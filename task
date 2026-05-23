@@ -1,0 +1,627 @@
+# Startup India Progress Dashboard — Complete Project Plan
+
+> **Stack:** Laravel 11 (Backend) + Blade Templates + Tailwind CSS (Frontend)  
+> **Purpose:** A web-based monitoring dashboard to track, manage, and visualize Startup India program data  
+> **Target Users:** DPIIT Analysts, State Nodal Officers, Admin Staff
+
+---
+
+## Table of Contents
+
+1. [Project Overview](#1-project-overview)
+2. [Tech Stack](#2-tech-stack)
+3. [Roles & Access Levels](#3-roles--access-levels)
+4. [Pages & Features](#4-pages--features)
+5. [Database Design](#5-database-design)
+6. [Routes](#6-routes)
+7. [Laravel File Structure](#7-laravel-file-structure)
+8. [Authentication Flow](#8-authentication-flow)
+9. [Feature Breakdown by Page](#9-feature-breakdown-by-page)
+10. [Development Phases](#10-development-phases)
+11. [Dummy Data Plan](#11-dummy-data-plan)
+
+---
+
+## 1. Project Overview
+
+A full-stack web application that allows government officials and analysts to:
+
+- Monitor startup registrations across India in real time
+- Track funding rounds, investment activity, and sector trends
+- View state-wise and sector-wise breakdown with visual charts
+- Manage startup records (add, edit, delete)
+- Generate and download summary reports
+- Control access through role-based login/register
+
+---
+
+## 2. Tech Stack
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| Backend Framework | Laravel 11 | Routes, controllers, business logic |
+| Database | MySQL | Data storage |
+| Frontend Templates | Laravel Blade | HTML views |
+| CSS Framework | Tailwind CSS (CDN) | Styling & responsive design |
+| Charts | Chart.js (CDN) | Bar, line, pie, doughnut charts |
+| Authentication | Laravel Breeze | Login, Register, Password Reset |
+| Dummy Data | Laravel Seeders + Faker | Testing and demo |
+| Icons | Heroicons / Tabler Icons | UI icons via CDN |
+| HTTP Client | Axios (CDN) | AJAX requests for live data |
+
+---
+
+## 3. Roles & Access Levels
+
+Three roles are defined. Each has a different level of access.
+
+| Role | Who | What They Can Do |
+|---|---|---|
+| `super_admin` | DPIIT HQ Admin | Full access: manage users, all startups, all states, reports |
+| `state_officer` | State Nodal Officer | View + manage startups only in their assigned state |
+| `viewer` | Analyst / Read-only | View dashboard, charts, reports — no edit/delete |
+
+Role is stored in the `users` table as a string column (`role`).  
+Middleware will check role on every protected route.
+
+---
+
+## 4. Pages & Features
+
+### 4.1 Auth Pages (Public — No Login Required)
+
+| Page | URL | Description |
+|---|---|---|
+| Login | `/login` | Email + password login form |
+| Register | `/register` | Name, email, password, role selection (viewer default), state assignment |
+| Forgot Password | `/forgot-password` | Send reset link via email |
+| Reset Password | `/reset-password` | Set new password via token link |
+
+---
+
+### 4.2 Dashboard (After Login)
+
+**URL:** `/dashboard`  
+**Access:** All roles
+
+What it shows:
+- 4 KPI cards: Total Startups, DPIIT Recognised, Funding Raised (₹ Cr), Jobs Created
+- Monthly registration bar chart (Chart.js)
+- Sector-wise pie/doughnut chart (Chart.js)
+- State-wise horizontal bar chart (Chart.js)
+- Recent Activity Feed (last 10 events)
+- Recently Registered Startups mini-table (last 5)
+
+---
+
+### 4.3 Startups List
+
+**URL:** `/startups`  
+**Access:** All roles (edit/delete buttons visible only to `super_admin` and `state_officer`)
+
+What it shows:
+- Full paginated table of startups (20 per page)
+- Columns: Name, Sector, State, Stage, Status, Recognised, Founded, Actions
+- Search bar (by name or sector)
+- Filter dropdowns: Sector, State, Stage, Status, Year
+- Export to CSV button (super_admin only)
+- "Add New Startup" button (super_admin + state_officer)
+
+---
+
+### 4.4 Add New Startup
+
+**URL:** `/startups/create`  
+**Access:** `super_admin`, `state_officer`
+
+Form fields:
+- Startup Name (text, required)
+- Sector (dropdown: IT/SaaS, Agritech, Edtech, Healthtech, Fintech, Cleantech, Logistics, Other)
+- State (dropdown: all 28 states + 8 UTs)
+- City (text)
+- Stage (dropdown: Idea, Pre-seed, Seed, Series A, Series B, Growth, Acquired)
+- Status (dropdown: Active, Inactive, Acquired, Shutdown)
+- DPIIT Recognised (Yes/No toggle)
+- Founded Date (date picker)
+- Website URL (optional)
+- Description (textarea, max 500 chars)
+- Founder Name (text)
+- Founder Email (email)
+
+---
+
+### 4.5 Startup Detail Page
+
+**URL:** `/startups/{id}`  
+**Access:** All roles
+
+Sections on the page:
+- Startup header: name, badge (sector), status badge, founded date, DPIIT tag
+- About section: description, website, city, state
+- Funding History table: round type, amount, investor, date
+- Timeline: key milestones (recognition, funding, awards)
+- Edit button (if super_admin or state_officer)
+
+---
+
+### 4.6 Edit Startup
+
+**URL:** `/startups/{id}/edit`  
+**Access:** `super_admin`, `state_officer` (own state only)
+
+Same form as Create, pre-filled with existing data.  
+Includes a "Delete Startup" button with confirmation modal (super_admin only).
+
+---
+
+### 4.7 Funding Tracker
+
+**URL:** `/funding`  
+**Access:** All roles
+
+What it shows:
+- Table of all funding rounds across all startups
+- Columns: Startup Name, Round Type, Amount (₹ Cr), Investor, Date, State
+- Filter by: Round Type, State, Year, Amount Range
+- Total funding raised summary card at top
+- "Add Funding Round" button (super_admin + state_officer)
+
+---
+
+### 4.8 Add Funding Round
+
+**URL:** `/funding/create`  
+**Access:** `super_admin`, `state_officer`
+
+Form fields:
+- Select Startup (searchable dropdown)
+- Round Type (Bootstrapped, Angel, Pre-seed, Seed, Series A, Series B, Series C+, Government Grant, Acquired)
+- Amount in ₹ Crore (number)
+- Investor Name (text)
+- Investment Date (date)
+- Notes (optional textarea)
+
+---
+
+### 4.9 State Analytics
+
+**URL:** `/states`  
+**Access:** All roles
+
+What it shows:
+- India map visual (SVG-based clickable state map or chart fallback)
+- Table below map: State, Total Startups, DPIIT Recognised, Funding ₹ Cr, Top Sector
+- Click a state row → see state detail with its own filtered charts
+- State Detail URL: `/states/{state_name}`
+
+---
+
+### 4.10 Reports
+
+**URL:** `/reports`  
+**Access:** All roles (download only for super_admin)
+
+What it shows:
+- Summary stats: current FY vs previous FY comparison table
+- Year-over-year growth line chart
+- Sector growth table
+- State ranking table
+- Download Report button → generates CSV summary (super_admin only)
+
+---
+
+### 4.11 User Management
+
+**URL:** `/users`  
+**Access:** `super_admin` only
+
+What it shows:
+- Table of all registered users: Name, Email, Role, State, Status, Joined
+- Edit role / assigned state for any user
+- Activate / Deactivate user account
+- Delete user
+
+---
+
+### 4.12 Profile / Settings
+
+**URL:** `/profile`  
+**Access:** All roles (own profile only)
+
+What it shows:
+- Edit name, email
+- Change password
+- Current role (read-only display)
+- Logout button
+
+---
+
+### 4.13 Activity Log
+
+**URL:** `/activity`  
+**Access:** `super_admin` only
+
+What it shows:
+- Table of all system actions: who did what, to which startup, at what time
+- Filter by: User, Action Type, Date Range
+- Columns: User, Action, Startup Affected, Timestamp
+
+---
+
+## 5. Database Design
+
+### Table: `users`
+
+| Column | Type | Notes |
+|---|---|---|
+| id | bigint PK | Auto increment |
+| name | varchar(100) | |
+| email | varchar(150) | Unique |
+| password | varchar | Hashed by Laravel |
+| role | enum | super_admin, state_officer, viewer |
+| state | varchar(100) | Assigned state (for state_officer) |
+| is_active | boolean | Default true |
+| email_verified_at | timestamp | |
+| remember_token | varchar | |
+| created_at / updated_at | timestamps | |
+
+---
+
+### Table: `startups`
+
+| Column | Type | Notes |
+|---|---|---|
+| id | bigint PK | |
+| name | varchar(150) | |
+| sector | varchar(80) | IT/SaaS, Agritech, etc. |
+| state | varchar(100) | |
+| city | varchar(100) | |
+| stage | varchar(50) | Idea, Seed, Series A, etc. |
+| status | varchar(50) | Active, Shutdown, etc. |
+| is_dpiit_recognised | boolean | Default false |
+| dpiit_recognition_date | date | Nullable |
+| founded_date | date | |
+| website | varchar(200) | Nullable |
+| description | text | Nullable |
+| founder_name | varchar(100) | |
+| founder_email | varchar(150) | Nullable |
+| created_by | bigint FK | users.id |
+| created_at / updated_at | timestamps | |
+
+---
+
+### Table: `funding_rounds`
+
+| Column | Type | Notes |
+|---|---|---|
+| id | bigint PK | |
+| startup_id | bigint FK | startups.id |
+| round_type | varchar(50) | Angel, Seed, Series A, etc. |
+| amount_cr | decimal(10,2) | Amount in ₹ Crore |
+| investor_name | varchar(150) | |
+| investment_date | date | |
+| notes | text | Nullable |
+| created_at / updated_at | timestamps | |
+
+---
+
+### Table: `activity_logs`
+
+| Column | Type | Notes |
+|---|---|---|
+| id | bigint PK | |
+| user_id | bigint FK | users.id |
+| action | varchar(100) | created, updated, deleted, recognised |
+| startup_id | bigint FK | startups.id (nullable) |
+| description | text | Human-readable log message |
+| created_at | timestamp | |
+
+---
+
+### Table: `states`
+
+| Column | Type | Notes |
+|---|---|---|
+| id | bigint PK | |
+| name | varchar(100) | e.g. Punjab, Maharashtra |
+| region | varchar(80) | North, South, East, West, Central, Northeast |
+| created_at / updated_at | timestamps | |
+
+> Note: State-level aggregates (total startups, funding) are computed via queries on `startups` and `funding_rounds` — not stored as columns in this table.
+
+---
+
+## 6. Routes
+
+### Public Routes (No Auth)
+```
+GET  /login                   → AuthController@showLogin
+POST /login                   → AuthController@login
+GET  /register                → AuthController@showRegister
+POST /register                → AuthController@register
+GET  /forgot-password         → AuthController@showForgot
+POST /forgot-password         → AuthController@sendResetLink
+GET  /reset-password/{token}  → AuthController@showReset
+POST /reset-password          → AuthController@resetPassword
+POST /logout                  → AuthController@logout
+```
+
+### Authenticated Routes (All Roles)
+```
+GET  /dashboard               → DashboardController@index
+GET  /startups                → StartupController@index
+GET  /startups/{id}           → StartupController@show
+GET  /funding                 → FundingController@index
+GET  /states                  → StateController@index
+GET  /states/{state}          → StateController@show
+GET  /reports                 → ReportController@index
+GET  /profile                 → ProfileController@show
+PUT  /profile                 → ProfileController@update
+```
+
+### Super Admin + State Officer Only
+```
+GET  /startups/create         → StartupController@create
+POST /startups                → StartupController@store
+GET  /startups/{id}/edit      → StartupController@edit
+PUT  /startups/{id}           → StartupController@update
+GET  /funding/create          → FundingController@create
+POST /funding                 → FundingController@store
+```
+
+### Super Admin Only
+```
+DELETE /startups/{id}         → StartupController@destroy
+GET    /users                 → UserController@index
+PUT    /users/{id}            → UserController@update
+DELETE /users/{id}            → UserController@destroy
+GET    /activity              → ActivityController@index
+GET    /reports/export        → ReportController@export
+```
+
+### API Routes (JSON — for Chart.js AJAX)
+```
+GET  /api/stats/overview      → Returns KPI numbers
+GET  /api/stats/monthly       → Monthly registration counts
+GET  /api/stats/sectors       → Sector-wise counts
+GET  /api/stats/states        → State-wise counts
+GET  /api/startups            → Paginated startup list (for AJAX search)
+```
+
+---
+
+## 7. Laravel File Structure
+
+```
+app/
+├── Http/
+│   ├── Controllers/
+│   │   ├── Auth/
+│   │   │   └── AuthController.php
+│   │   ├── DashboardController.php
+│   │   ├── StartupController.php
+│   │   ├── FundingController.php
+│   │   ├── StateController.php
+│   │   ├── ReportController.php
+│   │   ├── UserController.php
+│   │   ├── ActivityController.php
+│   │   ├── ProfileController.php
+│   │   └── Api/
+│   │       └── StatsController.php
+│   ├── Middleware/
+│   │   ├── CheckRole.php          ← custom role middleware
+│   │   └── LogActivity.php        ← auto-logs actions
+│   └── Requests/
+│       ├── StoreStartupRequest.php
+│       └── StoreFundingRequest.php
+├── Models/
+│   ├── User.php
+│   ├── Startup.php
+│   ├── FundingRound.php
+│   ├── ActivityLog.php
+│   └── State.php
+
+database/
+├── migrations/
+│   ├── create_users_table.php
+│   ├── create_startups_table.php
+│   ├── create_funding_rounds_table.php
+│   ├── create_activity_logs_table.php
+│   └── create_states_table.php
+├── seeders/
+│   ├── DatabaseSeeder.php
+│   ├── UserSeeder.php
+│   ├── StartupSeeder.php
+│   └── FundingSeeder.php
+└── factories/
+    ├── StartupFactory.php
+    └── FundingRoundFactory.php
+
+resources/
+└── views/
+    ├── layouts/
+    │   ├── app.blade.php          ← Main layout (sidebar + topbar)
+    │   └── auth.blade.php         ← Auth layout (centered card)
+    ├── auth/
+    │   ├── login.blade.php
+    │   ├── register.blade.php
+    │   ├── forgot-password.blade.php
+    │   └── reset-password.blade.php
+    ├── dashboard.blade.php
+    ├── startups/
+    │   ├── index.blade.php
+    │   ├── show.blade.php
+    │   ├── create.blade.php
+    │   └── edit.blade.php
+    ├── funding/
+    │   ├── index.blade.php
+    │   └── create.blade.php
+    ├── states/
+    │   ├── index.blade.php
+    │   └── show.blade.php
+    ├── reports/
+    │   └── index.blade.php
+    ├── users/
+    │   └── index.blade.php
+    ├── activity/
+    │   └── index.blade.php
+    └── profile/
+        └── show.blade.php
+
+routes/
+├── web.php                        ← All web routes
+└── api.php                        ← API routes for Chart.js
+```
+
+---
+
+## 8. Authentication Flow
+
+### Register Flow
+1. User fills register form (name, email, password, password confirmation, state)
+2. Role defaults to `viewer` — only `super_admin` can promote roles later
+3. Laravel Breeze handles hashing + session
+4. On success → redirect to `/dashboard`
+5. Activity logged: "New user registered"
+
+### Login Flow
+1. User fills login form (email, password)
+2. Laravel `Auth::attempt()` checks credentials
+3. On success → redirect to `/dashboard`
+4. On failure → back with error message (do not reveal if email exists)
+
+### Forgot Password Flow
+1. User enters email on `/forgot-password`
+2. Laravel sends reset link via email (uses `MAIL_*` env vars)
+3. User clicks link → `/reset-password/{token}`
+4. User sets new password → redirected to login
+
+### Role Middleware
+```
+Route::middleware(['auth', 'role:super_admin'])->group(...)
+Route::middleware(['auth', 'role:super_admin,state_officer'])->group(...)
+Route::middleware(['auth'])->group(...)
+```
+`CheckRole` middleware reads `$request->user()->role` and aborts with 403 if mismatch.
+
+---
+
+## 9. Feature Breakdown by Page
+
+### Dashboard — Controller Logic
+- Query: total startups count
+- Query: DPIIT recognised count
+- Query: SUM of funding_rounds.amount_cr
+- Query: (estimated jobs — can be a formula: startups × avg 6.3 jobs)
+- Query: GROUP BY month for current year → monthly registrations array
+- Query: GROUP BY sector → sector counts array
+- Query: GROUP BY state ORDER BY count DESC LIMIT 6
+- Query: Last 10 activity_logs with user name
+- Query: Last 5 startups created
+- Pass all data to `dashboard.blade.php`
+- Blade passes data arrays to Chart.js via `@json()` directive
+
+### Startups List — Search & Filter Logic
+- `Startup::query()` builder with chained `->when()` for each filter
+- `->paginate(20)` for pagination
+- AJAX search: `/api/startups?search=&sector=&state=&stage=` returns JSON
+- Blade: table rows, filter form, pagination links
+
+### Startup Detail — Relationships
+- `Startup` has many `FundingRound`
+- `Startup` has many `ActivityLog`
+- Eager load: `$startup->load(['fundingRounds', 'activityLogs.user'])`
+
+### Reports — Export CSV
+- Use Laravel's `Response::streamDownload()`
+- Loop through aggregated data, write CSV headers + rows
+- Return download response
+
+---
+
+## 10. Development Phases
+
+### Phase 1 — Foundation (Week 1)
+- [ ] Laravel project setup
+- [ ] MySQL database configuration
+- [ ] Install Laravel Breeze
+- [ ] Create all migrations and run them
+- [ ] Create models with relationships
+- [ ] Build auth views: Login, Register, Forgot/Reset Password
+- [ ] Create main layout (sidebar + topbar Blade file with Tailwind)
+
+### Phase 2 — Core Features (Week 2)
+- [ ] Dashboard page with all 4 KPI cards
+- [ ] Monthly chart using Chart.js (bar)
+- [ ] Sector chart (doughnut)
+- [ ] State-wise bar chart
+- [ ] Startups list page with search + filters + pagination
+- [ ] Startup detail page
+- [ ] Add / Edit startup form with validation
+
+### Phase 3 — Extended Features (Week 3)
+- [ ] Funding tracker (list + add form)
+- [ ] State analytics page
+- [ ] Activity feed on dashboard
+- [ ] Activity log page (super_admin)
+- [ ] Role-based middleware and route protection
+- [ ] Auto-log activity on create/update/delete
+
+### Phase 4 — Polish & Reports (Week 4)
+- [ ] Reports page with YoY comparison table
+- [ ] CSV export for reports
+- [ ] User management page
+- [ ] Profile / settings page
+- [ ] Seeders with 200+ fake startups
+- [ ] Responsive design check (Tailwind breakpoints)
+- [ ] Error pages: 403, 404, 500
+
+---
+
+## 11. Dummy Data Plan
+
+### Users to seed (5 accounts)
+| Name | Email | Role | State |
+|---|---|---|---|
+| Admin User | admin@startup.gov.in | super_admin | All |
+| Punjab Officer | punjab@startup.gov.in | state_officer | Punjab |
+| MH Officer | mh@startup.gov.in | state_officer | Maharashtra |
+| Analyst | analyst@startup.gov.in | viewer | — |
+| Demo User | demo@startup.gov.in | viewer | — |
+
+### Startups to seed
+- 200 fake startups using `StartupFactory` + Faker
+- Random sector from predefined list
+- Random state from 36 states/UTs
+- Random stage and status
+- 30% marked as DPIIT recognised
+- Founded dates spread across 2016–2024
+
+### Funding rounds to seed
+- 80 fake funding rounds attached to random startups
+- Random round types and amounts (₹1 Cr – ₹500 Cr)
+- Random investor names from a fixed list
+- Dates spread across 2018–2024
+
+---
+
+## Summary Checklist
+
+| # | Feature | Priority | Status |
+|---|---|---|---|
+| 1 | Login / Register / Auth | High | Pending |
+| 2 | Dashboard with Charts | High | Pending |
+| 3 | Startups CRUD | High | Pending |
+| 4 | Role-based Access Control | High | Pending |
+| 5 | Funding Tracker | Medium | Pending |
+| 6 | State Analytics | Medium | Pending |
+| 7 | Reports + CSV Export | Medium | Pending |
+| 8 | User Management | Medium | Pending |
+| 9 | Activity Log | Low | Pending |
+| 10 | Profile Settings | Low | Pending |
+| 11 | Dummy Data Seeders | High | Pending |
+| 12 | Responsive Design | Medium | Pending |
+
+---
+
+*Document Version: 1.0 — Ready for development handoff*

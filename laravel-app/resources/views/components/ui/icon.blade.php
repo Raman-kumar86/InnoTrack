@@ -33,6 +33,8 @@
         'circle' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8"/></svg>',
         'funding' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1c-1.1 0-2 .9-2 2v1.06A7 7 0 005 11v2a7 7 0 007 7 7 7 0 007-7v-2a7 7 0 00-5-6.94V3c0-1.1-.9-2-2-2zm1 15.5h-2v-1h2v1zm1.07-4.75c-.2.97-1.02 1.5-2.07 1.5h-1v-1.5c0-.83.67-1.5 1.5-1.5.83 0 1.5-.67 1.5-1.5S12.83 5.5 12 5.5c-1.1 0-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 1.14-.57 1.97-1.07 2.25z"/></svg>',
         'reports' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 3h8l4 4v14H7V3zm8 0v4h4M9 11h6M9 15h6M9 19h4"/></svg>',
+        'user' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a3 3 0 11-6 0 3 3 0 016 0zM4.5 20a7.5 7.5 0 0115 0"/></svg>',
+        'logout' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 16l-4-4m0 0 4-4m-4 4h10m0-7h2a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>',
     ];
 @endphp
 

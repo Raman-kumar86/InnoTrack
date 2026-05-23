@@ -35,14 +35,84 @@
             </button>
 
             <div class="relative">
-                <button type="button" class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800">
-                    <span class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-cyan-500 text-sm font-semibold text-white">AI</span>
-                    <span class="hidden text-left sm:block">
-                        <span class="block text-sm font-semibold text-slate-900 dark:text-white">Admin</span>
-                        <span class="block text-xs text-slate-500 dark:text-slate-400">Ministry of Commerce</span>
-                    </span>
-                    <x-ui.icon name="chevron-down" class="h-4 w-4 text-slate-400" />
-                </button>
+                <div class="relative js-profile">
+                    <button type="button" class="flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-2 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800" aria-expanded="false">
+                        @php
+                            $fullName = trim((string) (Auth::user()->name ?? ''));
+                            $first = $fullName === '' ? '' : explode(' ', $fullName)[0];
+                            $initial = $first !== '' ? strtoupper(substr($first, 0, 1)) : 'G';
+                        @endphp
+                        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-br from-indigo-600 to-cyan-500 text-sm font-semibold text-white">{{ $initial }}</span>
+                        <x-ui.icon name="chevron-down" class="h-4 w-4 text-slate-400 transition-transform duration-200 js-profile-chevron" />
+                    </button>
+
+                    <div class="pointer-events-none opacity-0 transform translate-y-1 transition-all duration-150 absolute right-0 mt-2 w-72 rounded-2xl border border-slate-200 bg-white shadow-lg dark:border-slate-800 dark:bg-slate-900 js-profile-menu">
+                        <div class="p-4">
+                                <div class="grid gap-1">
+                                    <a href="{{ route('profile.show') }}" class="flex items-center gap-2 rounded px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">
+                                        <x-ui.icon name="user" class="h-4 w-4 text-slate-400" />
+                                        Profile
+                                    </a>
+                                    <a href="{{ route('settings.index') }}" class="flex items-center gap-2 rounded px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">
+                                        <x-ui.icon name="settings" class="h-4 w-4 text-slate-400" />
+                                        Settings
+                                    </a>
+                                    <form method="POST" action="{{ route('auth.logout') }}">
+                                        @csrf
+                                        <button type="submit" class="w-full flex items-center gap-2 rounded px-3 py-2 text-sm text-rose-600 hover:bg-rose-50 dark:text-rose-400 dark:hover:bg-slate-800">
+                                            <x-ui.icon name="logout" class="h-4 w-4" />
+                                            Logout
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <script>
+                    (function() {
+                        try {
+                            const container = document.querySelector('.js-profile');
+                            if (!container) return;
+                            const btn = container.querySelector('button');
+                            const menu = container.querySelector('.js-profile-menu');
+                            const chevron = container.querySelector('.js-profile-chevron');
+                            let clickedOpen = false;
+
+                            function openMenu() {
+                                menu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-1');
+                                menu.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                                chevron?.classList.add('rotate-180');
+                                btn.setAttribute('aria-expanded', 'true');
+                            }
+
+                            function closeMenu() {
+                                menu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-1');
+                                menu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                                chevron?.classList.remove('rotate-180');
+                                btn.setAttribute('aria-expanded', 'false');
+                            }
+
+                            // Click/tap behavior
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                clickedOpen = !clickedOpen;
+                                if (clickedOpen) openMenu();
+                                else closeMenu();
+                            });
+
+                            // Close when clicking outside
+                            document.addEventListener('click', (e) => {
+                                if (!container.contains(e.target)) {
+                                    clickedOpen = false;
+                                    closeMenu();
+                                }
+                            });
+                        } catch (err) {
+                            // silent
+                        }
+                    })();
+                </script>
             </div>
         </div>
     </div>

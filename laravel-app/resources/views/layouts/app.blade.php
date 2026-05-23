@@ -35,7 +35,48 @@
     @endif
     @stack('styles')
 </head>
-<body class="min-h-full bg-[radial-gradient(circle_at_top_left,_rgba(79,70,229,0.08),_transparent_28%),radial-gradient(circle_at_top_right,_rgba(14,165,233,0.08),_transparent_24%)] text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+<body class="min-h-full bg-[radial-gradient(circle_at_top_left,rgba(79,70,229,0.08),transparent_28%),radial-gradient(circle_at_top_right,rgba(14,165,233,0.08),transparent_24%)] text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    @php($flashErrors = isset($errors) ? $errors : new \Illuminate\Support\ViewErrorBag())
+    @if (session('success') || session('error') || session('status') || $flashErrors->any())
+        <div class="fixed right-4 top-4 z-50 flex w-[min(24rem,calc(100vw-2rem))] flex-col gap-3">
+            @if (session('success'))
+                <div data-flash-message class="relative rounded-2xl border border-emerald-200 bg-white px-4 py-3 pr-12 text-sm text-slate-900 shadow-2xl shadow-emerald-950/10 backdrop-blur transition dark:border-emerald-400/20 dark:bg-emerald-500/15 dark:text-emerald-50 dark:shadow-emerald-950/20">
+                    {{ session('success') }}
+                    <button type="button" data-flash-close class="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full text-emerald-700 transition hover:bg-slate-100 hover:text-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/40 dark:text-emerald-100 dark:hover:bg-white/10 dark:hover:text-white" aria-label="Dismiss notification">
+                        <x-ui.icon name="x" class="h-4 w-4" />
+                    </button>
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div data-flash-message class="relative rounded-2xl border border-rose-200 bg-white px-4 py-3 pr-12 text-sm text-slate-900 shadow-2xl shadow-rose-950/10 backdrop-blur transition dark:border-rose-400/20 dark:bg-rose-500/15 dark:text-rose-50 dark:shadow-rose-950/20">
+                    {{ session('error') }}
+                    <button type="button" data-flash-close class="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full text-rose-700 transition hover:bg-slate-100 hover:text-rose-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/40 dark:text-rose-100 dark:hover:bg-white/10 dark:hover:text-white" aria-label="Dismiss notification">
+                        <x-ui.icon name="x" class="h-4 w-4" />
+                    </button>
+                </div>
+            @endif
+
+            @if (session('status'))
+                <div data-flash-message class="relative rounded-2xl border border-sky-200 bg-white px-4 py-3 pr-12 text-sm text-slate-900 shadow-2xl shadow-sky-950/10 backdrop-blur transition dark:border-sky-400/20 dark:bg-sky-500/15 dark:text-sky-50 dark:shadow-sky-950/20">
+                    {{ session('status') }}
+                    <button type="button" data-flash-close class="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full text-sky-700 transition hover:bg-slate-100 hover:text-sky-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/40 dark:text-sky-100 dark:hover:bg-white/10 dark:hover:text-white" aria-label="Dismiss notification">
+                        <x-ui.icon name="x" class="h-4 w-4" />
+                    </button>
+                </div>
+            @endif
+
+            @if ($flashErrors->any())
+                <div data-flash-message class="relative rounded-2xl border border-rose-200 bg-white px-4 py-3 pr-12 text-sm text-slate-900 shadow-2xl shadow-rose-950/10 backdrop-blur transition dark:border-rose-400/20 dark:bg-rose-500/15 dark:text-rose-50 dark:shadow-rose-950/20">
+                    {{ $flashErrors->first() }}
+                    <button type="button" data-flash-close class="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full text-rose-700 transition hover:bg-slate-100 hover:text-rose-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/40 dark:text-rose-100 dark:hover:bg-white/10 dark:hover:text-white" aria-label="Dismiss notification">
+                        <x-ui.icon name="x" class="h-4 w-4" />
+                    </button>
+                </div>
+            @endif
+        </div>
+    @endif
+
     <div data-sidebar-overlay class="fixed inset-0 z-40 hidden bg-slate-950/50 backdrop-blur-sm lg:hidden"></div>
 
     <div class="min-h-screen lg:flex">

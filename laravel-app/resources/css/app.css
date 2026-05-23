@@ -83,3 +83,41 @@
     @apply whitespace-nowrap px-6 py-4 text-sm text-slate-600 dark:text-slate-300;
   }
 }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(79 70 229) rgb(226 232 240);
+  }
+
+  .dark {
+    scrollbar-color: rgb(129 140 248) rgb(15 23 42);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, rgb(241 245 249), rgb(226 232 240));
+    border-left: 1px solid rgb(226 232 240);
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, rgb(15 23 42), rgb(30 41 59));
+    border-left: 1px solid rgb(30 41 59);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgb(99 102 241), rgb(14 165 233));
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgb(79 70 229), rgb(2 132 199));
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+ 

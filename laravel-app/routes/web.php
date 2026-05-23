@@ -1,22 +1,37 @@
 <?php
 
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'dashboard')->name('dashboard');
-Route::view('/startups', 'startups.index')->name('startups.index');
-Route::view('/startups/create', 'startups.create')->name('startups.create');
-Route::view('/startups/{startup}', 'startups.show')->name('startups.show');
-Route::view('/startups/{startup}/edit', 'startups.edit')->name('startups.edit');
-Route::view('/funding/create', 'funding.create')->name('funding.create');
-Route::view('/analytics/state', 'analytics.state')->name('analytics.state');
-Route::view('/reports', 'reports.index')->name('reports.index');
-Route::view('/users', 'users.index')->name('users.index');
-Route::view('/activity-logs', 'activity.index')->name('activity.index');
-Route::view('/settings', 'settings.index')->name('settings.index');
+Route::prefix('auth')->name('auth.')->group(function (): void {
+    Route::middleware('guest')->group(function (): void {
+        Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+        Route::post('/login', [AuthController::class, 'login'])->name('login.store');
 
-Route::prefix('auth')->name('auth.')->group(function () {
-    Route::view('/login', 'auth.login')->name('login');
-    Route::view('/register', 'auth.register')->name('register');
-    Route::view('/forgot-password', 'auth.forgot-password')->name('forgot-password');
-    Route::view('/reset-password', 'auth.reset-password')->name('reset-password');
+        Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+        Route::post('/register', [AuthController::class, 'register'])->name('register.store');
+
+        Route::view('/forgot-password', 'auth.forgot-password')->name('forgot-password');
+        Route::view('/reset-password', 'auth.reset-password')->name('reset-password');
+    });
+
+    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+});
+
+Route::middleware('auth')->group(function (): void {
+    Route::view('/', 'dashboard')->name('dashboard');
+    Route::view('/startups', 'startups.index')->name('startups.index');
+    Route::view('/startups/create', 'startups.create')->name('startups.create');
+    Route::view('/startups/{startup}', 'startups.show')->name('startups.show');
+    Route::view('/startups/{startup}/edit', 'startups.edit')->name('startups.edit');
+    Route::view('/funding/create', 'funding.create')->name('funding.create');
+    Route::view('/analytics/state', 'analytics.state')->name('analytics.state');
+    Route::view('/reports', 'reports.index')->name('reports.index');
+    Route::view('/users', 'users.index')->name('users.index');
+    Route::view('/activity-logs', 'activity.index')->name('activity.index');
+    Route::get('/settings', [SettingsController::class, 'edit'])->name('settings.index');
+    Route::patch('/settings', [SettingsController::class, 'update'])->name('settings.update');
+    Route::get('/setting', [SettingsController::class, 'edit'])->name('setting.alias');
+    Route::view('/profile', 'profile.show')->name('profile.show');
 });

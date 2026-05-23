@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'super_admin' => [
+        'email' => env('SUPER_ADMIN_EMAIL_ID'),
+    ],
+
 ];
