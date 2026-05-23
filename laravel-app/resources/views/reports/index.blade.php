@@ -10,6 +10,20 @@
 
     $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
     $growthSeries = [120, 144, 156, 169, 188, 205];
+    $approvalSeries = [20, 24, 28, 33, 35, 38];
+    $growthDatasets = [[
+        'label' => 'Funding growth',
+        'data' => $growthSeries,
+        'borderColor' => '#4f46e5',
+        'backgroundColor' => 'rgba(79, 70, 229, 0.12)',
+        'tension' => 0.42,
+        'fill' => true,
+    ]];
+    $approvalDatasets = [[
+        'label' => 'Approval rate',
+        'data' => $approvalSeries,
+        'backgroundColor' => '#0ea5e9',
+    ]];
     $summary = [
         ['label' => 'Total funding', 'value' => 'Rs 4,820 Cr'],
         ['label' => 'YoY growth', 'value' => '+18.4%'],
@@ -51,10 +65,10 @@
             </div>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
                 <x-ui.chart-card title="Funding growth" subtitle="Funding accumulation trend." height="h-64">
-                    <canvas data-chart="line" data-labels='@json($months)' data-values='@json($growthSeries)'></canvas>
+                    <canvas data-chart="line" data-labels='@json($months)' data-datasets='@json($growthDatasets)'></canvas>
                 </x-ui.chart-card>
                 <x-ui.chart-card title="Grant approval rate" subtitle="Reportable approval momentum." height="h-64">
-                    <canvas data-chart="bar" data-labels='@json($months)' data-values='@json([20, 24, 28, 33, 35, 38])'></canvas>
+                    <canvas data-chart="bar" data-labels='@json($months)' data-datasets='@json($approvalDatasets)'></canvas>
                 </x-ui.chart-card>
             </div>
         </x-ui.card>

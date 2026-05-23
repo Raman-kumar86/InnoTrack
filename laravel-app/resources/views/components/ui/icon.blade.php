@@ -6,9 +6,10 @@
 @php
     $icons = [
         'menu' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>',
+        'dashboard' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4h7v7H4V4zm9 0h7v4h-7V4zM13 10h7v10h-7V10zM4 13h7v7H4v-7z"/></svg>',
         'search' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/></svg>',
-        'sun' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.75a.75.75 0 01.75-.75V3a.75.75 0 00-1.5 0v1a.75.75 0 01.75.75zM12 20.25a.75.75 0 01-.75.75V21a.75.75 0 001.5 0v-0.0a.75.75 0 01-.75-.75z"/></svg>',
-        'moon' => '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>',
+        'sun' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 3v2.25m6.364.636-1.591 1.591M21 12h-2.25m-.636 6.364-1.591-1.591M12 18.75V21m-4.773-1.386 1.591-1.591M5.25 12H3m1.386-4.773 1.591 1.591M12 8.25A3.75 3.75 0 1 1 12 15.75a3.75 3.75 0 0 1 0-7.5z"/></svg>',
+        'moon' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M21.75 15.08A9.25 9.25 0 0 1 8.92 2.25a.75.75 0 0 0-.98.92A7.75 7.75 0 0 0 21 14.1a.75.75 0 0 0 .75.98Z"/></svg>',
         'bell' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>',
         'chevron-down' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>',
         'x' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>',
@@ -31,6 +32,7 @@
         'grid' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h7v7H3V3zm11 0h7v7h-7V3zM3 14h7v7H3v-7zm11 0h7v7h-7v-7z"/></svg>',
         'circle' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8"/></svg>',
         'funding' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1c-1.1 0-2 .9-2 2v1.06A7 7 0 005 11v2a7 7 0 007 7 7 7 0 007-7v-2a7 7 0 00-5-6.94V3c0-1.1-.9-2-2-2zm1 15.5h-2v-1h2v1zm1.07-4.75c-.2.97-1.02 1.5-2.07 1.5h-1v-1.5c0-.83.67-1.5 1.5-1.5.83 0 1.5-.67 1.5-1.5S12.83 5.5 12 5.5c-1.1 0-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 1.14-.57 1.97-1.07 2.25z"/></svg>',
+        'reports' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 3h8l4 4v14H7V3zm8 0v4h4M9 11h6M9 15h6M9 19h4"/></svg>',
     ];
 @endphp
 

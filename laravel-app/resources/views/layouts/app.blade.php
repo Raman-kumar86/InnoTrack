@@ -6,6 +6,30 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $title ?? 'Startup India Progress Dashboard' }}</title>
     <meta name="description" content="Government-grade startup ecosystem analytics dashboard.">
+    <script>
+        (function () {
+            const storageKey = 'startup-india-theme';
+            const root = document.documentElement;
+
+            let theme = 'light';
+
+            try {
+                const savedTheme = window.localStorage.getItem(storageKey);
+                if (savedTheme === 'dark' || savedTheme === 'light') {
+                    theme = savedTheme;
+                } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    theme = 'dark';
+                }
+            } catch (error) {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    theme = 'dark';
+                }
+            }
+
+            root.classList.toggle('dark', theme === 'dark');
+            root.setAttribute('data-theme', theme);
+        })();
+    </script>
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif

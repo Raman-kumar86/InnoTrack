@@ -12,6 +12,15 @@
     $fundingValues = [480, 455, 410, 388, 365, 342];
     $sectorLabels = ['SaaS', 'FinTech', 'HealthTech', 'Agritech', 'Deep Tech'];
     $sectorValues = [42, 20, 18, 12, 8];
+    $sparkLabels = ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6'];
+    $activeStatesSpark = [12, 14, 16, 18, 22, 28];
+    $highGrowthSpark = [3, 5, 6, 7, 9, 11];
+    $fundingConcentrationSpark = [280, 320, 350, 390, 420, 470];
+    $sectorClusterSpark = [2, 3, 3, 4, 4, 5];
+    $sectorDatasets = [[
+        'data' => $sectorValues,
+        'backgroundColor' => ['#4f46e5', '#0ea5e9', '#10b981', '#f59e0b', '#64748b'],
+    ]];
 
     $rankings = [
         ['name' => 'Karnataka', 'startups' => 4812, 'funding' => 'Rs 920 Cr', 'growth' => '+12.5%'],
@@ -34,10 +43,10 @@
     </x-ui.section-header>
 
     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-        <x-ui.kpi-card title="Active states" value="28" trend="2.4%" icon="map" :spark-labels="['Q1','Q2','Q3','Q4','Q5','Q6']" :spark-values="[12,14,16,18,22,28]" />
-        <x-ui.kpi-card title="High-growth states" value="11" trend="4.1%" icon="arrow-up" :spark-labels="['Q1','Q2','Q3','Q4','Q5','Q6']" :spark-values="[3,5,6,7,9,11]" />
-        <x-ui.kpi-card title="Funding concentration" value="Rs 4,520 Cr" trend="11.8%" icon="funding" :spark-labels="['Q1','Q2','Q3','Q4','Q5','Q6']" :spark-values="[280,320,350,390,420,470]" />
-        <x-ui.kpi-card title="Sector clusters" value="5" trend="1.0%" icon="grid" :spark-labels="['Q1','Q2','Q3','Q4','Q5','Q6']" :spark-values="[2,3,3,4,4,5]" />
+        <x-ui.kpi-card title="Active states" value="28" trend="2.4%" icon="map" :spark-labels="$sparkLabels" :spark-values="$activeStatesSpark" />
+        <x-ui.kpi-card title="High-growth states" value="11" trend="4.1%" icon="arrow-up" :spark-labels="$sparkLabels" :spark-values="$highGrowthSpark" />
+        <x-ui.kpi-card title="Funding concentration" value="Rs 4,520 Cr" trend="11.8%" icon="funding" :spark-labels="$sparkLabels" :spark-values="$fundingConcentrationSpark" />
+        <x-ui.kpi-card title="Sector clusters" value="5" trend="1.0%" icon="grid" :spark-labels="$sparkLabels" :spark-values="$sectorClusterSpark" />
     </div>
 
     <div class="grid gap-6 xl:grid-cols-3">
@@ -111,7 +120,7 @@
         </x-ui.chart-card>
 
         <x-ui.chart-card title="Sector distribution by state" subtitle="Dominant sector mix used by the state ecosystem filter.">
-            <canvas data-chart="doughnut" data-labels='@json($sectorLabels)' data-datasets='@json([["data" => $sectorValues, "backgroundColor" => ["#4f46e5", "#0ea5e9", "#10b981", "#f59e0b", "#64748b"]]])'></canvas>
+            <canvas data-chart="doughnut" data-labels='@json($sectorLabels)' data-datasets='@json($sectorDatasets)'></canvas>
         </x-ui.chart-card>
     </div>
 

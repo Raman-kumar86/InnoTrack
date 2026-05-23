@@ -25,8 +25,8 @@
 
         <div class="flex items-center gap-2">
             <button type="button" data-theme-toggle class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
-                <x-ui.icon name="sun" class="h-5 w-5 dark:hidden" />
-                <x-ui.icon name="moon" class="hidden h-5 w-5 dark:block" />
+                <x-ui.icon name="sun" class="h-5 w-5 text-amber-500 dark:hidden" />
+                <x-ui.icon name="moon" class="hidden h-5 w-5 text-slate-300 dark:block" />
             </button>
 
             <button type="button" class="relative inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
