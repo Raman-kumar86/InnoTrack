@@ -6,7 +6,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $title ?? 'Startup India Progress Dashboard' }}</title>
     <meta name="description" content="Secure government-grade startup ecosystem portal.">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @endif
     @stack('styles')
 </head>
 <body class="min-h-full bg-[radial-gradient(circle_at_top,_rgba(15,23,42,0.75),_rgba(15,23,42,0.98))] text-slate-100">
