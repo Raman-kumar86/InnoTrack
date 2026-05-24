@@ -1,0 +1,601 @@
+id,full_name,gender,age,email,phone,education,college,iit_iim_nit,serial_entrepreneur,linkedin_profile,experience_years,prev_company,created_at,updated_at
+1,Nikhil Pillai,Male,50,nikhil.pillai99@gmail.com,+91-9238965651,CA,BITS Pilani,Yes,No,https://linkedin.com/in/nikhil-pillai-381,15,Amazon,2019-03-16 07:17:21,2023-11-24 17:05:08
+2,Meera Sen,Female,46,meera.sen91@gmail.com,+91-7918920620,M.Tech,IIM Ahmedabad,Yes,No,https://linkedin.com/in/meera-sen-517,11,Ola,2021-03-23 13:03:13,2024-03-06 12:57:49
+3,Dinesh Chaudhary,Male,36,dinesh.chaudhary1@gmail.com,+91-8510792572,M.Sc,SRM,No,No,https://linkedin.com/in/dinesh-chaudhary-973,14,Ola,2022-02-14 19:57:14,2024-05-14 07:17:27
+4,Rahul Sen,Male,34,rahul.sen93@gmail.com,+91-7708861714,CA,Jadavpur University,No,No,https://linkedin.com/in/rahul-sen-737,18,Google,2020-06-01 18:36:42,2023-01-28 02:41:27
+5,Rekha Basu,Female,29,rekha.basu34@gmail.com,+91-8628238707,PhD,IIT Delhi,Yes,No,https://linkedin.com/in/rekha-basu-565,11,Flipkart,2020-04-01 08:48:53,2024-03-07 08:53:05
+6,Rahul Modi,Male,25,rahul.modi29@gmail.com,+91-9792347639,M.Tech,Anna University,No,Yes,https://linkedin.com/in/rahul-modi-872,1,TCS,2018-03-27 00:39:09,2023-09-02 04:30:42
+7,Shiv Rao,Male,38,shiv.rao99@gmail.com,+91-8584392711,MBA,BITS Pilani,Yes,Yes,https://linkedin.com/in/shiv-rao-896,6,Wipro,2017-03-18 18:01:59,2023-11-16 18:43:58
+8,Deepak Menon,Male,26,deepak.menon89@gmail.com,+91-9693985578,B.Sc,XLRI,No,Yes,https://linkedin.com/in/deepak-menon-813,25,Wipro,2023-09-03 19:51:07,2024-08-02 01:22:34
+9,Kunal Das,Male,26,kunal.das83@gmail.com,+91-8465576748,B.Tech,Manipal,No,No,https://linkedin.com/in/kunal-das-942,16,Amazon,2020-11-10 11:40:57,2024-04-15 22:09:27
+10,Usha Pandya,Female,44,usha.pandya79@gmail.com,+91-9311435034,CA,BITS Pilani,Yes,No,https://linkedin.com/in/usha-pandya-546,24,Paytm,2019-01-04 10:54:15,2023-03-30 08:56:28
+11,Kiran Basu,Female,42,kiran.basu86@gmail.com,+91-8627746667,PhD,FMS Delhi,No,Yes,https://linkedin.com/in/kiran-basu-606,11,Infosys,2021-06-20 06:22:51,2023-09-22 10:17:56
+12,Harsh Sharma,Male,40,harsh.sharma11@gmail.com,+91-8036616336,B.Com,NIT Trichy,Yes,No,https://linkedin.com/in/harsh-sharma-668,25,TCS,2023-09-29 15:41:45,2024-05-17 14:50:01
+13,Rohit Iyer,Male,36,rohit.iyer40@gmail.com,+91-9851686578,B.E,NIT Warangal,Yes,No,https://linkedin.com/in/rohit-iyer-584,18,Ola,2019-11-09 13:47:35,2023-12-05 11:44:29
+14,Rohit Chopra,Male,31,rohit.chopra93@gmail.com,+91-7827143233,PhD,IIT Kharagpur,Yes,Yes,https://linkedin.com/in/rohit-chopra-860,18,None,2023-09-27 05:12:13,2024-05-10 08:46:37
+15,Arjun Menon,Male,33,arjun.menon47@gmail.com,+91-7770695571,M.Sc,NIT Warangal,Yes,Yes,https://linkedin.com/in/arjun-menon-825,18,Infosys,2019-01-28 01:03:35,2023-10-27 22:08:40
+16,Arjun Sharma,Male,42,arjun.sharma61@gmail.com,+91-9056061866,CA,Delhi University,No,No,https://linkedin.com/in/arjun-sharma-288,2,Wipro,2021-05-10 03:52:04,2024-02-15 15:04:36
+17,Rajesh Mishra,Male,49,rajesh.mishra39@gmail.com,+91-7365849190,B.Sc,XLRI,No,Yes,https://linkedin.com/in/rajesh-mishra-671,25,Zomato,2022-10-19 19:50:39,2023-08-20 16:24:28
+18,Rohit Tiwari,Male,37,rohit.tiwari73@gmail.com,+91-9667292043,B.Tech,Delhi University,No,Yes,https://linkedin.com/in/rohit-tiwari-881,7,None,2018-05-14 08:42:05,2023-06-10 07:11:35
+19,Sanjay Sharma,Male,37,sanjay.sharma89@gmail.com,+91-9550399650,CA,VIT,No,No,https://linkedin.com/in/sanjay-sharma-133,8,Wipro,2023-12-05 09:44:55,2024-04-09 02:43:14
+20,Mohit Tiwari,Male,45,mohit.tiwari55@gmail.com,+91-7492960451,PGDM,NIT Trichy,Yes,No,https://linkedin.com/in/mohit-tiwari-763,5,Wipro,2017-08-05 02:03:10,2023-11-11 19:47:52
+21,Pankaj Agarwal,Male,38,pankaj.agarwal90@gmail.com,+91-8728760924,M.Sc,Delhi University,No,No,https://linkedin.com/in/pankaj-agarwal-548,3,Paytm,2016-06-12 13:47:20,2024-09-10 08:01:05
+22,Radha Chaudhary,Female,42,radha.chaudhary98@gmail.com,+91-9887427412,M.Sc,IIT Bombay,Yes,Yes,https://linkedin.com/in/radha-chaudhary-881,25,Infosys,2021-04-11 16:41:28,2023-10-12 05:37:27
+23,Vikram Shah,Male,35,vikram.shah43@gmail.com,+91-8378934717,M.Tech,BHU,No,No,https://linkedin.com/in/vikram-shah-437,14,None,2021-07-22 09:42:25,2024-07-17 01:29:05
+24,Nikhil Banerjee,Male,27,nikhil.banerjee66@gmail.com,+91-7004943787,PGDM,Jadavpur University,No,No,https://linkedin.com/in/nikhil-banerjee-523,2,TCS,2021-10-24 11:39:48,2024-05-25 20:28:48
+25,Aditya Malhotra,Male,41,aditya.malhotra37@gmail.com,+91-8881694278,CA,IIM Ahmedabad,Yes,Yes,https://linkedin.com/in/aditya-malhotra-129,21,Paytm,2018-09-07 22:10:19,2024-07-18 00:35:26
+26,Karan Agarwal,Male,38,karan.agarwal83@gmail.com,+91-7661300942,CA,IIT Kharagpur,Yes,No,https://linkedin.com/in/karan-agarwal-621,23,Wipro,2020-08-28 15:30:15,2024-04-12 17:09:24
+27,Vandana Dubey,Female,40,vandana.dubey9@gmail.com,+91-8186473561,B.Com,IIM Ahmedabad,Yes,No,https://linkedin.com/in/vandana-dubey-906,17,Wipro,2016-01-11 09:46:19,2024-08-24 18:42:31
+28,Pallavi Modi,Female,39,pallavi.modi43@gmail.com,+91-9370467256,PGDM,Anna University,No,No,https://linkedin.com/in/pallavi-modi-566,11,TCS,2023-10-27 07:36:24,2023-08-28 13:02:20
+29,Varun Sen,Male,36,varun.sen64@gmail.com,+91-7158998032,MBA,IIM Ahmedabad,Yes,No,https://linkedin.com/in/varun-sen-990,4,BYJU'S,2017-02-12 16:58:29,2023-01-16 23:09:26
+30,Ananya Shah,Female,49,ananya.shah44@gmail.com,+91-9676878743,B.Com,BITS Pilani,Yes,Yes,https://linkedin.com/in/ananya-shah-972,11,None,2021-12-25 12:20:40,2024-05-14 17:02:39
+31,Karan Kapoor,Male,31,karan.kapoor56@gmail.com,+91-7422809996,M.Tech,IIT Madras,Yes,No,https://linkedin.com/in/karan-kapoor-270,23,Wipro,2016-04-28 01:20:50,2023-02-27 09:22:23
+32,Rajesh Pillai,Male,40,rajesh.pillai73@gmail.com,+91-9928310291,MBA,BHU,No,No,https://linkedin.com/in/rajesh-pillai-279,3,Paytm,2020-04-15 19:43:15,2024-05-24 18:09:14
+33,Mahesh Chopra,Male,38,mahesh.chopra86@gmail.com,+91-7040361651,CA,BITS Pilani,Yes,No,https://linkedin.com/in/mahesh-chopra-793,18,Infosys,2016-10-29 14:22:37,2023-11-03 20:27:44
+34,Pankaj Khanna,Male,30,pankaj.khanna62@gmail.com,+91-7458072318,B.Sc,Jadavpur University,No,No,https://linkedin.com/in/pankaj-khanna-685,12,Paytm,2019-04-26 22:18:01,2024-11-05 12:17:00
+35,Tarun Dubey,Male,47,tarun.dubey37@gmail.com,+91-7988350974,B.E,SRM,No,No,https://linkedin.com/in/tarun-dubey-324,21,TCS,2022-12-18 08:43:48,2024-11-06 21:53:08
+36,Ashish Singh,Male,33,ashish.singh5@gmail.com,+91-9489250532,PhD,VIT,No,No,https://linkedin.com/in/ashish-singh-192,10,Flipkart,2020-08-28 05:12:08,2024-07-06 11:33:32
+37,Sidharth Reddy,Male,32,sidharth.reddy38@gmail.com,+91-8454770940,M.Tech,SRM,No,No,https://linkedin.com/in/sidharth-reddy-177,5,None,2018-07-13 21:46:43,2024-02-11 17:23:05
+38,Rahul Chopra,Male,41,rahul.chopra59@gmail.com,+91-8583063357,M.Sc,IIT Kharagpur,Yes,No,https://linkedin.com/in/rahul-chopra-942,21,Flipkart,2017-03-19 21:14:30,2023-01-26 19:56:35
+39,Tarun Yadav,Male,31,tarun.yadav82@gmail.com,+91-8994013856,M.Sc,IIT Madras,Yes,No,https://linkedin.com/in/tarun-yadav-219,5,Google,2016-06-01 09:31:07,2023-04-10 07:56:34
+40,Ankita Basu,Female,35,ankita.basu54@gmail.com,+91-9522607583,MBA,Amity,No,No,https://linkedin.com/in/ankita-basu-770,4,BYJU'S,2022-11-26 13:17:02,2024-12-07 11:13:28
+41,Karan Das,Male,27,karan.das70@gmail.com,+91-9769510048,PhD,Anna University,No,Yes,https://linkedin.com/in/karan-das-507,9,TCS,2017-05-15 14:05:42,2023-08-06 20:40:38
+42,Amit Chatterjee,Male,31,amit.chatterjee73@gmail.com,+91-7881351238,M.Tech,IIM Ahmedabad,Yes,No,https://linkedin.com/in/amit-chatterjee-700,7,TCS,2019-09-07 04:50:57,2024-09-02 00:17:54
+43,Kavya Modi,Female,32,kavya.modi15@gmail.com,+91-9839220941,B.Tech,IIM Bangalore,Yes,No,https://linkedin.com/in/kavya-modi-115,12,None,2018-09-01 18:20:01,2023-06-28 08:03:08
+44,Alok Agarwal,Male,47,alok.agarwal61@gmail.com,+91-8925327382,PhD,IIT Madras,Yes,Yes,https://linkedin.com/in/alok-agarwal-562,17,TCS,2022-11-24 01:46:50,2024-11-05 16:19:29
+45,Amit Shah,Male,51,amit.shah55@gmail.com,+91-9946766309,M.Tech,Jadavpur University,No,No,https://linkedin.com/in/amit-shah-829,15,Amazon,2016-11-26 10:38:09,2023-03-09 04:17:39
+46,Deepak Dubey,Male,40,deepak.dubey59@gmail.com,+91-9171325343,B.E,Delhi University,No,No,https://linkedin.com/in/deepak-dubey-201,23,Amazon,2023-05-05 20:56:49,2024-07-18 23:55:13
+47,Pankaj Iyer,Male,37,pankaj.iyer59@gmail.com,+91-8712533097,B.Com,Pune University,No,Yes,https://linkedin.com/in/pankaj-iyer-420,14,Flipkart,2023-06-17 08:23:09,2024-12-04 15:04:05
+48,Vikram Roy,Male,27,vikram.roy17@gmail.com,+91-9389594115,B.Tech,Anna University,No,No,https://linkedin.com/in/vikram-roy-786,4,Zomato,2019-12-19 21:48:27,2023-02-22 09:38:19
+49,Arjun Chaudhary,Male,40,arjun.chaudhary20@gmail.com,+91-9820660931,CA,NIT Trichy,Yes,No,https://linkedin.com/in/arjun-chaudhary-967,4,Flipkart,2022-03-28 11:07:48,2023-10-13 18:14:51
+50,Dinesh Bhatt,Male,48,dinesh.bhatt79@gmail.com,+91-9899002906,PGDM,FMS Delhi,No,Yes,https://linkedin.com/in/dinesh-bhatt-723,22,None,2018-12-31 00:11:17,2024-12-20 09:58:21
+51,Rahul Nair,Male,51,rahul.nair73@gmail.com,+91-9823273703,B.Com,IIM Ahmedabad,Yes,Yes,https://linkedin.com/in/rahul-nair-245,24,None,2016-05-05 02:47:33,2023-08-09 12:26:29
+52,Sanjay Das,Male,33,sanjay.das73@gmail.com,+91-9560761628,M.Tech,Pune University,No,Yes,https://linkedin.com/in/sanjay-das-259,6,None,2022-12-05 01:43:05,2023-10-06 14:42:27
+53,Pradeep Mukherjee,Male,37,pradeep.mukherjee28@gmail.com,+91-9200510647,M.Tech,BITS Pilani,Yes,No,https://linkedin.com/in/pradeep-mukherjee-540,4,Wipro,2023-08-09 21:37:31,2024-06-23 21:19:02
+54,Ankita Dubey,Female,25,ankita.dubey27@gmail.com,+91-8294586283,B.Sc,IIT Bombay,Yes,No,https://linkedin.com/in/ankita-dubey-882,9,Wipro,2019-09-05 03:00:31,2024-03-16 05:08:24
+55,Lakshmi Bhatt,Female,50,lakshmi.bhatt10@gmail.com,+91-8705407682,B.Tech,Anna University,No,No,https://linkedin.com/in/lakshmi-bhatt-119,15,Amazon,2019-07-06 18:27:36,2024-02-19 22:40:26
+56,Arjun Ghosh,Male,24,arjun.ghosh22@gmail.com,+91-9654827789,CA,Pune University,No,No,https://linkedin.com/in/arjun-ghosh-190,14,Amazon,2018-09-23 13:37:25,2024-06-20 02:25:55
+57,Ravi Chatterjee,Male,31,ravi.chatterjee22@gmail.com,+91-7328046924,PGDM,Pune University,No,Yes,https://linkedin.com/in/ravi-chatterjee-643,17,TCS,2019-12-02 11:46:52,2024-10-22 04:15:06
+58,Ritu Menon,Female,29,ritu.menon20@gmail.com,+91-9815389788,M.Tech,FMS Delhi,No,No,https://linkedin.com/in/ritu-menon-891,21,BYJU'S,2021-03-15 18:48:37,2024-04-04 21:59:56
+59,Dinesh Banerjee,Male,28,dinesh.banerjee9@gmail.com,+91-9014000727,CA,VIT,No,No,https://linkedin.com/in/dinesh-banerjee-915,9,Paytm,2016-08-18 11:32:04,2023-11-14 14:28:02
+60,Manish Kapoor,Male,26,manish.kapoor79@gmail.com,+91-9551553388,PGDM,IIT Madras,Yes,No,https://linkedin.com/in/manish-kapoor-573,19,Ola,2016-06-17 14:58:51,2024-08-08 20:12:20
+61,Alok Mishra,Male,25,alok.mishra14@gmail.com,+91-8475054001,M.Tech,VIT,No,No,https://linkedin.com/in/alok-mishra-140,8,None,2020-11-28 14:33:33,2024-09-16 05:23:23
+62,Deepak Dutta,Male,48,deepak.dutta87@gmail.com,+91-9567900251,B.Tech,Pune University,No,No,https://linkedin.com/in/deepak-dutta-167,11,Amazon,2022-04-04 21:24:18,2023-09-16 23:54:42
+63,Shreya Mehta,Female,42,shreya.mehta45@gmail.com,+91-8332435144,B.Com,IIM Ahmedabad,Yes,No,https://linkedin.com/in/shreya-mehta-709,23,Amazon,2019-06-22 17:24:41,2023-12-03 04:42:44
+64,Mahesh Roy,Male,40,mahesh.roy3@gmail.com,+91-8557345129,M.Sc,Anna University,No,No,https://linkedin.com/in/mahesh-roy-319,11,None,2021-06-14 06:14:08,2023-06-08 02:18:54
+65,Alok Modi,Male,50,alok.modi5@gmail.com,+91-9842964443,PhD,Manipal,No,No,https://linkedin.com/in/alok-modi-711,13,Infosys,2017-10-26 05:53:44,2024-10-01 05:46:28
+66,Gaurav Das,Male,45,gaurav.das57@gmail.com,+91-9622487366,M.Sc,NIT Warangal,Yes,No,https://linkedin.com/in/gaurav-das-339,18,TCS,2019-06-21 15:57:53,2023-07-18 11:43:36
+67,Pankaj Kapoor,Male,48,pankaj.kapoor65@gmail.com,+91-9265422548,B.Com,Jadavpur University,No,No,https://linkedin.com/in/pankaj-kapoor-936,7,None,2022-10-12 04:55:16,2023-02-23 20:30:55
+68,Harsh Joshi,Male,46,harsh.joshi16@gmail.com,+91-8224336336,M.Tech,Manipal,No,No,https://linkedin.com/in/harsh-joshi-379,15,Ola,2017-08-26 13:05:58,2023-08-16 14:56:22
+69,Gaurav Patel,Male,36,gaurav.patel48@gmail.com,+91-8012659111,B.Com,Manipal,No,Yes,https://linkedin.com/in/gaurav-patel-483,8,Google,2019-07-29 03:53:45,2024-10-27 10:50:09
+70,Sneha Kapoor,Female,50,sneha.kapoor90@gmail.com,+91-7596110070,CA,SRM,No,No,https://linkedin.com/in/sneha-kapoor-730,1,Amazon,2016-03-18 08:13:53,2023-06-03 17:46:38
+71,Arjun Kapoor,Male,31,arjun.kapoor16@gmail.com,+91-7205082311,B.Sc,Delhi University,No,No,https://linkedin.com/in/arjun-kapoor-754,20,BYJU'S,2016-09-14 03:53:57,2024-05-26 19:34:01
+72,Sita Mishra,Female,33,sita.mishra1@gmail.com,+91-9640587058,PhD,BHU,No,No,https://linkedin.com/in/sita-mishra-684,14,Infosys,2023-06-14 21:05:33,2024-01-05 02:33:34
+73,Deepak Shah,Male,25,deepak.shah48@gmail.com,+91-8089419573,B.Tech,Jadavpur University,No,No,https://linkedin.com/in/deepak-shah-907,3,Flipkart,2018-09-14 23:42:40,2023-04-17 18:47:48
+74,Rajesh Singh,Male,35,rajesh.singh44@gmail.com,+91-9760786161,MBA,Amity,No,No,https://linkedin.com/in/rajesh-singh-812,16,None,2018-01-16 04:04:45,2024-04-13 01:18:12
+75,Mohit Menon,Male,52,mohit.menon41@gmail.com,+91-8331765783,PGDM,IIT Delhi,Yes,No,https://linkedin.com/in/mohit-menon-934,18,BYJU'S,2018-11-03 01:48:41,2023-07-15 09:22:55
+76,Dinesh Chatterjee,Male,32,dinesh.chatterjee48@gmail.com,+91-8876691885,B.Com,IIT Kharagpur,Yes,No,https://linkedin.com/in/dinesh-chatterjee-495,11,Infosys,2021-07-25 22:31:23,2024-06-15 08:51:05
+77,Vikram Roy,Male,43,vikram.roy70@gmail.com,+91-8261717180,PhD,IIM Bangalore,Yes,Yes,https://linkedin.com/in/vikram-roy-181,11,None,2019-04-25 09:28:38,2024-03-12 05:44:28
+78,Pankaj Singh,Male,47,pankaj.singh79@gmail.com,+91-8868055235,M.Sc,Anna University,No,Yes,https://linkedin.com/in/pankaj-singh-176,22,None,2020-07-21 11:32:51,2024-11-26 05:01:09
+79,Amit Verma,Male,26,amit.verma83@gmail.com,+91-8573368806,PhD,NIT Warangal,Yes,No,https://linkedin.com/in/amit-verma-680,2,Paytm,2017-09-20 21:28:23,2024-01-16 14:48:04
+80,Lakshmi Das,Female,36,lakshmi.das84@gmail.com,+91-8196963451,B.Sc,Pune University,No,Yes,https://linkedin.com/in/lakshmi-das-126,24,Infosys,2021-08-06 16:24:58,2024-07-29 03:16:49
+81,Varun Mukherjee,Male,30,varun.mukherjee37@gmail.com,+91-9980624159,CA,FMS Delhi,No,No,https://linkedin.com/in/varun-mukherjee-225,5,Amazon,2021-01-25 05:57:45,2024-03-31 02:51:43
+82,Kunal Bose,Male,46,kunal.bose71@gmail.com,+91-9328608265,M.Sc,IIT Madras,Yes,No,https://linkedin.com/in/kunal-bose-971,6,None,2023-12-16 22:40:11,2024-01-06 16:14:07
+83,Mala Verma,Female,31,mala.verma4@gmail.com,+91-8550038771,PGDM,SRM,No,No,https://linkedin.com/in/mala-verma-578,18,Infosys,2022-11-11 02:04:19,2024-02-12 22:46:30
+84,Ankit Dutta,Male,50,ankit.dutta10@gmail.com,+91-7538274418,PhD,XLRI,No,Yes,https://linkedin.com/in/ankit-dutta-560,15,None,2021-10-20 11:08:56,2024-07-18 20:37:11
+85,Shweta Trivedi,Female,51,shweta.trivedi16@gmail.com,+91-9225231724,MBA,IIT Delhi,Yes,No,https://linkedin.com/in/shweta-trivedi-268,6,Flipkart,2023-12-15 07:22:33,2023-10-18 02:16:12
+86,Rajesh Khanna,Male,43,rajesh.khanna12@gmail.com,+91-9158535229,MBA,Amity,No,No,https://linkedin.com/in/rajesh-khanna-275,22,Paytm,2022-10-14 10:53:59,2024-07-31 01:52:55
+87,Vikram Singh,Male,44,vikram.singh34@gmail.com,+91-9796581976,B.Sc,XLRI,No,No,https://linkedin.com/in/vikram-singh-732,21,Google,2021-08-01 20:34:18,2024-10-19 09:30:15
+88,Rohit Basu,Male,26,rohit.basu21@gmail.com,+91-8888091245,B.Com,IIT Delhi,Yes,No,https://linkedin.com/in/rohit-basu-575,7,Flipkart,2022-10-20 04:20:55,2023-11-23 23:55:22
+89,Rajesh Das,Male,40,rajesh.das14@gmail.com,+91-8370592316,B.Sc,Amity,No,No,https://linkedin.com/in/rajesh-das-225,9,BYJU'S,2018-10-12 04:06:03,2023-10-25 12:55:39
+90,Karan Reddy,Male,50,karan.reddy74@gmail.com,+91-8343100352,B.Sc,Pune University,No,No,https://linkedin.com/in/karan-reddy-610,17,BYJU'S,2021-08-04 09:31:01,2023-04-03 12:32:29
+91,Nisha Tiwari,Female,35,nisha.tiwari7@gmail.com,+91-8208416260,CA,IIT Delhi,Yes,No,https://linkedin.com/in/nisha-tiwari-392,18,Google,2017-03-16 13:08:56,2023-09-28 23:23:48
+92,Manish Singh,Male,36,manish.singh73@gmail.com,+91-9412985084,B.Sc,IIT Delhi,Yes,No,https://linkedin.com/in/manish-singh-666,10,Amazon,2020-05-01 16:28:48,2024-07-17 08:52:39
+93,Rajesh Joshi,Male,36,rajesh.joshi44@gmail.com,+91-9395869480,PhD,Anna University,No,No,https://linkedin.com/in/rajesh-joshi-303,20,Ola,2020-07-02 16:02:02,2023-02-09 04:45:21
+94,Alok Basu,Male,28,alok.basu66@gmail.com,+91-7600354779,PhD,FMS Delhi,No,No,https://linkedin.com/in/alok-basu-266,13,Paytm,2019-05-10 18:21:32,2024-06-05 17:31:45
+95,Vivek Gupta,Male,35,vivek.gupta87@gmail.com,+91-7470748124,B.Com,Pune University,No,No,https://linkedin.com/in/vivek-gupta-915,24,None,2023-01-21 00:38:30,2023-09-29 20:50:49
+96,Usha Patel,Female,42,usha.patel22@gmail.com,+91-9251560728,B.E,SRM,No,No,https://linkedin.com/in/usha-patel-251,22,TCS,2016-05-09 18:44:07,2023-07-15 00:28:20
+97,Rajesh Dutta,Male,46,rajesh.dutta53@gmail.com,+91-9155298355,B.E,NIT Trichy,Yes,No,https://linkedin.com/in/rajesh-dutta-993,24,None,2016-09-12 22:08:33,2023-08-01 17:20:42
+98,Alok Sen,Male,34,alok.sen59@gmail.com,+91-9289763301,PhD,IIM Bangalore,Yes,No,https://linkedin.com/in/alok-sen-792,25,None,2023-08-20 20:51:44,2023-09-28 19:30:12
+99,Ritu Bhatt,Female,33,ritu.bhatt39@gmail.com,+91-8241263320,B.Sc,NIT Warangal,Yes,No,https://linkedin.com/in/ritu-bhatt-424,16,Flipkart,2022-04-14 23:17:18,2023-05-05 18:43:34
+100,Ashish Ghosh,Male,50,ashish.ghosh99@gmail.com,+91-7629110165,M.Sc,Anna University,No,Yes,https://linkedin.com/in/ashish-ghosh-394,23,Amazon,2019-11-19 14:41:16,2024-05-05 06:12:52
+101,Tarun Bhatt,Male,46,tarun.bhatt18@gmail.com,+91-7469124598,B.E,BITS Pilani,Yes,No,https://linkedin.com/in/tarun-bhatt-348,2,None,2021-12-15 07:40:14,2023-02-23 03:26:21
+102,Arjun Verma,Male,24,arjun.verma21@gmail.com,+91-8747654202,CA,Amity,No,No,https://linkedin.com/in/arjun-verma-766,7,None,2019-03-22 10:18:41,2023-03-02 02:41:36
+103,Sunita Singh,Female,29,sunita.singh23@gmail.com,+91-7156078445,B.Com,BHU,No,No,https://linkedin.com/in/sunita-singh-290,24,Wipro,2016-06-02 00:19:36,2024-09-09 03:59:21
+104,Pankaj Modi,Male,40,pankaj.modi18@gmail.com,+91-9165576952,CA,SRM,No,No,https://linkedin.com/in/pankaj-modi-297,4,Flipkart,2017-10-27 23:29:41,2023-09-21 22:11:00
+105,Mohit Kapoor,Male,42,mohit.kapoor23@gmail.com,+91-9624029587,B.Com,NIT Trichy,Yes,No,https://linkedin.com/in/mohit-kapoor-627,11,Amazon,2020-06-29 21:06:11,2023-05-24 15:20:59
+106,Priya Chopra,Female,36,priya.chopra58@gmail.com,+91-8146731886,PhD,NIT Warangal,Yes,No,https://linkedin.com/in/priya-chopra-696,24,Paytm,2016-02-16 08:41:23,2024-12-10 07:03:42
+107,Pankaj Khanna,Male,29,pankaj.khanna88@gmail.com,+91-9158308965,M.Sc,Jadavpur University,No,Yes,https://linkedin.com/in/pankaj-khanna-754,10,Flipkart,2022-11-22 07:14:08,2024-05-04 04:29:47
+108,Gaurav Bhatt,Male,39,gaurav.bhatt86@gmail.com,+91-7938070754,B.Sc,Amity,No,Yes,https://linkedin.com/in/gaurav-bhatt-638,15,Ola,2023-11-22 11:04:58,2024-07-31 03:03:53
+109,Geeta Modi,Female,28,geeta.modi42@gmail.com,+91-9234849897,CA,IIM Bangalore,Yes,Yes,https://linkedin.com/in/geeta-modi-796,7,None,2022-07-16 15:05:57,2024-06-06 14:51:03
+110,Rajesh Trivedi,Male,37,rajesh.trivedi73@gmail.com,+91-7247977570,PGDM,VIT,No,No,https://linkedin.com/in/rajesh-trivedi-788,10,None,2016-03-30 12:16:52,2023-01-04 23:13:37
+111,Amit Roy,Male,35,amit.roy70@gmail.com,+91-7258795967,M.Tech,IIT Madras,Yes,No,https://linkedin.com/in/amit-roy-132,10,Zomato,2018-01-07 04:49:41,2024-10-23 13:23:57
+112,Pankaj Sen,Male,36,pankaj.sen88@gmail.com,+91-9842377282,PGDM,IIT Madras,Yes,No,https://linkedin.com/in/pankaj-sen-769,12,Amazon,2018-01-01 17:25:33,2023-05-11 23:14:53
+113,Ankit Gupta,Male,33,ankit.gupta87@gmail.com,+91-9338374929,B.Com,VIT,No,No,https://linkedin.com/in/ankit-gupta-943,8,TCS,2021-03-01 11:09:17,2023-07-13 23:48:07
+114,Mohit Dutta,Male,43,mohit.dutta31@gmail.com,+91-7885113834,M.Tech,IIT Bombay,Yes,Yes,https://linkedin.com/in/mohit-dutta-708,2,BYJU'S,2022-09-14 21:45:55,2023-02-19 07:47:02
+115,Pankaj Iyer,Male,41,pankaj.iyer97@gmail.com,+91-7242425303,MBA,NIT Trichy,Yes,No,https://linkedin.com/in/pankaj-iyer-339,24,Paytm,2019-07-30 18:38:49,2024-11-19 10:15:19
+116,Radha Pandya,Female,31,radha.pandya39@gmail.com,+91-8181777110,B.Tech,BHU,No,No,https://linkedin.com/in/radha-pandya-741,22,Zomato,2022-03-26 15:03:22,2024-10-20 21:24:50
+117,Varun Dutta,Male,37,varun.dutta39@gmail.com,+91-8616884203,MBA,IIM Ahmedabad,Yes,No,https://linkedin.com/in/varun-dutta-346,8,Wipro,2023-12-08 04:51:29,2023-03-01 17:26:26
+118,Ankita Pillai,Female,32,ankita.pillai43@gmail.com,+91-9777580509,M.Tech,NIT Trichy,Yes,No,https://linkedin.com/in/ankita-pillai-967,12,Amazon,2022-01-02 23:53:12,2023-02-22 08:24:43
+119,Dinesh Kumar,Male,30,dinesh.kumar93@gmail.com,+91-9883858045,PGDM,XLRI,No,No,https://linkedin.com/in/dinesh-kumar-590,7,Flipkart,2019-05-26 00:13:59,2023-07-14 23:07:47
+120,Tarun Pillai,Male,46,tarun.pillai91@gmail.com,+91-7878377268,B.Com,FMS Delhi,No,No,https://linkedin.com/in/tarun-pillai-665,11,None,2019-03-05 12:29:34,2024-10-26 11:19:16
+121,Alok Desai,Male,38,alok.desai93@gmail.com,+91-9016446001,PhD,IIT Kharagpur,Yes,No,https://linkedin.com/in/alok-desai-479,11,Zomato,2016-07-06 18:55:14,2023-05-30 00:16:35
+122,Rohit Mishra,Male,30,rohit.mishra30@gmail.com,+91-8631399401,B.E,Pune University,No,No,https://linkedin.com/in/rohit-mishra-611,18,None,2023-09-06 10:16:48,2024-05-15 23:41:47
+123,Pankaj Reddy,Male,47,pankaj.reddy22@gmail.com,+91-7601117291,PGDM,Anna University,No,No,https://linkedin.com/in/pankaj-reddy-288,18,None,2016-08-28 16:02:53,2023-03-18 21:03:48
+124,Gaurav Verma,Male,50,gaurav.verma9@gmail.com,+91-7648667392,B.Tech,NIT Warangal,Yes,No,https://linkedin.com/in/gaurav-verma-617,15,Flipkart,2016-09-04 19:40:42,2024-09-23 15:42:31
+125,Rahul Modi,Male,41,rahul.modi2@gmail.com,+91-7071838242,PGDM,BHU,No,No,https://linkedin.com/in/rahul-modi-648,10,Google,2021-08-19 22:43:27,2023-07-03 03:58:06
+126,Meera Menon,Female,43,meera.menon33@gmail.com,+91-8522312933,M.Sc,Manipal,No,No,https://linkedin.com/in/meera-menon-180,12,Zomato,2021-02-23 18:15:44,2023-08-20 09:43:52
+127,Mahesh Singh,Male,26,mahesh.singh49@gmail.com,+91-8619930972,PGDM,Jadavpur University,No,No,https://linkedin.com/in/mahesh-singh-157,21,Google,2023-11-18 05:05:31,2024-03-20 20:50:21
+128,Ashish Pandya,Male,25,ashish.pandya28@gmail.com,+91-9973353078,B.E,NIT Warangal,Yes,No,https://linkedin.com/in/ashish-pandya-377,2,Amazon,2023-09-04 08:57:34,2024-07-31 21:02:11
+129,Rahul Rao,Male,42,rahul.rao97@gmail.com,+91-8710668371,M.Tech,IIM Ahmedabad,Yes,No,https://linkedin.com/in/rahul-rao-266,19,TCS,2022-05-10 12:43:57,2024-07-07 10:24:48
+130,Mala Mehta,Female,40,mala.mehta7@gmail.com,+91-7419557255,B.Com,Anna University,No,No,https://linkedin.com/in/mala-mehta-958,3,Flipkart,2022-10-14 19:38:25,2023-12-01 00:40:17
+131,Vivek Iyer,Male,35,vivek.iyer49@gmail.com,+91-8854772804,MBA,Amity,No,No,https://linkedin.com/in/vivek-iyer-187,25,Paytm,2019-04-24 07:45:04,2023-03-26 08:09:24
+132,Usha Sen,Female,34,usha.sen14@gmail.com,+91-7393077279,B.Tech,Anna University,No,No,https://linkedin.com/in/usha-sen-555,12,None,2019-01-09 03:08:05,2023-07-11 13:28:35
+133,Arjun Gupta,Male,26,arjun.gupta71@gmail.com,+91-7399707954,B.E,Anna University,No,No,https://linkedin.com/in/arjun-gupta-984,13,Google,2019-04-10 13:24:49,2023-03-28 23:57:35
+134,Geeta Pandya,Female,29,geeta.pandya22@gmail.com,+91-7596313527,M.Sc,Jadavpur University,No,No,https://linkedin.com/in/geeta-pandya-374,16,Infosys,2016-09-16 05:27:17,2024-03-07 09:30:50
+135,Manish Chopra,Male,31,manish.chopra77@gmail.com,+91-9648572296,B.Sc,SRM,No,No,https://linkedin.com/in/manish-chopra-209,5,Wipro,2016-01-28 12:21:53,2024-09-27 12:51:55
+136,Pankaj Chatterjee,Male,37,pankaj.chatterjee18@gmail.com,+91-8290359719,PhD,FMS Delhi,No,No,https://linkedin.com/in/pankaj-chatterjee-590,11,Infosys,2020-06-19 10:18:47,2024-12-12 20:31:36
+137,Shreya Sen,Female,32,shreya.sen47@gmail.com,+91-7489144474,B.E,Jadavpur University,No,No,https://linkedin.com/in/shreya-sen-706,18,Infosys,2023-08-24 17:01:46,2024-04-17 22:13:28
+138,Sidharth Kumar,Male,50,sidharth.kumar87@gmail.com,+91-9144490990,MBA,BHU,No,No,https://linkedin.com/in/sidharth-kumar-347,9,None,2017-09-23 22:27:50,2024-01-22 02:28:38
+139,Shiv Ghosh,Male,41,shiv.ghosh89@gmail.com,+91-8796587803,PGDM,Manipal,No,Yes,https://linkedin.com/in/shiv-ghosh-909,12,None,2022-01-08 19:40:58,2023-03-29 03:49:15
+140,Sanjay Yadav,Male,25,sanjay.yadav83@gmail.com,+91-9909719639,B.Com,XLRI,No,No,https://linkedin.com/in/sanjay-yadav-915,14,Amazon,2016-02-13 03:16:14,2024-06-06 23:33:35
+141,Pallavi Das,Female,36,pallavi.das99@gmail.com,+91-9918668580,B.E,VIT,No,No,https://linkedin.com/in/pallavi-das-453,1,BYJU'S,2017-03-04 09:26:58,2023-03-29 03:53:46
+142,Neha Khanna,Female,34,neha.khanna27@gmail.com,+91-9238171141,CA,VIT,No,No,https://linkedin.com/in/neha-khanna-587,4,BYJU'S,2023-10-24 14:20:04,2023-11-04 01:51:45
+143,Rahul Chatterjee,Male,44,rahul.chatterjee87@gmail.com,+91-7705895455,B.Sc,IIT Kharagpur,Yes,No,https://linkedin.com/in/rahul-chatterjee-665,6,Flipkart,2022-04-12 13:29:14,2024-02-19 20:11:11
+144,Deepak Gupta,Male,47,deepak.gupta26@gmail.com,+91-8930909978,B.E,FMS Delhi,No,No,https://linkedin.com/in/deepak-gupta-498,1,None,2018-05-29 06:17:48,2024-12-21 02:36:06
+145,Neha Banerjee,Female,30,neha.banerjee15@gmail.com,+91-8126799232,CA,VIT,No,No,https://linkedin.com/in/neha-banerjee-711,13,Paytm,2020-05-26 18:07:22,2023-12-27 14:39:11
+146,Tarun Yadav,Male,42,tarun.yadav87@gmail.com,+91-7575301286,PhD,IIT Madras,Yes,Yes,https://linkedin.com/in/tarun-yadav-344,10,Amazon,2018-01-19 11:44:09,2024-06-07 12:26:38
+147,Geeta Sen,Female,37,geeta.sen63@gmail.com,+91-9729458763,PGDM,IIM Bangalore,Yes,No,https://linkedin.com/in/geeta-sen-668,6,BYJU'S,2019-03-29 04:11:20,2024-04-06 19:03:55
+148,Rahul Desai,Male,28,rahul.desai50@gmail.com,+91-9411976659,PGDM,NIT Trichy,Yes,No,https://linkedin.com/in/rahul-desai-518,22,BYJU'S,2020-08-29 22:53:28,2024-05-15 05:05:36
+149,Mohit Iyer,Male,33,mohit.iyer36@gmail.com,+91-7965695131,PGDM,IIT Delhi,Yes,No,https://linkedin.com/in/mohit-iyer-272,25,BYJU'S,2022-05-05 23:49:49,2024-05-22 17:32:07
+150,Nikhil Modi,Male,50,nikhil.modi70@gmail.com,+91-7178715833,CA,Anna University,No,No,https://linkedin.com/in/nikhil-modi-535,4,None,2023-05-01 07:19:55,2023-02-03 14:16:22
+151,Pankaj Agarwal,Male,48,pankaj.agarwal27@gmail.com,+91-9525113890,PhD,NIT Warangal,Yes,No,https://linkedin.com/in/pankaj-agarwal-269,20,Infosys,2018-04-26 06:51:03,2024-08-06 11:34:17
+152,Shreya Kapoor,Female,33,shreya.kapoor35@gmail.com,+91-9209395548,M.Tech,XLRI,No,No,https://linkedin.com/in/shreya-kapoor-868,14,Google,2019-02-09 20:08:44,2023-05-16 07:09:45
+153,Sidharth Pillai,Male,48,sidharth.pillai63@gmail.com,+91-7610622521,B.E,Jadavpur University,No,No,https://linkedin.com/in/sidharth-pillai-742,14,Zomato,2021-01-25 02:40:50,2023-04-06 12:32:47
+154,Varun Das,Male,38,varun.das42@gmail.com,+91-9499480048,B.Tech,SRM,No,Yes,https://linkedin.com/in/varun-das-848,15,None,2023-06-13 22:22:54,2023-03-06 17:25:13
+155,Sidharth Rao,Male,39,sidharth.rao42@gmail.com,+91-8218023007,PhD,BITS Pilani,Yes,No,https://linkedin.com/in/sidharth-rao-679,16,None,2019-11-08 21:48:03,2023-02-17 03:40:50
+156,Rahul Agarwal,Male,51,rahul.agarwal57@gmail.com,+91-8960730480,B.Tech,IIM Bangalore,Yes,No,https://linkedin.com/in/rahul-agarwal-307,23,Infosys,2023-04-16 09:10:55,2023-10-08 02:41:23
+157,Vikram Das,Male,45,vikram.das7@gmail.com,+91-8702274064,M.Sc,IIM Bangalore,Yes,No,https://linkedin.com/in/vikram-das-539,21,Amazon,2023-11-22 03:00:13,2024-05-03 02:08:37
+158,Lakshmi Mukherjee,Female,24,lakshmi.mukherjee90@gmail.com,+91-8475639733,M.Tech,IIT Bombay,Yes,No,https://linkedin.com/in/lakshmi-mukherjee-810,5,BYJU'S,2016-10-17 07:24:05,2023-04-15 03:20:23
+159,Rajesh Sen,Male,48,rajesh.sen83@gmail.com,+91-9908281627,MBA,IIM Ahmedabad,Yes,Yes,https://linkedin.com/in/rajesh-sen-643,19,Google,2022-11-04 20:10:28,2023-12-26 23:13:40
+160,Vandana Dutta,Female,43,vandana.dutta28@gmail.com,+91-7372322246,M.Tech,VIT,No,No,https://linkedin.com/in/vandana-dutta-870,4,Paytm,2020-04-21 11:27:20,2023-05-24 07:17:41
+161,Karan Bhatt,Male,43,karan.bhatt93@gmail.com,+91-9609592494,M.Sc,FMS Delhi,No,Yes,https://linkedin.com/in/karan-bhatt-968,22,Wipro,2018-04-21 16:38:32,2023-07-13 23:25:18
+162,Mohit Pillai,Male,39,mohit.pillai15@gmail.com,+91-8035438246,CA,Jadavpur University,No,Yes,https://linkedin.com/in/mohit-pillai-640,1,Flipkart,2019-07-20 04:24:55,2024-08-05 13:23:34
+163,Kiran Shah,Female,48,kiran.shah3@gmail.com,+91-9522707023,M.Tech,IIT Madras,Yes,Yes,https://linkedin.com/in/kiran-shah-368,7,Google,2016-09-04 12:32:18,2024-10-05 22:32:49
+164,Gaurav Ghosh,Male,26,gaurav.ghosh69@gmail.com,+91-9645901955,MBA,Amity,No,No,https://linkedin.com/in/gaurav-ghosh-185,10,Amazon,2021-09-25 06:51:09,2024-07-03 10:25:37
+165,Rohit Roy,Male,47,rohit.roy8@gmail.com,+91-8050032570,M.Tech,NIT Warangal,Yes,No,https://linkedin.com/in/rohit-roy-218,15,Paytm,2022-10-29 01:19:42,2024-11-04 23:11:07
+166,Varun Verma,Male,46,varun.verma21@gmail.com,+91-9132077306,PhD,IIT Bombay,Yes,No,https://linkedin.com/in/varun-verma-270,12,Infosys,2019-01-05 23:56:07,2023-01-31 10:51:27
+167,Alok Kumar,Male,32,alok.kumar81@gmail.com,+91-7331013265,CA,XLRI,No,No,https://linkedin.com/in/alok-kumar-623,12,Google,2021-08-08 18:10:23,2023-06-11 08:49:06
+168,Karan Trivedi,Male,24,karan.trivedi2@gmail.com,+91-8050340486,B.Tech,IIT Delhi,Yes,No,https://linkedin.com/in/karan-trivedi-472,13,Infosys,2018-01-03 01:35:51,2024-11-02 13:14:20
+169,Shweta Banerjee,Female,32,shweta.banerjee74@gmail.com,+91-8601198885,M.Tech,IIT Madras,Yes,Yes,https://linkedin.com/in/shweta-banerjee-283,8,None,2021-10-13 01:25:04,2024-04-21 09:49:54
+170,Suresh Mehta,Male,41,suresh.mehta2@gmail.com,+91-8584496586,B.Sc,VIT,No,No,https://linkedin.com/in/suresh-mehta-677,10,None,2022-12-25 07:29:23,2024-08-28 15:49:49
+171,Usha Modi,Female,48,usha.modi20@gmail.com,+91-7027392783,B.Com,NIT Warangal,Yes,Yes,https://linkedin.com/in/usha-modi-338,18,Flipkart,2023-02-17 22:56:00,2023-12-10 00:48:42
+172,Dinesh Khanna,Male,27,dinesh.khanna68@gmail.com,+91-8022922016,B.Com,NIT Trichy,Yes,No,https://linkedin.com/in/dinesh-khanna-161,5,None,2019-02-20 02:02:58,2023-08-26 16:26:44
+173,Pankaj Mehta,Male,42,pankaj.mehta65@gmail.com,+91-7573437604,B.Com,IIT Kharagpur,Yes,Yes,https://linkedin.com/in/pankaj-mehta-706,19,Google,2020-11-16 21:08:15,2023-10-26 08:54:20
+174,Varun Banerjee,Male,34,varun.banerjee35@gmail.com,+91-8003352579,M.Tech,VIT,No,No,https://linkedin.com/in/varun-banerjee-239,25,None,2022-07-22 03:09:06,2023-06-18 14:29:20
+175,Arjun Modi,Male,35,arjun.modi58@gmail.com,+91-8324171556,CA,NIT Trichy,Yes,No,https://linkedin.com/in/arjun-modi-972,4,Amazon,2017-10-07 21:19:52,2024-12-22 22:38:02
+176,Seema Banerjee,Female,28,seema.banerjee92@gmail.com,+91-8066091571,PhD,IIT Madras,Yes,No,https://linkedin.com/in/seema-banerjee-625,2,None,2019-05-09 08:52:11,2023-02-01 12:54:28
+177,Pooja Basu,Female,27,pooja.basu16@gmail.com,+91-7051354601,B.Tech,IIM Ahmedabad,Yes,No,https://linkedin.com/in/pooja-basu-233,7,Zomato,2020-03-04 21:40:41,2023-03-28 18:37:16
+178,Rahul Kumar,Male,30,rahul.kumar17@gmail.com,+91-7395045224,PhD,VIT,No,Yes,https://linkedin.com/in/rahul-kumar-143,15,Google,2017-11-19 18:27:52,2024-02-09 15:01:24
+179,Sanjay Bose,Male,30,sanjay.bose36@gmail.com,+91-8201966146,CA,IIM Bangalore,Yes,No,https://linkedin.com/in/sanjay-bose-135,20,Paytm,2022-12-02 07:41:18,2024-05-25 13:56:35
+180,Amit Mehta,Male,32,amit.mehta18@gmail.com,+91-8800599868,B.Sc,Jadavpur University,No,No,https://linkedin.com/in/amit-mehta-745,18,None,2016-03-20 12:50:45,2024-01-03 15:34:50
+181,Manish Chaudhary,Male,40,manish.chaudhary50@gmail.com,+91-8161512446,MBA,Pune University,No,Yes,https://linkedin.com/in/manish-chaudhary-426,20,TCS,2016-04-30 08:03:51,2024-04-28 16:22:49
+182,Divya Joshi,Female,31,divya.joshi35@gmail.com,+91-9292179207,B.Tech,NIT Warangal,Yes,No,https://linkedin.com/in/divya-joshi-689,13,Flipkart,2017-12-12 05:15:37,2023-11-22 23:44:22
+183,Varun Bose,Male,42,varun.bose19@gmail.com,+91-9418534256,B.Sc,XLRI,No,No,https://linkedin.com/in/varun-bose-655,10,Infosys,2021-07-01 01:05:03,2023-08-27 19:14:01
+184,Rahul Chatterjee,Male,43,rahul.chatterjee17@gmail.com,+91-8463548951,MBA,NIT Trichy,Yes,No,https://linkedin.com/in/rahul-chatterjee-160,1,Infosys,2022-07-30 22:58:09,2023-04-24 16:55:23
+185,Manish Ghosh,Male,42,manish.ghosh44@gmail.com,+91-8296071464,PhD,IIT Kharagpur,Yes,No,https://linkedin.com/in/manish-ghosh-261,24,Zomato,2023-03-03 15:41:20,2023-06-28 22:35:44
+186,Karan Tiwari,Male,50,karan.tiwari49@gmail.com,+91-8317795722,M.Sc,IIM Bangalore,Yes,No,https://linkedin.com/in/karan-tiwari-281,24,Google,2023-11-15 18:25:54,2024-08-04 01:11:38
+187,Tarun Yadav,Male,31,tarun.yadav14@gmail.com,+91-9131098613,MBA,XLRI,No,No,https://linkedin.com/in/tarun-yadav-863,3,TCS,2019-11-21 10:10:40,2023-04-01 22:42:40
+188,Pankaj Sharma,Male,32,pankaj.sharma32@gmail.com,+91-9977168607,M.Tech,NIT Trichy,Yes,No,https://linkedin.com/in/pankaj-sharma-362,4,None,2016-01-06 01:24:28,2024-03-05 05:56:26
+189,Ashish Sen,Male,35,ashish.sen49@gmail.com,+91-7435632331,CA,Amity,No,No,https://linkedin.com/in/ashish-sen-266,15,Amazon,2016-05-16 09:01:20,2023-09-25 03:04:21
+190,Sudha Sen,Female,29,sudha.sen71@gmail.com,+91-7399881571,PhD,IIT Madras,Yes,No,https://linkedin.com/in/sudha-sen-821,1,Zomato,2023-05-01 05:38:56,2024-03-20 05:03:06
+191,Aditya Menon,Male,37,aditya.menon93@gmail.com,+91-9319821061,M.Sc,Amity,No,No,https://linkedin.com/in/aditya-menon-404,8,Amazon,2016-07-22 12:36:35,2024-05-17 04:03:23
+192,Gaurav Mehta,Male,33,gaurav.mehta62@gmail.com,+91-7857596764,M.Tech,FMS Delhi,No,Yes,https://linkedin.com/in/gaurav-mehta-311,6,None,2019-04-10 02:30:54,2023-04-29 09:50:25
+193,Vivek Chopra,Male,26,vivek.chopra50@gmail.com,+91-7794058803,PhD,Amity,No,No,https://linkedin.com/in/vivek-chopra-478,6,BYJU'S,2016-07-01 08:28:29,2023-09-27 07:53:17
+194,Rajesh Joshi,Male,26,rajesh.joshi70@gmail.com,+91-8778059107,B.E,Anna University,No,No,https://linkedin.com/in/rajesh-joshi-666,2,Zomato,2021-11-10 13:34:43,2024-05-01 18:56:15
+195,Rohit Mehta,Male,36,rohit.mehta65@gmail.com,+91-9453370912,PGDM,IIT Delhi,Yes,No,https://linkedin.com/in/rohit-mehta-223,25,BYJU'S,2017-12-09 05:13:51,2023-07-17 04:02:27
+196,Kunal Roy,Male,30,kunal.roy77@gmail.com,+91-8107613491,PhD,IIM Ahmedabad,Yes,Yes,https://linkedin.com/in/kunal-roy-189,13,Ola,2020-06-15 17:20:54,2023-10-10 16:29:58
+197,Mohit Yadav,Male,42,mohit.yadav54@gmail.com,+91-7483264745,B.Com,Manipal,No,No,https://linkedin.com/in/mohit-yadav-251,19,Paytm,2022-07-14 03:59:06,2024-07-30 03:50:18
+198,Ashish Dutta,Male,32,ashish.dutta84@gmail.com,+91-9085570788,B.E,Jadavpur University,No,No,https://linkedin.com/in/ashish-dutta-138,6,Wipro,2020-07-08 04:39:38,2024-11-28 22:25:02
+199,Ashish Chatterjee,Male,46,ashish.chatterjee7@gmail.com,+91-9041046587,M.Sc,NIT Warangal,Yes,No,https://linkedin.com/in/ashish-chatterjee-120,11,None,2019-05-26 09:17:53,2024-05-18 22:43:06
+200,Kavya Khanna,Female,47,kavya.khanna42@gmail.com,+91-8157150012,B.Com,VIT,No,Yes,https://linkedin.com/in/kavya-khanna-292,15,TCS,2020-07-25 23:31:48,2024-06-12 11:52:03
+201,Ananya Khanna,Female,46,ananya.khanna52@gmail.com,+91-7582611532,PGDM,Manipal,No,Yes,https://linkedin.com/in/ananya-khanna-277,7,TCS,2016-08-24 07:02:29,2023-02-21 11:45:12
+202,Manish Basu,Male,40,manish.basu82@gmail.com,+91-7532029870,B.Tech,Jadavpur University,No,No,https://linkedin.com/in/manish-basu-481,16,Paytm,2021-01-01 05:55:30,2024-08-23 17:22:22
+203,Seema Chopra,Female,47,seema.chopra37@gmail.com,+91-7117898946,B.Com,IIT Madras,Yes,Yes,https://linkedin.com/in/seema-chopra-266,19,None,2018-05-27 07:41:14,2024-11-24 06:17:41
+204,Alok Gupta,Male,51,alok.gupta61@gmail.com,+91-7568284681,MBA,IIT Bombay,Yes,Yes,https://linkedin.com/in/alok-gupta-329,9,Paytm,2019-06-05 22:45:41,2023-10-09 13:57:24
+205,Pankaj Chopra,Male,30,pankaj.chopra39@gmail.com,+91-9908535332,PGDM,VIT,No,No,https://linkedin.com/in/pankaj-chopra-698,4,Google,2021-09-26 21:53:53,2024-01-19 17:41:38
+206,Rohit Joshi,Male,39,rohit.joshi44@gmail.com,+91-8187486518,PhD,IIT Madras,Yes,No,https://linkedin.com/in/rohit-joshi-367,21,None,2023-04-22 09:12:09,2024-06-13 07:57:03
+207,Kunal Banerjee,Male,45,kunal.banerjee93@gmail.com,+91-7109329542,CA,IIM Ahmedabad,Yes,No,https://linkedin.com/in/kunal-banerjee-365,14,Zomato,2020-05-09 23:02:37,2024-12-26 18:52:12
+208,Ravi Iyer,Male,45,ravi.iyer82@gmail.com,+91-9043267129,PhD,Amity,No,No,https://linkedin.com/in/ravi-iyer-965,6,None,2022-04-05 05:18:06,2024-04-27 04:47:16
+209,Radha Chatterjee,Female,44,radha.chatterjee29@gmail.com,+91-8525930586,B.Sc,IIT Madras,Yes,No,https://linkedin.com/in/radha-chatterjee-530,11,Flipkart,2018-12-03 18:18:29,2023-05-01 15:03:55
+210,Vivek Menon,Male,40,vivek.menon88@gmail.com,+91-8639256813,PGDM,IIT Kharagpur,Yes,No,https://linkedin.com/in/vivek-menon-523,2,Infosys,2017-07-16 06:21:26,2024-08-06 14:09:20
+211,Kiran Mehta,Female,39,kiran.mehta81@gmail.com,+91-7759454456,PhD,Pune University,No,Yes,https://linkedin.com/in/kiran-mehta-104,15,Wipro,2018-05-07 05:36:48,2023-06-12 15:50:48
+212,Rajesh Yadav,Male,37,rajesh.yadav52@gmail.com,+91-8842650262,CA,BHU,No,No,https://linkedin.com/in/rajesh-yadav-104,2,Ola,2018-03-27 23:23:00,2023-11-26 16:12:01
+213,Mahesh Pillai,Male,31,mahesh.pillai40@gmail.com,+91-7553753599,M.Tech,Anna University,No,No,https://linkedin.com/in/mahesh-pillai-615,19,Wipro,2017-11-15 02:52:02,2023-11-02 09:29:46
+214,Gaurav Verma,Male,34,gaurav.verma46@gmail.com,+91-7809283659,MBA,SRM,No,No,https://linkedin.com/in/gaurav-verma-119,8,TCS,2017-06-21 06:46:01,2024-08-26 16:10:07
+215,Varun Singh,Male,36,varun.singh99@gmail.com,+91-9296662600,B.E,BITS Pilani,Yes,Yes,https://linkedin.com/in/varun-singh-708,2,None,2017-03-18 20:53:01,2023-02-19 22:07:26
+216,Deepak Agarwal,Male,41,deepak.agarwal61@gmail.com,+91-7657675888,B.Sc,BITS Pilani,Yes,Yes,https://linkedin.com/in/deepak-agarwal-408,14,None,2017-02-17 21:33:17,2024-09-29 19:44:08
+217,Sidharth Joshi,Male,40,sidharth.joshi16@gmail.com,+91-8214216328,M.Tech,FMS Delhi,No,Yes,https://linkedin.com/in/sidharth-joshi-609,7,Paytm,2018-03-29 08:53:33,2023-07-26 11:45:26
+218,Sanjay Singh,Male,41,sanjay.singh27@gmail.com,+91-9955813290,CA,SRM,No,No,https://linkedin.com/in/sanjay-singh-340,1,Google,2023-07-14 02:58:07,2024-08-10 21:31:09
+219,Ankit Trivedi,Male,26,ankit.trivedi33@gmail.com,+91-9767405445,B.Sc,IIT Kharagpur,Yes,No,https://linkedin.com/in/ankit-trivedi-403,9,BYJU'S,2016-07-24 03:52:11,2023-02-10 09:23:51
+220,Gaurav Agarwal,Male,27,gaurav.agarwal2@gmail.com,+91-7594399606,MBA,IIT Delhi,Yes,No,https://linkedin.com/in/gaurav-agarwal-466,15,Paytm,2019-01-03 23:05:23,2023-12-17 05:07:25
+221,Pankaj Malhotra,Male,50,pankaj.malhotra89@gmail.com,+91-9054046672,B.Com,Jadavpur University,No,No,https://linkedin.com/in/pankaj-malhotra-215,5,None,2016-08-28 05:06:26,2024-08-27 15:51:36
+222,Sanjay Yadav,Male,36,sanjay.yadav79@gmail.com,+91-7123764767,MBA,Anna University,No,No,https://linkedin.com/in/sanjay-yadav-599,4,Zomato,2020-12-10 01:04:16,2024-11-01 10:00:45
+223,Radha Chatterjee,Female,40,radha.chatterjee89@gmail.com,+91-9655316364,M.Tech,Manipal,No,No,https://linkedin.com/in/radha-chatterjee-777,24,TCS,2021-05-27 11:42:43,2024-10-18 12:09:53
+224,Rahul Reddy,Male,40,rahul.reddy64@gmail.com,+91-7710404224,M.Tech,SRM,No,No,https://linkedin.com/in/rahul-reddy-428,8,Flipkart,2019-02-13 01:32:14,2024-07-17 20:24:25
+225,Ananya Basu,Female,38,ananya.basu58@gmail.com,+91-7378042415,CA,XLRI,No,No,https://linkedin.com/in/ananya-basu-423,4,BYJU'S,2023-04-30 00:06:25,2024-02-27 01:35:35
+226,Sidharth Mehta,Male,49,sidharth.mehta80@gmail.com,+91-9738205384,M.Sc,FMS Delhi,No,No,https://linkedin.com/in/sidharth-mehta-770,22,BYJU'S,2019-10-28 11:52:03,2023-08-17 14:21:35
+227,Varun Das,Male,46,varun.das15@gmail.com,+91-7418488804,B.Sc,VIT,No,Yes,https://linkedin.com/in/varun-das-449,12,None,2019-04-10 17:33:23,2024-12-19 03:02:57
+228,Smita Verma,Female,50,smita.verma14@gmail.com,+91-8092164263,B.E,BHU,No,No,https://linkedin.com/in/smita-verma-292,4,Zomato,2018-06-02 14:52:50,2023-07-15 22:21:06
+229,Amit Tiwari,Male,27,amit.tiwari59@gmail.com,+91-9828049969,B.E,VIT,No,No,https://linkedin.com/in/amit-tiwari-610,1,Ola,2016-07-17 17:59:27,2024-08-22 15:59:32
+230,Sita Tiwari,Female,29,sita.tiwari14@gmail.com,+91-8663894274,B.E,IIM Ahmedabad,Yes,No,https://linkedin.com/in/sita-tiwari-616,13,Zomato,2022-10-30 22:48:15,2023-10-08 12:21:18
+231,Mohit Verma,Male,28,mohit.verma78@gmail.com,+91-9200288670,M.Sc,BHU,No,No,https://linkedin.com/in/mohit-verma-828,24,Ola,2023-02-04 06:12:13,2024-10-01 22:18:43
+232,Tarun Verma,Male,46,tarun.verma65@gmail.com,+91-9329983136,PhD,IIM Bangalore,Yes,Yes,https://linkedin.com/in/tarun-verma-879,12,Ola,2021-05-21 18:36:42,2024-12-28 13:43:47
+233,Ashish Roy,Male,49,ashish.roy67@gmail.com,+91-7457287198,B.Tech,IIT Bombay,Yes,No,https://linkedin.com/in/ashish-roy-248,2,None,2016-08-19 06:17:48,2023-06-14 09:43:16
+234,Seema Patel,Female,46,seema.patel27@gmail.com,+91-9324316421,B.Tech,Delhi University,No,No,https://linkedin.com/in/seema-patel-933,15,Amazon,2022-11-28 21:47:35,2023-08-18 23:41:35
+235,Karan Trivedi,Male,49,karan.trivedi89@gmail.com,+91-9853978147,B.Tech,Delhi University,No,No,https://linkedin.com/in/karan-trivedi-496,14,None,2023-09-07 10:35:03,2023-01-14 23:16:12
+236,Sidharth Iyer,Male,44,sidharth.iyer97@gmail.com,+91-9527095794,PGDM,Anna University,No,No,https://linkedin.com/in/sidharth-iyer-894,24,TCS,2019-04-19 14:11:43,2023-03-18 05:11:47
+237,Deepak Singh,Male,37,deepak.singh72@gmail.com,+91-8134900434,MBA,BITS Pilani,Yes,No,https://linkedin.com/in/deepak-singh-698,9,Google,2019-09-15 14:45:59,2023-06-08 01:09:59
+238,Pradeep Patel,Male,48,pradeep.patel85@gmail.com,+91-8293450101,CA,FMS Delhi,No,No,https://linkedin.com/in/pradeep-patel-174,23,Flipkart,2021-11-22 07:11:33,2023-03-11 16:10:26
+239,Vikram Bose,Male,31,vikram.bose85@gmail.com,+91-8425428846,PhD,NIT Trichy,Yes,No,https://linkedin.com/in/vikram-bose-400,7,None,2022-12-07 16:30:35,2024-10-26 00:07:42
+240,Pankaj Pillai,Male,52,pankaj.pillai80@gmail.com,+91-8047229693,B.Tech,FMS Delhi,No,No,https://linkedin.com/in/pankaj-pillai-490,4,Zomato,2018-11-16 17:46:18,2023-01-26 16:52:49
+241,Alok Trivedi,Male,38,alok.trivedi6@gmail.com,+91-8273174184,B.Sc,SRM,No,No,https://linkedin.com/in/alok-trivedi-626,3,Amazon,2017-11-16 17:34:00,2024-10-03 02:13:42
+242,Rekha Roy,Female,50,rekha.roy27@gmail.com,+91-9309636755,B.Com,IIT Kharagpur,Yes,Yes,https://linkedin.com/in/rekha-roy-864,22,Infosys,2016-04-07 14:45:21,2023-02-08 02:04:03
+243,Mala Chopra,Female,41,mala.chopra74@gmail.com,+91-7977730531,M.Sc,IIT Madras,Yes,No,https://linkedin.com/in/mala-chopra-497,15,None,2020-07-14 13:20:01,2024-02-03 21:07:34
+244,Mahesh Yadav,Male,26,mahesh.yadav6@gmail.com,+91-7311769311,PhD,XLRI,No,Yes,https://linkedin.com/in/mahesh-yadav-396,22,Wipro,2022-10-20 02:18:48,2024-03-24 12:25:52
+245,Vivek Reddy,Male,41,vivek.reddy18@gmail.com,+91-8679300279,PGDM,NIT Warangal,Yes,No,https://linkedin.com/in/vivek-reddy-749,5,Wipro,2023-08-06 23:41:23,2023-01-12 17:55:35
+246,Pooja Singh,Female,24,pooja.singh77@gmail.com,+91-8692568000,PGDM,XLRI,No,Yes,https://linkedin.com/in/pooja-singh-412,7,None,2019-11-09 06:26:57,2024-10-23 16:09:10
+247,Meera Yadav,Female,50,meera.yadav25@gmail.com,+91-7492300084,MBA,BITS Pilani,Yes,Yes,https://linkedin.com/in/meera-yadav-971,25,Ola,2021-03-04 20:35:04,2023-10-25 21:04:16
+248,Aditya Tiwari,Male,39,aditya.tiwari46@gmail.com,+91-7550679848,B.Sc,Pune University,No,Yes,https://linkedin.com/in/aditya-tiwari-391,20,Amazon,2018-03-03 10:31:28,2023-12-03 19:42:19
+249,Geeta Chaudhary,Female,35,geeta.chaudhary55@gmail.com,+91-7724301196,B.Tech,Pune University,No,No,https://linkedin.com/in/geeta-chaudhary-352,8,None,2023-03-09 13:17:53,2024-01-04 04:43:46
+250,Ashish Shah,Male,38,ashish.shah46@gmail.com,+91-8311991364,CA,VIT,No,Yes,https://linkedin.com/in/ashish-shah-279,21,Paytm,2016-12-01 08:54:52,2023-05-24 17:12:16
+251,Ravi Kumar,Male,52,ravi.kumar65@gmail.com,+91-9712815143,B.Tech,IIT Bombay,Yes,No,https://linkedin.com/in/ravi-kumar-887,19,TCS,2016-05-30 17:16:34,2024-07-06 15:41:49
+252,Neha Ghosh,Female,31,neha.ghosh94@gmail.com,+91-8249831874,MBA,XLRI,No,No,https://linkedin.com/in/neha-ghosh-613,17,Amazon,2020-06-13 11:32:00,2024-11-09 07:54:51
+253,Kiran Trivedi,Female,28,kiran.trivedi21@gmail.com,+91-7769422699,B.E,VIT,No,No,https://linkedin.com/in/kiran-trivedi-853,24,BYJU'S,2020-01-09 01:14:48,2024-05-14 07:04:16
+254,Karan Singh,Male,45,karan.singh67@gmail.com,+91-8551562813,B.Com,NIT Trichy,Yes,No,https://linkedin.com/in/karan-singh-565,2,Google,2023-04-10 10:06:45,2024-06-17 20:53:17
+255,Shiv Modi,Male,42,shiv.modi49@gmail.com,+91-9807514105,B.Com,IIM Bangalore,Yes,No,https://linkedin.com/in/shiv-modi-701,21,Amazon,2021-10-17 08:24:58,2023-08-17 16:25:22
+256,Vivek Shah,Male,52,vivek.shah1@gmail.com,+91-9155373421,MBA,FMS Delhi,No,No,https://linkedin.com/in/vivek-shah-269,8,Amazon,2021-10-08 20:17:13,2023-06-03 05:10:23
+257,Kunal Iyer,Male,37,kunal.iyer93@gmail.com,+91-7486786005,CA,Pune University,No,No,https://linkedin.com/in/kunal-iyer-590,7,Paytm,2017-10-22 20:53:26,2023-01-23 07:02:08
+258,Kavya Trivedi,Female,25,kavya.trivedi19@gmail.com,+91-7240140248,MBA,XLRI,No,No,https://linkedin.com/in/kavya-trivedi-284,17,Zomato,2022-09-20 18:40:01,2024-11-08 09:05:13
+259,Pradeep Shah,Male,51,pradeep.shah22@gmail.com,+91-7942160389,B.Com,SRM,No,No,https://linkedin.com/in/pradeep-shah-913,19,None,2018-01-14 19:42:32,2023-09-28 05:46:43
+260,Tarun Basu,Male,43,tarun.basu9@gmail.com,+91-7987042690,B.Com,XLRI,No,No,https://linkedin.com/in/tarun-basu-235,4,Google,2018-04-08 16:55:58,2024-05-31 21:26:52
+261,Asha Joshi,Female,29,asha.joshi79@gmail.com,+91-9576180666,B.Tech,SRM,No,Yes,https://linkedin.com/in/asha-joshi-195,16,None,2017-06-17 19:34:52,2023-01-02 21:41:27
+262,Manish Singh,Male,46,manish.singh55@gmail.com,+91-7985635941,CA,Manipal,No,No,https://linkedin.com/in/manish-singh-458,19,None,2023-10-24 18:06:27,2023-05-18 08:30:49
+263,Vandana Mehta,Female,33,vandana.mehta70@gmail.com,+91-8755124229,M.Sc,FMS Delhi,No,No,https://linkedin.com/in/vandana-mehta-105,23,None,2016-01-30 18:33:07,2024-06-16 00:24:41
+264,Sita Banerjee,Female,37,sita.banerjee14@gmail.com,+91-7664768939,B.Com,Anna University,No,No,https://linkedin.com/in/sita-banerjee-367,18,Zomato,2022-05-01 11:39:17,2024-11-27 12:48:13
+265,Harsh Bhatt,Male,39,harsh.bhatt48@gmail.com,+91-9401289703,PGDM,IIM Bangalore,Yes,No,https://linkedin.com/in/harsh-bhatt-359,10,Paytm,2019-11-11 22:25:47,2023-05-22 21:07:47
+266,Pallavi Reddy,Female,27,pallavi.reddy66@gmail.com,+91-8720395994,PhD,NIT Trichy,Yes,Yes,https://linkedin.com/in/pallavi-reddy-264,13,None,2016-01-22 02:52:09,2024-04-27 19:27:05
+267,Nikhil Iyer,Male,35,nikhil.iyer78@gmail.com,+91-7162157936,B.Com,IIT Madras,Yes,No,https://linkedin.com/in/nikhil-iyer-728,21,Ola,2019-03-19 22:38:03,2023-06-29 20:31:28
+268,Aditya Pandya,Male,33,aditya.pandya5@gmail.com,+91-9574896934,PGDM,NIT Trichy,Yes,No,https://linkedin.com/in/aditya-pandya-729,6,None,2016-05-27 11:15:41,2023-01-01 05:05:17
+269,Manish Ghosh,Male,36,manish.ghosh26@gmail.com,+91-9223687972,B.Tech,XLRI,No,Yes,https://linkedin.com/in/manish-ghosh-192,18,Wipro,2022-04-09 18:22:22,2023-10-11 07:38:12
+270,Tarun Ghosh,Male,42,tarun.ghosh34@gmail.com,+91-7751768690,B.Com,IIT Bombay,Yes,Yes,https://linkedin.com/in/tarun-ghosh-672,3,Ola,2019-04-20 10:07:51,2024-06-09 08:56:34
+271,Varun Mukherjee,Male,36,varun.mukherjee62@gmail.com,+91-8044850685,PhD,XLRI,No,No,https://linkedin.com/in/varun-mukherjee-797,15,Paytm,2016-04-22 15:07:16,2023-03-11 12:40:50
+272,Radha Iyer,Female,49,radha.iyer53@gmail.com,+91-8516536926,PGDM,Pune University,No,Yes,https://linkedin.com/in/radha-iyer-817,9,TCS,2019-03-22 02:25:43,2023-12-17 02:35:59
+273,Smita Banerjee,Female,35,smita.banerjee74@gmail.com,+91-8155671697,MBA,NIT Trichy,Yes,No,https://linkedin.com/in/smita-banerjee-610,24,TCS,2018-08-19 23:15:55,2023-09-29 06:14:12
+274,Seema Yadav,Female,35,seema.yadav14@gmail.com,+91-7514874186,M.Tech,IIM Ahmedabad,Yes,No,https://linkedin.com/in/seema-yadav-728,1,None,2022-01-26 01:54:30,2024-01-16 19:20:31
+275,Vivek Nair,Male,48,vivek.nair36@gmail.com,+91-8708879427,B.Sc,Manipal,No,No,https://linkedin.com/in/vivek-nair-155,17,None,2020-09-29 15:34:02,2024-05-29 11:25:55
+276,Pallavi Agarwal,Female,46,pallavi.agarwal59@gmail.com,+91-8355711871,B.Tech,Manipal,No,Yes,https://linkedin.com/in/pallavi-agarwal-790,7,Zomato,2022-07-07 03:20:23,2024-09-19 08:11:35
+277,Karan Malhotra,Male,39,karan.malhotra44@gmail.com,+91-8571632270,MBA,FMS Delhi,No,No,https://linkedin.com/in/karan-malhotra-534,7,Zomato,2023-11-10 11:23:54,2024-02-15 08:28:11
+278,Geeta Iyer,Female,50,geeta.iyer93@gmail.com,+91-8159422567,B.Sc,IIT Kharagpur,Yes,No,https://linkedin.com/in/geeta-iyer-976,13,TCS,2017-08-20 23:09:30,2023-01-10 05:26:31
+279,Sudha Pandya,Female,41,sudha.pandya63@gmail.com,+91-8288637003,M.Sc,Pune University,No,Yes,https://linkedin.com/in/sudha-pandya-507,4,None,2017-10-31 01:13:52,2023-09-18 15:53:40
+280,Pankaj Chatterjee,Male,32,pankaj.chatterjee47@gmail.com,+91-9406685070,PGDM,Anna University,No,No,https://linkedin.com/in/pankaj-chatterjee-452,1,Zomato,2017-05-11 11:55:43,2024-09-12 06:36:36
+281,Kiran Kapoor,Female,35,kiran.kapoor87@gmail.com,+91-9192342557,CA,Pune University,No,No,https://linkedin.com/in/kiran-kapoor-180,13,Paytm,2019-03-19 14:40:09,2023-06-21 20:51:59
+282,Gaurav Yadav,Male,42,gaurav.yadav10@gmail.com,+91-7339783148,MBA,Jadavpur University,No,No,https://linkedin.com/in/gaurav-yadav-333,11,Flipkart,2023-04-28 09:45:17,2024-09-11 20:25:17
+283,Ankit Das,Male,47,ankit.das67@gmail.com,+91-8933975047,B.Com,XLRI,No,No,https://linkedin.com/in/ankit-das-288,1,Infosys,2018-08-19 21:16:47,2024-12-18 23:05:13
+284,Ankita Joshi,Female,27,ankita.joshi61@gmail.com,+91-9355504998,B.Tech,IIT Madras,Yes,Yes,https://linkedin.com/in/ankita-joshi-889,13,Ola,2016-12-06 03:16:39,2023-06-09 02:41:59
+285,Rohit Iyer,Male,31,rohit.iyer57@gmail.com,+91-9690714075,MBA,Delhi University,No,No,https://linkedin.com/in/rohit-iyer-639,6,Google,2016-05-23 21:22:55,2023-11-30 15:29:55
+286,Harsh Mukherjee,Male,28,harsh.mukherjee23@gmail.com,+91-9537599506,B.E,Amity,No,No,https://linkedin.com/in/harsh-mukherjee-746,24,None,2022-04-29 13:33:40,2024-10-16 17:19:58
+287,Vivek Modi,Male,31,vivek.modi57@gmail.com,+91-8322283789,PhD,IIT Madras,Yes,No,https://linkedin.com/in/vivek-modi-366,5,Wipro,2016-02-13 00:33:52,2023-05-20 11:18:30
+288,Varun Desai,Male,48,varun.desai39@gmail.com,+91-7039224201,B.Com,SRM,No,No,https://linkedin.com/in/varun-desai-711,8,None,2016-01-30 17:23:12,2024-02-26 17:27:25
+289,Divya Sen,Female,50,divya.sen29@gmail.com,+91-8129491690,M.Tech,Jadavpur University,No,No,https://linkedin.com/in/divya-sen-740,8,Ola,2022-11-16 22:43:17,2023-10-19 20:47:34
+290,Gaurav Menon,Male,51,gaurav.menon24@gmail.com,+91-7586795774,M.Sc,IIT Madras,Yes,Yes,https://linkedin.com/in/gaurav-menon-752,15,Paytm,2021-01-28 08:44:39,2024-05-18 06:20:01
+291,Sneha Modi,Female,24,sneha.modi14@gmail.com,+91-8211672712,M.Sc,IIM Bangalore,Yes,No,https://linkedin.com/in/sneha-modi-832,15,None,2016-02-03 07:05:09,2023-01-16 15:13:21
+292,Rohit Desai,Male,35,rohit.desai90@gmail.com,+91-7136309890,PhD,VIT,No,Yes,https://linkedin.com/in/rohit-desai-963,25,Infosys,2016-08-17 08:49:25,2023-03-15 17:30:11
+293,Sudha Chopra,Female,50,sudha.chopra2@gmail.com,+91-7523820885,B.Sc,Jadavpur University,No,No,https://linkedin.com/in/sudha-chopra-889,15,TCS,2016-05-17 06:29:47,2023-04-07 16:42:13
+294,Deepak Khanna,Male,34,deepak.khanna81@gmail.com,+91-7181187132,PGDM,IIM Bangalore,Yes,Yes,https://linkedin.com/in/deepak-khanna-359,16,None,2019-05-08 06:23:56,2023-02-23 21:13:07
+295,Anjali Roy,Female,34,anjali.roy22@gmail.com,+91-8185840646,B.E,IIT Bombay,Yes,Yes,https://linkedin.com/in/anjali-roy-505,8,Google,2016-06-21 18:50:44,2024-05-01 22:38:09
+296,Ankit Mehta,Male,31,ankit.mehta64@gmail.com,+91-7392566677,B.E,IIM Bangalore,Yes,No,https://linkedin.com/in/ankit-mehta-877,21,Google,2016-09-01 11:41:09,2024-12-19 17:50:06
+297,Smita Iyer,Female,34,smita.iyer83@gmail.com,+91-8491718314,CA,Amity,No,No,https://linkedin.com/in/smita-iyer-121,23,Zomato,2020-01-07 23:08:16,2023-02-10 15:45:28
+298,Harsh Desai,Male,30,harsh.desai24@gmail.com,+91-9334832473,PhD,XLRI,No,No,https://linkedin.com/in/harsh-desai-849,15,Wipro,2022-09-18 17:10:04,2024-06-27 04:28:18
+299,Harsh Das,Male,38,harsh.das82@gmail.com,+91-9173071915,B.Com,IIT Bombay,Yes,No,https://linkedin.com/in/harsh-das-119,20,Flipkart,2022-12-15 07:20:46,2023-03-06 21:34:52
+300,Aditya Pandya,Male,45,aditya.pandya99@gmail.com,+91-9368536195,MBA,SRM,No,No,https://linkedin.com/in/aditya-pandya-430,14,None,2019-08-12 03:06:33,2024-11-05 02:02:53
+301,Divya Singh,Female,30,divya.singh63@gmail.com,+91-7822987217,M.Tech,IIT Kharagpur,Yes,Yes,https://linkedin.com/in/divya-singh-684,21,Zomato,2023-05-18 15:33:39,2024-12-19 18:16:03
+302,Karan Dubey,Male,46,karan.dubey2@gmail.com,+91-7896523274,CA,IIT Madras,Yes,Yes,https://linkedin.com/in/karan-dubey-579,21,Google,2020-01-18 17:47:56,2024-03-01 11:50:45
+303,Sidharth Yadav,Male,32,sidharth.yadav6@gmail.com,+91-7302314710,M.Sc,Manipal,No,Yes,https://linkedin.com/in/sidharth-yadav-321,17,Amazon,2017-02-18 23:14:34,2024-01-30 06:12:33
+304,Geeta Nair,Female,41,geeta.nair54@gmail.com,+91-7453179940,B.E,Amity,No,No,https://linkedin.com/in/geeta-nair-790,15,None,2023-06-17 13:56:06,2023-06-20 05:35:25
+305,Kunal Reddy,Male,41,kunal.reddy57@gmail.com,+91-8513220374,PhD,FMS Delhi,No,No,https://linkedin.com/in/kunal-reddy-965,12,Zomato,2023-02-06 13:52:46,2023-11-28 19:15:36
+306,Ankita Bhatt,Female,47,ankita.bhatt47@gmail.com,+91-8943058119,CA,BITS Pilani,Yes,No,https://linkedin.com/in/ankita-bhatt-100,24,Google,2019-03-11 19:01:33,2023-05-19 09:00:19
+307,Nisha Banerjee,Female,24,nisha.banerjee71@gmail.com,+91-9195894317,PGDM,BITS Pilani,Yes,No,https://linkedin.com/in/nisha-banerjee-196,2,BYJU'S,2019-12-27 04:08:16,2024-01-11 18:15:14
+308,Mohit Khanna,Male,26,mohit.khanna52@gmail.com,+91-9444115276,B.Sc,XLRI,No,Yes,https://linkedin.com/in/mohit-khanna-840,11,None,2021-05-30 05:31:52,2024-12-07 22:36:52
+309,Pradeep Khanna,Male,25,pradeep.khanna49@gmail.com,+91-7337057834,B.Tech,XLRI,No,No,https://linkedin.com/in/pradeep-khanna-456,14,Zomato,2017-05-08 07:47:41,2024-09-08 00:40:49
+310,Amit Khanna,Male,40,amit.khanna41@gmail.com,+91-9318980522,B.E,IIT Delhi,Yes,No,https://linkedin.com/in/amit-khanna-434,17,None,2018-06-23 04:03:43,2024-02-07 14:48:38
+311,Karan Roy,Male,33,karan.roy19@gmail.com,+91-7567747634,PhD,Jadavpur University,No,Yes,https://linkedin.com/in/karan-roy-587,19,None,2016-07-20 17:25:16,2023-03-29 12:32:27
+312,Kiran Verma,Female,39,kiran.verma26@gmail.com,+91-9095347470,B.Com,Amity,No,No,https://linkedin.com/in/kiran-verma-674,20,None,2021-11-17 07:15:04,2023-09-30 13:20:43
+313,Arjun Dutta,Male,37,arjun.dutta45@gmail.com,+91-7818147210,PhD,Anna University,No,No,https://linkedin.com/in/arjun-dutta-708,21,Google,2019-06-02 05:22:39,2024-03-28 19:09:28
+314,Tarun Iyer,Male,30,tarun.iyer20@gmail.com,+91-7368570209,M.Tech,Anna University,No,Yes,https://linkedin.com/in/tarun-iyer-348,20,Infosys,2019-03-24 00:21:44,2023-04-24 09:28:30
+315,Suresh Rao,Male,47,suresh.rao28@gmail.com,+91-7875320136,PGDM,Amity,No,No,https://linkedin.com/in/suresh-rao-661,16,Paytm,2017-08-01 22:44:42,2023-01-19 12:37:57
+316,Nikhil Reddy,Male,25,nikhil.reddy26@gmail.com,+91-9991559353,B.E,Delhi University,No,No,https://linkedin.com/in/nikhil-reddy-154,15,None,2016-02-04 02:24:42,2023-10-05 21:54:58
+317,Dinesh Joshi,Male,24,dinesh.joshi84@gmail.com,+91-8660104622,B.Sc,Delhi University,No,No,https://linkedin.com/in/dinesh-joshi-620,23,Amazon,2019-07-16 15:55:38,2024-06-28 02:11:12
+318,Harsh Gupta,Male,25,harsh.gupta68@gmail.com,+91-8309653729,PhD,NIT Warangal,Yes,No,https://linkedin.com/in/harsh-gupta-502,24,Infosys,2016-03-16 11:43:22,2023-12-30 20:19:15
+319,Mohit Patel,Male,44,mohit.patel50@gmail.com,+91-7126555049,PGDM,BITS Pilani,Yes,No,https://linkedin.com/in/mohit-patel-330,5,Flipkart,2020-05-28 21:08:05,2024-01-27 16:43:39
+320,Shweta Pillai,Female,42,shweta.pillai55@gmail.com,+91-8341673745,B.E,IIM Ahmedabad,Yes,No,https://linkedin.com/in/shweta-pillai-559,18,Infosys,2018-04-26 20:08:37,2024-07-08 21:51:12
+321,Swati Pandya,Female,28,swati.pandya99@gmail.com,+91-7623424790,B.E,BHU,No,No,https://linkedin.com/in/swati-pandya-425,3,Ola,2021-12-23 23:07:11,2023-11-22 04:46:01
+322,Ashish Dutta,Male,37,ashish.dutta57@gmail.com,+91-9735238728,M.Sc,Delhi University,No,No,https://linkedin.com/in/ashish-dutta-897,7,Amazon,2017-06-22 05:01:48,2024-09-18 19:17:38
+323,Asha Iyer,Female,31,asha.iyer46@gmail.com,+91-7341344355,CA,IIT Bombay,Yes,No,https://linkedin.com/in/asha-iyer-614,20,BYJU'S,2023-12-26 20:23:11,2024-02-01 15:30:08
+324,Nisha Iyer,Female,25,nisha.iyer98@gmail.com,+91-7064485730,M.Sc,BHU,No,No,https://linkedin.com/in/nisha-iyer-327,24,None,2018-04-10 06:04:11,2024-03-25 19:31:44
+325,Dinesh Basu,Male,52,dinesh.basu55@gmail.com,+91-8738889526,B.Tech,NIT Warangal,Yes,No,https://linkedin.com/in/dinesh-basu-837,11,Zomato,2022-11-09 23:36:38,2024-07-03 16:41:56
+326,Alok Joshi,Male,38,alok.joshi6@gmail.com,+91-8055366449,PGDM,VIT,No,No,https://linkedin.com/in/alok-joshi-852,2,Ola,2020-05-05 16:48:40,2023-02-20 06:18:28
+327,Ashish Khanna,Male,48,ashish.khanna60@gmail.com,+91-7715054503,B.Com,Delhi University,No,No,https://linkedin.com/in/ashish-khanna-727,2,None,2021-10-18 04:29:53,2024-10-23 14:05:46
+328,Sanjay Tiwari,Male,52,sanjay.tiwari18@gmail.com,+91-8688208703,B.Com,Amity,No,No,https://linkedin.com/in/sanjay-tiwari-561,1,Infosys,2021-02-01 18:57:45,2023-07-26 14:05:16
+329,Varun Reddy,Male,46,varun.reddy12@gmail.com,+91-7490334658,CA,IIT Kharagpur,Yes,No,https://linkedin.com/in/varun-reddy-187,17,None,2020-04-22 23:50:32,2024-09-18 05:24:35
+330,Amit Reddy,Male,34,amit.reddy85@gmail.com,+91-7644630523,MBA,XLRI,No,No,https://linkedin.com/in/amit-reddy-283,25,None,2016-07-29 13:19:19,2024-04-01 09:40:11
+331,Ashish Verma,Male,30,ashish.verma80@gmail.com,+91-8087103368,B.Tech,IIT Bombay,Yes,No,https://linkedin.com/in/ashish-verma-609,16,Ola,2016-01-24 19:56:31,2023-09-01 06:37:42
+332,Pankaj Dutta,Male,38,pankaj.dutta77@gmail.com,+91-9577418939,B.Tech,IIT Madras,Yes,No,https://linkedin.com/in/pankaj-dutta-660,9,Paytm,2023-01-18 17:52:52,2023-08-01 01:11:09
+333,Mahesh Bose,Male,25,mahesh.bose5@gmail.com,+91-9864728338,B.E,IIM Ahmedabad,Yes,No,https://linkedin.com/in/mahesh-bose-439,3,Google,2017-03-22 13:11:10,2024-11-19 09:39:42
+334,Pallavi Tiwari,Female,35,pallavi.tiwari12@gmail.com,+91-8285460026,PhD,IIT Delhi,Yes,No,https://linkedin.com/in/pallavi-tiwari-488,3,None,2020-10-16 17:04:18,2024-04-27 04:07:44
+335,Suresh Pandya,Male,37,suresh.pandya27@gmail.com,+91-9988564933,B.Sc,Manipal,No,Yes,https://linkedin.com/in/suresh-pandya-211,19,None,2023-01-20 16:05:30,2024-12-06 19:59:50
+336,Gaurav Dubey,Male,51,gaurav.dubey34@gmail.com,+91-9256538123,B.E,Pune University,No,No,https://linkedin.com/in/gaurav-dubey-232,20,Paytm,2021-07-26 16:46:40,2024-05-24 15:51:11
+337,Sita Kapoor,Female,30,sita.kapoor16@gmail.com,+91-7103022527,CA,IIT Bombay,Yes,Yes,https://linkedin.com/in/sita-kapoor-855,7,None,2022-11-25 13:26:02,2023-12-08 11:35:51
+338,Priya Menon,Female,46,priya.menon33@gmail.com,+91-7291353679,M.Sc,Delhi University,No,No,https://linkedin.com/in/priya-menon-618,18,Flipkart,2016-01-26 03:43:21,2023-12-16 12:46:36
+339,Sidharth Nair,Male,30,sidharth.nair44@gmail.com,+91-9888249353,CA,Pune University,No,No,https://linkedin.com/in/sidharth-nair-916,2,None,2017-07-10 15:09:40,2024-04-16 17:57:21
+340,Mohit Dutta,Male,47,mohit.dutta67@gmail.com,+91-8285671613,B.E,IIT Delhi,Yes,No,https://linkedin.com/in/mohit-dutta-668,18,Google,2018-05-03 18:43:21,2023-12-29 02:09:17
+341,Suresh Sen,Male,44,suresh.sen22@gmail.com,+91-9452347464,B.E,Amity,No,No,https://linkedin.com/in/suresh-sen-291,20,Amazon,2019-06-16 22:54:20,2024-12-27 01:17:26
+342,Vivek Pillai,Male,35,vivek.pillai39@gmail.com,+91-7928313711,PGDM,VIT,No,No,https://linkedin.com/in/vivek-pillai-279,4,Flipkart,2016-06-02 06:58:05,2024-03-30 16:01:51
+343,Ashish Trivedi,Male,28,ashish.trivedi44@gmail.com,+91-9076496184,PGDM,NIT Trichy,Yes,No,https://linkedin.com/in/ashish-trivedi-894,11,Infosys,2017-02-06 16:43:08,2023-07-30 23:02:29
+344,Varun Pandya,Male,27,varun.pandya40@gmail.com,+91-7189107235,B.E,IIT Bombay,Yes,Yes,https://linkedin.com/in/varun-pandya-441,15,Google,2017-02-26 16:49:42,2023-11-16 00:36:48
+345,Mahesh Rao,Male,34,mahesh.rao25@gmail.com,+91-8230797512,M.Sc,NIT Trichy,Yes,No,https://linkedin.com/in/mahesh-rao-891,15,None,2017-04-26 08:09:10,2023-10-08 03:00:39
+346,Aditya Modi,Male,35,aditya.modi41@gmail.com,+91-8164159934,MBA,Amity,No,No,https://linkedin.com/in/aditya-modi-687,8,Infosys,2016-10-18 09:39:57,2023-12-13 17:28:03
+347,Priya Shah,Female,52,priya.shah14@gmail.com,+91-8647547914,B.Tech,IIT Delhi,Yes,Yes,https://linkedin.com/in/priya-shah-536,13,Infosys,2023-11-26 19:57:37,2024-10-06 22:44:28
+348,Rohit Chatterjee,Male,50,rohit.chatterjee92@gmail.com,+91-9881365834,PGDM,NIT Trichy,Yes,Yes,https://linkedin.com/in/rohit-chatterjee-873,25,BYJU'S,2022-05-14 04:05:52,2024-12-16 14:06:29
+349,Kunal Basu,Male,39,kunal.basu29@gmail.com,+91-7617279928,B.E,NIT Warangal,Yes,No,https://linkedin.com/in/kunal-basu-472,13,Infosys,2023-11-05 21:21:50,2023-11-29 14:31:01
+350,Vivek Agarwal,Male,35,vivek.agarwal60@gmail.com,+91-7733587041,M.Sc,SRM,No,No,https://linkedin.com/in/vivek-agarwal-718,19,Infosys,2021-09-11 03:25:52,2023-04-20 10:35:41
+351,Mohit Khanna,Male,41,mohit.khanna52@gmail.com,+91-9536332631,B.Com,VIT,No,No,https://linkedin.com/in/mohit-khanna-735,8,Ola,2017-10-13 15:24:04,2023-12-15 06:52:44
+352,Mohit Roy,Male,42,mohit.roy70@gmail.com,+91-9981279224,B.Sc,Pune University,No,No,https://linkedin.com/in/mohit-roy-778,22,Amazon,2023-12-25 18:53:31,2023-04-28 18:38:29
+353,Harsh Joshi,Male,50,harsh.joshi23@gmail.com,+91-8323003336,B.Com,VIT,No,Yes,https://linkedin.com/in/harsh-joshi-712,4,None,2022-09-08 12:20:31,2024-10-22 21:03:05
+354,Seema Verma,Female,52,seema.verma97@gmail.com,+91-9732169658,B.Tech,XLRI,No,No,https://linkedin.com/in/seema-verma-776,5,BYJU'S,2021-12-16 09:24:39,2024-08-14 14:12:13
+355,Rohit Chaudhary,Male,49,rohit.chaudhary56@gmail.com,+91-8478605304,M.Tech,Delhi University,No,Yes,https://linkedin.com/in/rohit-chaudhary-726,17,Zomato,2017-06-06 09:03:23,2024-07-16 01:00:45
+356,Arjun Kapoor,Male,51,arjun.kapoor31@gmail.com,+91-8854203954,B.E,IIT Bombay,Yes,No,https://linkedin.com/in/arjun-kapoor-740,11,None,2020-04-16 12:24:27,2024-07-12 06:42:11
+357,Rajesh Menon,Male,41,rajesh.menon47@gmail.com,+91-8792012815,MBA,Jadavpur University,No,No,https://linkedin.com/in/rajesh-menon-993,22,Infosys,2017-07-04 00:04:41,2023-01-17 04:46:56
+358,Kunal Roy,Male,28,kunal.roy18@gmail.com,+91-9758412226,B.Com,IIT Madras,Yes,No,https://linkedin.com/in/kunal-roy-907,23,Paytm,2020-10-09 19:11:29,2024-06-05 13:35:52
+359,Deepak Bose,Male,31,deepak.bose55@gmail.com,+91-9596622371,B.Tech,IIM Bangalore,Yes,No,https://linkedin.com/in/deepak-bose-967,24,TCS,2023-12-26 16:17:26,2024-07-13 18:23:02
+360,Shiv Shah,Male,46,shiv.shah15@gmail.com,+91-9492235444,CA,Anna University,No,Yes,https://linkedin.com/in/shiv-shah-245,24,None,2021-11-26 08:29:33,2023-03-22 16:56:39
+361,Karan Shah,Male,44,karan.shah88@gmail.com,+91-9721667797,PGDM,IIT Madras,Yes,No,https://linkedin.com/in/karan-shah-727,2,Flipkart,2021-12-31 00:30:29,2024-06-08 15:36:46
+362,Gaurav Bose,Male,49,gaurav.bose38@gmail.com,+91-7719442108,B.Tech,Delhi University,No,No,https://linkedin.com/in/gaurav-bose-844,19,Wipro,2016-09-08 20:30:37,2023-06-23 18:03:42
+363,Mohit Yadav,Male,24,mohit.yadav63@gmail.com,+91-7354378489,MBA,Delhi University,No,Yes,https://linkedin.com/in/mohit-yadav-971,9,Wipro,2017-06-26 19:17:17,2023-09-21 00:47:07
+364,Vandana Tiwari,Female,47,vandana.tiwari85@gmail.com,+91-8918360758,PhD,IIM Ahmedabad,Yes,No,https://linkedin.com/in/vandana-tiwari-367,23,TCS,2021-06-09 05:51:33,2023-02-03 10:05:09
+365,Seema Desai,Female,48,seema.desai99@gmail.com,+91-8645689727,B.Sc,BHU,No,No,https://linkedin.com/in/seema-desai-843,21,Infosys,2018-05-13 18:46:53,2023-12-20 01:41:16
+366,Amit Reddy,Male,38,amit.reddy61@gmail.com,+91-8294361972,CA,Jadavpur University,No,No,https://linkedin.com/in/amit-reddy-488,22,None,2020-05-16 15:16:09,2024-06-27 13:00:18
+367,Deepak Banerjee,Male,40,deepak.banerjee13@gmail.com,+91-9281887562,PhD,IIT Delhi,Yes,No,https://linkedin.com/in/deepak-banerjee-725,21,Wipro,2019-10-04 08:17:51,2023-04-11 08:41:37
+368,Pankaj Pillai,Male,47,pankaj.pillai99@gmail.com,+91-7837199429,PGDM,XLRI,No,No,https://linkedin.com/in/pankaj-pillai-793,23,Infosys,2019-07-07 17:00:43,2023-01-09 02:00:26
+369,Alok Joshi,Male,45,alok.joshi45@gmail.com,+91-7942385937,M.Sc,VIT,No,No,https://linkedin.com/in/alok-joshi-297,2,Google,2022-12-12 02:03:38,2024-11-03 06:38:40
+370,Varun Agarwal,Male,26,varun.agarwal17@gmail.com,+91-8614729199,B.E,FMS Delhi,No,No,https://linkedin.com/in/varun-agarwal-213,23,Infosys,2018-11-03 09:29:42,2023-03-19 20:29:59
+371,Ankit Roy,Male,46,ankit.roy33@gmail.com,+91-7695638799,M.Tech,Pune University,No,No,https://linkedin.com/in/ankit-roy-895,2,Zomato,2020-05-10 10:03:16,2023-09-29 05:28:04
+372,Tarun Menon,Male,43,tarun.menon23@gmail.com,+91-9772329146,CA,Jadavpur University,No,Yes,https://linkedin.com/in/tarun-menon-247,18,None,2020-11-01 06:39:41,2023-04-19 14:45:16
+373,Amit Kumar,Male,26,amit.kumar94@gmail.com,+91-8076303124,CA,XLRI,No,Yes,https://linkedin.com/in/amit-kumar-609,5,None,2023-03-07 00:59:02,2024-11-11 12:17:09
+374,Ashish Ghosh,Male,42,ashish.ghosh66@gmail.com,+91-9107452219,CA,IIT Bombay,Yes,No,https://linkedin.com/in/ashish-ghosh-513,24,None,2016-10-14 17:14:00,2024-01-29 22:52:49
+375,Arjun Chaudhary,Male,41,arjun.chaudhary43@gmail.com,+91-9928462203,M.Sc,Anna University,No,No,https://linkedin.com/in/arjun-chaudhary-156,21,None,2017-01-06 11:34:54,2023-12-15 02:53:29
+376,Mahesh Menon,Male,29,mahesh.menon6@gmail.com,+91-8649970409,B.Sc,Amity,No,No,https://linkedin.com/in/mahesh-menon-812,13,Amazon,2023-01-27 22:22:31,2023-03-28 20:28:47
+377,Kavya Singh,Female,30,kavya.singh93@gmail.com,+91-9546681221,B.Sc,IIT Bombay,Yes,No,https://linkedin.com/in/kavya-singh-498,3,None,2022-01-23 20:19:31,2024-06-30 14:01:02
+378,Amit Chatterjee,Male,49,amit.chatterjee52@gmail.com,+91-7507609787,B.Sc,IIT Delhi,Yes,No,https://linkedin.com/in/amit-chatterjee-794,18,Infosys,2022-07-01 07:59:04,2023-02-07 23:09:31
+379,Vivek Yadav,Male,25,vivek.yadav90@gmail.com,+91-9786516452,MBA,NIT Warangal,Yes,Yes,https://linkedin.com/in/vivek-yadav-276,21,Google,2019-06-12 03:29:39,2023-06-24 18:04:52
+380,Arjun Desai,Male,43,arjun.desai29@gmail.com,+91-7271055863,B.Sc,FMS Delhi,No,No,https://linkedin.com/in/arjun-desai-445,24,None,2020-07-04 10:07:43,2024-08-12 17:08:20
+381,Kiran Singh,Female,42,kiran.singh43@gmail.com,+91-7271535964,M.Tech,IIM Bangalore,Yes,No,https://linkedin.com/in/kiran-singh-244,25,Zomato,2017-11-19 22:23:35,2023-06-18 14:15:59
+382,Rajesh Joshi,Male,49,rajesh.joshi49@gmail.com,+91-7677546830,B.Tech,FMS Delhi,No,No,https://linkedin.com/in/rajesh-joshi-182,1,Google,2018-01-04 02:45:41,2024-08-30 09:26:44
+383,Varun Verma,Male,30,varun.verma82@gmail.com,+91-8163720296,PGDM,IIM Ahmedabad,Yes,No,https://linkedin.com/in/varun-verma-521,8,Infosys,2022-11-05 22:02:38,2023-07-04 22:31:39
+384,Mahesh Khanna,Male,35,mahesh.khanna1@gmail.com,+91-9395347941,B.Sc,BHU,No,No,https://linkedin.com/in/mahesh-khanna-220,17,Amazon,2022-12-10 11:55:48,2024-07-06 16:14:29
+385,Ritu Patel,Female,30,ritu.patel20@gmail.com,+91-9943099512,CA,IIT Kharagpur,Yes,No,https://linkedin.com/in/ritu-patel-280,6,None,2016-06-25 01:41:23,2023-10-19 06:27:16
+386,Pradeep Basu,Male,25,pradeep.basu95@gmail.com,+91-7225299266,PGDM,IIT Kharagpur,Yes,No,https://linkedin.com/in/pradeep-basu-261,1,BYJU'S,2021-10-10 03:04:57,2023-08-29 23:28:37
+387,Gaurav Menon,Male,47,gaurav.menon30@gmail.com,+91-7473017075,PhD,Pune University,No,No,https://linkedin.com/in/gaurav-menon-200,8,None,2020-08-16 06:24:57,2023-08-14 02:30:37
+388,Amit Roy,Male,28,amit.roy79@gmail.com,+91-8954170921,MBA,NIT Trichy,Yes,No,https://linkedin.com/in/amit-roy-482,5,BYJU'S,2018-03-06 20:22:17,2023-07-27 10:08:02
+389,Nikhil Verma,Male,27,nikhil.verma59@gmail.com,+91-8796257670,MBA,VIT,No,No,https://linkedin.com/in/nikhil-verma-325,10,Paytm,2017-10-04 20:39:57,2023-06-24 18:35:54
+390,Ananya Dutta,Female,51,ananya.dutta63@gmail.com,+91-7929613915,B.E,Manipal,No,No,https://linkedin.com/in/ananya-dutta-957,15,Wipro,2016-02-29 23:27:47,2023-09-10 07:20:27
+391,Sudha Tiwari,Female,28,sudha.tiwari1@gmail.com,+91-8794316441,B.Tech,XLRI,No,Yes,https://linkedin.com/in/sudha-tiwari-581,24,None,2021-08-27 01:27:33,2024-02-08 15:51:51
+392,Pankaj Desai,Male,31,pankaj.desai72@gmail.com,+91-7053356336,B.Com,IIT Madras,Yes,No,https://linkedin.com/in/pankaj-desai-235,12,Wipro,2018-09-06 20:05:01,2024-05-06 21:19:10
+393,Dinesh Chaudhary,Male,47,dinesh.chaudhary4@gmail.com,+91-8953526348,CA,XLRI,No,No,https://linkedin.com/in/dinesh-chaudhary-995,23,Zomato,2018-01-27 11:40:29,2024-12-21 20:00:55
+394,Deepak Chatterjee,Male,40,deepak.chatterjee38@gmail.com,+91-8829236235,M.Sc,IIT Delhi,Yes,No,https://linkedin.com/in/deepak-chatterjee-906,22,Amazon,2022-12-16 10:47:59,2023-02-26 16:58:43
+395,Ashish Patel,Male,27,ashish.patel47@gmail.com,+91-8998675370,B.E,Jadavpur University,No,Yes,https://linkedin.com/in/ashish-patel-474,12,Infosys,2023-04-08 17:45:04,2024-07-28 22:49:13
+396,Shreya Pillai,Female,41,shreya.pillai84@gmail.com,+91-9055113777,B.E,IIT Kharagpur,Yes,No,https://linkedin.com/in/shreya-pillai-871,24,None,2018-07-12 10:22:57,2023-10-01 16:43:27
+397,Amit Kumar,Male,35,amit.kumar58@gmail.com,+91-9088328665,PGDM,Anna University,No,Yes,https://linkedin.com/in/amit-kumar-581,23,Ola,2023-08-10 17:57:18,2024-04-07 19:23:51
+398,Aditya Basu,Male,26,aditya.basu51@gmail.com,+91-7767990928,M.Sc,IIT Madras,Yes,Yes,https://linkedin.com/in/aditya-basu-211,6,Wipro,2017-04-03 22:09:31,2023-06-04 06:33:40
+399,Rohit Dutta,Male,45,rohit.dutta17@gmail.com,+91-9035406123,PhD,Amity,No,No,https://linkedin.com/in/rohit-dutta-554,24,None,2016-03-28 09:12:04,2023-01-23 07:53:33
+400,Gaurav Tiwari,Male,34,gaurav.tiwari63@gmail.com,+91-9548450006,PGDM,Pune University,No,No,https://linkedin.com/in/gaurav-tiwari-568,10,Paytm,2017-06-24 09:10:50,2023-09-24 07:30:23
+401,Ankit Patel,Male,28,ankit.patel37@gmail.com,+91-8958189548,MBA,Anna University,No,No,https://linkedin.com/in/ankit-patel-828,18,Wipro,2018-01-16 05:53:45,2024-12-10 21:50:09
+402,Meera Agarwal,Female,25,meera.agarwal74@gmail.com,+91-7543199610,CA,Pune University,No,No,https://linkedin.com/in/meera-agarwal-478,6,TCS,2022-04-22 22:02:42,2023-11-21 11:09:23
+403,Harsh Reddy,Male,41,harsh.reddy16@gmail.com,+91-7107052949,B.Com,Delhi University,No,No,https://linkedin.com/in/harsh-reddy-886,5,BYJU'S,2019-08-04 04:00:47,2024-07-13 16:21:41
+404,Vivek Kapoor,Male,48,vivek.kapoor86@gmail.com,+91-7631718712,B.E,XLRI,No,No,https://linkedin.com/in/vivek-kapoor-446,23,Amazon,2021-05-15 01:08:43,2024-07-18 03:19:01
+405,Pradeep Iyer,Male,38,pradeep.iyer12@gmail.com,+91-8401733322,B.Tech,Anna University,No,No,https://linkedin.com/in/pradeep-iyer-697,17,TCS,2019-02-12 06:01:05,2024-07-05 14:43:42
+406,Alok Ghosh,Male,30,alok.ghosh41@gmail.com,+91-9590603471,B.E,SRM,No,Yes,https://linkedin.com/in/alok-ghosh-782,12,Zomato,2017-08-28 22:54:27,2024-01-14 12:23:00
+407,Manish Bose,Male,33,manish.bose72@gmail.com,+91-7376233267,B.Sc,VIT,No,No,https://linkedin.com/in/manish-bose-859,14,None,2020-12-17 09:10:51,2024-03-10 23:57:26
+408,Seema Tiwari,Female,43,seema.tiwari19@gmail.com,+91-7892424586,M.Sc,IIT Madras,Yes,No,https://linkedin.com/in/seema-tiwari-988,17,Flipkart,2016-09-27 18:48:24,2023-04-01 00:26:40
+409,Gaurav Nair,Male,41,gaurav.nair91@gmail.com,+91-9439182043,MBA,VIT,No,No,https://linkedin.com/in/gaurav-nair-290,13,Wipro,2022-03-18 15:02:52,2023-11-06 18:19:31
+410,Karan Gupta,Male,49,karan.gupta20@gmail.com,+91-8128189228,M.Sc,IIT Bombay,Yes,No,https://linkedin.com/in/karan-gupta-227,21,None,2019-03-24 13:11:31,2024-12-05 20:15:01
+411,Ankit Malhotra,Male,39,ankit.malhotra77@gmail.com,+91-8553745264,B.E,IIT Madras,Yes,No,https://linkedin.com/in/ankit-malhotra-679,14,Wipro,2023-01-16 21:30:44,2023-05-03 11:32:46
+412,Dinesh Chopra,Male,29,dinesh.chopra8@gmail.com,+91-7627654163,PhD,XLRI,No,No,https://linkedin.com/in/dinesh-chopra-999,23,Infosys,2020-01-03 05:03:17,2024-01-05 13:40:58
+413,Amit Kapoor,Male,33,amit.kapoor82@gmail.com,+91-7329968072,PGDM,Manipal,No,No,https://linkedin.com/in/amit-kapoor-884,21,Infosys,2017-01-22 19:48:10,2024-07-10 10:55:20
+414,Nikhil Das,Male,27,nikhil.das75@gmail.com,+91-8510236617,MBA,Amity,No,Yes,https://linkedin.com/in/nikhil-das-240,17,Wipro,2020-03-07 15:26:21,2023-06-16 03:13:09
+415,Seema Menon,Female,49,seema.menon79@gmail.com,+91-9962036342,PGDM,Amity,No,Yes,https://linkedin.com/in/seema-menon-527,15,Amazon,2017-04-22 04:59:01,2024-05-06 11:19:44
+416,Rajesh Mukherjee,Male,52,rajesh.mukherjee67@gmail.com,+91-8469072661,MBA,FMS Delhi,No,No,https://linkedin.com/in/rajesh-mukherjee-129,24,Amazon,2018-06-29 04:54:44,2023-05-26 22:14:19
+417,Nisha Verma,Female,26,nisha.verma89@gmail.com,+91-7479843174,M.Tech,BHU,No,Yes,https://linkedin.com/in/nisha-verma-893,16,None,2020-11-01 01:12:06,2023-02-03 21:32:37
+418,Vivek Agarwal,Male,32,vivek.agarwal9@gmail.com,+91-8295558864,B.Tech,IIT Delhi,Yes,Yes,https://linkedin.com/in/vivek-agarwal-901,4,Paytm,2018-04-21 18:57:12,2023-07-09 21:22:01
+419,Rajesh Malhotra,Male,42,rajesh.malhotra46@gmail.com,+91-7689588485,PGDM,Anna University,No,No,https://linkedin.com/in/rajesh-malhotra-617,19,Amazon,2017-02-09 18:48:00,2024-06-25 06:45:12
+420,Sanjay Modi,Male,24,sanjay.modi28@gmail.com,+91-9165502207,CA,IIT Kharagpur,Yes,No,https://linkedin.com/in/sanjay-modi-814,19,Infosys,2020-12-05 21:06:11,2023-12-30 12:27:13
+421,Shweta Agarwal,Female,48,shweta.agarwal16@gmail.com,+91-9001032544,M.Tech,Pune University,No,No,https://linkedin.com/in/shweta-agarwal-607,25,Flipkart,2023-11-26 09:35:46,2023-02-11 02:20:31
+422,Deepak Kapoor,Male,38,deepak.kapoor95@gmail.com,+91-8340059485,CA,FMS Delhi,No,No,https://linkedin.com/in/deepak-kapoor-667,14,Wipro,2020-10-18 06:54:04,2024-05-02 21:23:11
+423,Kunal Desai,Male,45,kunal.desai51@gmail.com,+91-8881446290,PGDM,IIT Kharagpur,Yes,Yes,https://linkedin.com/in/kunal-desai-222,5,Zomato,2020-06-28 22:37:06,2023-06-22 02:23:12
+424,Aditya Dubey,Male,51,aditya.dubey16@gmail.com,+91-8000167474,B.Com,Jadavpur University,No,No,https://linkedin.com/in/aditya-dubey-385,25,None,2022-07-11 18:17:48,2024-10-21 12:22:30
+425,Vivek Trivedi,Male,32,vivek.trivedi99@gmail.com,+91-8952641348,M.Tech,IIM Ahmedabad,Yes,Yes,https://linkedin.com/in/vivek-trivedi-356,16,BYJU'S,2018-08-03 20:08:01,2023-04-12 23:03:53
+426,Vivek Gupta,Male,29,vivek.gupta78@gmail.com,+91-9917160520,PhD,Jadavpur University,No,No,https://linkedin.com/in/vivek-gupta-410,20,Paytm,2017-01-29 02:42:48,2024-06-16 15:50:29
+427,Swati Desai,Female,39,swati.desai34@gmail.com,+91-9329753974,PhD,Manipal,No,Yes,https://linkedin.com/in/swati-desai-882,2,Zomato,2017-05-02 12:28:20,2024-01-21 14:29:02
+428,Sanjay Bhatt,Male,45,sanjay.bhatt91@gmail.com,+91-7704994153,CA,Delhi University,No,No,https://linkedin.com/in/sanjay-bhatt-237,10,None,2020-05-12 15:48:07,2024-08-05 21:31:42
+429,Vivek Bhatt,Male,51,vivek.bhatt65@gmail.com,+91-7239389148,B.Com,IIM Bangalore,Yes,No,https://linkedin.com/in/vivek-bhatt-606,19,Zomato,2022-12-01 21:22:49,2023-10-19 10:03:01
+430,Rajesh Das,Male,35,rajesh.das4@gmail.com,+91-9685011686,PhD,XLRI,No,No,https://linkedin.com/in/rajesh-das-199,14,Flipkart,2020-01-03 13:22:03,2024-11-08 07:15:15
+431,Shiv Mehta,Male,46,shiv.mehta40@gmail.com,+91-7491650481,PhD,IIT Madras,Yes,No,https://linkedin.com/in/shiv-mehta-120,18,Flipkart,2016-06-02 14:42:55,2024-03-08 18:32:57
+432,Nikhil Gupta,Male,46,nikhil.gupta76@gmail.com,+91-7095504800,PhD,SRM,No,No,https://linkedin.com/in/nikhil-gupta-684,13,Flipkart,2022-06-03 03:51:31,2023-04-13 22:43:13
+433,Vivek Trivedi,Male,49,vivek.trivedi22@gmail.com,+91-9640665603,M.Sc,Pune University,No,No,https://linkedin.com/in/vivek-trivedi-546,7,BYJU'S,2023-02-15 02:53:54,2024-07-02 06:18:16
+434,Rohit Chaudhary,Male,36,rohit.chaudhary80@gmail.com,+91-7394955891,B.E,NIT Warangal,Yes,Yes,https://linkedin.com/in/rohit-chaudhary-706,11,Wipro,2016-10-02 18:51:33,2024-05-01 13:13:22
+435,Mahesh Khanna,Male,40,mahesh.khanna56@gmail.com,+91-9849524815,PGDM,Delhi University,No,No,https://linkedin.com/in/mahesh-khanna-304,14,Zomato,2018-10-26 19:32:29,2024-11-18 17:11:56
+436,Mahesh Pandya,Male,51,mahesh.pandya74@gmail.com,+91-9144063281,B.Sc,IIM Bangalore,Yes,No,https://linkedin.com/in/mahesh-pandya-374,21,Ola,2022-11-21 13:59:36,2024-10-03 01:33:12
+437,Pankaj Mishra,Male,31,pankaj.mishra96@gmail.com,+91-9943369572,M.Sc,IIM Ahmedabad,Yes,No,https://linkedin.com/in/pankaj-mishra-520,11,Amazon,2023-02-09 06:54:26,2023-10-01 09:41:10
+438,Kunal Dubey,Male,31,kunal.dubey31@gmail.com,+91-7487730383,MBA,Jadavpur University,No,No,https://linkedin.com/in/kunal-dubey-128,8,None,2019-06-25 14:31:35,2024-03-22 13:41:57
+439,Aditya Reddy,Male,32,aditya.reddy4@gmail.com,+91-8109805988,M.Sc,IIM Ahmedabad,Yes,No,https://linkedin.com/in/aditya-reddy-759,2,None,2021-06-13 00:03:55,2023-03-27 10:38:19
+440,Ashish Dutta,Male,52,ashish.dutta86@gmail.com,+91-9823642917,M.Tech,Anna University,No,No,https://linkedin.com/in/ashish-dutta-959,24,Infosys,2018-08-24 03:36:47,2024-05-27 03:33:42
+441,Vivek Mehta,Male,31,vivek.mehta16@gmail.com,+91-8346087107,PhD,FMS Delhi,No,No,https://linkedin.com/in/vivek-mehta-925,24,None,2018-08-24 13:13:09,2023-04-20 05:13:17
+442,Gaurav Chopra,Male,51,gaurav.chopra8@gmail.com,+91-9106074066,PGDM,XLRI,No,No,https://linkedin.com/in/gaurav-chopra-816,4,Flipkart,2022-02-13 13:30:43,2023-09-10 08:56:50
+443,Neha Shah,Female,46,neha.shah40@gmail.com,+91-7090513024,B.E,Anna University,No,Yes,https://linkedin.com/in/neha-shah-961,24,None,2016-08-11 22:58:50,2024-11-18 07:16:35
+444,Rohit Das,Male,52,rohit.das69@gmail.com,+91-8015252510,CA,IIT Kharagpur,Yes,No,https://linkedin.com/in/rohit-das-108,13,Wipro,2019-05-17 02:59:52,2023-08-30 09:13:55
+445,Vandana Mukherjee,Female,44,vandana.mukherjee99@gmail.com,+91-9767803644,B.Com,Pune University,No,Yes,https://linkedin.com/in/vandana-mukherjee-380,3,None,2021-07-06 15:47:26,2023-12-07 22:27:56
+446,Sidharth Reddy,Male,46,sidharth.reddy65@gmail.com,+91-7285045092,PhD,BITS Pilani,Yes,No,https://linkedin.com/in/sidharth-reddy-716,24,Ola,2019-08-31 14:44:01,2023-02-23 20:41:11
+447,Mohit Verma,Male,24,mohit.verma26@gmail.com,+91-9698511953,M.Sc,Jadavpur University,No,No,https://linkedin.com/in/mohit-verma-689,3,Amazon,2017-10-08 07:33:45,2024-10-26 04:54:38
+448,Mohit Banerjee,Male,38,mohit.banerjee95@gmail.com,+91-7573420239,M.Sc,SRM,No,No,https://linkedin.com/in/mohit-banerjee-803,19,Flipkart,2019-02-28 06:05:26,2024-01-12 05:25:56
+449,Sidharth Chaudhary,Male,31,sidharth.chaudhary3@gmail.com,+91-9398868010,B.E,IIT Bombay,Yes,No,https://linkedin.com/in/sidharth-chaudhary-191,15,TCS,2018-12-08 22:54:10,2023-02-20 12:39:27
+450,Rajesh Mehta,Male,35,rajesh.mehta73@gmail.com,+91-7504016658,B.Tech,IIM Bangalore,Yes,No,https://linkedin.com/in/rajesh-mehta-891,15,None,2021-07-17 03:14:45,2023-07-28 06:55:52
+451,Rohit Desai,Male,36,rohit.desai56@gmail.com,+91-7887365823,B.E,IIM Ahmedabad,Yes,No,https://linkedin.com/in/rohit-desai-943,10,None,2023-08-05 06:26:11,2024-02-23 04:01:18
+452,Karan Yadav,Male,38,karan.yadav48@gmail.com,+91-9503549632,CA,NIT Warangal,Yes,Yes,https://linkedin.com/in/karan-yadav-110,16,Infosys,2019-08-17 22:25:43,2023-08-06 22:24:45
+453,Ravi Dubey,Male,32,ravi.dubey13@gmail.com,+91-9392296673,B.Tech,IIT Madras,Yes,Yes,https://linkedin.com/in/ravi-dubey-440,8,BYJU'S,2019-12-22 19:42:51,2024-09-04 22:47:51
+454,Rahul Chopra,Male,40,rahul.chopra49@gmail.com,+91-8299259176,B.Com,FMS Delhi,No,No,https://linkedin.com/in/rahul-chopra-235,18,Google,2022-07-05 05:16:10,2024-05-30 15:59:21
+455,Rajesh Mehta,Male,34,rajesh.mehta56@gmail.com,+91-7609008040,M.Sc,Manipal,No,Yes,https://linkedin.com/in/rajesh-mehta-420,2,Infosys,2021-08-06 08:47:23,2024-03-16 09:57:56
+456,Pradeep Chopra,Male,40,pradeep.chopra56@gmail.com,+91-7708600119,PhD,Pune University,No,No,https://linkedin.com/in/pradeep-chopra-882,5,Ola,2023-05-16 20:51:28,2023-02-24 06:09:03
+457,Divya Singh,Female,39,divya.singh21@gmail.com,+91-9006320271,B.Com,BITS Pilani,Yes,Yes,https://linkedin.com/in/divya-singh-606,2,BYJU'S,2019-12-31 22:35:31,2024-04-13 15:07:54
+458,Pooja Bose,Female,26,pooja.bose37@gmail.com,+91-7775907148,MBA,NIT Trichy,Yes,No,https://linkedin.com/in/pooja-bose-676,22,Paytm,2018-05-19 18:00:33,2024-08-07 05:26:58
+459,Karan Desai,Male,45,karan.desai43@gmail.com,+91-7111506668,M.Sc,IIT Kharagpur,Yes,Yes,https://linkedin.com/in/karan-desai-503,12,Paytm,2017-03-10 10:09:01,2023-03-25 14:53:45
+460,Pankaj Malhotra,Male,43,pankaj.malhotra43@gmail.com,+91-7188321417,B.E,IIT Bombay,Yes,No,https://linkedin.com/in/pankaj-malhotra-432,24,None,2022-05-20 04:13:55,2023-02-19 20:18:20
+461,Ravi Kumar,Male,41,ravi.kumar49@gmail.com,+91-7397503555,B.Com,FMS Delhi,No,No,https://linkedin.com/in/ravi-kumar-282,8,None,2020-06-21 02:01:54,2023-08-02 05:24:49
+462,Rohit Mishra,Male,27,rohit.mishra63@gmail.com,+91-8856965264,M.Sc,Delhi University,No,No,https://linkedin.com/in/rohit-mishra-467,22,Amazon,2020-02-14 16:12:31,2024-04-01 12:30:17
+463,Vikram Roy,Male,49,vikram.roy79@gmail.com,+91-7800392193,B.Com,Anna University,No,No,https://linkedin.com/in/vikram-roy-195,2,Ola,2019-10-31 14:43:14,2024-10-25 21:45:09
+464,Alok Pandya,Male,26,alok.pandya60@gmail.com,+91-8878427679,M.Tech,Delhi University,No,No,https://linkedin.com/in/alok-pandya-407,5,Infosys,2023-09-03 09:53:15,2024-06-19 13:18:36
+465,Harsh Kumar,Male,25,harsh.kumar14@gmail.com,+91-9193231853,B.Com,Manipal,No,No,https://linkedin.com/in/harsh-kumar-196,15,None,2022-05-17 08:22:16,2024-08-22 02:49:32
+466,Arjun Basu,Male,29,arjun.basu51@gmail.com,+91-7194384710,M.Tech,IIM Bangalore,Yes,No,https://linkedin.com/in/arjun-basu-997,23,Wipro,2019-07-09 18:46:29,2024-11-17 14:39:51
+467,Suresh Nair,Male,30,suresh.nair11@gmail.com,+91-9594387328,M.Sc,IIM Bangalore,Yes,Yes,https://linkedin.com/in/suresh-nair-544,18,Google,2016-01-24 12:07:00,2023-06-25 20:30:29
+468,Dinesh Dubey,Male,47,dinesh.dubey39@gmail.com,+91-9656434573,B.E,SRM,No,No,https://linkedin.com/in/dinesh-dubey-807,22,None,2023-07-28 12:51:19,2023-03-31 04:08:00
+469,Pooja Gupta,Female,46,pooja.gupta4@gmail.com,+91-7898633785,CA,NIT Trichy,Yes,No,https://linkedin.com/in/pooja-gupta-765,8,Zomato,2023-01-08 17:12:05,2023-11-05 14:09:30
+470,Rahul Agarwal,Male,29,rahul.agarwal95@gmail.com,+91-8912402662,CA,IIM Ahmedabad,Yes,No,https://linkedin.com/in/rahul-agarwal-120,15,Paytm,2018-09-20 06:18:36,2024-02-06 01:21:00
+471,Mahesh Roy,Male,37,mahesh.roy95@gmail.com,+91-9485331230,B.E,SRM,No,No,https://linkedin.com/in/mahesh-roy-137,16,Zomato,2021-06-14 16:37:46,2024-09-18 21:57:52
+472,Karan Patel,Male,40,karan.patel55@gmail.com,+91-9475633552,PhD,IIT Bombay,Yes,Yes,https://linkedin.com/in/karan-patel-374,21,Zomato,2021-04-22 03:31:39,2024-10-23 11:28:44
+473,Rahul Reddy,Male,33,rahul.reddy61@gmail.com,+91-8476813297,CA,NIT Trichy,Yes,No,https://linkedin.com/in/rahul-reddy-619,8,Paytm,2023-09-06 10:58:38,2024-11-03 14:08:56
+474,Ravi Sen,Male,37,ravi.sen61@gmail.com,+91-7695895299,B.E,Anna University,No,No,https://linkedin.com/in/ravi-sen-389,23,None,2016-12-19 21:30:08,2023-06-27 06:10:38
+475,Arjun Dutta,Male,39,arjun.dutta31@gmail.com,+91-7899507630,PGDM,Delhi University,No,Yes,https://linkedin.com/in/arjun-dutta-118,12,Wipro,2020-01-02 21:10:11,2024-05-30 01:51:04
+476,Gaurav Agarwal,Male,43,gaurav.agarwal16@gmail.com,+91-9413691946,B.Sc,NIT Warangal,Yes,No,https://linkedin.com/in/gaurav-agarwal-364,11,None,2019-12-26 01:49:56,2024-07-24 08:57:09
+477,Varun Patel,Male,38,varun.patel97@gmail.com,+91-7476444349,M.Tech,VIT,No,Yes,https://linkedin.com/in/varun-patel-943,18,Google,2021-09-08 03:10:40,2023-05-01 06:58:23
+478,Usha Kapoor,Female,46,usha.kapoor98@gmail.com,+91-9172809426,CA,VIT,No,Yes,https://linkedin.com/in/usha-kapoor-257,21,Flipkart,2019-10-02 04:07:54,2023-07-26 14:26:49
+479,Karan Shah,Male,34,karan.shah65@gmail.com,+91-7735563832,M.Tech,Delhi University,No,No,https://linkedin.com/in/karan-shah-481,23,None,2020-08-26 11:40:42,2023-09-09 04:48:48
+480,Mohit Iyer,Male,28,mohit.iyer53@gmail.com,+91-8757970136,CA,BHU,No,No,https://linkedin.com/in/mohit-iyer-130,15,Infosys,2016-02-10 22:51:33,2023-03-13 02:21:20
+481,Ankit Reddy,Male,37,ankit.reddy51@gmail.com,+91-7159316365,MBA,IIT Delhi,Yes,Yes,https://linkedin.com/in/ankit-reddy-746,23,None,2023-05-28 16:18:26,2024-02-16 21:44:35
+482,Ravi Banerjee,Male,35,ravi.banerjee36@gmail.com,+91-9266848252,B.E,IIT Bombay,Yes,No,https://linkedin.com/in/ravi-banerjee-817,13,BYJU'S,2023-03-22 06:56:34,2024-10-01 19:41:28
+483,Ashish Ghosh,Male,48,ashish.ghosh39@gmail.com,+91-7361983810,B.Tech,NIT Trichy,Yes,No,https://linkedin.com/in/ashish-ghosh-499,24,None,2017-05-31 16:34:18,2023-08-07 02:32:35
+484,Alok Chatterjee,Male,48,alok.chatterjee3@gmail.com,+91-7119791902,PGDM,IIM Bangalore,Yes,No,https://linkedin.com/in/alok-chatterjee-347,25,Wipro,2020-09-27 16:07:46,2023-03-03 11:16:40
+485,Arjun Patel,Male,48,arjun.patel58@gmail.com,+91-8279733229,B.E,IIT Kharagpur,Yes,Yes,https://linkedin.com/in/arjun-patel-564,11,TCS,2022-07-10 18:45:57,2024-10-04 21:34:54
+486,Neha Khanna,Female,33,neha.khanna87@gmail.com,+91-7601172960,B.Com,XLRI,No,No,https://linkedin.com/in/neha-khanna-207,11,Ola,2022-07-13 06:52:49,2024-01-05 14:06:09
+487,Sidharth Dutta,Male,26,sidharth.dutta8@gmail.com,+91-8824874609,MBA,IIT Madras,Yes,No,https://linkedin.com/in/sidharth-dutta-319,15,Amazon,2020-02-21 21:33:25,2024-08-25 17:33:49
+488,Dinesh Chopra,Male,42,dinesh.chopra82@gmail.com,+91-8818584477,CA,SRM,No,No,https://linkedin.com/in/dinesh-chopra-849,14,Infosys,2017-08-14 16:08:31,2024-12-29 14:08:45
+489,Varun Rao,Male,38,varun.rao5@gmail.com,+91-7673621345,PGDM,SRM,No,No,https://linkedin.com/in/varun-rao-221,20,Zomato,2017-03-27 03:23:36,2023-10-24 01:33:09
+490,Manish Khanna,Male,35,manish.khanna38@gmail.com,+91-9087034313,B.Tech,Delhi University,No,No,https://linkedin.com/in/manish-khanna-245,19,Zomato,2016-07-18 09:56:18,2023-08-09 05:52:47
+491,Rahul Agarwal,Male,41,rahul.agarwal9@gmail.com,+91-7191909783,B.Com,Anna University,No,No,https://linkedin.com/in/rahul-agarwal-686,10,Paytm,2021-01-26 10:50:24,2024-05-01 23:53:38
+492,Kiran Verma,Female,40,kiran.verma98@gmail.com,+91-8932432000,CA,VIT,No,No,https://linkedin.com/in/kiran-verma-987,24,Flipkart,2016-12-31 19:42:39,2024-02-24 12:14:57
+493,Suresh Modi,Male,25,suresh.modi95@gmail.com,+91-8191316960,M.Tech,VIT,No,No,https://linkedin.com/in/suresh-modi-824,1,Paytm,2023-01-24 22:19:35,2024-10-22 03:41:35
+494,Aditya Yadav,Male,41,aditya.yadav97@gmail.com,+91-7227093741,B.E,XLRI,No,No,https://linkedin.com/in/aditya-yadav-868,16,Ola,2016-03-17 03:42:59,2024-06-28 05:01:17
+495,Meera Tiwari,Female,38,meera.tiwari69@gmail.com,+91-9606421620,PhD,IIT Madras,Yes,No,https://linkedin.com/in/meera-tiwari-703,2,BYJU'S,2016-04-05 10:27:11,2024-02-29 00:55:33
+496,Deepak Chopra,Male,26,deepak.chopra13@gmail.com,+91-9326924276,MBA,IIT Kharagpur,Yes,No,https://linkedin.com/in/deepak-chopra-247,6,Wipro,2017-01-02 04:19:26,2024-11-25 05:03:39
+497,Sanjay Gupta,Male,46,sanjay.gupta39@gmail.com,+91-8674778305,M.Tech,IIT Delhi,Yes,No,https://linkedin.com/in/sanjay-gupta-245,14,Flipkart,2018-11-22 12:52:57,2023-05-04 01:12:15
+498,Smita Trivedi,Female,48,smita.trivedi50@gmail.com,+91-7494270721,M.Sc,Manipal,No,Yes,https://linkedin.com/in/smita-trivedi-425,15,Ola,2020-07-25 02:30:01,2024-02-22 20:14:58
+499,Nikhil Bhatt,Male,42,nikhil.bhatt32@gmail.com,+91-9382450355,MBA,IIT Kharagpur,Yes,No,https://linkedin.com/in/nikhil-bhatt-681,14,BYJU'S,2016-12-09 20:32:13,2023-05-26 11:34:10
+500,Sunita Roy,Female,41,sunita.roy6@gmail.com,+91-7004299516,CA,VIT,No,No,https://linkedin.com/in/sunita-roy-768,6,Google,2016-09-03 15:17:38,2023-09-14 21:24:22
+501,Geeta Trivedi,Female,33,geeta.trivedi21@gmail.com,+91-9293896030,B.E,IIT Delhi,Yes,Yes,https://linkedin.com/in/geeta-trivedi-407,3,Zomato,2023-10-31 03:53:08,2024-07-23 08:56:27
+502,Asha Trivedi,Female,49,asha.trivedi88@gmail.com,+91-8471607210,M.Sc,Pune University,No,No,https://linkedin.com/in/asha-trivedi-379,8,None,2019-08-10 10:13:29,2024-09-05 10:01:58
+503,Anjali Sharma,Female,43,anjali.sharma1@gmail.com,+91-7041139816,MBA,SRM,No,No,https://linkedin.com/in/anjali-sharma-669,23,None,2021-06-25 12:34:05,2024-10-26 20:04:34
+504,Ashish Mukherjee,Male,45,ashish.mukherjee46@gmail.com,+91-8616524533,B.E,IIT Kharagpur,Yes,No,https://linkedin.com/in/ashish-mukherjee-496,6,None,2023-10-26 00:07:29,2024-01-15 06:28:00
+505,Usha Gupta,Female,48,usha.gupta88@gmail.com,+91-8536829594,B.Sc,BITS Pilani,Yes,Yes,https://linkedin.com/in/usha-gupta-935,20,None,2019-05-26 22:14:14,2024-05-20 11:02:17
+506,Ashish Dubey,Male,30,ashish.dubey26@gmail.com,+91-9742062207,B.Com,IIT Bombay,Yes,Yes,https://linkedin.com/in/ashish-dubey-990,9,Paytm,2021-08-11 15:10:35,2023-07-18 21:47:36
+507,Ananya Tiwari,Female,28,ananya.tiwari17@gmail.com,+91-8115078625,B.E,IIT Madras,Yes,No,https://linkedin.com/in/ananya-tiwari-635,24,None,2019-01-28 06:54:43,2023-01-24 22:43:34
+508,Kunal Bhatt,Male,52,kunal.bhatt1@gmail.com,+91-8834442705,B.Tech,VIT,No,No,https://linkedin.com/in/kunal-bhatt-542,14,Wipro,2017-05-13 21:33:29,2024-05-22 11:33:48
+509,Ashish Iyer,Male,25,ashish.iyer54@gmail.com,+91-9286684757,CA,BITS Pilani,Yes,No,https://linkedin.com/in/ashish-iyer-105,13,TCS,2019-10-02 02:56:36,2023-01-26 23:14:44
+510,Vikram Pillai,Male,30,vikram.pillai43@gmail.com,+91-8334901018,M.Tech,IIM Bangalore,Yes,Yes,https://linkedin.com/in/vikram-pillai-128,16,Zomato,2016-04-08 18:51:40,2023-12-09 08:15:06
+511,Karan Chatterjee,Male,50,karan.chatterjee43@gmail.com,+91-9231987320,B.Sc,IIT Delhi,Yes,Yes,https://linkedin.com/in/karan-chatterjee-894,20,Paytm,2020-12-01 03:40:28,2024-08-15 03:05:03
+512,Deepak Banerjee,Male,52,deepak.banerjee17@gmail.com,+91-7266297557,CA,IIT Madras,Yes,Yes,https://linkedin.com/in/deepak-banerjee-408,20,None,2020-11-03 02:06:43,2023-02-27 17:03:18
+513,Deepak Joshi,Male,43,deepak.joshi30@gmail.com,+91-9575158682,B.E,BHU,No,Yes,https://linkedin.com/in/deepak-joshi-564,13,BYJU'S,2020-10-19 19:39:06,2023-12-14 20:43:50
+514,Pankaj Pandya,Male,34,pankaj.pandya25@gmail.com,+91-7463884781,M.Tech,XLRI,No,Yes,https://linkedin.com/in/pankaj-pandya-709,23,Amazon,2022-08-25 06:57:36,2023-05-10 20:32:16
+515,Gaurav Shah,Male,47,gaurav.shah57@gmail.com,+91-7798534963,B.Sc,FMS Delhi,No,No,https://linkedin.com/in/gaurav-shah-916,2,Google,2017-06-06 09:37:27,2024-06-09 20:48:22
+516,Shiv Modi,Male,48,shiv.modi19@gmail.com,+91-9016589212,M.Sc,IIM Ahmedabad,Yes,No,https://linkedin.com/in/shiv-modi-398,12,Google,2021-10-21 18:42:43,2023-05-29 01:15:32
+517,Gaurav Bose,Male,30,gaurav.bose82@gmail.com,+91-7864410427,M.Tech,NIT Trichy,Yes,No,https://linkedin.com/in/gaurav-bose-293,22,BYJU'S,2023-10-16 22:29:38,2024-12-10 10:54:37
+518,Pradeep Khanna,Male,37,pradeep.khanna21@gmail.com,+91-7450318292,CA,Pune University,No,Yes,https://linkedin.com/in/pradeep-khanna-607,8,Google,2023-03-01 07:44:14,2024-04-22 19:13:15
+519,Ravi Chatterjee,Male,49,ravi.chatterjee27@gmail.com,+91-8719329399,MBA,Jadavpur University,No,Yes,https://linkedin.com/in/ravi-chatterjee-471,1,Amazon,2020-01-05 00:35:07,2023-05-26 09:28:12
+520,Amit Gupta,Male,30,amit.gupta37@gmail.com,+91-7747954010,B.Sc,NIT Trichy,Yes,No,https://linkedin.com/in/amit-gupta-836,6,Flipkart,2022-03-21 07:11:12,2023-01-23 05:53:16
+521,Rahul Verma,Male,36,rahul.verma44@gmail.com,+91-7902962666,M.Sc,IIT Kharagpur,Yes,No,https://linkedin.com/in/rahul-verma-345,12,None,2020-03-05 21:10:33,2024-09-30 13:56:45
+522,Arjun Mishra,Male,52,arjun.mishra25@gmail.com,+91-7823264888,PGDM,IIM Ahmedabad,Yes,No,https://linkedin.com/in/arjun-mishra-811,12,Flipkart,2022-09-21 13:40:15,2023-02-17 19:37:12
+523,Mohit Mishra,Male,34,mohit.mishra7@gmail.com,+91-9703506410,M.Sc,NIT Warangal,Yes,No,https://linkedin.com/in/mohit-mishra-971,17,Paytm,2021-06-25 06:46:05,2024-04-26 21:39:04
+524,Lakshmi Sen,Female,48,lakshmi.sen48@gmail.com,+91-9141418189,PGDM,Manipal,No,No,https://linkedin.com/in/lakshmi-sen-283,11,None,2020-03-11 16:44:30,2024-05-21 15:17:37
+525,Mahesh Tiwari,Male,44,mahesh.tiwari27@gmail.com,+91-7942858177,B.Sc,IIT Delhi,Yes,No,https://linkedin.com/in/mahesh-tiwari-983,8,Zomato,2018-06-14 09:27:56,2024-01-22 18:10:59
+526,Nikhil Bhatt,Male,26,nikhil.bhatt97@gmail.com,+91-7360898168,M.Sc,IIM Ahmedabad,Yes,No,https://linkedin.com/in/nikhil-bhatt-631,12,TCS,2022-07-19 01:29:32,2024-09-28 10:27:28
+527,Gaurav Dutta,Male,35,gaurav.dutta41@gmail.com,+91-8172609694,B.Com,SRM,No,Yes,https://linkedin.com/in/gaurav-dutta-283,15,TCS,2018-12-23 20:04:22,2023-03-26 09:53:32
+528,Mohit Malhotra,Male,31,mohit.malhotra16@gmail.com,+91-7306440248,PhD,IIT Kharagpur,Yes,Yes,https://linkedin.com/in/mohit-malhotra-659,7,Flipkart,2018-03-16 21:21:16,2023-11-06 23:52:49
+529,Aditya Dubey,Male,28,aditya.dubey34@gmail.com,+91-7036652731,M.Sc,Amity,No,No,https://linkedin.com/in/aditya-dubey-942,12,None,2020-07-12 12:52:37,2024-11-02 00:30:41
+530,Rekha Ghosh,Female,31,rekha.ghosh93@gmail.com,+91-7901406355,CA,NIT Warangal,Yes,No,https://linkedin.com/in/rekha-ghosh-628,19,None,2022-03-13 14:46:52,2024-04-17 10:50:05
+531,Dinesh Menon,Male,37,dinesh.menon27@gmail.com,+91-8884119695,CA,BHU,No,Yes,https://linkedin.com/in/dinesh-menon-483,5,Paytm,2017-06-09 09:47:00,2024-05-26 21:53:22
+532,Karan Dutta,Male,37,karan.dutta98@gmail.com,+91-9965754837,PGDM,Jadavpur University,No,No,https://linkedin.com/in/karan-dutta-433,19,Google,2022-05-13 01:59:08,2023-06-07 10:36:40
+533,Deepak Rao,Male,36,deepak.rao69@gmail.com,+91-8659720707,B.Sc,IIT Madras,Yes,No,https://linkedin.com/in/deepak-rao-211,11,Paytm,2021-01-23 20:57:19,2023-04-06 05:06:43
+534,Sneha Dubey,Female,39,sneha.dubey24@gmail.com,+91-7854693080,M.Tech,IIT Bombay,Yes,No,https://linkedin.com/in/sneha-dubey-390,7,TCS,2019-04-07 21:33:04,2024-04-10 01:23:33
+535,Sanjay Banerjee,Male,51,sanjay.banerjee51@gmail.com,+91-7674462136,M.Tech,BHU,No,No,https://linkedin.com/in/sanjay-banerjee-649,14,BYJU'S,2016-10-08 12:57:55,2023-07-31 04:55:13
+536,Gaurav Shah,Male,29,gaurav.shah74@gmail.com,+91-8332787339,B.E,FMS Delhi,No,No,https://linkedin.com/in/gaurav-shah-614,23,None,2021-02-22 08:12:00,2023-05-27 14:04:52
+537,Pradeep Pillai,Male,40,pradeep.pillai73@gmail.com,+91-9108651239,CA,Pune University,No,No,https://linkedin.com/in/pradeep-pillai-689,2,None,2017-01-08 09:41:56,2024-04-12 11:44:53
+538,Deepak Yadav,Male,50,deepak.yadav54@gmail.com,+91-8070025912,MBA,IIM Bangalore,Yes,No,https://linkedin.com/in/deepak-yadav-568,13,None,2018-01-21 22:36:06,2024-02-07 22:02:15
+539,Ritu Modi,Female,33,ritu.modi90@gmail.com,+91-7933102557,CA,IIT Madras,Yes,No,https://linkedin.com/in/ritu-modi-880,18,Amazon,2020-02-19 02:48:06,2024-05-31 10:26:28
+540,Ritu Rao,Female,40,ritu.rao60@gmail.com,+91-7114752423,M.Tech,IIT Delhi,Yes,No,https://linkedin.com/in/ritu-rao-490,11,None,2020-06-23 06:25:02,2023-01-11 08:07:45
+541,Shreya Basu,Female,39,shreya.basu9@gmail.com,+91-7354543653,PGDM,VIT,No,No,https://linkedin.com/in/shreya-basu-830,15,Infosys,2021-04-12 08:53:10,2023-06-24 00:38:06
+542,Swati Agarwal,Female,41,swati.agarwal22@gmail.com,+91-7333226324,B.Tech,Jadavpur University,No,No,https://linkedin.com/in/swati-agarwal-257,15,Flipkart,2017-12-29 06:45:02,2024-11-22 17:13:28
+543,Sidharth Pandya,Male,44,sidharth.pandya50@gmail.com,+91-9965016547,M.Sc,IIT Kharagpur,Yes,No,https://linkedin.com/in/sidharth-pandya-153,20,Google,2016-07-18 12:49:12,2023-09-13 11:58:15
+544,Ananya Gupta,Female,37,ananya.gupta2@gmail.com,+91-8447904938,B.Sc,IIT Bombay,Yes,Yes,https://linkedin.com/in/ananya-gupta-325,4,None,2023-06-13 05:46:10,2023-02-15 13:32:06
+545,Suresh Bhatt,Male,44,suresh.bhatt80@gmail.com,+91-7889570659,PGDM,NIT Trichy,Yes,No,https://linkedin.com/in/suresh-bhatt-538,4,TCS,2018-05-25 03:22:20,2023-06-27 00:25:41
+546,Rahul Sen,Male,30,rahul.sen29@gmail.com,+91-7283537782,M.Sc,VIT,No,No,https://linkedin.com/in/rahul-sen-144,3,TCS,2020-08-10 09:49:38,2024-05-26 03:45:34
+547,Ritu Joshi,Female,43,ritu.joshi81@gmail.com,+91-9990651739,B.Com,Pune University,No,No,https://linkedin.com/in/ritu-joshi-440,6,None,2023-09-17 10:54:42,2024-05-08 02:21:01
+548,Deepak Trivedi,Male,44,deepak.trivedi65@gmail.com,+91-9523158206,B.Tech,NIT Warangal,Yes,No,https://linkedin.com/in/deepak-trivedi-121,20,None,2017-05-23 09:15:47,2024-03-14 07:39:05
+549,Rajesh Das,Male,39,rajesh.das26@gmail.com,+91-7651420194,B.Com,Delhi University,No,No,https://linkedin.com/in/rajesh-das-757,2,TCS,2022-09-15 14:47:56,2023-12-03 04:17:20
+550,Alok Dutta,Male,44,alok.dutta97@gmail.com,+91-7101762093,B.Sc,Delhi University,No,No,https://linkedin.com/in/alok-dutta-450,8,TCS,2022-01-18 01:58:58,2024-11-11 07:51:43
+551,Asha Sen,Female,40,asha.sen24@gmail.com,+91-8899925557,B.Tech,Pune University,No,Yes,https://linkedin.com/in/asha-sen-990,16,Amazon,2018-02-27 01:40:09,2023-07-29 04:05:11
+552,Meera Trivedi,Female,26,meera.trivedi93@gmail.com,+91-9006068638,M.Sc,BHU,No,No,https://linkedin.com/in/meera-trivedi-838,7,TCS,2020-10-02 05:38:15,2023-11-07 09:36:28
+553,Ritu Shah,Female,26,ritu.shah51@gmail.com,+91-8622284281,MBA,Anna University,No,No,https://linkedin.com/in/ritu-shah-551,14,Ola,2022-11-01 23:27:48,2023-06-09 15:01:48
+554,Gaurav Mehta,Male,48,gaurav.mehta77@gmail.com,+91-9307246477,MBA,Delhi University,No,No,https://linkedin.com/in/gaurav-mehta-363,13,BYJU'S,2019-06-06 14:18:24,2024-07-29 19:30:04
+555,Rajesh Shah,Male,30,rajesh.shah25@gmail.com,+91-7017955333,B.Tech,IIM Ahmedabad,Yes,No,https://linkedin.com/in/rajesh-shah-603,13,Zomato,2020-06-04 23:23:24,2024-05-16 09:41:37
+556,Gaurav Singh,Male,27,gaurav.singh73@gmail.com,+91-7697341120,B.Sc,Jadavpur University,No,No,https://linkedin.com/in/gaurav-singh-361,25,None,2019-11-28 16:45:31,2024-10-12 22:23:44
+557,Mahesh Sen,Male,37,mahesh.sen32@gmail.com,+91-9051815663,B.Tech,NIT Warangal,Yes,No,https://linkedin.com/in/mahesh-sen-746,23,None,2016-04-25 22:42:41,2023-06-01 08:38:29
+558,Ritu Pillai,Female,43,ritu.pillai85@gmail.com,+91-7693325479,B.Tech,XLRI,No,Yes,https://linkedin.com/in/ritu-pillai-889,3,None,2023-12-24 12:25:45,2024-08-23 02:33:58
+559,Sudha Roy,Female,29,sudha.roy33@gmail.com,+91-9971416447,M.Sc,BHU,No,No,https://linkedin.com/in/sudha-roy-700,10,None,2020-08-12 23:55:05,2023-04-22 20:36:49
+560,Sidharth Mishra,Male,32,sidharth.mishra96@gmail.com,+91-8709269083,M.Sc,NIT Trichy,Yes,Yes,https://linkedin.com/in/sidharth-mishra-272,16,Google,2017-01-31 02:49:44,2024-03-03 16:26:41
+561,Ravi Roy,Male,29,ravi.roy48@gmail.com,+91-7800582077,MBA,IIM Bangalore,Yes,No,https://linkedin.com/in/ravi-roy-598,6,Ola,2017-03-27 14:36:52,2023-08-06 05:12:03
+562,Mala Menon,Female,32,mala.menon57@gmail.com,+91-9692246047,B.E,BHU,No,Yes,https://linkedin.com/in/mala-menon-989,21,Infosys,2016-11-22 09:05:24,2023-05-08 08:04:21
+563,Shiv Pillai,Male,39,shiv.pillai87@gmail.com,+91-7432971971,B.Tech,SRM,No,Yes,https://linkedin.com/in/shiv-pillai-372,25,Google,2023-06-18 18:50:02,2023-04-10 06:33:50
+564,Deepak Dubey,Male,40,deepak.dubey63@gmail.com,+91-9032515029,PhD,BITS Pilani,Yes,No,https://linkedin.com/in/deepak-dubey-444,12,None,2019-11-06 10:52:15,2024-01-05 21:25:24
+565,Manish Chatterjee,Male,49,manish.chatterjee1@gmail.com,+91-8962453267,B.Com,IIT Kharagpur,Yes,No,https://linkedin.com/in/manish-chatterjee-126,20,Amazon,2021-12-13 08:44:48,2023-09-12 11:28:39
+566,Alok Dutta,Male,45,alok.dutta1@gmail.com,+91-9740503763,PhD,NIT Trichy,Yes,Yes,https://linkedin.com/in/alok-dutta-748,12,Google,2019-08-26 21:28:14,2024-09-13 15:25:47
+567,Manish Roy,Male,39,manish.roy94@gmail.com,+91-8652954868,M.Sc,IIT Kharagpur,Yes,No,https://linkedin.com/in/manish-roy-829,5,Ola,2022-05-31 22:32:02,2023-05-11 15:50:05
+568,Sidharth Bhatt,Male,51,sidharth.bhatt22@gmail.com,+91-8916786778,M.Tech,VIT,No,No,https://linkedin.com/in/sidharth-bhatt-778,18,TCS,2018-09-23 06:10:48,2024-11-06 22:05:06
+569,Varun Gupta,Male,29,varun.gupta50@gmail.com,+91-8204127801,B.Sc,Pune University,No,No,https://linkedin.com/in/varun-gupta-781,16,None,2017-05-19 21:08:59,2024-07-01 20:46:31
+570,Mohit Chatterjee,Male,51,mohit.chatterjee74@gmail.com,+91-9579898495,M.Tech,NIT Warangal,Yes,No,https://linkedin.com/in/mohit-chatterjee-486,23,None,2020-04-12 20:41:50,2024-07-29 13:51:14
+571,Ritu Agarwal,Female,33,ritu.agarwal15@gmail.com,+91-7382850920,PhD,IIT Madras,Yes,No,https://linkedin.com/in/ritu-agarwal-862,4,Paytm,2020-02-15 04:54:20,2024-01-25 18:47:00
+572,Amit Tiwari,Male,41,amit.tiwari50@gmail.com,+91-8819771189,PhD,NIT Trichy,Yes,No,https://linkedin.com/in/amit-tiwari-916,22,None,2017-06-01 16:42:38,2024-08-27 07:06:25
+573,Harsh Basu,Male,34,harsh.basu38@gmail.com,+91-7940186551,CA,IIM Ahmedabad,Yes,No,https://linkedin.com/in/harsh-basu-250,20,Wipro,2017-08-20 23:42:54,2024-12-20 01:38:20
+574,Alok Agarwal,Male,32,alok.agarwal62@gmail.com,+91-9710455360,B.Sc,XLRI,No,No,https://linkedin.com/in/alok-agarwal-398,23,Zomato,2016-08-28 10:09:52,2023-08-04 23:59:51
+575,Sita Patel,Female,51,sita.patel63@gmail.com,+91-8682801964,M.Sc,IIM Bangalore,Yes,No,https://linkedin.com/in/sita-patel-122,18,Zomato,2019-10-14 13:43:30,2023-12-23 12:25:04
+576,Rohit Menon,Male,46,rohit.menon51@gmail.com,+91-7417984375,MBA,Amity,No,No,https://linkedin.com/in/rohit-menon-870,19,None,2016-08-09 22:19:29,2024-11-01 05:36:08
+577,Varun Shah,Male,33,varun.shah27@gmail.com,+91-7936889011,B.Sc,IIM Ahmedabad,Yes,Yes,https://linkedin.com/in/varun-shah-470,24,Paytm,2017-02-21 21:50:54,2023-06-01 12:27:43
+578,Vandana Patel,Female,27,vandana.patel61@gmail.com,+91-7771517340,B.Tech,Anna University,No,Yes,https://linkedin.com/in/vandana-patel-627,21,Flipkart,2022-08-27 13:09:40,2024-02-18 07:02:07
+579,Ankita Desai,Female,33,ankita.desai23@gmail.com,+91-9803741606,B.Com,FMS Delhi,No,Yes,https://linkedin.com/in/ankita-desai-896,15,None,2020-04-14 08:40:41,2024-03-31 11:00:07
+580,Vikram Agarwal,Male,39,vikram.agarwal29@gmail.com,+91-7098899199,B.E,Manipal,No,No,https://linkedin.com/in/vikram-agarwal-380,23,None,2017-01-22 18:11:24,2024-05-10 20:44:27
+581,Shiv Verma,Male,27,shiv.verma9@gmail.com,+91-9308592457,MBA,Pune University,No,No,https://linkedin.com/in/shiv-verma-932,23,Google,2020-05-31 17:52:34,2024-06-26 15:04:33
+582,Ankit Rao,Male,45,ankit.rao24@gmail.com,+91-9573126110,MBA,IIT Kharagpur,Yes,Yes,https://linkedin.com/in/ankit-rao-668,15,None,2019-07-11 03:02:08,2024-08-11 06:41:10
+583,Harsh Chopra,Male,51,harsh.chopra11@gmail.com,+91-7535655939,PGDM,IIT Delhi,Yes,No,https://linkedin.com/in/harsh-chopra-472,18,Infosys,2020-09-28 21:00:15,2023-11-04 01:33:57
+584,Kunal Modi,Male,38,kunal.modi74@gmail.com,+91-9106435883,PhD,IIM Ahmedabad,Yes,No,https://linkedin.com/in/kunal-modi-720,18,Ola,2018-05-09 22:06:42,2023-02-15 07:02:12
+585,Swati Rao,Female,28,swati.rao71@gmail.com,+91-7927884600,B.E,FMS Delhi,No,No,https://linkedin.com/in/swati-rao-384,5,None,2022-12-23 13:04:35,2023-09-19 08:24:41
+586,Ankita Basu,Female,26,ankita.basu87@gmail.com,+91-8826835815,MBA,BITS Pilani,Yes,No,https://linkedin.com/in/ankita-basu-172,21,None,2019-01-08 20:44:41,2023-07-17 22:23:36
+587,Shweta Mishra,Female,34,shweta.mishra49@gmail.com,+91-7111281996,B.E,BHU,No,No,https://linkedin.com/in/shweta-mishra-179,9,Amazon,2021-12-16 03:43:35,2024-02-21 02:21:40
+588,Manish Chatterjee,Male,48,manish.chatterjee19@gmail.com,+91-7969655322,M.Sc,BITS Pilani,Yes,Yes,https://linkedin.com/in/manish-chatterjee-200,13,TCS,2020-03-30 03:50:59,2023-05-07 05:33:46
+589,Shiv Desai,Male,27,shiv.desai45@gmail.com,+91-9457400192,M.Sc,Manipal,No,No,https://linkedin.com/in/shiv-desai-722,4,Google,2017-11-30 10:48:24,2023-07-05 11:51:47
+590,Vivek Tiwari,Male,28,vivek.tiwari2@gmail.com,+91-9949175145,PGDM,BITS Pilani,Yes,No,https://linkedin.com/in/vivek-tiwari-773,5,Infosys,2020-03-31 18:47:17,2023-02-24 23:40:23
+591,Radha Dubey,Female,37,radha.dubey24@gmail.com,+91-8885318861,PhD,VIT,No,No,https://linkedin.com/in/radha-dubey-614,10,Wipro,2020-10-18 16:45:56,2023-08-23 09:40:54
+592,Rohit Dutta,Male,48,rohit.dutta12@gmail.com,+91-9725915610,M.Tech,Pune University,No,Yes,https://linkedin.com/in/rohit-dutta-847,8,Amazon,2017-11-07 18:03:05,2023-10-20 17:59:31
+593,Gaurav Trivedi,Male,47,gaurav.trivedi62@gmail.com,+91-9138057075,PGDM,IIM Ahmedabad,Yes,Yes,https://linkedin.com/in/gaurav-trivedi-515,1,Paytm,2018-02-17 23:00:45,2024-03-11 22:34:47
+594,Karan Pandya,Male,45,karan.pandya6@gmail.com,+91-9608649529,CA,FMS Delhi,No,No,https://linkedin.com/in/karan-pandya-790,25,Ola,2018-07-10 05:04:23,2023-05-17 16:22:03
+595,Vivek Sen,Male,29,vivek.sen15@gmail.com,+91-8451521111,B.Sc,Anna University,No,Yes,https://linkedin.com/in/vivek-sen-397,10,BYJU'S,2019-04-17 08:13:00,2024-10-08 18:25:13
+596,Tarun Trivedi,Male,50,tarun.trivedi60@gmail.com,+91-9653210404,CA,IIT Delhi,Yes,Yes,https://linkedin.com/in/tarun-trivedi-464,1,Paytm,2021-02-28 10:19:22,2023-04-20 00:22:56
+597,Ankita Bose,Female,24,ankita.bose56@gmail.com,+91-9113322013,B.Sc,IIT Kharagpur,Yes,Yes,https://linkedin.com/in/ankita-bose-641,17,Infosys,2020-08-09 03:58:31,2023-01-08 04:49:42
+598,Karan Shah,Male,36,karan.shah39@gmail.com,+91-8565497109,B.Com,Anna University,No,No,https://linkedin.com/in/karan-shah-649,9,Amazon,2020-12-01 21:53:28,2023-06-15 04:22:47
+599,Rahul Bose,Male,52,rahul.bose15@gmail.com,+91-7814184372,M.Sc,NIT Trichy,Yes,Yes,https://linkedin.com/in/rahul-bose-236,13,Zomato,2019-09-18 01:10:42,2023-07-23 15:42:17
+600,Gaurav Desai,Male,41,gaurav.desai88@gmail.com,+91-7547324831,PhD,SRM,No,No,https://linkedin.com/in/gaurav-desai-613,24,None,2020-05-11 04:07:06,2023-01-22 04:09:22

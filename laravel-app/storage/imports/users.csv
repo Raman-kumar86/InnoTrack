@@ -1,0 +1,41 @@
+id,name,email,role,state_id,department,is_active,last_login_at,email_verified_at,created_at,updated_at
+1,Shreya Patel,shreya.patel1@startupindia.gov.in,viewer,,Ministry of Finance,1,2024-06-09 02:43:31,2024-08-14 02:32:35,2023-07-25 08:38:16,2023-09-23 22:11:13
+2,Sunita Agarwal,sunita.agarwal2@startupindia.gov.in,viewer,,State Government,1,2024-11-29 21:30:15,2022-07-18 19:06:45,2023-06-25 11:48:26,2024-06-22 07:11:25
+3,Shreya Sharma,shreya.sharma3@startupindia.gov.in,state_officer,12,NASSCOM,0,2024-08-03 06:55:18,2024-11-25 12:21:16,2023-08-06 22:54:50,2023-05-15 04:13:57
+4,Priya Patel,priya.patel4@startupindia.gov.in,super_admin,,State Government,1,2024-10-07 17:31:02,2024-01-06 13:31:27,2023-11-20 01:10:51,2023-01-20 06:16:28
+5,Ananya Patel,ananya.patel5@startupindia.gov.in,state_officer,5,Ministry of Finance,0,2024-10-07 01:32:56,2022-06-17 00:35:35,2023-11-01 14:58:45,2023-03-04 06:19:17
+6,Kavya Agarwal,kavya.agarwal6@startupindia.gov.in,incubator_manager,,NASSCOM,0,2024-04-09 16:44:14,2023-08-18 11:12:25,2022-10-27 07:20:37,2024-02-19 17:46:20
+7,Rohit Agarwal,rohit.agarwal7@startupindia.gov.in,viewer,,Startup India Cell,1,2024-06-27 01:20:10,2024-03-27 16:26:26,2023-09-24 12:23:26,2023-10-03 00:25:00
+8,Rajesh Nair,rajesh.nair8@startupindia.gov.in,state_officer,8,NASSCOM,1,2024-01-23 23:01:40,2024-06-07 20:14:39,2021-10-11 08:38:17,2024-07-17 22:17:03
+9,Meera Gupta,meera.gupta9@startupindia.gov.in,state_officer,8,Startup India Cell,1,2024-08-30 21:51:55,2024-08-15 08:10:35,2022-07-03 05:50:33,2023-11-29 02:28:40
+10,Shreya Verma,shreya.verma10@startupindia.gov.in,analyst,,State Government,1,2024-07-28 18:44:07,2022-06-19 12:21:59,2022-06-17 13:15:24,2024-06-09 23:03:22
+11,Ananya Kumar,ananya.kumar11@startupindia.gov.in,analyst,,State Government,1,2024-08-12 01:24:41,2023-08-13 18:23:09,2023-10-14 12:05:24,2023-12-25 11:15:08
+12,Ananya Mehta,ananya.mehta12@startupindia.gov.in,analyst,,NASSCOM,1,2024-02-06 18:43:58,2024-08-17 13:08:06,2021-09-25 12:26:57,2023-09-03 10:00:20
+13,Shreya Sharma,shreya.sharma13@startupindia.gov.in,analyst,,NASSCOM,0,2024-07-28 13:40:13,2023-09-05 05:35:51,2022-04-06 06:08:13,2024-11-26 21:32:15
+14,Divya Mehta,divya.mehta14@startupindia.gov.in,state_officer,7,NASSCOM,1,2024-02-14 18:05:52,2024-11-07 21:09:55,2021-01-11 23:25:00,2023-10-31 11:19:52
+15,Rajesh Nair,rajesh.nair15@startupindia.gov.in,analyst,,Ministry of Finance,1,2024-11-29 22:53:03,2022-05-14 02:13:18,2021-12-17 13:23:46,2023-12-07 02:08:34
+16,Gaurav Agarwal,gaurav.agarwal16@startupindia.gov.in,viewer,,State Government,1,2024-11-24 18:58:21,2024-09-04 03:19:51,2023-03-30 07:38:30,2023-01-29 19:00:12
+17,Arjun Verma,arjun.verma17@startupindia.gov.in,viewer,,Startup India Cell,0,2024-01-28 19:25:21,2022-03-01 02:29:30,2021-11-05 15:15:13,2024-06-24 22:13:10
+18,Karan Joshi,karan.joshi18@startupindia.gov.in,incubator_manager,,DPIIT,1,2024-05-04 03:33:49,2023-05-20 07:24:22,2022-07-22 04:54:28,2024-06-05 07:35:05
+19,Pooja Kumar,pooja.kumar19@startupindia.gov.in,analyst,,NASSCOM,0,2024-02-26 08:06:35,2022-04-23 02:15:31,2022-09-12 05:23:59,2024-07-02 15:05:06
+20,Pooja Joshi,pooja.joshi20@startupindia.gov.in,state_officer,5,Ministry of Finance,0,2024-07-06 09:06:03,2023-10-13 19:28:20,2023-04-19 16:21:45,2023-11-01 04:01:26
+21,Rohit Joshi,rohit.joshi21@startupindia.gov.in,viewer,,State Government,1,2024-05-16 07:19:32,2023-10-23 08:09:01,2023-05-22 00:51:36,2024-05-15 16:16:44
+22,Manish Patel,manish.patel22@startupindia.gov.in,incubator_manager,,Startup India Cell,1,2024-12-19 09:10:42,2024-11-21 02:05:08,2022-01-20 20:26:10,2024-08-20 22:13:34
+23,Vikram Agarwal,vikram.agarwal23@startupindia.gov.in,incubator_manager,,NASSCOM,0,2024-04-13 03:14:20,2022-01-28 07:22:30,2022-06-13 07:15:59,2024-08-15 22:21:56
+24,Rajesh Patel,rajesh.patel24@startupindia.gov.in,viewer,,Startup India Cell,0,2024-04-25 00:16:56,2022-02-25 14:18:06,2023-10-29 16:32:33,2024-02-10 12:15:06
+25,Manish Patel,manish.patel25@startupindia.gov.in,analyst,,NASSCOM,1,2024-05-04 21:51:43,2022-04-17 07:18:55,2022-07-09 12:29:49,2023-02-12 04:51:55
+26,Shreya Mehta,shreya.mehta26@startupindia.gov.in,incubator_manager,,NASSCOM,1,2024-05-14 17:03:12,2024-12-31 06:18:52,2022-01-23 23:00:27,2024-09-25 00:50:15
+27,Arjun Verma,arjun.verma27@startupindia.gov.in,analyst,,NASSCOM,0,2024-04-04 01:39:00,2024-06-07 18:07:09,2021-12-14 03:35:39,2024-06-21 00:13:42
+28,Vikram Mehta,vikram.mehta28@startupindia.gov.in,state_officer,1,DPIIT,1,2024-09-17 17:03:35,2024-04-16 05:38:41,2023-02-12 20:26:10,2024-09-13 04:12:07
+29,Karan Gupta,karan.gupta29@startupindia.gov.in,incubator_manager,,NASSCOM,0,2024-08-14 11:23:22,2023-03-31 17:12:30,2022-03-02 23:57:20,2024-05-03 19:48:46
+30,Ankita Agarwal,ankita.agarwal30@startupindia.gov.in,analyst,,State Government,0,2024-09-30 22:39:56,2023-05-05 19:06:35,2022-12-01 04:07:57,2024-12-11 08:55:29
+31,Karan Verma,karan.verma31@startupindia.gov.in,incubator_manager,,Startup India Cell,0,2024-10-28 06:35:13,2022-03-15 07:57:51,2023-01-26 23:52:16,2024-04-10 23:09:33
+32,Karan Verma,karan.verma32@startupindia.gov.in,incubator_manager,,Ministry of Finance,1,2024-03-04 08:47:21,2024-11-18 11:24:07,2023-09-20 16:01:52,2023-10-28 17:47:06
+33,Manish Nair,manish.nair33@startupindia.gov.in,incubator_manager,,Ministry of Finance,1,2024-02-19 16:48:56,2022-06-14 17:05:54,2022-06-05 01:29:41,2023-05-20 18:17:35
+34,Neha Patel,neha.patel34@startupindia.gov.in,state_officer,3,DPIIT,1,2024-09-07 21:01:56,2024-01-08 21:56:51,2023-09-30 07:31:30,2023-09-13 06:36:48
+35,Manish Joshi,manish.joshi35@startupindia.gov.in,state_officer,2,Startup India Cell,0,2024-02-06 18:33:18,2023-05-16 23:49:44,2022-01-04 05:54:01,2023-07-23 05:58:23
+36,Kavya Kumar,kavya.kumar36@startupindia.gov.in,super_admin,,Ministry of Finance,0,2024-03-25 22:31:45,2024-08-24 13:47:15,2021-07-23 03:43:20,2023-03-06 07:26:51
+37,Rohit Verma,rohit.verma37@startupindia.gov.in,state_officer,8,DPIIT,0,2024-08-30 19:48:05,2023-03-04 07:35:16,2022-04-12 22:18:46,2024-02-09 07:42:04
+38,Manish Kumar,manish.kumar38@startupindia.gov.in,analyst,,Ministry of Finance,1,2024-01-17 12:43:57,2022-10-28 19:42:13,2023-07-04 16:37:21,2024-12-03 09:03:53
+39,Sanjay Joshi,sanjay.joshi39@startupindia.gov.in,viewer,,NASSCOM,1,2024-03-28 01:32:52,2022-09-28 17:44:19,2021-08-02 16:40:35,2024-08-08 08:56:26
+40,Karan Verma,karan.verma40@startupindia.gov.in,incubator_manager,,NASSCOM,1,2024-04-15 12:41:33,2024-05-12 08:52:40,2022-01-26 13:35:07,2023-05-31 16:04:47

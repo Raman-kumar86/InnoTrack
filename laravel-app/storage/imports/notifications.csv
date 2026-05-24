@@ -1,0 +1,201 @@
+id,user_id,startup_id,notification_type,title,message,is_read,priority,created_at,updated_at
+1,1,248,dpiit_approval,Dpiit Approval,DPIIT recognition approved for CartKing Labs,0,low,2024-11-28 23:48:05,2024-06-17 13:11:31
+2,1,37,incubator_assignment,Incubator Assignment,Startup assigned to C-CAMP incubator,0,high,2024-11-30 20:38:10,2024-07-15 08:55:30
+3,1,333,milestone_achieved,Milestone Achieved,LastMile Pro has crossed ₹311 Cr ARR milestone,0,low,2023-03-08 16:21:01,2024-08-18 20:31:12
+4,1,318,funding_update,Funding Update,New funding round of ₹192 Cr announced,1,medium,2024-04-04 20:07:16,2024-04-19 20:59:51
+5,1,290,milestone_achieved,Milestone Achieved,MLStudio Pro has crossed ₹380 Cr ARR milestone,0,high,2024-11-18 02:51:08,2024-01-30 09:24:19
+6,1,151,monthly_report,Monthly Report,Monthly performance report for Aug 2024 is ready,0,low,2024-11-22 19:31:56,2024-06-04 13:25:39
+7,1,156,incubator_assignment,Incubator Assignment,Startup assigned to SINE IIT Bombay incubator,0,medium,2024-12-05 14:20:10,2024-01-02 14:57:11
+8,1,285,monthly_report,Monthly Report,Monthly performance report for Apr 2024 is ready,1,low,2023-09-02 08:12:14,2024-11-22 17:05:12
+9,1,6,startup_verification,Startup Verification,Startup TaxiApp Solutions has been verified,0,medium,2023-05-31 12:21:01,2024-08-06 09:54:51
+10,1,110,funding_update,Funding Update,New funding round of ₹457 Cr announced,0,high,2024-02-19 18:28:10,2024-03-21 11:43:29
+11,1,126,startup_verification,Startup Verification,Startup SwiftLogix Tech has been verified,0,medium,2023-07-08 12:49:51,2024-06-05 04:31:11
+12,1,33,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,medium,2024-04-17 15:05:25,2024-06-16 06:22:17
+13,1,410,incubator_assignment,Incubator Assignment,Startup assigned to SINE IIT Bombay incubator,1,medium,2024-06-19 00:20:58,2024-09-05 02:56:32
+14,1,476,dpiit_approval,Dpiit Approval,DPIIT recognition approved for PlatformX Ventures,0,medium,2023-02-05 19:30:25,2024-04-08 05:39:46
+15,1,107,startup_verification,Startup Verification,Startup PharmaBio Hub has been verified,0,low,2023-10-22 04:47:14,2024-12-28 22:20:50
+16,1,151,monthly_report,Monthly Report,Monthly performance report for Mar 2024 is ready,0,high,2024-12-06 12:15:08,2024-09-21 06:06:27
+17,1,491,startup_verification,Startup Verification,Startup EcoBalance Tech has been verified,1,low,2024-04-29 00:51:32,2024-07-28 21:52:41
+18,1,474,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,1,high,2023-08-13 13:03:32,2024-01-22 12:02:35
+19,1,418,incubator_assignment,Incubator Assignment,Startup assigned to NSRCEL IIM Bangalore incubator,0,high,2024-11-24 04:51:31,2024-05-12 09:33:55
+20,1,196,dpiit_approval,Dpiit Approval,DPIIT recognition approved for LastMile India,0,high,2023-11-09 16:54:45,2024-05-29 05:26:11
+21,1,369,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,1,medium,2024-01-07 12:22:30,2024-08-07 03:01:35
+22,1,267,startup_verification,Startup Verification,Startup FireWall Tech has been verified,0,high,2023-02-21 19:00:24,2024-11-05 11:20:16
+23,1,337,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,low,2023-11-30 05:26:04,2024-06-11 18:35:47
+24,1,196,startup_verification,Startup Verification,Startup LastMile India has been verified,0,high,2024-03-12 04:21:02,2024-08-07 12:35:02
+25,1,324,incubator_assignment,Incubator Assignment,Startup assigned to 91Springboard incubator,0,medium,2023-05-08 23:57:24,2024-04-27 10:41:13
+26,1,99,document_submitted,Document Submitted,Document submitted by AppSuite awaiting review,0,low,2024-09-14 01:01:00,2024-12-19 08:31:26
+27,1,493,milestone_achieved,Milestone Achieved,WealthApp Labs has crossed ₹315 Cr ARR milestone,1,low,2024-03-19 16:01:34,2024-08-25 07:02:59
+28,1,294,funding_update,Funding Update,New funding round of ₹322 Cr announced,0,medium,2023-07-13 03:16:21,2024-05-18 20:26:58
+29,1,186,dpiit_approval,Dpiit Approval,DPIIT recognition approved for DocAI Pro,0,medium,2023-04-15 18:41:25,2024-09-11 10:31:31
+30,1,42,milestone_achieved,Milestone Achieved,FoodHub Labs has crossed ₹224 Cr ARR milestone,0,medium,2023-06-16 20:53:07,2024-01-06 00:40:49
+31,1,464,funding_update,Funding Update,New funding round of ₹220 Cr announced,1,high,2023-06-26 06:49:23,2024-09-26 13:13:25
+32,1,376,incubator_assignment,Incubator Assignment,Startup assigned to BITS Pilani TBI incubator,1,low,2023-03-30 20:17:45,2024-09-23 19:03:19
+33,1,291,monthly_report,Monthly Report,Monthly performance report for Mar 2024 is ready,0,medium,2023-10-11 11:29:03,2024-12-04 04:56:44
+34,1,455,milestone_achieved,Milestone Achieved,GenomicsPlus Byte has crossed ₹495 Cr ARR milestone,0,high,2024-11-28 00:16:02,2024-07-09 08:06:09
+35,1,114,document_submitted,Document Submitted,Document submitted by SoilSense Labs awaiting review,1,high,2024-01-07 12:44:12,2024-07-03 06:58:49
+36,1,434,monthly_report,Monthly Report,Monthly performance report for Jul 2024 is ready,0,medium,2023-05-25 04:33:32,2024-03-18 21:39:24
+37,1,238,funding_update,Funding Update,New funding round of ₹63 Cr announced,1,high,2024-01-27 13:38:47,2024-11-09 09:15:20
+38,1,310,milestone_achieved,Milestone Achieved,VaultSec Byte has crossed ₹401 Cr ARR milestone,0,high,2023-11-02 14:59:20,2024-10-31 09:14:17
+39,1,232,milestone_achieved,Milestone Achieved,UrbanRide has crossed ₹236 Cr ARR milestone,1,low,2024-04-12 02:42:23,2024-04-03 22:31:12
+40,1,29,incubator_assignment,Incubator Assignment,Startup assigned to Atal Innovation Mission incubator,0,medium,2024-03-26 04:40:29,2024-02-14 02:40:15
+41,1,326,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,1,high,2023-03-10 05:27:31,2024-04-24 13:21:03
+42,1,380,document_submitted,Document Submitted,Document submitted by ArmBot India awaiting review,1,medium,2023-01-29 15:16:38,2024-01-05 00:27:32
+43,1,344,incubator_assignment,Incubator Assignment,Startup assigned to SINE IIT Bombay incubator,0,high,2023-04-21 23:59:10,2024-04-23 00:37:00
+44,1,57,milestone_achieved,Milestone Achieved,ClimaCare Now has crossed ₹82 Cr ARR milestone,0,high,2023-08-05 01:24:48,2024-06-17 12:42:54
+45,1,118,incubator_assignment,Incubator Assignment,Startup assigned to Zone Startups India incubator,0,high,2024-01-10 22:12:02,2024-11-26 04:42:16
+46,1,359,dpiit_approval,Dpiit Approval,DPIIT recognition approved for AIcraft India,0,low,2023-08-13 13:18:53,2024-01-02 06:01:46
+47,1,252,milestone_achieved,Milestone Achieved,CartKing has crossed ₹165 Cr ARR milestone,1,low,2024-07-30 22:28:21,2024-06-12 10:41:19
+48,1,150,funding_update,Funding Update,New funding round of ₹251 Cr announced,0,high,2023-02-14 11:44:27,2024-06-27 04:37:21
+49,1,202,startup_verification,Startup Verification,Startup EduLeap India has been verified,0,low,2023-10-08 04:01:29,2024-06-27 14:30:56
+50,1,200,milestone_achieved,Milestone Achieved,ClinicAI Box has crossed ₹38 Cr ARR milestone,0,medium,2024-10-29 00:06:37,2024-06-11 12:28:31
+51,1,48,incubator_assignment,Incubator Assignment,Startup assigned to BITS Pilani TBI incubator,0,low,2023-09-30 15:34:38,2024-04-11 01:24:36
+52,1,491,startup_verification,Startup Verification,Startup EcoBalance Tech has been verified,1,medium,2023-10-28 21:12:33,2024-02-06 05:35:46
+53,1,357,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,high,2023-02-08 00:11:55,2024-06-07 03:45:10
+54,1,470,milestone_achieved,Milestone Achieved,CashFlow Byte has crossed ₹381 Cr ARR milestone,0,medium,2023-07-05 10:40:40,2024-12-23 17:22:54
+55,1,262,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,low,2024-02-04 08:19:31,2024-04-20 18:35:16
+56,1,16,document_submitted,Document Submitted,Document submitted by CarbonCut Hub awaiting review,1,high,2024-02-25 20:44:23,2024-04-18 03:11:44
+57,1,192,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,1,low,2024-01-27 12:11:22,2024-06-03 16:41:42
+58,1,60,funding_update,Funding Update,New funding round of ₹323 Cr announced,1,low,2024-04-12 21:16:41,2024-09-14 15:01:18
+59,1,404,dpiit_approval,Dpiit Approval,DPIIT recognition approved for NeuralHub Labs,1,medium,2023-09-09 00:29:32,2024-02-03 16:01:24
+60,1,487,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,high,2024-06-26 02:19:42,2024-05-02 10:57:42
+61,1,103,document_submitted,Document Submitted,Document submitted by ClimaCare Hub awaiting review,1,low,2023-03-24 10:23:51,2024-03-16 08:05:22
+62,1,229,document_submitted,Document Submitted,Document submitted by LabGen Now awaiting review,1,high,2024-12-24 10:13:59,2024-01-13 18:52:59
+63,1,84,startup_verification,Startup Verification,Startup BioCore Ventures has been verified,1,high,2023-05-14 23:40:41,2024-04-30 21:58:54
+64,1,454,dpiit_approval,Dpiit Approval,DPIIT recognition approved for ClimaCare Ventures,0,low,2024-07-20 19:49:22,2024-06-22 14:38:07
+65,1,169,funding_update,Funding Update,New funding round of ₹97 Cr announced,1,high,2023-11-19 20:07:54,2024-03-26 04:11:46
+66,1,326,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,medium,2023-03-04 00:53:23,2024-08-09 03:18:05
+67,1,413,funding_update,Funding Update,New funding round of ₹137 Cr announced,0,high,2024-08-16 12:21:28,2024-02-02 21:16:26
+68,1,369,monthly_report,Monthly Report,Monthly performance report for Mar 2024 is ready,1,medium,2023-08-17 00:34:07,2024-03-06 23:43:43
+69,1,302,dpiit_approval,Dpiit Approval,DPIIT recognition approved for SolarMax Labs,1,high,2024-05-09 03:51:09,2024-11-17 12:13:30
+70,1,95,document_submitted,Document Submitted,Document submitted by RoboArm Box awaiting review,0,low,2024-06-17 11:01:41,2024-09-11 01:32:21
+71,1,234,dpiit_approval,Dpiit Approval,DPIIT recognition approved for MetroRide Hub,1,high,2024-02-14 02:01:08,2024-09-05 20:56:28
+72,1,124,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,high,2023-07-25 21:51:32,2024-02-13 01:30:35
+73,1,399,startup_verification,Startup Verification,Startup LastMile Labs has been verified,1,medium,2024-12-18 22:07:55,2024-03-12 23:00:51
+74,1,294,document_submitted,Document Submitted,Document submitted by MoveIt AI awaiting review,1,low,2023-06-12 03:17:07,2024-10-08 02:43:34
+75,1,118,monthly_report,Monthly Report,Monthly performance report for Oct 2024 is ready,1,high,2023-02-22 03:31:45,2024-05-25 00:15:39
+76,1,483,document_submitted,Document Submitted,Document submitted by TasteBox Hub awaiting review,0,low,2024-11-11 20:05:59,2024-06-12 09:13:34
+77,1,10,funding_update,Funding Update,New funding round of ₹419 Cr announced,0,low,2024-03-07 11:44:57,2024-08-15 19:33:37
+78,1,146,dpiit_approval,Dpiit Approval,DPIIT recognition approved for PayZen Now,1,medium,2024-09-07 05:09:27,2024-02-01 08:11:06
+79,1,79,document_submitted,Document Submitted,Document submitted by FleetEdge Ventures awaiting review,0,medium,2024-07-26 13:06:09,2024-08-13 03:58:15
+80,1,170,funding_update,Funding Update,New funding round of ₹100 Cr announced,0,medium,2024-05-25 02:43:14,2024-06-16 06:33:41
+81,1,291,funding_update,Funding Update,New funding round of ₹200 Cr announced,0,high,2023-10-26 20:54:25,2024-11-02 12:09:36
+82,1,447,startup_verification,Startup Verification,Startup EduPath Solutions has been verified,1,low,2024-03-29 07:56:27,2024-06-30 12:05:05
+83,1,379,document_submitted,Document Submitted,Document submitted by MLStudio India awaiting review,1,medium,2024-09-18 18:43:04,2024-03-01 11:53:22
+84,1,319,incubator_assignment,Incubator Assignment,Startup assigned to NSRCEL IIM Bangalore incubator,1,medium,2023-07-16 12:55:18,2024-04-26 10:47:01
+85,1,24,document_submitted,Document Submitted,Document submitted by AgriVision Tech awaiting review,0,high,2024-01-19 00:40:22,2024-01-21 16:26:59
+86,1,41,milestone_achieved,Milestone Achieved,DroneBot Labs has crossed ₹4 Cr ARR milestone,1,high,2024-03-18 11:02:18,2024-11-19 20:51:39
+87,1,294,incubator_assignment,Incubator Assignment,Startup assigned to Atal Innovation Mission incubator,0,low,2023-11-06 09:10:05,2024-09-25 10:07:08
+88,1,128,funding_update,Funding Update,New funding round of ₹494 Cr announced,0,medium,2023-08-13 06:24:21,2024-08-04 09:15:27
+89,1,330,monthly_report,Monthly Report,Monthly performance report for Aug 2024 is ready,0,low,2023-11-26 11:10:15,2024-06-01 23:44:36
+90,1,364,incubator_assignment,Incubator Assignment,Startup assigned to C-CAMP incubator,0,high,2024-02-05 16:35:02,2024-12-03 23:29:09
+91,1,222,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,1,high,2024-09-24 10:01:41,2024-11-27 03:56:35
+92,1,472,funding_update,Funding Update,New funding round of ₹344 Cr announced,0,medium,2023-04-30 22:52:46,2024-02-10 18:52:13
+93,1,385,dpiit_approval,Dpiit Approval,DPIIT recognition approved for AgriVision Plus,0,low,2023-04-05 20:23:32,2024-12-26 04:08:33
+94,1,161,startup_verification,Startup Verification,Startup TechDeep Solutions has been verified,0,low,2024-07-30 17:40:02,2024-08-19 22:52:07
+95,1,216,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,high,2024-12-23 21:24:09,2024-06-23 10:41:33
+96,1,358,dpiit_approval,Dpiit Approval,DPIIT recognition approved for FarmByte Byte,0,medium,2023-03-28 17:59:35,2024-01-17 01:39:41
+97,1,80,document_submitted,Document Submitted,Document submitted by GreenCap Now awaiting review,0,medium,2023-05-29 03:58:08,2024-03-10 03:54:21
+98,1,208,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,1,medium,2024-11-12 00:17:20,2024-12-15 13:32:51
+99,1,466,monthly_report,Monthly Report,Monthly performance report for Aug 2024 is ready,0,low,2024-01-25 19:07:18,2024-03-30 23:10:41
+100,1,234,startup_verification,Startup Verification,Startup MetroRide Hub has been verified,0,medium,2024-04-02 10:46:52,2024-06-21 20:33:15
+101,1,41,dpiit_approval,Dpiit Approval,DPIIT recognition approved for DroneBot Labs,0,medium,2024-07-03 19:15:52,2024-04-05 06:24:18
+102,1,47,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,high,2024-06-19 20:05:29,2024-08-08 00:35:46
+103,1,243,funding_update,Funding Update,New funding round of ₹308 Cr announced,1,low,2023-08-20 01:12:01,2024-05-01 11:24:09
+104,1,44,startup_verification,Startup Verification,Startup FleetEdge Labs has been verified,0,medium,2024-04-26 04:43:01,2024-12-03 20:37:23
+105,1,207,document_submitted,Document Submitted,Document submitted by QuantumTech awaiting review,1,high,2023-04-03 07:44:14,2024-01-26 23:21:29
+106,1,414,dpiit_approval,Dpiit Approval,DPIIT recognition approved for FlexCharge Hub,0,high,2023-08-16 06:30:57,2024-03-12 11:05:13
+107,1,274,incubator_assignment,Incubator Assignment,Startup assigned to STPI Incubation incubator,1,medium,2023-12-23 09:27:34,2024-03-19 22:12:32
+108,1,243,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,low,2023-08-17 08:02:57,2024-06-09 06:15:36
+109,1,397,funding_update,Funding Update,New funding round of ₹340 Cr announced,1,low,2024-03-21 12:21:01,2024-10-16 07:53:30
+110,1,488,incubator_assignment,Incubator Assignment,Startup assigned to T-Hub incubator,0,low,2024-07-19 17:04:30,2024-09-07 04:42:09
+111,1,414,funding_update,Funding Update,New funding round of ₹468 Cr announced,0,high,2023-08-14 02:05:04,2024-01-03 06:39:54
+112,1,150,document_submitted,Document Submitted,Document submitted by FarmByte India awaiting review,0,medium,2024-12-19 09:59:27,2024-12-01 18:40:18
+113,1,359,document_submitted,Document Submitted,Document submitted by AIcraft India awaiting review,0,low,2023-01-20 13:06:00,2024-04-02 16:50:15
+114,1,294,monthly_report,Monthly Report,Monthly performance report for Jan 2024 is ready,1,high,2023-04-21 12:47:17,2024-12-24 17:13:07
+115,1,104,startup_verification,Startup Verification,Startup SchoolSpark Box has been verified,0,medium,2024-06-03 15:33:54,2024-02-27 20:40:57
+116,1,345,dpiit_approval,Dpiit Approval,DPIIT recognition approved for AIcraft Pro,0,medium,2023-02-12 13:52:59,2024-11-22 03:08:08
+117,1,427,milestone_achieved,Milestone Achieved,SecureNet AI has crossed ₹19 Cr ARR milestone,0,high,2023-06-27 08:20:35,2024-08-09 08:05:18
+118,1,381,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,low,2024-12-14 17:50:19,2024-03-25 17:29:52
+119,1,118,incubator_assignment,Incubator Assignment,Startup assigned to T-Hub incubator,0,medium,2024-01-14 06:19:31,2024-05-18 14:17:51
+120,1,153,milestone_achieved,Milestone Achieved,AppSuite Solutions has crossed ₹6 Cr ARR milestone,0,medium,2024-10-24 09:44:05,2024-03-06 03:10:19
+121,1,267,startup_verification,Startup Verification,Startup FireWall Tech has been verified,1,medium,2024-02-08 02:03:42,2024-07-30 00:57:51
+122,1,458,dpiit_approval,Dpiit Approval,DPIIT recognition approved for WindGen Plus,0,medium,2024-03-13 18:45:07,2024-03-10 07:22:43
+123,1,294,document_submitted,Document Submitted,Document submitted by MoveIt AI awaiting review,1,low,2023-07-20 03:25:57,2024-08-19 22:49:23
+124,1,203,funding_update,Funding Update,New funding round of ₹92 Cr announced,1,high,2024-06-21 12:28:51,2024-12-14 18:21:05
+125,1,104,monthly_report,Monthly Report,Monthly performance report for Jul 2024 is ready,1,high,2024-01-05 10:47:58,2024-09-09 21:28:22
+126,1,467,monthly_report,Monthly Report,Monthly performance report for Sep 2024 is ready,1,high,2024-01-21 01:42:28,2024-02-14 15:10:47
+127,1,182,dpiit_approval,Dpiit Approval,DPIIT recognition approved for DataPulse,0,low,2024-04-11 19:58:23,2024-05-18 20:39:12
+128,1,151,funding_update,Funding Update,New funding round of ₹28 Cr announced,1,medium,2023-03-20 00:09:30,2024-01-01 08:39:13
+129,1,424,milestone_achieved,Milestone Achieved,MoneyMap Hub has crossed ₹412 Cr ARR milestone,0,medium,2024-05-02 20:16:18,2024-11-09 08:02:07
+130,1,195,incubator_assignment,Incubator Assignment,Startup assigned to SINE IIT Bombay incubator,0,high,2024-09-25 03:06:51,2024-01-15 01:45:45
+131,1,34,funding_update,Funding Update,New funding round of ₹408 Cr announced,0,high,2024-03-26 01:09:22,2024-07-27 05:02:09
+132,1,416,incubator_assignment,Incubator Assignment,Startup assigned to SINE IIT Bombay incubator,0,low,2024-12-27 16:37:40,2024-06-26 01:03:21
+133,1,36,monthly_report,Monthly Report,Monthly performance report for Jul 2024 is ready,1,high,2024-04-20 03:09:02,2024-06-30 01:07:08
+134,1,340,startup_verification,Startup Verification,Startup CogniSys Byte has been verified,0,high,2023-08-21 04:01:38,2024-02-01 09:52:24
+135,1,353,milestone_achieved,Milestone Achieved,MedTrack Hub has crossed ₹455 Cr ARR milestone,0,low,2023-03-18 02:59:23,2024-07-20 18:59:30
+136,1,368,dpiit_approval,Dpiit Approval,DPIIT recognition approved for EcoTech Ventures,0,low,2024-03-03 15:57:35,2024-03-07 02:17:22
+137,1,239,milestone_achieved,Milestone Achieved,BuyRight Byte has crossed ₹377 Cr ARR milestone,0,low,2023-06-22 12:07:42,2024-07-02 16:26:06
+138,1,37,milestone_achieved,Milestone Achieved,BioCore Tech has crossed ₹378 Cr ARR milestone,0,low,2024-05-24 12:40:05,2024-12-03 06:54:28
+139,1,446,milestone_achieved,Milestone Achieved,BioSynth Now has crossed ₹407 Cr ARR milestone,1,medium,2024-09-05 15:13:28,2024-10-11 13:42:10
+140,1,181,milestone_achieved,Milestone Achieved,AgriVision Ventures has crossed ₹354 Cr ARR milestone,0,high,2024-09-27 12:12:36,2024-02-12 02:31:38
+141,1,329,startup_verification,Startup Verification,Startup LendEasy Hub has been verified,1,high,2023-08-28 08:01:42,2024-04-03 21:40:23
+142,1,84,milestone_achieved,Milestone Achieved,BioCore Ventures has crossed ₹210 Cr ARR milestone,1,medium,2024-09-15 05:29:15,2024-03-06 03:00:43
+143,1,122,document_submitted,Document Submitted,Document submitted by WealthApp Ventures awaiting review,1,medium,2023-11-13 07:51:20,2024-08-06 09:32:00
+144,1,258,document_submitted,Document Submitted,Document submitted by ArmBot Labs awaiting review,0,medium,2024-08-11 07:02:53,2024-06-21 14:38:51
+145,1,159,milestone_achieved,Milestone Achieved,SoilSense India has crossed ₹120 Cr ARR milestone,0,low,2023-10-19 22:24:10,2024-03-24 09:45:25
+146,1,139,monthly_report,Monthly Report,Monthly performance report for Aug 2024 is ready,0,low,2023-04-13 23:52:40,2024-04-06 00:54:17
+147,1,4,funding_update,Funding Update,New funding round of ₹327 Cr announced,1,high,2023-09-22 16:26:39,2024-04-06 10:50:01
+148,1,312,monthly_report,Monthly Report,Monthly performance report for Jul 2024 is ready,0,low,2023-12-27 05:28:02,2024-04-19 21:40:10
+149,1,103,funding_update,Funding Update,New funding round of ₹215 Cr announced,0,medium,2023-05-24 12:14:36,2024-10-04 07:49:32
+150,1,471,monthly_report,Monthly Report,Monthly performance report for Mar 2024 is ready,1,low,2023-06-03 01:00:35,2024-11-05 11:17:05
+151,1,191,incubator_assignment,Incubator Assignment,Startup assigned to C-CAMP incubator,0,high,2024-08-13 22:32:05,2024-01-09 17:22:02
+152,1,17,funding_update,Funding Update,New funding round of ₹376 Cr announced,1,high,2024-05-14 12:21:29,2024-10-31 09:07:03
+153,1,20,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,1,low,2023-03-25 03:47:29,2024-12-01 00:34:31
+154,1,79,startup_verification,Startup Verification,Startup FleetEdge Ventures has been verified,0,medium,2024-05-22 13:41:32,2024-05-13 14:24:30
+155,1,444,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,medium,2023-09-16 14:00:37,2024-05-19 09:19:11
+156,1,135,document_submitted,Document Submitted,Document submitted by ZapCharge Ventures awaiting review,0,medium,2023-10-22 03:03:57,2024-07-12 03:36:10
+157,1,263,funding_update,Funding Update,New funding round of ₹401 Cr announced,1,low,2023-05-26 04:02:56,2024-12-30 07:46:34
+158,1,351,document_submitted,Document Submitted,Document submitted by MetroRide AI awaiting review,1,medium,2023-05-21 18:46:04,2024-09-17 09:55:24
+159,1,73,dpiit_approval,Dpiit Approval,DPIIT recognition approved for FarmByte Hub,1,low,2023-11-03 23:23:42,2024-02-19 23:58:18
+160,1,380,funding_update,Funding Update,New funding round of ₹420 Cr announced,0,medium,2023-02-12 05:39:54,2024-04-02 12:56:24
+161,1,436,document_submitted,Document Submitted,Document submitted by AgriVision awaiting review,0,high,2024-10-14 11:01:19,2024-04-06 15:56:48
+162,1,147,monthly_report,Monthly Report,Monthly performance report for Dec 2024 is ready,0,high,2024-01-08 08:08:14,2024-10-24 14:58:09
+163,1,494,funding_update,Funding Update,New funding round of ₹54 Cr announced,0,low,2023-12-14 23:11:32,2024-05-10 11:14:42
+164,1,60,dpiit_approval,Dpiit Approval,DPIIT recognition approved for PharmaBio Byte,0,medium,2024-09-06 02:42:43,2024-05-14 17:44:06
+165,1,491,incubator_assignment,Incubator Assignment,Startup assigned to BITS Pilani TBI incubator,1,low,2024-10-05 00:46:32,2024-07-20 01:19:17
+166,1,178,dpiit_approval,Dpiit Approval,DPIIT recognition approved for GaiaTech,0,low,2024-08-28 17:04:33,2024-02-04 08:37:24
+167,1,139,milestone_achieved,Milestone Achieved,ZapCharge Solutions has crossed ₹330 Cr ARR milestone,1,medium,2023-04-08 23:20:37,2024-08-28 23:16:50
+168,1,118,incubator_assignment,Incubator Assignment,Startup assigned to IIT Madras Incubation Cell incubator,0,low,2024-10-03 16:11:40,2024-07-04 20:06:59
+169,1,478,monthly_report,Monthly Report,Monthly performance report for Dec 2024 is ready,0,low,2023-06-21 18:16:41,2024-09-13 07:03:44
+170,1,482,startup_verification,Startup Verification,Startup NanoTech Plus has been verified,1,medium,2023-06-23 16:28:19,2024-12-06 07:41:39
+171,1,98,monthly_report,Monthly Report,Monthly performance report for Sep 2024 is ready,0,low,2023-09-02 20:07:58,2024-09-30 20:17:05
+172,1,372,funding_update,Funding Update,New funding round of ₹245 Cr announced,1,low,2024-07-31 17:34:25,2024-07-10 18:33:22
+173,1,37,monthly_report,Monthly Report,Monthly performance report for Apr 2024 is ready,0,medium,2024-10-24 05:21:07,2024-04-11 16:51:27
+174,1,225,dpiit_approval,Dpiit Approval,DPIIT recognition approved for EVHub Pro,0,low,2024-04-16 06:41:59,2024-12-13 19:16:59
+175,1,206,startup_verification,Startup Verification,Startup WindGen Tech has been verified,0,high,2023-10-28 23:14:16,2024-09-22 11:10:01
+176,1,269,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,1,medium,2023-10-22 23:04:43,2024-03-07 09:45:17
+177,1,268,document_submitted,Document Submitted,Document submitted by DocAI India awaiting review,0,low,2024-12-04 21:54:21,2024-12-21 00:29:40
+178,1,167,incubator_assignment,Incubator Assignment,Startup assigned to IIM Ahmedabad CIIE incubator,0,medium,2023-09-15 19:09:37,2024-12-14 23:58:21
+179,1,469,document_submitted,Document Submitted,Document submitted by DeepSight Box awaiting review,0,high,2023-04-27 04:35:48,2024-07-26 00:03:13
+180,1,71,monthly_report,Monthly Report,Monthly performance report for Nov 2024 is ready,0,medium,2023-05-14 08:59:25,2024-12-31 23:31:30
+181,1,40,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,low,2023-09-06 02:31:42,2024-03-17 03:52:06
+182,1,84,milestone_achieved,Milestone Achieved,BioCore Ventures has crossed ₹353 Cr ARR milestone,0,low,2024-03-01 23:43:36,2024-07-14 02:43:56
+183,1,222,document_submitted,Document Submitted,Document submitted by BuyRight Hub awaiting review,0,high,2024-06-30 23:50:12,2024-10-17 06:27:43
+184,1,348,milestone_achieved,Milestone Achieved,NetSec Byte has crossed ₹209 Cr ARR milestone,0,low,2024-06-03 19:21:44,2024-06-17 17:32:54
+185,1,322,incubator_assignment,Incubator Assignment,Startup assigned to Zone Startups India incubator,0,medium,2024-10-06 10:35:17,2024-07-02 06:31:31
+186,1,491,document_submitted,Document Submitted,Document submitted by EcoBalance Tech awaiting review,0,low,2023-09-16 15:05:59,2024-06-28 19:08:36
+187,1,72,dpiit_approval,Dpiit Approval,DPIIT recognition approved for ChargeUp Byte,1,high,2024-05-19 00:51:16,2024-04-15 04:53:55
+188,1,459,funding_update,Funding Update,New funding round of ₹278 Cr announced,0,high,2024-08-05 19:03:03,2024-10-23 16:56:34
+189,1,167,milestone_achieved,Milestone Achieved,TaxiApp Byte has crossed ₹221 Cr ARR milestone,1,medium,2024-10-27 11:37:32,2024-12-14 08:02:47
+190,1,56,document_submitted,Document Submitted,Document submitted by CropBot Ventures awaiting review,1,low,2023-10-30 14:46:55,2024-08-06 19:14:52
+191,1,9,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,high,2023-12-15 12:51:17,2024-03-21 12:41:10
+192,1,404,monthly_report,Monthly Report,Monthly performance report for Sep 2024 is ready,0,low,2023-10-13 14:24:04,2024-06-09 09:00:00
+193,1,96,dpiit_approval,Dpiit Approval,DPIIT recognition approved for VaultSec Solutions,0,medium,2023-09-03 09:07:34,2024-12-13 05:18:22
+194,1,441,incubator_assignment,Incubator Assignment,Startup assigned to BITS Pilani TBI incubator,0,medium,2023-06-06 05:19:12,2024-04-29 18:00:25
+195,1,376,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,low,2023-04-07 00:51:05,2024-03-30 23:20:04
+196,1,282,startup_verification,Startup Verification,Startup DocAI Labs has been verified,1,medium,2024-09-21 01:02:13,2024-02-01 05:11:17
+197,1,450,startup_verification,Startup Verification,Startup EVolt Pro has been verified,0,medium,2024-02-08 07:46:44,2024-03-13 08:05:32
+198,1,484,funding_update,Funding Update,New funding round of ₹264 Cr announced,1,high,2024-07-27 23:19:57,2024-02-02 11:08:15
+199,1,260,policy_update,Policy Update,New policy update: Startup India 2024 guidelines released,0,high,2024-12-15 06:04:08,2024-05-11 06:33:30
+200,1,41,funding_update,Funding Update,New funding round of ₹229 Cr announced,0,medium,2023-02-01 04:29:34,2024-05-08 19:50:46

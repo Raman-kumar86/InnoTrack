@@ -1,0 +1,16 @@
+id,incubator_name,city,state_id,incubator_type,total_startups_supported,active_startups,funding_provided_crore,established_year,website,email,phone,created_at,updated_at
+1,T-Hub,Hyderabad,4,Government,223,47,53.49,2013,https://www.t-hub.in,info@t-hub.in,+91-9303329764,2021-07-07 04:27:11,2023-07-25 14:15:55
+2,NSRCEL IIM Bangalore,Bengaluru,1,Academic,88,133,162.56,2018,https://www.nsrcel-iim-bangalore.in,info@nsrcel-iim-bangalore.in,+91-7420514789,2019-04-14 20:34:53,2022-01-31 02:59:48
+3,C-CAMP,Bengaluru,1,Government,484,80,37.43,2017,https://www.c-camp.in,info@c-camp.in,+91-9067418686,2020-03-13 12:57:03,2022-12-04 12:00:24
+4,Kerala Startup Mission,Kochi,8,Government,185,136,60.62,2018,https://www.kerala-startup-mission.in,info@kerala-startup-mission.in,+91-9842715617,2021-09-23 04:12:18,2023-03-22 01:37:47
+5,IIT Madras Incubation Cell,Chennai,5,Academic,327,35,150.86,2010,https://www.iit-madras-incubation-cell.in,info@iit-madras-incubation-cell.in,+91-7215359682,2021-09-03 16:58:54,2024-12-23 05:03:32
+6,IIM Ahmedabad CIIE,Ahmedabad,6,Academic,91,67,18.36,2011,https://www.iim-ahmedabad-ciie.in,info@iim-ahmedabad-ciie.in,+91-9900015820,2020-04-26 12:07:56,2023-05-20 18:38:02
+7,SINE IIT Bombay,Mumbai,2,Academic,367,40,86.75,2019,https://www.sine-iit-bombay.in,info@sine-iit-bombay.in,+91-9427631155,2021-12-06 10:59:16,2023-02-23 21:45:20
+8,Startup Oasis Jaipur,Jaipur,9,Government,172,87,82.18,2020,https://www.startup-oasis-jaipur.in,info@startup-oasis-jaipur.in,+91-9772404776,2020-09-06 14:20:59,2022-05-29 00:29:39
+9,BITS Pilani TBI,Pilani,9,Academic,338,45,19.29,2013,https://www.bits-pilani-tbi.in,info@bits-pilani-tbi.in,+91-9172758220,2020-06-27 04:59:22,2022-05-21 07:23:18
+10,SIDBI Innovation Hub,Lucknow,7,Government,130,132,167.58,2014,https://www.sidbi-innovation-hub.in,info@sidbi-innovation-hub.in,+91-9627135980,2021-12-19 00:42:52,2023-09-06 21:06:56
+11,IIT Delhi Entrepreneurship Cell,New Delhi,3,Academic,118,87,27.51,2011,https://www.iit-delhi-entrepreneurship-cell.in,info@iit-delhi-entrepreneurship-cell.in,+91-9376077463,2019-11-15 08:18:38,2023-03-08 22:21:13
+12,Atal Innovation Mission,New Delhi,3,Government,401,87,103.55,2014,https://www.atal-innovation-mission.in,info@atal-innovation-mission.in,+91-7218179599,2019-07-09 20:27:53,2023-07-21 01:00:21
+13,STPI Incubation,Bengaluru,1,Government,444,53,129.24,2014,https://www.stpi-incubation.in,info@stpi-incubation.in,+91-7693989311,2021-06-23 17:45:27,2022-01-20 03:04:56
+14,Zone Startups India,Mumbai,2,Private,403,58,111.39,2015,https://www.zone-startups-india.in,info@zone-startups-india.in,+91-9501859536,2019-10-31 13:08:02,2023-09-24 11:57:59
+15,91Springboard,Gurugram,10,Private,457,30,180.29,2013,https://www.91springboard.in,info@91springboard.in,+91-9929454134,2020-05-26 21:06:22,2024-04-12 19:47:09
