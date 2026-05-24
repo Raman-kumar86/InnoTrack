@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('auth')->name('auth.')->group(function (): void {
@@ -23,7 +24,7 @@ Route::prefix('auth')->name('auth.')->group(function (): void {
 });
 
 Route::middleware('auth')->group(function (): void {
-    Route::view('/', 'dashboard')->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::view('/startups', 'startups.index')->name('startups.index');
     Route::view('/startups/create', 'startups.create')->name('startups.create');
     Route::view('/startups/{startup}', 'startups.show')->name('startups.show');

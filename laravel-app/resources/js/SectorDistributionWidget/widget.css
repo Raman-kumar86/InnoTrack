@@ -1,0 +1,420 @@
+.sdw-card {
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: linear-gradient(145deg, #111827, #0d1421);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    color: #f0f4ff;
+}
+
+.sdw-mono {
+    font-family: inherit;
+}
+
+.sdw-syne {
+    font-family: inherit;
+}
+
+.sdw-sans {
+    font-family: inherit;
+}
+
+.sdw-eyebrow {
+    color: #6ee7f7;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.sdw-headline {
+    color: #f0f4ff;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.sdw-subtitle {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 13px;
+}
+
+.sdw-open-btn {
+    border-radius: 10px;
+    border: 1px solid rgba(110, 231, 247, 0.3);
+    background: linear-gradient(135deg, #1e3a5f, #0f2744);
+    color: #6ee7f7;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    padding: 10px 16px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.sdw-open-btn:hover {
+    background: linear-gradient(135deg, #1e4a7f, #0f3060);
+    border-color: rgba(110, 231, 247, 0.6);
+    box-shadow: 0 0 16px rgba(110, 231, 247, 0.15);
+    transform: translateY(-1px);
+}
+
+.sdw-ring-panel {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 20px;
+    height: 420px;
+}
+
+.sdw-ring-center-label {
+    color: #6ee7f7;
+    font-family: inherit;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.sdw-ring-center-value {
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.sdw-ring-center-sub {
+    color: rgba(255, 255, 255, 0.4);
+    font-family: inherit;
+    font-size: 11px;
+    max-width: 130px;
+    text-align: center;
+}
+
+.sdw-stat-card {
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 16px 20px;
+}
+
+.sdw-stat-card-accent {
+    border-left: 3px solid #6ee7f7;
+}
+
+.sdw-stat-label {
+    color: rgba(255, 255, 255, 0.4);
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.sdw-stat-mini-label {
+    color: rgba(255, 255, 255, 0.4);
+    font-family: inherit;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.sdw-stat-value {
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.sdw-stat-mini-value {
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.sdw-stat-sub {
+    color: rgba(255, 255, 255, 0.45);
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.sdw-top-share {
+    color: #34d399;
+}
+
+.sdw-bottom-note {
+    border-radius: 12px;
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: inherit;
+    font-size: 12px;
+    padding: 14px 16px;
+}
+
+.sdw-modal-shell {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    pointer-events: none;
+}
+
+.sdw-modal-shell.is-open {
+    pointer-events: auto;
+}
+
+.sdw-modal-panel {
+    position: relative;
+    z-index: 1;
+    width: min(900px, 92vw);
+    max-height: 88vh;
+    overflow-y: auto;
+    border-radius: 24px;
+    border: 1px solid rgba(110, 231, 247, 0.12);
+    background: rgba(13, 20, 35, 0.75);
+    backdrop-filter: blur(24px);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.04),
+        0 40px 80px rgba(0, 0, 0, 0.6),
+        0 0 60px rgba(110, 231, 247, 0.04);
+    padding: 32px;
+    transform: scale(0.96);
+    opacity: 0;
+    transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+.sdw-modal-shell.is-open .sdw-modal-panel {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.sdw-close-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+}
+
+.sdw-close-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.sdw-switcher {
+    display: inline-flex;
+    gap: 2px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 4px;
+}
+
+.sdw-switch-btn {
+    border-radius: 9px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 8px 18px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.sdw-switch-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.sdw-switch-btn.is-active {
+    background: rgba(110, 231, 247, 0.12);
+    border-color: rgba(110, 231, 247, 0.25);
+    color: #6ee7f7;
+}
+
+.sdw-chart-area {
+    height: 420px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 24px;
+}
+
+.sdw-tooltip {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(8, 14, 26, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 10px 12px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+}
+
+.sdw-tooltip-title {
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.sdw-tooltip-line {
+    color: rgba(255, 255, 255, 0.55);
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+}
+
+.sdw-modal-footer {
+    margin-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.sdw-footer-left {
+    color: rgba(255, 255, 255, 0.25);
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.sdw-footer-right {
+    color: rgba(255, 255, 255, 0.2);
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+}
+
+.sdw-modal-skeleton {
+    display: grid;
+    gap: 12px;
+}
+
+.sdw-shimmer {
+    border-radius: 12px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.04) 100%);
+    background-size: 200% 100%;
+    animation: sdw-shimmer 1.5s infinite;
+}
+
+.sdw-treemap-label {
+    fill: rgba(255, 255, 255, 0.92);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.sdw-treemap-share {
+    fill: rgba(255, 255, 255, 0.84);
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.sdw-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.sdw-table-head {
+    position: sticky;
+    top: 0;
+    background: rgba(13, 20, 35, 0.94);
+    z-index: 1;
+}
+
+.sdw-table th {
+    color: rgba(255, 255, 255, 0.3);
+    font-family: inherit;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 12px;
+}
+
+.sdw-table td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 10px 12px;
+}
+
+.sdw-table-row:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.sdw-rank {
+    color: rgba(255, 255, 255, 0.3);
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.sdw-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    display: inline-block;
+}
+
+.sdw-sector-cell {
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.sdw-num-cell {
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 13px;
+    text-align: right;
+}
+
+.sdw-share-cell {
+    color: #6ee7f7;
+    font-family: inherit;
+    font-size: 13px;
+    text-align: right;
+}
+
+@media (max-width: 640px) {
+    .sdw-ring-panel {
+        height: 360px;
+    }
+}
+
+.sdw-bar-track {
+    width: 120px;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.sdw-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    width: var(--bar-width, 0%);
+    background: var(--bar-color, #6ee7f7);
+}
+
+.sdw-scroll {
+    max-height: 340px;
+    overflow-y: auto;
+}
+
+@keyframes sdw-shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}

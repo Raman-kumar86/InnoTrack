@@ -162,7 +162,12 @@ function updateThemeSelection(theme) {
 }
 
 function openModal(selector) {
-	const modal = document.querySelector(selector);
+	if (!selector) {
+		return;
+	}
+
+	const normalizedSelector = selector.startsWith('#') || selector.startsWith('.') ? selector : `#${selector}`;
+	const modal = document.querySelector(normalizedSelector);
 
 	if (!modal) {
 		return;
@@ -202,6 +207,47 @@ function initModals() {
 		if (modalBackdrop && event.target === modalBackdrop) {
 			closeModal(modalBackdrop);
 		}
+	});
+}
+
+function setSectorModalView(modal, view) {
+	if (!modal || !view) {
+		return;
+	}
+
+	modal.querySelectorAll('[data-sector-view-tab]').forEach((tab) => {
+		const active = tab.getAttribute('data-sector-view-tab') === view;
+		tab.classList.toggle('bg-indigo-600', active);
+		tab.classList.toggle('text-white', active);
+		tab.classList.toggle('shadow-lg', active);
+		tab.classList.toggle('shadow-indigo-600/20', active);
+		tab.classList.toggle('bg-slate-100', !active);
+		tab.classList.toggle('text-slate-600', !active);
+		tab.classList.toggle('dark:bg-slate-800', !active);
+		tab.classList.toggle('dark:text-slate-300', !active);
+	});
+
+	modal.querySelectorAll('[data-sector-view-panel]').forEach((panel) => {
+		panel.classList.toggle('hidden', panel.getAttribute('data-sector-view-panel') !== view);
+	});
+}
+
+function initSectorModalViews() {
+	document.addEventListener('click', (event) => {
+		const trigger = event.target.closest('[data-sector-view-tab]');
+
+		if (!trigger) {
+			return;
+		}
+
+		const modal = trigger.closest('[data-sector-modal]');
+		const view = trigger.getAttribute('data-sector-view-tab');
+
+		if (!modal || !view) {
+			return;
+		}
+
+		setSectorModalView(modal, view);
 	});
 }
 
@@ -352,6 +398,7 @@ initThemeToggle();
 initSidebarToggle();
 initPasswordToggles();
 initModals();
+initSectorModalViews();
 initFlashMessages();
 initSettingsPreferences();
 initCharts();

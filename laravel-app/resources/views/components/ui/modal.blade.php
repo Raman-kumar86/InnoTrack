@@ -1,6 +1,6 @@
 @props(['id' => null, 'title' => null])
 
-<div id="{{ $id }}" class="modal hidden fixed inset-0 z-50 items-center justify-center p-4">
+<div id="{{ $id }}" data-modal class="modal hidden fixed inset-0 z-50 items-center justify-center p-4">
     <div class="modal-backdrop absolute inset-0 bg-black/50"></div>
     <div class="relative z-10 w-full max-w-2xl">
         <div class="surface-card overflow-hidden p-6">
