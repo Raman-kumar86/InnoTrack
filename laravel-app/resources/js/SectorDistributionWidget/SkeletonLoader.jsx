@@ -1,5 +1,5 @@
-export default function SkeletonLoader({ mode = 'card' }) {
-    if (mode === 'modal') {
+export default function SkeletonLoader({ mode = "card" }) {
+    if (mode === "modal") {
         return (
             <div className="sdw-modal-skeleton">
                 <div className="sdw-shimmer h-16" />

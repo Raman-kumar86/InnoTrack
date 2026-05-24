@@ -117,9 +117,7 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
 
         <div id="sector-distribution-widget" class="xl:col-span-1" data-api-url="{{ route('dashboard.sector-distribution') }}" data-title="Sector distribution" data-subtitle="Share of active startups by dominant sector."></div>
 
-        <x-ui.chart-card title="State-wise startup strength" subtitle="Top startup states ranked by active ecosystem volume.">
-            <canvas data-chart="bar" data-horizontal="true" data-labels='@json($stateLabels)' data-values='@json($stateFunding)'></canvas>
-        </x-ui.chart-card>
+        <div id="state-strength-widget" class="xl:col-span-1" data-api-url="{{ route('dashboard.state-startup-strength') }}" data-title="State ecosystem" data-subtitle="Top startup states by active ecosystem volume."></div>
 
         <x-ui.chart-card title="Funding growth" subtitle="Cumulative funding growth across the fiscal year.">
             <canvas data-chart="line" data-labels='@json($months)' data-values='@json($fundingSeries)'></canvas>
@@ -134,9 +132,6 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
                     <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Recent onboarding activity from the national startup registry.</p>
                 </div>
 
-    @push('scripts')
-        @vite('resources/js/sector-distribution-widget.jsx')
-    @endpush
                 <x-ui.button href="{{ route('startups.index') }}" variant="secondary">View all</x-ui.button>
             </div>
 
@@ -267,4 +262,8 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
         </div>
     </div>
 </section>
+
+@push('scripts')
+    @vite(['resources/js/sector-distribution-widget.jsx', 'resources/js/state-strength-widget.jsx'])
+@endpush
 @endsection

@@ -376,6 +376,32 @@ class DashboardController extends Controller
     ]);
   }
 
+  public function stateStartupStrength(): \Illuminate\Http\JsonResponse
+  {
+    $total = (int) DB::table('startups')
+      ->where('status', 'Active')
+      ->count();
+
+    $states = DB::table('startups as s')
+      ->join('states as st', 's.state_id', '=', 'st.id')
+      ->where('s.status', 'Active')
+      ->groupBy('st.id', 'st.state_name')
+      ->orderByDesc('count')
+      ->selectRaw('st.id as state_id, st.state_name, COUNT(*) as count')
+      ->get();
+
+    return response()->json([
+      'total_active_startups' => $total,
+      'states' => $states->map(fn ($state) => [
+        'state_id' => $state->state_id,
+        'state_name' => $state->state_name,
+        'count' => (int) $state->count,
+        'share' => $total > 0 ? round(((int) $state->count / $total) * 100, 2) : 0,
+        'tier' => (int) $state->count >= 25 ? 'Tier 1' : ((int) $state->count >= 15 ? 'Tier 2' : 'Tier 3'),
+      ])->values(),
+    ]);
+  }
+
   /**
    * @return array{0: array<int, string>, 1: array<int, string>}
    */
