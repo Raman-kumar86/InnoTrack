@@ -12,8 +12,11 @@ Route::prefix('auth')->name('auth.')->group(function (): void {
         Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
         Route::post('/register', [AuthController::class, 'register'])->name('register.store');
 
-        Route::view('/forgot-password', 'auth.forgot-password')->name('forgot-password');
-        Route::view('/reset-password', 'auth.reset-password')->name('reset-password');
+        Route::get('/forgot-password', [AuthController::class, 'showForgotPassword'])->name('forgot-password');
+        Route::post('/forgot-password', [AuthController::class, 'sendPasswordResetLink'])->name('forgot-password.send');
+
+        Route::get('/reset-password/{token}', [AuthController::class, 'showResetPassword'])->name('reset-password');
+        Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('reset-password.update');
     });
 
     Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
