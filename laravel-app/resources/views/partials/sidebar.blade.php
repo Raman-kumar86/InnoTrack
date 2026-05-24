@@ -1,21 +1,21 @@
 @php
-    $navigation = [
-        ['label' => 'Dashboard', 'route' => 'dashboard', 'icon' => 'dashboard'],
-        ['label' => 'Startups', 'route' => 'startups.index', 'icon' => 'rocket'],
-        ['label' => 'Funding Tracker', 'route' => 'funding.create', 'icon' => 'funding'],
-        ['label' => 'State Analytics', 'route' => 'analytics.state', 'icon' => 'map'],
-        ['label' => 'Reports', 'route' => 'reports.index', 'icon' => 'reports'],
-        ['label' => 'User Management', 'route' => 'users.index', 'icon' => 'users'],
-        ['label' => 'Activity Logs', 'route' => 'activity.index', 'icon' => 'activity'],
-        ['label' => 'Settings', 'route' => 'settings.index', 'icon' => 'settings'],
-    ];
+$navigation = [
+['label' => 'Dashboard', 'route' => 'dashboard', 'icon' => 'dashboard'],
+['label' => 'Startups', 'route' => 'startups.index', 'icon' => 'rocket'],
+['label' => 'Funding Tracker', 'route' => 'funding.create', 'icon' => 'funding'],
+['label' => 'State Analytics', 'route' => 'analytics.state', 'icon' => 'map'],
+['label' => 'Reports', 'route' => 'reports.index', 'icon' => 'reports'],
+['label' => 'User Management', 'route' => 'users.index', 'icon' => 'users'],
+['label' => 'Activity Logs', 'route' => 'activity.index', 'icon' => 'activity'],
+['label' => 'Settings', 'route' => 'settings.index', 'icon' => 'settings'],
+];
 @endphp
 
 <aside data-sidebar class="fixed inset-y-0 left-0 z-50 w-72 -translate-x-full border-r border-slate-200/80 bg-white/95 backdrop-blur-xl transition-transform duration-300 ease-out dark:border-slate-800 dark:bg-slate-950/95 lg:translate-x-0">
     <div class="flex h-full flex-col">
         <div class="flex items-center justify-between border-b border-slate-200/80 px-6 py-5 dark:border-slate-800">
             <a href="{{ route('dashboard') }}" class="flex items-center gap-3">
-                <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500 text-white shadow-lg shadow-indigo-600/30">
+                <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-linear-to-br from-indigo-600 via-blue-600 to-cyan-500 text-white shadow-lg shadow-indigo-600/30">
                     <x-ui.icon name="shield" class="h-6 w-6" />
                 </span>
                 <span>
@@ -30,31 +30,18 @@
         </div>
 
         <div class="flex-1 overflow-y-auto px-4 py-5">
-            <div class="mb-6 rounded-3xl border border-indigo-500/10 bg-gradient-to-br from-indigo-600/10 via-blue-500/10 to-cyan-500/10 p-4">
-                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">National overview</p>
-                <div class="mt-3 grid grid-cols-2 gap-3 text-sm">
-                    <div class="rounded-2xl bg-white/70 p-3 dark:bg-slate-900/70">
-                        <p class="text-slate-500 dark:text-slate-400">Active startups</p>
-                        <p class="mt-1 text-lg font-semibold text-slate-900 dark:text-white">18,420</p>
-                    </div>
-                    <div class="rounded-2xl bg-white/70 p-3 dark:bg-slate-900/70">
-                        <p class="text-slate-500 dark:text-slate-400">Funding stages</p>
-                        <p class="mt-1 text-lg font-semibold text-slate-900 dark:text-white">6</p>
-                    </div>
-                </div>
-            </div>
 
             <nav class="space-y-2">
                 @foreach ($navigation as $item)
-                    <a href="{{ route($item['route']) }}" class="sidebar-link {{ request()->routeIs($item['route']) ? 'sidebar-link-active' : 'sidebar-link-inactive' }}">
-                        <span class="flex h-10 w-10 items-center justify-center rounded-2xl {{ request()->routeIs($item['route']) ? 'bg-white/15' : 'bg-slate-100 dark:bg-slate-800' }}">
-                            <x-ui.icon name="{{ $item['icon'] }}" class="h-5 w-5" />
-                        </span>
-                        <span class="flex-1">{{ $item['label'] }}</span>
-                        @if (request()->routeIs($item['route']))
-                            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                        @endif
-                    </a>
+                <a href="{{ route($item['route']) }}" class="sidebar-link {{ request()->routeIs($item['route']) ? 'sidebar-link-active' : 'sidebar-link-inactive' }}">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-2xl {{ request()->routeIs($item['route']) ? 'bg-white/15' : 'bg-slate-100 dark:bg-slate-800' }}">
+                        <x-ui.icon name="{{ $item['icon'] }}" class="h-5 w-5" />
+                    </span>
+                    <span class="flex-1">{{ $item['label'] }}</span>
+                    @if (request()->routeIs($item['route']))
+                    <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                    @endif
+                </a>
                 @endforeach
             </nav>
         </div>

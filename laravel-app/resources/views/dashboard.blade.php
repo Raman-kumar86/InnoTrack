@@ -61,6 +61,25 @@ $sectorCards = $sectorCards ?? [
 ['name' => 'FinTech', 'value' => '20%', 'subtitle' => 'Highest funding velocity in metro states'],
 ];
 
+$monthOptions = $monthOptions ?? [
+    1 => 'January',
+    2 => 'February',
+    3 => 'March',
+    4 => 'April',
+    5 => 'May',
+    6 => 'June',
+    7 => 'July',
+    8 => 'August',
+    9 => 'September',
+    10 => 'October',
+    11 => 'November',
+    12 => 'December',
+];
+$availableYears = $availableYears ?? [date('Y')];
+$selectedMonth = $selectedMonth ?? (int) date('n');
+$selectedYear = $selectedYear ?? (int) date('Y');
+$selectedRangeLabel = $selectedRangeLabel ?? null;
+
 // prepare datasets for charts to avoid Blade/parser issues with parentheses inside strings
 $registrationDatasets = $registrationDatasets ?? [[
 'label' => 'Registrations',
@@ -112,6 +131,32 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
 
     <div class="grid gap-6 xl:grid-cols-2">
         <x-ui.chart-card title="Monthly startup registrations" subtitle="New registrations and profile updates over the last twelve months.">
+            <x-slot:action>
+                <form method="GET" action="{{ route('dashboard') }}" class="flex flex-wrap items-end gap-2">
+                    <label class="flex flex-col gap-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                        Month
+                        <select name="month" class="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                            @foreach ($monthOptions as $monthNumber => $monthLabel)
+                                <option value="{{ $monthNumber }}" @selected((int) $selectedMonth === (int) $monthNumber)>{{ $monthLabel }}</option>
+                            @endforeach
+                        </select>
+                    </label>
+
+                    <label class="flex flex-col gap-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                        Year
+                        <select name="year" class="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                            @foreach ($availableYears as $year)
+                                <option value="{{ $year }}" @selected((int) $selectedYear === (int) $year)>{{ $year }}</option>
+                            @endforeach
+                        </select>
+                    </label>
+
+                    <x-ui.button type="submit" variant="secondary">Filter</x-ui.button>
+                </form>
+                @if ($selectedRangeLabel)
+                    <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">{{ $selectedRangeLabel }}</p>
+                @endif
+            </x-slot:action>
             <canvas data-chart="line" data-labels='@json($months)' data-datasets='@json($registrationDatasets)'></canvas>
         </x-ui.chart-card>
 
@@ -120,6 +165,32 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
         <div id="state-strength-widget" class="xl:col-span-1" data-api-url="{{ route('dashboard.state-startup-strength') }}" data-title="State ecosystem" data-subtitle="Top startup states by active ecosystem volume."></div>
 
         <x-ui.chart-card title="Funding growth" subtitle="Cumulative funding growth across the fiscal year.">
+            <x-slot:action>
+                <form method="GET" action="{{ route('dashboard') }}" class="flex flex-wrap items-end gap-2">
+                    <label class="flex flex-col gap-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                        Month
+                        <select name="month" class="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                            @foreach ($monthOptions as $monthNumber => $monthLabel)
+                                <option value="{{ $monthNumber }}" @selected((int) $selectedMonth === (int) $monthNumber)>{{ $monthLabel }}</option>
+                            @endforeach
+                        </select>
+                    </label>
+
+                    <label class="flex flex-col gap-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                        Year
+                        <select name="year" class="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                            @foreach ($availableYears as $year)
+                                <option value="{{ $year }}" @selected((int) $selectedYear === (int) $year)>{{ $year }}</option>
+                            @endforeach
+                        </select>
+                    </label>
+
+                    <x-ui.button type="submit" variant="secondary">Filter</x-ui.button>
+                </form>
+                @if ($selectedRangeLabel)
+                    <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">{{ $selectedRangeLabel }}</p>
+                @endif
+            </x-slot:action>
             <canvas data-chart="line" data-labels='@json($months)' data-values='@json($fundingSeries)'></canvas>
         </x-ui.chart-card>
     </div>
@@ -229,41 +300,109 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
             </div>
         </x-ui.card>
 
-        <div class="space-y-6">
-            <x-ui.card>
-                <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Top performing states</h3>
-                <div class="mt-5 space-y-4">
-                    @foreach ($topStates as $state)
-                    <div class="rounded-3xl border border-slate-200 p-4 dark:border-slate-800">
-                        <div class="flex items-center justify-between gap-3">
-                            <p class="font-medium text-slate-900 dark:text-white">{{ $state['name'] }}</p>
-                            <span class="rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">{{ $state['growth'] }}</span>
-                        </div>
-                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">{{ number_format($state['startups']) }} active startups</p>
+        <x-ui.card class="xl:col-span-1">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Top performing states</h3>
+            <div class="mt-5 space-y-4">
+                @foreach ($topStates as $state)
+                <div class="rounded-3xl border border-slate-200 p-4 dark:border-slate-800">
+                    <div class="flex items-center justify-between gap-3">
+                        <p class="font-medium text-slate-900 dark:text-white">{{ $state['name'] }}</p>
+                        <span class="rounded-full px-2.5 py-1 text-xs font-semibold {{ str_starts_with($state['growth'], '-') ? 'bg-rose-500/10 text-rose-600 dark:text-rose-400' : 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' }}">{{ $state['growth'] }}</span>
                     </div>
-                    @endforeach
+                    <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">{{ number_format($state['startups']) }} active startups</p>
                 </div>
-            </x-ui.card>
+                @endforeach
+            </div>
+        </x-ui.card>
+    </div>
 
-            <x-ui.card>
-                <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Sector performance</h3>
-                <div class="mt-5 space-y-4">
-                    @foreach ($sectorCards as $sector)
-                    <div class="rounded-3xl border border-slate-200 p-4 dark:border-slate-800">
-                        <div class="flex items-center justify-between gap-3">
-                            <p class="font-medium text-slate-900 dark:text-white">{{ $sector['name'] }}</p>
-                            <span class="text-2xl font-semibold text-indigo-600 dark:text-indigo-400">{{ $sector['value'] }}</span>
-                        </div>
-                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">{{ $sector['subtitle'] }}</p>
-                    </div>
-                    @endforeach
+    <div class="grid gap-6">
+        <x-ui.card>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                    <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Sector performance</h3>
+                    <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Active startup share by dominant sector, with search and filter.</p>
                 </div>
-            </x-ui.card>
-        </div>
+
+                <label class="flex w-full max-w-sm flex-col gap-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                    Search
+                    <input
+                        type="search"
+                        data-sector-search
+                        placeholder="Search sector, value, or note"
+                        class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+                    >
+                </label>
+            </div>
+
+            <div class="mt-5 max-h-104 overflow-y-auto rounded-3xl border border-slate-200 dark:border-slate-800">
+                <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
+                    <thead class="sticky top-0 z-10 bg-slate-50 dark:bg-slate-900/95">
+                        <tr class="text-left text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                            <th class="px-5 py-4">Sector</th>
+                            <th class="px-5 py-4">Share</th>
+                            <th class="px-5 py-4">Details</th>
+                            <th class="px-5 py-4 text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white dark:divide-slate-800 dark:bg-slate-950" data-sector-table-body>
+                        @foreach ($sectorCards as $sector)
+                            <tr
+                                data-sector-row
+                                data-sector-key="{{ strtolower($sector['name'].' '.$sector['value'].' '.$sector['subtitle']) }}"
+                                class="transition hover:bg-slate-50 dark:hover:bg-slate-900/70"
+                            >
+                                <td class="px-5 py-4 align-top">
+                                    <p class="font-medium text-slate-900 dark:text-white">{{ $sector['name'] }}</p>
+                                </td>
+                                <td class="px-5 py-4 align-top text-sm font-semibold text-indigo-600 dark:text-indigo-400">{{ $sector['value'] }}</td>
+                                <td class="px-5 py-4 align-top text-sm text-slate-500 dark:text-slate-400">{{ $sector['subtitle'] }}</td>
+                                <td class="px-5 py-4 align-top text-right">
+                                    <x-ui.button href="{{ route('startups.index') }}" variant="secondary">Details</x-ui.button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        <tr data-sector-empty class="hidden">
+                            <td colspan="4" class="px-5 py-8 text-center text-sm text-slate-500 dark:text-slate-400">No matching sectors found.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </x-ui.card>
     </div>
 </section>
 
 @push('scripts')
     @vite(['resources/js/sector-distribution-widget.jsx', 'resources/js/state-strength-widget.jsx'])
+    <script>
+        (() => {
+            const searchInput = document.querySelector('[data-sector-search]');
+            const rows = Array.from(document.querySelectorAll('[data-sector-row]'));
+            const emptyRow = document.querySelector('[data-sector-empty]');
+
+            if (!searchInput || !rows.length || !emptyRow) {
+                return;
+            }
+
+            const updateTable = () => {
+                const query = searchInput.value.trim().toLowerCase();
+                let visibleCount = 0;
+
+                rows.forEach((row) => {
+                    const key = row.getAttribute('data-sector-key') || '';
+                    const match = key.includes(query);
+                    row.classList.toggle('hidden', !match);
+
+                    if (match) {
+                        visibleCount += 1;
+                    }
+                });
+
+                emptyRow.classList.toggle('hidden', visibleCount !== 0);
+            };
+
+            searchInput.addEventListener('input', updateTable);
+        })();
+    </script>
 @endpush
 @endsection

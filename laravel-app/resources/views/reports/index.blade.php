@@ -1,43 +1,14 @@
 @extends('layouts.app')
 
 @php
-    $title = 'Reports';
-    $pageTitle = 'Reports';
-    $breadcrumbs = [
-        ['label' => 'Home', 'url' => route('dashboard')],
-        ['label' => 'Reports', 'url' => route('reports.index')],
-    ];
-
-    $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
-    $growthSeries = [120, 144, 156, 169, 188, 205];
-    $approvalSeries = [20, 24, 28, 33, 35, 38];
-    $growthDatasets = [[
-        'label' => 'Funding growth',
-        'data' => $growthSeries,
-        'borderColor' => '#4f46e5',
-        'backgroundColor' => 'rgba(79, 70, 229, 0.12)',
-        'tension' => 0.42,
-        'fill' => true,
-    ]];
-    $approvalDatasets = [[
-        'label' => 'Approval rate',
-        'data' => $approvalSeries,
-        'backgroundColor' => '#0ea5e9',
-    ]];
-    $summary = [
-        ['label' => 'Total funding', 'value' => 'Rs 4,820 Cr'],
-        ['label' => 'YoY growth', 'value' => '+18.4%'],
-        ['label' => 'Approved grants', 'value' => '1,248'],
-        ['label' => 'Printable reports', 'value' => '38'],
-    ];
+// View variables are provided by App\Http\Controllers\ReportsController
 @endphp
 
 @section('content')
 <section class="space-y-6">
     <x-ui.section-header
         title="Reports"
-        subtitle="Export, compare, and print executive-ready summaries for government and startup ecosystem reviews."
-    >
+        subtitle="Export, compare, and print executive-ready summaries for government and startup ecosystem reviews.">
         <x-ui.button variant="secondary">
             <x-ui.icon name="download" class="h-4 w-4" />
             Download PDF
@@ -47,10 +18,10 @@
 
     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         @foreach ($summary as $item)
-            <x-ui.card>
-                <p class="text-sm text-slate-500 dark:text-slate-400">{{ $item['label'] }}</p>
-                <p class="mt-3 text-3xl font-semibold text-slate-900 dark:text-white">{{ $item['value'] }}</p>
-            </x-ui.card>
+        <x-ui.card>
+            <p class="text-sm text-slate-500 dark:text-slate-400">{{ $item['label'] }}</p>
+            <p class="mt-3 text-3xl font-semibold text-slate-900 dark:text-white">{{ $item['value'] }}</p>
+        </x-ui.card>
         @endforeach
     </div>
 
@@ -65,10 +36,31 @@
             </div>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
                 <x-ui.chart-card title="Funding growth" subtitle="Funding accumulation trend." height="h-64">
+                    <x-slot:action>
+                        <form method="get" action="{{ route('reports.index') }}" class="flex items-center gap-2">
+                            <label class="text-xs text-slate-500">From</label>
+                            <input type="date" name="start_date" value="{{ $selectedStartDate ?? '' }}" class="form-input" />
+                            <label class="text-xs text-slate-500">To</label>
+                            <input type="date" name="end_date" value="{{ $selectedEndDate ?? '' }}" class="form-input" />
+                            <x-ui.button type="submit" variant="secondary">Filter</x-ui.button>
+                        </form>
+                    </x-slot:action>
                     <canvas data-chart="line" data-labels='@json($months)' data-datasets='@json($growthDatasets)'></canvas>
+                    <p class="mt-2 text-xs text-slate-500">Showing: {{ $selectedRangeLabel ?? '' }}</p>
                 </x-ui.chart-card>
+
                 <x-ui.chart-card title="Grant approval rate" subtitle="Reportable approval momentum." height="h-64">
+                    <x-slot:action>
+                        <form method="get" action="{{ route('reports.index') }}" class="flex items-center gap-2">
+                            <label class="text-xs text-slate-500">From</label>
+                            <input type="date" name="start_date" value="{{ $selectedStartDate ?? '' }}" class="form-input" />
+                            <label class="text-xs text-slate-500">To</label>
+                            <input type="date" name="end_date" value="{{ $selectedEndDate ?? '' }}" class="form-input" />
+                            <x-ui.button type="submit" variant="secondary">Filter</x-ui.button>
+                        </form>
+                    </x-slot:action>
                     <canvas data-chart="bar" data-labels='@json($months)' data-datasets='@json($approvalDatasets)'></canvas>
+                    <p class="mt-2 text-xs text-slate-500">Showing: {{ $selectedRangeLabel ?? '' }}</p>
                 </x-ui.chart-card>
             </div>
         </x-ui.card>
@@ -76,7 +68,7 @@
         <x-ui.card>
             <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Export center</h3>
             <div class="mt-5 space-y-3">
-                <div class="rounded-3xl border border-slate-200 p-4 dark:border-slate-800">
+                <div class="rounded-3xl border border-slate-200 p-4 dark:border-slate-800"> 
                     <p class="font-medium text-slate-900 dark:text-white">Executive summary</p>
                     <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">PDF, print-ready</p>
                 </div>
@@ -91,43 +83,42 @@
             </div>
         </x-ui.card>
     </div>
+</div>
 
-    <x-ui.card>
-        <div class="flex items-start justify-between gap-4">
-            <div>
-                <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Printable report layout</h3>
-                <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">A compact preview for board packs, ministry notes, and executive briefings.</p>
-            </div>
-            <x-ui.button variant="secondary">Print layout</x-ui.button>
-        </div>
-
-        <div class="mt-6 rounded-[2rem] border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex flex-col gap-5 border-b border-slate-200 pb-5 dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-400">Government summary</p>
-                    <h4 class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">Startup India Progress Overview</h4>
-                </div>
-                <div class="rounded-2xl bg-slate-100 px-4 py-3 text-sm text-slate-600 dark:bg-slate-900 dark:text-slate-300">Prepared for FY 2025-26</div>
-            </div>
-            <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                <div class="rounded-3xl bg-slate-50 p-4 dark:bg-slate-900">
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Startup registrations</p>
-                    <p class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">18,420</p>
-                </div>
-                <div class="rounded-3xl bg-slate-50 p-4 dark:bg-slate-900">
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Funding raised</p>
-                    <p class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">Rs 4,820 Cr</p>
-                </div>
-                <div class="rounded-3xl bg-slate-50 p-4 dark:bg-slate-900">
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Jobs created</p>
-                    <p class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">2.41 L</p>
-                </div>
-                <div class="rounded-3xl bg-slate-50 p-4 dark:bg-slate-900">
-                    <p class="text-sm text-slate-500 dark:text-slate-400">States covered</p>
-                    <p class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">28</p>
-                </div>
-            </div>
+    <x-ui.card class="mt-6">
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Monthly detail</h3>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Per-month funding, registrations and approval rates for the selected range.</p>
+        <div class="mt-4 overflow-x-auto">
+            <table class="w-full text-sm table-auto border-collapse">
+                <thead>
+                    <tr class="text-left text-xs text-slate-500">
+                        <th class="px-3 py-2">Month</th>
+                        <th class="px-3 py-2">Funding (USD)</th>
+                        <th class="px-3 py-2">Cumulative (USD)</th>
+                        <th class="px-3 py-2">Registrations</th>
+                        <th class="px-3 py-2">Recognized</th>
+                        <th class="px-3 py-2">Approval %</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    @forelse($tableRows as $row)
+                    <tr>
+                        <td class="px-3 py-2 text-slate-700">{{ $row['label'] }}</td>
+                        <td class="px-3 py-2">{{ number_format($row['funding'], 2) }}</td>
+                        <td class="px-3 py-2">{{ number_format($row['cumulative'], 2) }}</td>
+                        <td class="px-3 py-2">{{ number_format($row['registrations']) }}</td>
+                        <td class="px-3 py-2">{{ number_format($row['recognized']) }}</td>
+                        <td class="px-3 py-2">{{ number_format($row['approval'], 1) }}%</td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td class="px-3 py-4 text-slate-500" colspan="6">No data for the selected range.</td>
+                    </tr>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
     </x-ui.card>
+
 </section>
 @endsection

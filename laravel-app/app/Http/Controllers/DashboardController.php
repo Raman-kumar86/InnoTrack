@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-  public function index(): View
+  public function index(Request $request): View
   {
     $totalStartups = DB::table('startups')->count();
     $activeStartups = DB::table('startups')->where('status', 'Active')->count();
@@ -16,9 +17,20 @@ class DashboardController extends Controller
     $recognizedStartups = DB::table('startups')->where('dpiit_recognized', 'Yes')->count();
     $jobsCreated = (int) DB::table('startups')->sum('jobs_created');
 
-    [$sparkLabels, $monthKeys] = $this->buildMonthSeries(6);
-    $monthStart = Carbon::now()->startOfMonth()->subMonths(count($monthKeys) - 1)->startOfMonth();
-    $monthEnd = Carbon::now()->endOfMonth();
+    $currentYear = Carbon::now()->year;
+    $availableYears = range($currentYear - 4, $currentYear);
+    $selectedYear = max(min($request->integer('year', $currentYear), $currentYear), $currentYear - 4);
+    $selectedMonth = max(1, min(12, $request->integer('month', Carbon::now()->month)));
+    $filterApplied = $request->filled('month') || $request->filled('year');
+
+    if ($filterApplied) {
+      [$sparkLabels, $monthKeys] = $this->buildMonthSeries($selectedMonth, Carbon::create($selectedYear, $selectedMonth, 1)->endOfMonth());
+    } else {
+      [$sparkLabels, $monthKeys] = $this->buildMonthSeries(6);
+    }
+
+    $monthStart = Carbon::createFromFormat('Y-m', $monthKeys[0])->startOfMonth();
+    $monthEnd = Carbon::createFromFormat('Y-m', $monthKeys[count($monthKeys) - 1])->endOfMonth();
 
     $registrationsByMonth = DB::table('startups')
       ->selectRaw("DATE_FORMAT(created_at, '%Y-%m') as month_key, COUNT(*) as total")
@@ -57,6 +69,7 @@ class DashboardController extends Controller
     $recognizedSpark = $this->seriesFromMonthMap($monthKeys, $recognizedByMonth, 'int');
     $fundingSpark = $this->seriesFromMonthMap($monthKeys, $fundingByMonth, 'float');
     $jobsSpark = $this->seriesFromMonthMap($monthKeys, $jobsByMonth, 'int');
+    $selectedRangeLabel = Carbon::createFromFormat('Y-m', $monthKeys[0])->format('M Y') . ' - ' . Carbon::createFromFormat('Y-m', $monthKeys[count($monthKeys) - 1])->format('M Y');
 
     $startupSectorRows = DB::table('sectors')
       ->leftJoin('startups', 'sectors.id', '=', 'startups.sector_id')
@@ -172,13 +185,27 @@ class DashboardController extends Controller
       'color' => '#94a3b8',
     ])->values()->all();
 
-    $stateRows = DB::table('states')
-      ->leftJoin('startups', 'states.id', '=', 'startups.state_id')
-      ->select('states.state_name as name', DB::raw('COUNT(startups.id) as startups'))
-      ->groupBy('states.id', 'states.state_name')
+    $previousRangeStart = $monthStart->copy()->subMonths(count($monthKeys))->startOfMonth();
+    $previousRangeEnd = $monthStart->copy()->subDay();
+
+    $stateRows = DB::table('startups as s')
+      ->join('states as st', 's.state_id', '=', 'st.id')
+      ->whereNotNull('s.created_at')
+      ->whereBetween('s.created_at', [$monthStart, $monthEnd])
+      ->select('st.state_name as name', DB::raw('COUNT(s.id) as startups'))
+      ->groupBy('st.id', 'st.state_name')
       ->orderByDesc('startups')
       ->limit(6)
       ->get();
+
+    $previousStateCounts = DB::table('startups as s')
+      ->join('states as st', 's.state_id', '=', 'st.id')
+      ->whereNotNull('s.created_at')
+      ->whereBetween('s.created_at', [$previousRangeStart, $previousRangeEnd])
+      ->select('st.state_name as name', DB::raw('COUNT(s.id) as startups'))
+      ->groupBy('st.id', 'st.state_name')
+      ->pluck('startups', 'name')
+      ->all();
 
     $stateLabels = $stateRows->pluck('name')->values()->all();
     $stateFunding = $stateRows->pluck('startups')->map(fn($value) => (int) $value)->values()->all();
@@ -211,11 +238,20 @@ class DashboardController extends Controller
       })
       ->all();
 
-    $topStates = $stateRows->take(4)->map(function ($state): array {
+    $topStates = $stateRows->take(4)->map(function ($state) use ($previousStateCounts): array {
+      $currentCount = (int) $state->startups;
+      $previousCount = (int) ($previousStateCounts[$state->name] ?? 0);
+
+      if ($previousCount > 0) {
+        $growthValue = (($currentCount - $previousCount) / $previousCount) * 100;
+      } else {
+        $growthValue = $currentCount > 0 ? 100.0 : 0.0;
+      }
+
       return [
         'name' => $state->name,
-        'startups' => (int) $state->startups,
-        'growth' => '+' . number_format(min(15.0, max(1.0, (float) $state->startups / 400)), 1) . '%',
+        'startups' => $currentCount,
+        'growth' => sprintf('%s%.1f%%', $growthValue >= 0 ? '+' : '', $growthValue),
       ];
     })->values()->all();
 
@@ -299,7 +335,7 @@ class DashboardController extends Controller
       ];
     }, $sectorLabels, $sectorValues, $sectorColors);
 
-    $fundingSeries = $fundingSpark;
+    $fundingSeries = $this->cumulativeSeriesFromMonthMap($monthKeys, $fundingByMonth, 'float');
 
     $heatmapRows = [
       ['state' => $stateLabels[0] ?? 'Karnataka', 'cells' => [18, 26, 32, 42, 50, 60]],
@@ -321,6 +357,24 @@ class DashboardController extends Controller
       'fundingSpark' => $fundingSpark,
       'jobsSpark' => $jobsSpark,
       'months' => $months,
+      'monthOptions' => [
+        1 => 'January',
+        2 => 'February',
+        3 => 'March',
+        4 => 'April',
+        5 => 'May',
+        6 => 'June',
+        7 => 'July',
+        8 => 'August',
+        9 => 'September',
+        10 => 'October',
+        11 => 'November',
+        12 => 'December',
+      ],
+      'availableYears' => $availableYears,
+      'selectedMonth' => $selectedMonth,
+      'selectedYear' => $selectedYear,
+      'selectedRangeLabel' => $selectedRangeLabel,
       'registrations' => $registrations,
       'sectors' => $sectors,
       'stateLabels' => $stateLabels,
@@ -405,11 +459,11 @@ class DashboardController extends Controller
   /**
    * @return array{0: array<int, string>, 1: array<int, string>}
    */
-  private function buildMonthSeries(int $months): array
+  private function buildMonthSeries(int $months, ?Carbon $endDate = null): array
   {
     $labels = [];
     $keys = [];
-    $cursor = Carbon::now()->startOfMonth()->subMonths(max(0, $months - 1));
+    $cursor = ($endDate ?? Carbon::now()->endOfMonth())->copy()->startOfMonth()->subMonths(max(0, $months - 1));
 
     for ($index = 0; $index < $months; $index++) {
       $labels[] = $cursor->format('M');
@@ -431,6 +485,23 @@ class DashboardController extends Controller
       $value = $monthMap[$monthKey] ?? 0;
 
       return $cast === 'float' ? (float) $value : (int) $value;
+    }, $monthKeys);
+  }
+
+  /**
+   * @param array<int, string> $monthKeys
+   * @param array<string, mixed> $monthMap
+   * @return array<int, int|float>
+   */
+  private function cumulativeSeriesFromMonthMap(array $monthKeys, array $monthMap, string $cast = 'int'): array
+  {
+    $runningTotal = 0.0;
+
+    return array_map(static function (string $monthKey) use ($monthMap, $cast, &$runningTotal): int|float {
+      $value = $monthMap[$monthKey] ?? 0;
+      $runningTotal += (float) $value;
+
+      return $cast === 'float' ? $runningTotal : (int) $runningTotal;
     }, $monthKeys);
   }
 

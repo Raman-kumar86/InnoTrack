@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $title ?? 'Startup India Progress Dashboard' }}</title>
     <meta name="description" content="Secure government-grade startup ecosystem portal.">
+    @viteReactRefresh
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
