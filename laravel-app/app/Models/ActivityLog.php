@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ActivityLog extends Model
 {
     protected $fillable = [
+        'causer_id',
+        'target_user_id',
         'user_id',
         'user_name',
         'module',
@@ -34,6 +36,22 @@ class ActivityLog extends Model
     {
         return $this->belongsTo(User::class)->withDefault([
             'name' => 'System',
+        ]);
+    }
+
+    public function causer()
+    {
+        return $this->belongsTo(User::class, 'causer_id')->withDefault([
+            'name' => 'System',
+            'role' => 'super_admin',
+        ]);
+    }
+
+    public function targetUser()
+    {
+        return $this->belongsTo(User::class, 'target_user_id')->withDefault([
+            'name' => 'Unknown User',
+            'role' => 'reviewer',
         ]);
     }
 
@@ -66,7 +84,19 @@ class ActivityLog extends Model
 
     public function scopeFilterUser(Builder $query, ?string $userId): Builder
     {
-        return $query->when($userId, static fn (Builder $query, string $userId): Builder => $query->where('user_id', $userId));
+        return $query->when($userId, static fn (Builder $query, string $userId): Builder => $query->where('causer_id', $userId));
+    }
+
+    public function scopeFilterAction(Builder $query, ?string $action): Builder
+    {
+        return $query->when($action, static fn (Builder $query, string $action): Builder => $query->where('action', $action));
+    }
+
+    public function scopeFilterRole(Builder $query, ?string $role): Builder
+    {
+        return $query->when($role, static function (Builder $query, string $role): void {
+            $query->whereHas('causer', static fn (Builder $query): Builder => $query->where('role', $role));
+        });
     }
 
     public function scopeFilterDateRange(Builder $query, ?string $range, ?string $dateFrom, ?string $dateTo): Builder

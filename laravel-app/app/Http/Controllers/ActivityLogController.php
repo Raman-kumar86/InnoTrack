@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ActivityLog;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
 use App\Traits\LogsActivity;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -17,6 +18,7 @@ class ActivityLogController extends Controller
 
     public function index(Request $request): View
     {
+        /** @var array<string,mixed> $filters */
         $filters = [
             'search' => $request->string('search')->toString() ?: null,
             'module' => $request->string('module')->toString() ?: null,
@@ -179,7 +181,7 @@ class ActivityLogController extends Controller
         return response()->json(['deleted' => $deleted]);
     }
 
-    private function filteredQuery(array $filters)
+    private function filteredQuery(array $filters): Builder
     {
         return ActivityLog::query()
             ->with('user')

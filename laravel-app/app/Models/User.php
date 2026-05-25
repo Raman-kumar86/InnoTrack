@@ -23,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'role',
+        'status',
         'state',
         'is_active',
         'password',
@@ -46,6 +47,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'is_active' => 'boolean',
+        'status' => 'string',
         'password' => 'hashed',
     ];
 
@@ -56,12 +58,32 @@ class User extends Authenticatable
 
     public function isStateOfficer(): bool
     {
-        return $this->role === 'state_officer';
+        return $this->role === 'state_analyst';
     }
 
     public function isViewer(): bool
     {
-        return $this->role === 'viewer';
+        return $this->role === 'reviewer';
+    }
+
+    public function isStateAnalyst(): bool
+    {
+        return $this->role === 'state_analyst';
+    }
+
+    public function isReviewer(): bool
+    {
+        return $this->role === 'reviewer';
+    }
+
+    public function isBlocked(): bool
+    {
+        return $this->status === 'blocked';
+    }
+
+    public function isActiveStatus(): bool
+    {
+        return $this->status === 'active';
     }
 
     public function activityLogs(): HasMany

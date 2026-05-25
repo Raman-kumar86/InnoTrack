@@ -103,6 +103,10 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
 
 @endphp
 
+@php
+    $viewerIsReviewer = auth()->check() && auth()->user()->isReviewer();
+@endphp
+
 @section('content')
 <section class="space-y-6">
     <x-ui.section-header
@@ -112,10 +116,12 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
             <x-ui.icon name="download" class="h-4 w-4" />
             Export report
         </x-ui.button>
-        <x-ui.button href="{{ route('startups.create') }}">
-            <x-ui.icon name="plus" class="h-4 w-4" />
-            Add startup
-        </x-ui.button>
+        @unless($viewerIsReviewer)
+            <x-ui.button href="{{ route('startups.create') }}">
+                <x-ui.icon name="plus" class="h-4 w-4" />
+                Add startup
+            </x-ui.button>
+        @endunless
     </x-ui.section-header>
 
     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">

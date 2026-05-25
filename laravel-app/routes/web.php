@@ -4,6 +4,7 @@ use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ActivityLogController;
+use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\FundingRoundController;
 use App\Http\Controllers\StateAnalyticsController;
 use App\Http\Controllers\StartupController;
@@ -53,10 +54,38 @@ Route::middleware('auth')->group(function (): void {
     Route::get('/reports/export/executive', [ReportsController::class, 'exportExecutive'])->name('reports.export.executive');
     Route::get('/reports/export/funding', [ReportsController::class, 'exportFunding'])->name('reports.export.funding');
     Route::get('/reports/export/states', [ReportsController::class, 'exportStates'])->name('reports.export.states');
-    Route::view('/users', 'users.index')->name('users.index');
-    Route::get('/activity-logs', [ActivityLogController::class, 'index'])->name('activity-logs.index');
-    Route::get('/activity-logs/export', [ActivityLogController::class, 'export'])->name('activity-logs.export');
-    Route::delete('/activity-logs/{activityLog}', [ActivityLogController::class, 'destroy'])->name('activity-logs.destroy');
+    Route::get('/users', [UserManagementController::class, 'index'])->name('users.index');
+    Route::post('/users', [UserManagementController::class, 'store'])
+        ->middleware('role.access:super_admin')
+        ->name('users.store');
+    Route::patch('/users/{user}', [UserManagementController::class, 'update'])
+        ->middleware('role.access:super_admin')
+        ->name('users.update');
+    Route::delete('/users/{user}', [UserManagementController::class, 'destroy'])
+        ->middleware('role.access:super_admin')
+        ->name('users.destroy');
+    Route::post('/users/{user}/block', [UserManagementController::class, 'block'])
+        ->middleware('role.access:super_admin,state_analyst')
+        ->name('users.block');
+    Route::post('/users/{user}/unblock', [UserManagementController::class, 'unblock'])
+        ->middleware('role.access:super_admin,state_analyst')
+        ->name('users.unblock');
+    Route::post('/users/{user}/promote', [UserManagementController::class, 'promote'])
+        ->middleware('role.access:super_admin')
+        ->name('users.promote');
+    Route::post('/users/{user}/demote', [UserManagementController::class, 'demote'])
+        ->middleware('role.access:super_admin')
+        ->name('users.demote');
+
+    Route::get('/activity-logs', [ActivityLogController::class, 'index'])
+        ->middleware('role.access:super_admin,state_analyst')
+        ->name('activity-logs.index');
+    Route::get('/activity-logs/export', [ActivityLogController::class, 'export'])
+        ->middleware('role.access:super_admin')
+        ->name('activity-logs.export');
+    Route::delete('/activity-logs/{activityLog}', [ActivityLogController::class, 'destroy'])
+        ->middleware('role.access:super_admin')
+        ->name('activity-logs.destroy');
     Route::redirect('/activity', '/activity-logs')->name('activity.index');
     Route::get('/settings', [SettingsController::class, 'edit'])->name('settings.index');
     Route::patch('/settings', [SettingsController::class, 'update'])->name('settings.update');

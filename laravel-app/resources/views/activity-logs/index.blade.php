@@ -263,8 +263,8 @@
                                 Actions <x-ui.icon name="chevron-down" class="h-3 w-3" />
                             </button>
                             <div x-show="open" x-transition @click.outside="open = false" class="absolute right-0 top-9 z-20 w-44 rounded-2xl border border-slate-200 bg-white p-1.5 shadow-xl dark:border-slate-800 dark:bg-slate-950">
-                                @if ($log->metadata)
-                                    <button type="button" @click="viewMeta(@js($log->metadata), @js($log->action)); open = false" class="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800">
+                                        @if ($log->metadata)
+                                        <button type="button" @click="viewMeta({!! json_encode($log->metadata) !!}, {!! json_encode($log->action) !!}); open = false" class="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800">
                                         <x-ui.icon name="eye" class="h-4 w-4" /> View details
                                     </button>
                                 @endif
@@ -394,13 +394,13 @@
 @endsection
 
 @push('scripts')
-<script>
+    <script>
 function activityLogs() {
     return {
-        pageIds: @js($logs->pluck('id')->map(static fn ($id) => (string) $id)->values()),
+        pageIds: @json($logs->pluck('id')->map(static fn ($id) => (string) $id)->values()->all()),
         selectedIds: [],
         selectAll: false,
-        dateRange: @js($filters['date_range'] ?? 'today'),
+        dateRange: @json($filters['date_range'] ?? 'today'),
         metaModal: { open: false, data: null, action: '' },
         deleteModal: { open: false },
 
@@ -432,7 +432,7 @@ function activityLogs() {
                 return;
             }
 
-            const response = await fetch(@js(route('activity-logs.bulk-destroy')), {
+            const response = await fetch('{{ route('activity-logs.bulk-destroy') }}', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
