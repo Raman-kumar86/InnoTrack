@@ -43,7 +43,8 @@
     $founderCount = $startup->founder_count !== null ? number_format((int) $startup->founder_count) : 'Not available';
     $tags = $startup->tags->pluck('tag')->filter()->values();
     $founders = $startup->founders;
-    $founderNames = $founders->pluck('full_name')->filter()->values();
+    $founderNamesPreview = $founders->take(3)->pluck('full_name')->join(', ');
+    $founderOthersCount = max(0, $founders->count() - 3);
     $fundingRounds = $startup->fundingRounds;
     $timeline = $startup->updates;
 
@@ -64,6 +65,18 @@
                     <div>
                         <div class="flex flex-wrap items-center gap-2">
                             <h2 class="text-3xl font-semibold tracking-tight">{{ $startupName }}</h2>
+                            @if($founders->isNotEmpty())
+                                <div class="mt-1 flex items-center gap-3 text-sm text-white/80">
+                                    <div class="flex -space-x-2">
+                                        @foreach($founders->take(3) as $f)
+                                            <div class="h-7 w-7 flex items-center justify-center rounded-full bg-white/20 text-xs font-semibold ring-1 ring-white/25">{{ mb_strtoupper(mb_substr($f->full_name, 0, 1)) }}</div>
+                                        @endforeach
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-sm text-white/90">{{ $founderNamesPreview }}{{ $founderOthersCount ? ' and '.$founderOthersCount.' others' : '' }}</p>
+                                    </div>
+                                </div>
+                            @endif
                             <x-ui.badge :variant="$statusVariant">{{ $status }}</x-ui.badge>
                             <x-ui.badge variant="info">{{ $startup->dpiit_recognized ? 'DPIIT Recognised' : 'Not DPIIT Recognised' }}</x-ui.badge>
                         </div>
@@ -72,30 +85,6 @@
                             <span class="rounded-full bg-white/10 px-3 py-1">{{ $sectorName }}</span>
                             <span class="rounded-full bg-white/10 px-3 py-1">{{ $stateName }}</span>
                             <span class="rounded-full bg-white/10 px-3 py-1">{{ $fundingStage }}</span>
-                        </div>
-                        <div class="mt-4 rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                            <div class="flex flex-wrap items-center justify-between gap-3">
-                                <div>
-                                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-white/55">Founding team</p>
-                                    <p class="mt-1 text-sm text-white/75">{{ $founderCount }} founders linked to this startup</p>
-                                </div>
-                                @if ($founderNames->isNotEmpty())
-                                    <div class="flex -space-x-2">
-                                        @foreach ($founderNames->take(4) as $name)
-                                            <span class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-900/40 bg-white/15 text-xs font-semibold text-white ring-2 ring-slate-950/20" title="{{ $name }}">
-                                                {{ mb_strtoupper(mb_substr($name, 0, 1)) }}
-                                            </span>
-                                        @endforeach
-                                    </div>
-                                @endif
-                            </div>
-                            @if ($founderNames->isNotEmpty())
-                                <div class="mt-3 flex flex-wrap gap-2">
-                                    @foreach ($founderNames->take(6) as $name)
-                                        <span class="rounded-full bg-white/10 px-3 py-1 text-sm text-white/85">{{ $name }}</span>
-                                    @endforeach
-                                </div>
-                            @endif
                         </div>
                     </div>
                 </div>
@@ -217,13 +206,7 @@
 
     <div class="grid gap-6 xl:grid-cols-3">
         <x-ui.card>
-            <div class="flex items-start justify-between gap-4">
-                <div>
-                    <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Founders</h3>
-                    <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">People behind the startup, linked from the founder backfill.</p>
-                </div>
-                <x-ui.badge variant="info">{{ $founders->count() }} linked</x-ui.badge>
-            </div>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Founders</h3>
             <div class="mt-5 space-y-4">
                 <div class="rounded-3xl border border-slate-200 p-4 dark:border-slate-800">
                     <p class="font-medium text-slate-900 dark:text-white">Founder count</p>
@@ -231,33 +214,19 @@
                 </div>
 
                 @forelse ($founders as $founder)
-                    <div class="rounded-3xl border border-slate-200 p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800">
+                    <div class="rounded-3xl border border-slate-200 p-4 dark:border-slate-800">
                         <div class="flex items-start gap-4">
-                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-indigo-600/10 text-sm font-semibold text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-300">
-                                {{ mb_strtoupper(mb_substr($founder->full_name, 0, 2)) }}
+                            <div class="shrink-0">
+                                <div class="h-12 w-12 flex items-center justify-center rounded-full bg-indigo-600 text-white font-semibold">{{ mb_strtoupper(mb_substr($founder->full_name, 0, 1)) }}</div>
                             </div>
-                            <div class="min-w-0 flex-1">
-                                <p class="truncate font-semibold text-slate-900 dark:text-white">{{ $founder->full_name }}</p>
+                            <div class="flex-1">
+                                <p class="text-lg font-semibold text-slate-900 dark:text-white">{{ $founder->full_name }}</p>
                                 <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ $founder->education ?: 'Founder profile not fully completed' }}</p>
-                            </div>
-                        </div>
-
-                        <div class="mt-4 grid gap-2 text-sm text-slate-600 dark:text-slate-300">
-                            <div class="flex items-center justify-between gap-3 rounded-2xl bg-slate-50 px-3 py-2 dark:bg-slate-900">
-                                <span>Email</span>
-                                <span class="truncate text-slate-900 dark:text-white">{{ $founder->email ?: 'Not available' }}</span>
-                            </div>
-                            <div class="flex items-center justify-between gap-3 rounded-2xl bg-slate-50 px-3 py-2 dark:bg-slate-900">
-                                <span>Phone</span>
-                                <span class="truncate text-slate-900 dark:text-white">{{ $founder->phone ?: 'Not available' }}</span>
-                            </div>
-                            <div class="flex items-center justify-between gap-3 rounded-2xl bg-slate-50 px-3 py-2 dark:bg-slate-900">
-                                <span>Experience</span>
-                                <span class="text-slate-900 dark:text-white">{{ $founder->experience_years ? $founder->experience_years.' years' : 'Not listed' }}</span>
-                            </div>
-                            <div class="flex items-center justify-between gap-3 rounded-2xl bg-slate-50 px-3 py-2 dark:bg-slate-900">
-                                <span>Previous company</span>
-                                <span class="truncate text-slate-900 dark:text-white">{{ $founder->prev_company ?: 'Not available' }}</span>
+                                <div class="mt-3 space-y-1 text-sm text-slate-600 dark:text-slate-300">
+                                    <p>{{ $founder->email ?: 'Email not available' }}</p>
+                                    <p>{{ $founder->phone ?: 'Phone not available' }}</p>
+                                    <p>{{ $founder->experience_years ? $founder->experience_years.' years experience' : 'Experience not listed' }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>

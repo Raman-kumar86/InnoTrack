@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Sector;
 use App\Models\Startup;
 use App\Models\State;
+use App\Models\Founder;
+use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
 
 class StartupController extends Controller
@@ -89,7 +91,155 @@ class StartupController extends Controller
 
     public function edit(Startup $startup)
     {
-        return view('startups.edit', compact('startup'));
+        $sectors = Sector::query()->orderBy('sector_name')->get(['id', 'sector_name']);
+        $states = State::query()->orderBy('state_name')->get(['id', 'state_name']);
+
+        // Ensure related data is loaded so the edit form is prefilled reliably
+        $startup->load([
+            'founders' => fn ($q) => $q->orderBy('full_name'),
+            'sector',
+            'state',
+        ]);
+
+        $fundingStages = Startup::query()
+            ->select('funding_stage')
+            ->whereNotNull('funding_stage')
+            ->where('funding_stage', '!=', '')
+            ->distinct()
+            ->orderBy('funding_stage')
+            ->pluck('funding_stage');
+
+        return view('startups.edit', compact('startup', 'sectors', 'states', 'fundingStages'));
+    }
+
+    public function update(Request $request, Startup $startup)
+    {
+        $data = $request->validate([
+            'startup_name' => ['required', 'string', 'max:255'],
+            'website' => ['nullable', 'url', 'max:255'],
+            'registration_number' => ['nullable', 'string', 'max:255'],
+            'sector_id' => ['nullable', 'exists:sectors,id'],
+            'state_id' => ['nullable', 'exists:states,id'],
+            'funding_stage' => ['nullable', 'string', 'max:100'],
+            'description' => ['nullable', 'string'],
+            'dpiit_recognized' => ['nullable', 'in:0,1'],
+            'public_listing' => ['nullable', 'in:0,1'],
+            'email' => ['nullable', 'email', 'max:255'],
+            'phone' => ['nullable', 'string', 'max:50'],
+            'linkedin_url' => ['nullable', 'url', 'max:255'],
+            'founded_year' => ['nullable', 'integer', 'min:1900', 'max:' . now()->year],
+            'founder_count' => ['nullable', 'integer', 'min:0'],
+            'employee_count' => ['nullable', 'integer', 'min:0'],
+            'total_funding_usd' => ['nullable', 'numeric'],
+            'valuation_usd' => ['nullable', 'numeric'],
+            'annual_revenue_inr' => ['nullable', 'numeric'],
+            'jobs_created' => ['nullable', 'integer', 'min:0'],
+            'patents_filed' => ['nullable', 'integer', 'min:0'],
+            'city' => ['nullable', 'string', 'max:255'],
+            'status' => ['nullable', 'string', 'max:50'],
+            'women_led' => ['nullable', 'in:0,1'],
+            'ai_enabled' => ['nullable', 'in:0,1'],
+            'sustainability_focus' => ['nullable', 'in:0,1'],
+            'export_business' => ['nullable', 'in:0,1'],
+            'founders' => ['nullable', 'array'],
+            'founders.*.id' => ['nullable', 'integer', 'exists:founders,id'],
+            'founders.*.full_name' => ['nullable', 'string', 'max:255'],
+            'founders.*.email' => ['nullable', 'email', 'max:255'],
+            'founders.*._destroy' => ['nullable', 'in:0,1'],
+        ]);
+
+        $startup->fill([
+            'startup_name' => $data['startup_name'],
+            'website' => $data['website'] ?? null,
+            'registration_number' => $data['registration_number'] ?? null,
+            'sector_id' => $data['sector_id'] ?? null,
+            'state_id' => $data['state_id'] ?? null,
+            'funding_stage' => $data['funding_stage'] ?? null,
+            'description' => $data['description'] ?? null,
+            'email' => $data['email'] ?? null,
+            'phone' => $data['phone'] ?? null,
+            'linkedin_url' => $data['linkedin_url'] ?? null,
+            'founded_year' => $data['founded_year'] ?? null,
+            'founder_count' => $data['founder_count'] ?? null,
+            'employee_count' => $data['employee_count'] ?? null,
+            'total_funding_usd' => $data['total_funding_usd'] ?? null,
+            'valuation_usd' => $data['valuation_usd'] ?? null,
+            'annual_revenue_inr' => $data['annual_revenue_inr'] ?? null,
+            'jobs_created' => $data['jobs_created'] ?? null,
+            'patents_filed' => $data['patents_filed'] ?? null,
+            'city' => $data['city'] ?? null,
+            'status' => $data['status'] ?? null,
+        ]);
+
+        $startup->dpiit_recognized = isset($data['dpiit_recognized']) && $data['dpiit_recognized'] === '1';
+        $startup->women_led = isset($data['women_led']) && $data['women_led'] === '1';
+        $startup->ai_enabled = isset($data['ai_enabled']) && $data['ai_enabled'] === '1';
+        $startup->sustainability_focus = isset($data['sustainability_focus']) && $data['sustainability_focus'] === '1';
+        $startup->export_business = isset($data['export_business']) && $data['export_business'] === '1';
+
+        if (array_key_exists('public_listing', $data)) {
+            $startup->public_listing = $data['public_listing'] === '1';
+        }
+
+        $startup->save();
+
+        // Process founders CRUD: create, update, mark for delete
+        $foundersInput = $request->input('founders', []);
+        $keep = [];
+
+        foreach ($foundersInput as $f) {
+            $f = array_map(function ($v) {
+                return $v === '' ? null : $v;
+            }, $f);
+
+            $destroy = isset($f['_destroy']) && $f['_destroy'] === '1';
+
+            if (! empty($f['id'])) {
+                $founder = Founder::find($f['id']);
+                if (! $founder || $founder->startup_id !== $startup->id) {
+                    // skip any founder not belonging to this startup
+                    continue;
+                }
+
+                if ($destroy) {
+                    $founder->delete();
+                    continue;
+                }
+
+                $founder->fill([
+                    'full_name' => $f['full_name'] ?? $founder->full_name,
+                    'email' => $f['email'] ?? $founder->email,
+                ]);
+
+                $founder->save();
+                $keep[] = $founder->id;
+                continue;
+            }
+
+            if ($destroy) {
+                continue;
+            }
+
+            // create new founder
+            if (! empty($f['full_name']) || ! empty($f['email'])) {
+                $new = Founder::create([
+                    'startup_id' => $startup->id,
+                    'full_name' => $f['full_name'] ?? null,
+                    'email' => $f['email'] ?? null,
+                ]);
+
+                $keep[] = $new->id;
+            }
+        }
+
+        // remove any founders that were not included in the submitted list
+        $existing = $startup->founders()->pluck('id')->all();
+        $toDelete = array_diff($existing, $keep);
+        if (! empty($toDelete)) {
+            Founder::query()->whereIn('id', $toDelete)->delete();
+        }
+
+        return redirect()->route('startups.show', ['startup' => $startup->id])->with('success', 'Startup updated successfully.');
     }
 
     public function destroy(Startup $startup)
@@ -175,7 +325,7 @@ class StartupController extends Controller
         return response()->json(['message' => count($ids).' startups updated to '.$status]);
     }
 
-    private function streamStartupsCsv($startups, string $filename)
+    private function streamStartupsCsv(Collection|array $startups, string $filename)
     {
         return response()->streamDownload(function () use ($startups): void {
             $handle = fopen('php://output', 'w');

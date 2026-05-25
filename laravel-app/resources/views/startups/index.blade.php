@@ -390,7 +390,7 @@
                         </th>
                         <th class="px-6 py-4">
                             <a class="inline-flex items-center gap-1 {{ $sortActive(['funding_high', 'funding_low']) ? 'font-bold text-indigo-600 dark:text-indigo-400' : 'hover:text-indigo-600 dark:hover:text-indigo-400' }}" href="{{ $buildIndexUrl(['sort' => $sort === 'funding_high' ? 'funding_low' : 'funding_high']) }}">
-                                Funding (USD) <span class="text-xs opacity-60">{{ $sortIndicator(['funding_high', 'funding_low']) }}</span>
+                                Funding (Rs.) <span class="text-xs opacity-60">{{ $sortIndicator(['funding_high', 'funding_low']) }}</span>
                             </a>
                         </th>
                         <th class="px-6 py-4">
@@ -406,11 +406,11 @@
                         @php
                             $fundingValue = (float) ($startup->total_funding_usd ?? 0);
                             $formattedFunding = match (true) {
-                                $fundingValue >= 1e9 => '$'.number_format($fundingValue / 1e9, 2).'B',
-                                $fundingValue >= 1e6 => '$'.number_format($fundingValue / 1e6, 1).'M',
-                                $fundingValue >= 1e3 => '$'.number_format($fundingValue / 1e3, 0).'K',
+                                $fundingValue >= 1e9 => 'Rs.'.number_format($fundingValue / 1e9, 2).'B',
+                                $fundingValue >= 1e6 => 'Rs.'.number_format($fundingValue / 1e6, 1).'M',
+                                $fundingValue >= 1e3 => 'Rs.'.number_format($fundingValue / 1e3, 0).'K',
                                 $fundingValue == 0.0 => 'Bootstrapped',
-                                default => '$'.number_format($fundingValue, 2),
+                                default => 'Rs.'.number_format($fundingValue, 2),
                             };
 
                             $growthValue = (float) ($startup->growth_percentage ?? 0);
@@ -594,7 +594,7 @@
                     </div>
 
                     <div>
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white">Total Funding (USD)</p>
+                        <p class="text-sm font-semibold text-slate-900 dark:text-white">Total Funding (Rs.)</p>
                         <div class="mt-3 grid grid-cols-2 gap-3">
                             <input type="number" name="funding_min" value="{{ $filters['funding_min'] ?? '' }}" placeholder="Min" class="input-modern">
                             <input type="number" name="funding_max" value="{{ $filters['funding_max'] ?? '' }}" placeholder="Max" class="input-modern">

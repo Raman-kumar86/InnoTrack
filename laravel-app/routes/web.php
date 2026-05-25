@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function (): void {
     Route::get('/startups/create', [StartupController::class, 'create'])->name('startups.create');
     Route::get('/startups/{startup}', [StartupController::class, 'show'])->name('startups.show');
     Route::get('/startups/{startup}/edit', [StartupController::class, 'edit'])->name('startups.edit');
+    Route::patch('/startups/{startup}', [StartupController::class, 'update'])->name('startups.update');
     Route::delete('/startups/{startup}', [StartupController::class, 'destroy'])->name('startups.destroy');
     Route::view('/funding/create', 'funding.create')->name('funding.create');
     Route::view('/analytics/state', 'analytics.state')->name('analytics.state');
