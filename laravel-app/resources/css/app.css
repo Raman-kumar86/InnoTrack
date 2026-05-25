@@ -71,6 +71,10 @@
     @apply min-h-32 w-full rounded-2xl border border-slate-200 bg-white/90 px-4 py-3 text-sm text-slate-900 shadow-sm transition focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100;
   }
 
+  .checkbox-modern {
+    @apply h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900;
+  }
+
   .table-modern {
     @apply min-w-full divide-y divide-slate-200 dark:divide-slate-800;
   }

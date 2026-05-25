@@ -1,6 +1,6 @@
 @props(['name' => null, 'label' => null, 'error' => null])
 
-<div class="space-y-2">
+<div {{ $attributes->merge(['class' => 'space-y-2']) }}>
     @if ($label)
         <label class="text-sm font-medium text-slate-700 dark:text-slate-200">{{ $label }}</label>
     @endif

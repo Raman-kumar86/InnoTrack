@@ -3,6 +3,7 @@
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\StartupController;
 use App\Http\Controllers\ReportsController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,10 +27,12 @@ Route::prefix('auth')->name('auth.')->group(function (): void {
 
 Route::middleware('auth')->group(function (): void {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::view('/startups', 'startups.index')->name('startups.index');
-    Route::view('/startups/create', 'startups.create')->name('startups.create');
-    Route::view('/startups/{startup}', 'startups.show')->name('startups.show');
-    Route::view('/startups/{startup}/edit', 'startups.edit')->name('startups.edit');
+    Route::get('/startups', [StartupController::class, 'index'])->name('startups.index');
+    Route::get('/startups/export', [StartupController::class, 'export'])->name('startups.export');
+    Route::get('/startups/create', [StartupController::class, 'create'])->name('startups.create');
+    Route::get('/startups/{startup}', [StartupController::class, 'show'])->name('startups.show');
+    Route::get('/startups/{startup}/edit', [StartupController::class, 'edit'])->name('startups.edit');
+    Route::delete('/startups/{startup}', [StartupController::class, 'destroy'])->name('startups.destroy');
     Route::view('/funding/create', 'funding.create')->name('funding.create');
     Route::view('/analytics/state', 'analytics.state')->name('analytics.state');
     Route::get('/reports', [ReportsController::class, 'index'])->name('reports.index');
