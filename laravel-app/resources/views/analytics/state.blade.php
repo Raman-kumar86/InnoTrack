@@ -59,11 +59,11 @@
                 <x-ui.badge variant="info">Live</x-ui.badge>
             </div>
 
-            <div class="relative mt-6 overflow-hidden rounded-4xl border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-indigo-50 p-6 dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-indigo-950/30">
+            <div class="relative mt-6 overflow-hidden rounded-4xl border border-slate-200 bg-linear-to-br from-slate-50 via-white to-indigo-50 p-6 dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-indigo-950/30">
                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(79,70,229,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.16),transparent_28%)]"></div>
                 <div class="relative grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(320px,1fr)]">
-                    <div class="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 p-5 shadow-lg backdrop-blur dark:border-slate-800 dark:bg-slate-900/80">
-                        <div class="absolute inset-8 rounded-[50%_50%_42%_42%/58%_58%_42%_42%] border border-indigo-500/15 bg-gradient-to-br from-indigo-500/8 to-cyan-500/8"></div>
+                    <div class="relative min-h-90 overflow-hidden rounded-4xl border border-white/70 bg-white/70 p-5 shadow-lg backdrop-blur dark:border-slate-800 dark:bg-slate-900/80">
+                        <div class="absolute inset-8 rounded-[50%_50%_42%_42%/58%_58%_42%_42%] border border-indigo-500/15 bg-linear-to-br from-indigo-500/8 to-cyan-500/8"></div>
                         <div class="absolute left-[18%] top-[22%] rounded-2xl bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-lg shadow-indigo-600/30">Karnataka</div>
                         <div class="absolute left-[49%] top-[12%] rounded-2xl bg-cyan-600 px-3 py-2 text-xs font-semibold text-white shadow-lg shadow-cyan-600/30">Delhi</div>
                         <div class="absolute left-[58%] top-[35%] rounded-2xl bg-emerald-600 px-3 py-2 text-xs font-semibold text-white shadow-lg shadow-emerald-600/30">Maharashtra</div>

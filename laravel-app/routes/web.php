@@ -49,6 +49,9 @@ Route::middleware('auth')->group(function (): void {
         return redirect()->route('state-analytics.index');
     })->name('analytics.state');
     Route::get('/reports', [ReportsController::class, 'index'])->name('reports.index');
+    Route::get('/reports/export/executive', [ReportsController::class, 'exportExecutive'])->name('reports.export.executive');
+    Route::get('/reports/export/funding', [ReportsController::class, 'exportFunding'])->name('reports.export.funding');
+    Route::get('/reports/export/states', [ReportsController::class, 'exportStates'])->name('reports.export.states');
     Route::view('/users', 'users.index')->name('users.index');
     Route::view('/activity-logs', 'activity.index')->name('activity.index');
     Route::get('/settings', [SettingsController::class, 'edit'])->name('settings.index');
