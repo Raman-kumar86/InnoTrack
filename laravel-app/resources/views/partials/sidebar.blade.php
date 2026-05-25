@@ -34,6 +34,9 @@ $navigation = [
 
             <nav class="space-y-2">
                 @foreach ($navigation as $item)
+                @if (auth()->user()?->isReviewer() && in_array($item['route'], ['users.index', 'activity-logs.index'], true))
+                    @continue
+                @endif
                 @php($isActive = request()->routeIs($item['route']))
                 <a
                     href="{{ route($item['route']) }}"

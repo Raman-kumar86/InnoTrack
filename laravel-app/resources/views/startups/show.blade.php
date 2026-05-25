@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @php
+    $isReviewer = auth()->user()?->isReviewer();
     $startupName = $startup->startup_name ?: 'Startup Profile';
     $title = $startupName;
     $pageTitle = $startupName;
@@ -93,7 +94,9 @@
                     @if ($website)
                         <x-ui.button href="{{ $website }}" variant="secondary">Website</x-ui.button>
                     @endif
-                    <x-ui.button href="{{ route('startups.edit', ['startup' => $startup->id]) }}">Edit startup</x-ui.button>
+                    @if (! $isReviewer)
+                        <x-ui.button href="{{ route('startups.edit', ['startup' => $startup->id]) }}">Edit startup</x-ui.button>
+                    @endif
                 </div>
             </div>
         </div>

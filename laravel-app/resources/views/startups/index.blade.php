@@ -3,6 +3,8 @@
 @php
 $title = 'Startups';
 $pageTitle = 'Startups';
+$isReviewer = auth()->user()?->isReviewer();
+$showSelectionColumn = ! $isReviewer;
 $breadcrumbs = [
 ['label' => 'Home', 'url' => route('dashboard')],
 ['label' => 'Startups', 'url' => route('startups.index')],
@@ -59,10 +61,12 @@ $startupStages = $fundingStages->values();
                 Export CSV
             </x-ui.button>
 
-            <x-ui.button href="{{ route('startups.create') }}">
-                <x-ui.icon name="plus" class="h-4 w-4" />
-                Add Startup
-            </x-ui.button>
+            @if (! auth()->user()?->isReviewer())
+                <x-ui.button href="{{ route('startups.create') }}">
+                    <x-ui.icon name="plus" class="h-4 w-4" />
+                    Add Startup
+                </x-ui.button>
+            @endif
         </div>
     </x-ui.section-header>
 
@@ -342,10 +346,12 @@ $startupStages = $fundingStages->values();
                 @endforeach
             </select>
 
-            <x-ui.button type="button" variant="danger" @click="confirmBulkDelete()">
-                <x-ui.icon name="trash" class="h-4 w-4" />
-                Delete Selected
-            </x-ui.button>
+            @if (! $isReviewer)
+                <x-ui.button type="button" variant="danger" @click="confirmBulkDelete()">
+                    <x-ui.icon name="trash" class="h-4 w-4" />
+                    Delete Selected
+                </x-ui.button>
+            @endif
 
             <x-ui.button type="button" variant="ghost" @click="selectedIds = []; selectAll = false">
                 <x-ui.icon name="x" class="h-4 w-4" />
@@ -366,9 +372,11 @@ $startupStages = $fundingStages->values();
             <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
                 <thead class="bg-slate-50/80 text-left text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:bg-slate-900/80 dark:text-slate-400">
                     <tr>
-                        <th class="w-12 px-6 py-4">
-                            <input type="checkbox" x-model="selectAll" @change="toggleAll()" class="checkbox-modern" />
-                        </th>
+                        @if ($showSelectionColumn)
+                            <th class="w-12 px-6 py-4">
+                                <input type="checkbox" x-model="selectAll" @change="toggleAll()" class="checkbox-modern" />
+                            </th>
+                        @endif
                         <th class="px-6 py-4">
                             <a class="inline-flex items-center gap-1 {{ $sortActive(['name_asc', 'name_desc']) ? 'font-bold text-indigo-600 dark:text-indigo-400' : 'hover:text-indigo-600 dark:hover:text-indigo-400' }}" href="{{ $buildIndexUrl(['sort' => $sort === 'name_asc' ? 'name_desc' : 'name_asc']) }}">
                                 Startup Name <span class="text-xs opacity-60">{{ $sortIndicator(['name_asc', 'name_desc']) }}</span>
@@ -410,9 +418,11 @@ $startupStages = $fundingStages->values();
                     @endphp
 
                     <tr class="group hover:bg-slate-50/70 dark:hover:bg-slate-800/40" :class="{ 'bg-indigo-50/50 dark:bg-indigo-950/20': selectedIds.includes('{{ $startup->id }}') }">
-                        <td class="px-6 py-4">
-                            <input type="checkbox" value="{{ $startup->id }}" x-model="selectedIds" class="checkbox-modern" />
-                        </td>
+                        @if ($showSelectionColumn)
+                            <td class="px-6 py-4">
+                                <input type="checkbox" value="{{ $startup->id }}" x-model="selectedIds" class="checkbox-modern" />
+                            </td>
+                        @endif
                         <td class="px-6 py-4">
                             <div class="flex flex-col">
                                 <span class="font-semibold text-slate-900 dark:text-white">{{ $startup->startup_name }}</span>
@@ -435,30 +445,36 @@ $startupStages = $fundingStages->values();
                                 @endif
                                 </td>
                         <td class="px-6 py-4">
-                            <div class="relative inline-flex">
-                                <button type="button" class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800" @click.stop="toggleActionMenu('{{ $startup->id }}')" :aria-expanded="(openActionMenu === '{{ $startup->id }}').toString()">
-                                    Actions
-                                    <span class="transition-transform duration-200" :class="openActionMenu === '{{ $startup->id }}' ? 'rotate-180' : ''">
-                                        <x-ui.icon name="chevron-down" class="h-4 w-4" />
-                                    </span>
-                                </button>
-                                <div x-cloak x-show="openActionMenu === '{{ $startup->id }}'" x-transition.origin.top.right @click.outside="closeActionMenu()" class="absolute right-0 top-12 z-20 w-48 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl shadow-slate-200/70 dark:border-slate-800 dark:bg-slate-950 dark:shadow-slate-950/40">
-                                    <a href="{{ route('startups.show', ['startup' => $startup->id]) }}" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">
-                                        <x-ui.icon name="eye" class="h-4 w-4" /> View
-                                    </a>
-                                    <a href="{{ route('startups.edit', $startup) }}" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">
-                                        <x-ui.icon name="edit" class="h-4 w-4" /> Edit
-                                    </a>
-                                    <button type="button" class="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm text-rose-600 transition hover:bg-rose-500/10 dark:text-rose-400" @click="confirmDelete('{{ $startup->id }}', @js($startup->startup_name))">
-                                        <x-ui.icon name="trash" class="h-4 w-4" /> Delete
+                            @if ($isReviewer)
+                                <a href="{{ route('startups.show', ['startup' => $startup->id]) }}" class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
+                                    <x-ui.icon name="eye" class="h-4 w-4" /> View
+                                </a>
+                            @else
+                                <div class="relative inline-flex">
+                                    <button type="button" class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800" @click.stop="toggleActionMenu('{{ $startup->id }}')" :aria-expanded="(openActionMenu === '{{ $startup->id }}').toString()">
+                                        Actions
+                                        <span class="transition-transform duration-200" :class="openActionMenu === '{{ $startup->id }}' ? 'rotate-180' : ''">
+                                            <x-ui.icon name="chevron-down" class="h-4 w-4" />
+                                        </span>
                                     </button>
+                                    <div x-cloak x-show="openActionMenu === '{{ $startup->id }}'" x-transition.origin.top.right @click.outside="closeActionMenu()" class="absolute right-0 top-12 z-20 w-48 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl shadow-slate-200/70 dark:border-slate-800 dark:bg-slate-950 dark:shadow-slate-950/40">
+                                        <a href="{{ route('startups.show', ['startup' => $startup->id]) }}" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">
+                                            <x-ui.icon name="eye" class="h-4 w-4" /> View
+                                        </a>
+                                        <a href="{{ route('startups.edit', $startup) }}" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">
+                                            <x-ui.icon name="edit" class="h-4 w-4" /> Edit
+                                        </a>
+                                        <button type="button" class="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm text-rose-600 transition hover:bg-rose-500/10 dark:text-rose-400" @click="confirmDelete('{{ $startup->id }}', @js($startup->startup_name))">
+                                            <x-ui.icon name="trash" class="h-4 w-4" /> Delete
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                         </td>
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="13" class="px-6 py-16">
+                        <td colspan="{{ $showSelectionColumn ? 13 : 12 }}" class="px-6 py-16">
                             <div class="flex flex-col items-center justify-center gap-3">
                                 <div class="flex h-16 w-16 items-center justify-center rounded-3xl bg-indigo-600/10 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400">
                                     <x-ui.icon name="inbox" class="h-8 w-8" />

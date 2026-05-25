@@ -20,8 +20,6 @@
         title="User management"
         subtitle="Manage role access, onboarding status, and admin permissions with audit-ready controls."
     >
-        <x-ui.button variant="secondary">Invite user</x-ui.button>
-        <x-ui.button>New role</x-ui.button>
     </x-ui.section-header>
 
     <x-ui.card>
