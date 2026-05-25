@@ -220,11 +220,9 @@ class AuthController extends Controller
         $user = Auth::user();
 
         if (! $user || ! $user->is_active) {
-            Auth::logout();
+            $request->session()->regenerate();
 
-            return back()
-                ->withErrors(['email' => 'This account is inactive. Contact an administrator.'])
-                ->withInput($request->only('email', 'remember'));
+            return redirect()->route('auth.blocked');
         }
 
         $request->session()->regenerate();
@@ -238,8 +236,8 @@ class AuthController extends Controller
             'first_name' => ['required', 'string', 'max:100'],
             'last_name' => ['required', 'string', 'max:100'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],
-            'role' => ['required', Rule::in(['viewer', 'state_officer'])],
-            'state' => ['nullable', 'string', 'max:100', 'required_if:role,state_officer'],
+            'role' => ['required', Rule::in(['reviewer'])],
+            'state' => ['nullable', 'string', 'max:100'],
             'password' => ['required', 'confirmed', Password::min(8)->mixedCase()->numbers()],
             'terms' => ['accepted'],
         ]);
@@ -287,13 +285,16 @@ class AuthController extends Controller
 
     private function resolveRole(?string $email, string $requestedRole): string
     {
-        $superAdminEmail = trim((string) config('services.super_admin.email'));
+        $superAdminEmails = array_map(
+            static fn ($configuredEmail) => mb_strtolower(trim((string) $configuredEmail)),
+            (array) config('services.super_admin.emails', [])
+        );
 
-        if ($superAdminEmail !== '' && strcasecmp((string) $email, $superAdminEmail) === 0) {
+        if (in_array(mb_strtolower(trim((string) $email)), $superAdminEmails, true)) {
             return 'super_admin';
         }
 
-        return $requestedRole;
+        return 'reviewer';
     }
 
     private function resolveState(string $role, ?string $state): ?string

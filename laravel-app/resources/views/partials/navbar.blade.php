@@ -20,13 +20,21 @@
         </div>
 
         <div class="hidden max-w-xl flex-1 lg:block">
-            <label class="relative block">
-                <span class="sr-only">Search</span>
+            <form method="GET" action="{{ route('search.index') }}" class="relative block">
+                <label for="navbar-search" class="sr-only">Search</label>
                 <span class="pointer-events-none absolute inset-y-0 left-4 flex items-center text-slate-400">
                     <x-ui.icon name="search" class="h-5 w-5" />
                 </span>
-                <input type="search" placeholder="Search startups, states, reports..." class="input-modern pl-12" />
-            </label>
+                <input
+                    id="navbar-search"
+                    name="query"
+                    type="search"
+                    value="{{ request('query') }}"
+                    placeholder="Search startups, states, reports..."
+                    class="input-modern pl-12 pr-28"
+                />
+                <button type="submit" class="absolute inset-y-1 right-1 rounded-2xl bg-slate-900 px-4 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white">Search</button>
+            </form>
         </div>
 
         <div class="flex items-center gap-2">
@@ -35,10 +43,64 @@
                 <x-ui.icon name="moon" class="hidden h-5 w-5 text-slate-300 dark:block" />
             </button>
 
-            <button type="button" class="relative inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
-                <x-ui.icon name="bell" class="h-5 w-5" />
-                <span class="absolute right-2 top-2 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-slate-950"></span>
-            </button>
+            <div class="relative" x-data="{ open: false }">
+                <button type="button" @click="open = !open" class="relative inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200" :aria-expanded="open.toString()" aria-haspopup="true">
+                    <x-ui.icon name="bell" class="h-5 w-5" />
+                    @if (($navUnreadNotificationCount ?? 0) > 0)
+                        <span class="absolute right-2 top-2 min-h-2.5 min-w-2.5 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-slate-950"></span>
+                    @endif
+                </button>
+
+                <div x-cloak x-show="open" x-transition.origin.top.right @click.outside="open = false" class="absolute right-0 mt-2 w-[22rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl dark:border-slate-800 dark:bg-slate-900">
+                    <div class="flex items-center justify-between border-b border-slate-200 px-4 py-3 dark:border-slate-800">
+                        <div>
+                            <p class="text-sm font-semibold text-slate-900 dark:text-white">Notifications</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">{{ number_format($navUnreadNotificationCount ?? 0) }} unread</p>
+                        </div>
+
+                        @if (($navUnreadNotificationCount ?? 0) > 0)
+                            <form method="POST" action="{{ route('notifications.read-all') }}">
+                                @csrf
+                                <button type="submit" class="rounded-2xl border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">Mark all read</button>
+                            </form>
+                        @endif
+                    </div>
+
+                    <div class="max-h-96 overflow-y-auto">
+                        @forelse (($navNotifications ?? collect()) as $notification)
+                            <form method="POST" action="{{ route('notifications.read', $notification) }}" class="border-b border-slate-100 dark:border-slate-800 last:border-b-0">
+                                @csrf
+                                <button type="submit" class="flex w-full gap-3 px-4 py-3 text-left transition hover:bg-slate-50 dark:hover:bg-slate-800/70">
+                                    <div class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl {{ $notification->is_read ? 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400' : 'bg-emerald-500/10 text-emerald-500 dark:bg-emerald-500/15 dark:text-emerald-300' }}">
+                                        <x-ui.icon name="{{ $notification->notification_type === 'funding_update' ? 'funding' : 'bell' }}" class="h-5 w-5" />
+                                    </div>
+                                    <div class="min-w-0 flex-1">
+                                        <div class="flex items-start justify-between gap-3">
+                                            <p class="truncate text-sm font-semibold {{ $notification->is_read ? 'text-slate-700 dark:text-slate-200' : 'text-slate-900 dark:text-white' }}">{{ $notification->title }}</p>
+                                            <span class="shrink-0 rounded-full px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] {{ $notification->priority === 'high' ? 'bg-yellow-500/10 text-yellow-600 dark:text-yellow-300' : ($notification->priority === 'medium' ? 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-300' : 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400') }}">{{ $notification->priority }}</span>
+                                        </div>
+                                        <p class="mt-1 line-clamp-2 text-xs leading-5 text-slate-500 dark:text-slate-400">{{ $notification->message }}</p>
+                                        <div class="mt-2 flex items-center gap-2 text-[11px] text-slate-400 dark:text-slate-500">
+                                            <span class="font-medium text-cyan-600 dark:text-cyan-300">{{ $notification->relative_time }}</span>
+                                            @if ($notification->startup?->startup_name)
+                                                <span class="truncate">• {{ $notification->startup->startup_name }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </button>
+                            </form>
+                        @empty
+                            <div class="px-4 py-10 text-center">
+                                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-slate-400 dark:border-slate-800 dark:bg-slate-800 dark:text-slate-500">
+                                    <x-ui.icon name="inbox" class="h-6 w-6" />
+                                </div>
+                                <p class="mt-3 text-sm font-semibold text-slate-700 dark:text-white">No notifications yet</p>
+                                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">You’ll see startup updates and system alerts here.</p>
+                            </div>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
 
             <div class="relative">
                 <div class="relative js-profile">

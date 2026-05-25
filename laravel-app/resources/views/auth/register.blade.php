@@ -6,7 +6,7 @@
     <div class="text-center">
         <p class="text-sm font-semibold uppercase tracking-[0.35em] text-indigo-300">Create account</p>
         <h1 class="mt-3 text-3xl font-semibold tracking-tight text-white">Register a new workspace user</h1>
-        <p class="mt-3 text-sm text-slate-300">Viewer is the default role. Choose state officer if you need state access.</p>
+        <p class="mt-3 text-sm text-slate-300">All new accounts are created as reviewers.</p>
     </div>
 
     <form class="space-y-4" method="POST" action="{{ route('auth.register.store') }}">
@@ -16,10 +16,16 @@
             <x-ui.auth-field name="last_name" label="Last name" value="{{ old('last_name') }}" autocomplete="family-name" :error="$formErrors->first('last_name')" />
         </div>
         <x-ui.auth-field name="email" label="Email address" type="email" value="{{ old('email') }}" autocomplete="email" :error="$formErrors->first('email')" />
-        <x-ui.select-field name="role" label="Account role" :error="$formErrors->first('role')">
-            <option value="viewer" @selected(old('role', 'viewer') === 'viewer')>Viewer</option>
-            <option value="state_officer" @selected(old('role') === 'state_officer')>State officer</option>
-        </x-ui.select-field>
+        <input type="hidden" name="role" value="reviewer">
+        <div class="space-y-2">
+            <label class="block text-sm font-medium text-slate-200">Account role</label>
+            <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">
+                Reviewer
+            </div>
+            @if ($formErrors->has('role'))
+                <p class="text-xs font-medium text-rose-500">{{ $formErrors->first('role') }}</p>
+            @endif
+        </div>
         <x-ui.auth-field name="state" label="State / Territory" value="{{ old('state') }}" autocomplete="address-level1" :error="$formErrors->first('state')" />
         <x-ui.auth-field name="password" label="Password" type="password" autocomplete="new-password" toggle="true" :error="$formErrors->first('password')" />
         <x-ui.auth-field name="password_confirmation" label="Confirm password" type="password" autocomplete="new-password" toggle="true" :error="$formErrors->first('password_confirmation')" />

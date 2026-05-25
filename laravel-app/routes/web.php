@@ -4,7 +4,9 @@ use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ActivityLogController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserManagementController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\FundingRoundController;
 use App\Http\Controllers\StateAnalyticsController;
 use App\Http\Controllers\StartupController;
@@ -27,10 +29,13 @@ Route::prefix('auth')->name('auth.')->group(function (): void {
     });
 
     Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+
+    Route::view('/blocked', 'auth.blocked')->middleware('auth')->name('blocked');
 });
 
-Route::middleware('auth')->group(function (): void {
+Route::middleware(['auth', 'active.user'])->group(function (): void {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/search', [SearchController::class, 'index'])->name('search.index');
     Route::get('/startups', [StartupController::class, 'index'])->name('startups.index');
     Route::get('/startups/export', [StartupController::class, 'export'])->name('startups.export');
     Route::get('/startups/create', [StartupController::class, 'create'])->name('startups.create');
@@ -91,4 +96,7 @@ Route::middleware('auth')->group(function (): void {
     Route::patch('/settings', [SettingsController::class, 'update'])->name('settings.update');
     Route::get('/setting', [SettingsController::class, 'edit'])->name('setting.alias');
     Route::view('/profile', 'profile.show')->name('profile.show');
+
+    Route::post('/notifications/{notification}/read', [NotificationController::class, 'markAsRead'])->name('notifications.read');
+    Route::post('/notifications/read-all', [NotificationController::class, 'markAllAsRead'])->name('notifications.read-all');
 });

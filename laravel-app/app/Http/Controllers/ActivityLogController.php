@@ -30,17 +30,15 @@ class ActivityLogController extends Controller
         ];
 
         $sort = $request->string('sort')->toString() ?: 'newest';
-        $perPage = (int) $request->integer('per_page', 25);
-        $perPage = in_array($perPage, config('activity.per_page_options', []), true) ? $perPage : 25;
+        $perPage = 10;
 
         $query = $this->filteredQuery($filters);
 
         $logs = (clone $query)
+            ->with(['causer', 'targetUser'])
             ->when($sort === 'oldest', fn ($query) => $query->oldest('created_at'), fn ($query) => $query->latest('created_at'))
             ->paginate($perPage)
             ->withQueryString();
-
-        $timeline = (clone $query)->latest('created_at')->take(10)->get();
 
         $summaryQuery = $this->filteredQuery($filters);
         $totalToday = (clone $summaryQuery)->count();
@@ -72,11 +70,9 @@ class ActivityLogController extends Controller
                 ['label' => 'Activity Logs', 'url' => route('activity-logs.index')],
             ],
             'logs' => $logs,
-            'timeline' => $timeline,
             'filters' => $filters,
             'sort' => $sort,
             'perPage' => $perPage,
-            'perPageOptions' => $perPageOptions,
             'modules' => $modules,
             'results' => $results,
             'users' => $users,

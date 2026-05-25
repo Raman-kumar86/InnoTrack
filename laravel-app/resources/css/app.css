@@ -92,6 +92,7 @@
   }
 }
 
+@layer utilities {
   html {
     scrollbar-width: thin;
     scrollbar-color: rgb(79 70 229) rgb(226 232 240);
@@ -128,4 +129,30 @@
     border: 2px solid transparent;
     background-clip: content-box;
   }
+
+  .activity-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(34 211 238) rgb(15 23 42);
+  }
+
+  .activity-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .activity-scrollbar::-webkit-scrollbar-track {
+    background: rgb(15 23 42);
+    border-radius: 9999px;
+  }
+
+  .activity-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgb(34 211 238), rgb(99 102 241));
+    border-radius: 9999px;
+    border: 2px solid rgb(15 23 42);
+  }
+
+  .activity-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgb(45 212 191), rgb(59 130 246));
+  }
+}
  

@@ -24,7 +24,7 @@ class UpdateUserRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users', 'email')->ignore($target->id)],
-            'role' => ['required', Rule::in(['state_analyst', 'reviewer'])],
+            'role' => ['required', Rule::in(['super_admin', 'state_analyst', 'reviewer'])],
             'status' => ['required', Rule::in(['active', 'blocked'])],
             'password' => ['nullable', 'string', 'min:8', 'confirmed'],
         ];

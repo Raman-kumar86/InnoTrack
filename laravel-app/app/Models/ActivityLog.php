@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class ActivityLog extends Model
 {
@@ -139,5 +140,96 @@ class ActivityLog extends Model
         }
 
         return $this->created_at->format('d M Y, H:i');
+    }
+
+    public function getActorNameAttribute(): string
+    {
+        return $this->causer?->name
+            ?? $this->user?->name
+            ?? $this->user_name
+            ?? 'System';
+    }
+
+    public function getTargetNameAttribute(): string
+    {
+        if ($this->target_user_id) {
+            return $this->targetUser?->name ?? 'Unknown User';
+        }
+
+        return 'Not specified';
+    }
+
+    public function getActionToneAttribute(): array
+    {
+        $signal = Str::lower(trim(($this->action ?? '') . ' ' . ($this->description ?? '')));
+
+        return match (true) {
+            Str::contains($signal, ['unblock', 'restore', 'reactivate']) => [
+                'badge' => 'bg-emerald-500/15',
+                'ring' => 'ring-emerald-400/20',
+                'icon' => 'text-emerald-300',
+                'title' => 'text-emerald-200',
+                'pill' => 'border-emerald-400/20 bg-emerald-500/10 text-emerald-200',
+            ],
+            Str::contains($signal, ['block', 'suspend', 'disable']) => [
+                'badge' => 'bg-yellow-500/15',
+                'ring' => 'ring-yellow-400/20',
+                'icon' => 'text-yellow-300',
+                'title' => 'text-yellow-100',
+                'pill' => 'border-yellow-400/20 bg-yellow-500/10 text-yellow-100',
+            ],
+            Str::contains($signal, ['promot', 'promote']) => [
+                'badge' => 'bg-cyan-500/15',
+                'ring' => 'ring-cyan-400/20',
+                'icon' => 'text-cyan-300',
+                'title' => 'text-cyan-100',
+                'pill' => 'border-cyan-400/20 bg-cyan-500/10 text-cyan-100',
+            ],
+            Str::contains($signal, ['demot', 'revoke']) => [
+                'badge' => 'bg-indigo-500/15',
+                'ring' => 'ring-indigo-400/20',
+                'icon' => 'text-indigo-300',
+                'title' => 'text-indigo-100',
+                'pill' => 'border-indigo-400/20 bg-indigo-500/10 text-indigo-100',
+            ],
+            Str::contains($signal, ['delete', 'prune', 'remove']) => [
+                'badge' => 'bg-slate-500/15',
+                'ring' => 'ring-slate-400/20',
+                'icon' => 'text-slate-300',
+                'title' => 'text-slate-100',
+                'pill' => 'border-slate-400/20 bg-slate-500/10 text-slate-100',
+            ],
+            default => [
+                'badge' => 'bg-slate-500/15',
+                'ring' => 'ring-slate-400/20',
+                'icon' => 'text-slate-300',
+                'title' => 'text-slate-100',
+                'pill' => 'border-slate-400/20 bg-slate-500/10 text-slate-100',
+            ],
+        };
+    }
+
+    public function getActionIconAttribute(): string
+    {
+        $signal = Str::lower(trim(($this->action ?? '') . ' ' . ($this->description ?? '')));
+
+        return match (true) {
+            Str::contains($signal, ['unblock', 'restore', 'reactivate']) => 'check-circle',
+            Str::contains($signal, ['block', 'suspend', 'disable']) => 'shield',
+            Str::contains($signal, ['promot', 'promote']) => 'arrow-up',
+            Str::contains($signal, ['demot', 'revoke']) => 'activity',
+            Str::contains($signal, ['delete', 'prune', 'remove']) => 'trash',
+            default => 'activity',
+        };
+    }
+
+    public function getRelativeTimeAttribute(): string
+    {
+        return $this->created_at?->diffForHumans() ?? 'Just now';
+    }
+
+    public function getTimestampLabelAttribute(): string
+    {
+        return $this->created_at?->format('d M Y, h:i A') ?? '—';
     }
 }

@@ -43,7 +43,11 @@ return [
     ],
 
     'super_admin' => [
-        'email' => env('SUPER_ADMIN_EMAIL_ID'),
+        'emails' => collect(explode(',', (string) env('SUPER_ADMIN_EMAIL_ID', '')))
+            ->map(static fn ($email) => trim((string) $email))
+            ->filter()
+            ->values()
+            ->all(),
     ],
 
 ];
