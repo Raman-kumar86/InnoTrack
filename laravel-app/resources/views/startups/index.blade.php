@@ -130,33 +130,5 @@
         </tbody>
     </x-ui.table>
 
-    <div class="grid gap-6 lg:grid-cols-3">
-        <x-ui.empty-state
-            title="No matching startups"
-            description="When filters return zero rows, this empty state keeps the page informative and actionable."
-            class="hidden lg:flex"
-            icon="circle"
-        >
-            <x-slot:action>
-                <x-ui.button href="{{ route('startups.create') }}">
-                    <x-ui.icon name="plus" class="h-4 w-4" />
-                    Add Startup
-                </x-ui.button>
-            </x-slot:action>
-        </x-ui.empty-state>
-
-        <x-ui.card class="lg:col-span-2">
-            <div class="flex items-center justify-between gap-4">
-                <div>
-                    <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Pagination</h3>
-                    <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Stubbed pagination controls for the production table experience.</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <x-ui.button variant="secondary">Previous</x-ui.button>
-                    <x-ui.button>Next</x-ui.button>
-                </div>
-            </div>
-        </x-ui.card>
-    </div>
 </section>
 @endsection

@@ -335,8 +335,8 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
                 </label>
             </div>
 
-            <div class="mt-5 max-h-104 overflow-y-auto rounded-3xl border border-slate-200 dark:border-slate-800">
-                <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
+            <!-- <div class="mt-5 max-h-[24rem] overflow-y-auto rounded-3xl border border-slate-200 dark:border-slate-800">
+                <table class="min-w-full table-fixed divide-y divide-slate-200 dark:divide-slate-800">
                     <thead class="sticky top-0 z-10 bg-slate-50 dark:bg-slate-900/95">
                         <tr class="text-left text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
                             <th class="px-5 py-4">Sector</th>
@@ -350,14 +350,14 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
                             <tr
                                 data-sector-row
                                 data-sector-key="{{ strtolower($sector['name'].' '.$sector['value'].' '.$sector['subtitle']) }}"
-                                class="transition hover:bg-slate-50 dark:hover:bg-slate-900/70"
+                                class="h-16 transition hover:bg-indigo-50 dark:hover:bg-indigo-500/10"
                             >
-                                <td class="px-5 py-4 align-top">
+                                <td class="px-5 py-4 align-middle">
                                     <p class="font-medium text-slate-900 dark:text-white">{{ $sector['name'] }}</p>
                                 </td>
-                                <td class="px-5 py-4 align-top text-sm font-semibold text-indigo-600 dark:text-indigo-400">{{ $sector['value'] }}</td>
-                                <td class="px-5 py-4 align-top text-sm text-slate-500 dark:text-slate-400">{{ $sector['subtitle'] }}</td>
-                                <td class="px-5 py-4 align-top text-right">
+                                <td class="px-5 py-4 align-middle text-sm font-semibold text-indigo-600 dark:text-indigo-400">{{ $sector['value'] }}</td>
+                                <td class="px-5 py-4 align-middle text-sm text-slate-500 dark:text-slate-400">{{ $sector['subtitle'] }}</td>
+                                <td class="px-5 py-4 align-middle text-right">
                                     <x-ui.button href="{{ route('startups.index') }}" variant="secondary">Details</x-ui.button>
                                 </td>
                             </tr>
@@ -367,7 +367,53 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div> -->
+            <div class="max-h-[420px] overflow-y-auto rounded-2xl">
+    <table class="min-w-full table-fixed divide-y divide-slate-200 dark:divide-slate-800">
+        <thead class="sticky top-0 z-10 bg-slate-50 dark:bg-slate-900/95">
+            <tr class="text-left text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                <th class="px-5 py-4">Sector</th>
+                <th class="px-5 py-4">Share</th>
+                <th class="px-5 py-4">Details</th>
+                <th class="px-5 py-4 text-right">Action</th>
+            </tr>
+        </thead>
+
+        <tbody class="divide-y divide-slate-200 bg-white dark:divide-slate-800 dark:bg-slate-950" data-sector-table-body>
+            @foreach ($sectorCards as $sector)
+                <tr
+                    data-sector-row
+                    data-sector-key="{{ strtolower($sector['name'].' '.$sector['value'].' '.$sector['subtitle']) }}"
+                    class="h-16 transition hover:bg-indigo-50 dark:hover:bg-indigo-500/10"
+                >
+                    <td class="px-5 py-4 align-middle">
+                        <p class="font-medium text-slate-900 dark:text-white">{{ $sector['name'] }}</p>
+                    </td>
+
+                    <td class="px-5 py-4 align-middle text-sm font-semibold text-indigo-600 dark:text-indigo-400">
+                        {{ $sector['value'] }}
+                    </td>
+
+                    <td class="px-5 py-4 align-middle text-sm text-slate-500 dark:text-slate-400">
+                        {{ $sector['subtitle'] }}
+                    </td>
+
+                    <td class="px-5 py-4 align-middle text-right">
+                        <x-ui.button href="{{ route('startups.index') }}" variant="secondary">
+                            Details
+                        </x-ui.button>
+                    </td>
+                </tr>
+            @endforeach
+
+            <tr data-sector-empty class="hidden">
+                <td colspan="4" class="px-5 py-8 text-center text-sm text-slate-500 dark:text-slate-400">
+                    No matching sectors found.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
         </x-ui.card>
     </div>
 </section>
