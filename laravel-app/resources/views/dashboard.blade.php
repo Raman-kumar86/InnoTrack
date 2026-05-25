@@ -368,7 +368,7 @@ $sectorTotalActive = $sectorTotalActive ?? 0;
                     </tbody>
                 </table>
             </div> -->
-            <div class="max-h-[420px] overflow-y-auto rounded-2xl">
+            <div class="max-h-105 overflow-y-auto rounded-2xl">
     <table class="min-w-full table-fixed divide-y divide-slate-200 dark:divide-slate-800">
         <thead class="sticky top-0 z-10 bg-slate-50 dark:bg-slate-900/95">
             <tr class="text-left text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">

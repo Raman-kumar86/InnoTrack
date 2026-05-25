@@ -49,7 +49,7 @@
 @endphp
 
 @section('content')
-<section class="space-y-6" x-data="startupAdmin()" x-init="init()" x-effect="selectAll = startupIds.length > 0 && selectedIds.length === startupIds.length" data-startup-ids='@json($startupIds)'>
+<section class="space-y-6" x-data="startupAdmin(@js($startupIds))" x-init="init()" x-effect="selectAll = startupIds.length > 0 && selectedIds.length === startupIds.length" @keydown.escape.window="closeActionMenu()">
     <x-ui.section-header
         title="Startup management"
         subtitle="Search, filter, sort, export, and manage startup records in a data-rich admin interface."
@@ -92,92 +92,162 @@
             <span class="font-medium text-slate-500 dark:text-slate-400">women-led</span>
         </div>
     </div>
+<x-ui.card>
+    <form method="GET" action="{{ route('startups.index') }}" id="filterForm">
+        <input type="hidden" name="per_page" value="{{ $perPage }}">
 
-    <x-ui.card>
-        <form method="GET" action="{{ route('startups.index') }}" id="filterForm">
-            <input type="hidden" name="sort" value="{{ $sort }}">
-            <input type="hidden" name="per_page" value="{{ $perPage }}">
+        <div class="grid gap-4 items-end xl:grid-cols-12">
 
-            <div class="grid gap-4 xl:grid-cols-12">
-                <div class="xl:col-span-4">
-                    <x-ui.form-field label="Advanced search" help="Search by startup name, founder, sector, or registration code.">
-                        <input
-                            type="search"
-                            name="search"
-                            value="{{ $filters['search'] ?? '' }}"
-                            placeholder="Search startups..."
-                            class="input-modern"
-                            x-on:input.debounce.400ms="$el.form.submit()"
-                        />
-                    </x-ui.form-field>
-                </div>
+            <!-- Search -->
+            <div class="xl:col-span-4 min-w-0">
+                <x-ui.form-field label="Advanced search">
+                    <p class="text-xs leading-5 text-slate-500 dark:text-slate-400">Search by startup name, founder, sector, or registration code.</p>
+                    <input
+                        type="search"
+                        name="search"
+                        value="{{ $filters['search'] ?? '' }}"
+                        placeholder="Search startups..."
+                        class="input-modern w-full"
+                        x-on:input.debounce.400ms="$el.form.submit()"
+                    />
+                </x-ui.form-field>
+            </div>
 
-                <div class="xl:col-span-2">
-                    <x-ui.select-field label="Sector">
-                        <select name="sector_id" class="select-modern" onchange="this.form.submit()">
-                            <option value="">All sectors</option>
-                            @foreach ($sectors as $sector)
-                                <option value="{{ $sector->id }}" @selected((string) ($filters['sector_id'] ?? '') === (string) $sector->id)>
-                                    {{ $sector->sector_name }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </x-ui.select-field>
-                </div>
+            <!-- Sector -->
+            <div class="xl:col-span-2 min-w-0">
+                <x-ui.select-field label="Sector">
+                    <select
+                        name="sector_id"
+                        class="select-modern w-full min-w-0 truncate"
+                        onchange="this.form.submit()"
+                    >
+                        <option value="">All sectors</option>
 
-                <div class="xl:col-span-2">
-                    <x-ui.select-field label="State">
-                        <select name="state_id" class="select-modern" onchange="this.form.submit()">
-                            <option value="">All states</option>
-                            @foreach ($states as $state)
-                                <option value="{{ $state->id }}" @selected((string) ($filters['state_id'] ?? '') === (string) $state->id)>
-                                    {{ $state->state_name }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </x-ui.select-field>
-                </div>
+                        @foreach ($sectors as $sector)
+                            <option
+                                value="{{ $sector->id }}"
+                                @selected((string) ($filters['sector_id'] ?? '') === (string) $sector->id)
+                            >
+                                {{ $sector->sector_name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </x-ui.select-field>
+            </div>
 
-                <div class="xl:col-span-2">
-                    <x-ui.select-field label="Sort by">
-                        <select name="sort" class="select-modern" onchange="this.form.submit()">
-                            <option value="newest" @selected($sort === 'newest')>Newest first</option>
-                            <option value="oldest" @selected($sort === 'oldest')>Oldest first</option>
-                            <option value="funding_high" @selected($sort === 'funding_high')>Funding highest</option>
-                            <option value="funding_low" @selected($sort === 'funding_low')>Funding lowest</option>
-                            <option value="growth_high" @selected($sort === 'growth_high')>Growth rate ↑</option>
-                            <option value="growth_low" @selected($sort === 'growth_low')>Growth rate ↓</option>
-                            <option value="name_asc" @selected($sort === 'name_asc')>Name A–Z</option>
-                            <option value="name_desc" @selected($sort === 'name_desc')>Name Z–A</option>
-                            <option value="employees_high" @selected($sort === 'employees_high')>Employees highest</option>
-                            <option value="valuation_high" @selected($sort === 'valuation_high')>Valuation highest</option>
-                        </select>
-                    </x-ui.select-field>
-                </div>
+            <!-- State -->
+            <div class="xl:col-span-2 min-w-0">
+                <x-ui.select-field label="State">
+                    <select
+                        name="state_id"
+                        class="select-modern w-full min-w-0 truncate"
+                        onchange="this.form.submit()"
+                    >
+                        <option value="">All states</option>
 
-                <div class="xl:col-span-2">
-                    <div class="flex items-end gap-2">
-                        <x-ui.button type="button" variant="secondary" class="relative w-full justify-center" @click="drawerOpen = true">
-                            <x-ui.icon name="filter" class="h-4 w-4" />
+                        @foreach ($states as $state)
+                            <option
+                                value="{{ $state->id }}"
+                                @selected((string) ($filters['state_id'] ?? '') === (string) $state->id)
+                            >
+                                {{ $state->state_name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </x-ui.select-field>
+            </div>
+
+            <!-- Sort -->
+            <div class="xl:col-span-2 min-w-0">
+                <x-ui.select-field label="Sort by">
+                    <select
+                        name="sort"
+                        class="select-modern w-full min-w-0 truncate"
+                        onchange="this.form.submit()"
+                    >
+                        <option value="newest" @selected($sort === 'newest')>
+                            Newest first
+                        </option>
+
+                        <option value="oldest" @selected($sort === 'oldest')>
+                            Oldest first
+                        </option>
+
+                        <option value="funding_high" @selected($sort === 'funding_high')>
+                            Funding highest
+                        </option>
+
+                        <option value="funding_low" @selected($sort === 'funding_low')>
+                            Funding lowest
+                        </option>
+
+                        <option value="growth_high" @selected($sort === 'growth_high')>
+                            Growth rate ↑
+                        </option>
+
+                        <option value="growth_low" @selected($sort === 'growth_low')>
+                            Growth rate ↓
+                        </option>
+
+                        <option value="name_asc" @selected($sort === 'name_asc')>
+                            Name A–Z
+                        </option>
+
+                        <option value="name_desc" @selected($sort === 'name_desc')>
+                            Name Z–A
+                        </option>
+
+                        <option value="employees_high" @selected($sort === 'employees_high')>
+                            Employees highest
+                        </option>
+
+                        <option value="valuation_high" @selected($sort === 'valuation_high')>
+                            Valuation highest
+                        </option>
+                    </select>
+                </x-ui.select-field>
+            </div>
+
+            <!-- Filters Button -->
+            <div class="xl:col-span-2 min-w-0">
+                <div class="flex items-end gap-2">
+
+                    <x-ui.button
+                        type="button"
+                        variant="secondary"
+                        class="relative w-full justify-center whitespace-nowrap"
+                        @click="drawerOpen = true"
+                    >
+                        <x-ui.icon name="filter" class="h-4 w-4 shrink-0" />
+
+                        <span class="truncate">
                             Filters
-                            @if ($activeFilterCount > 0)
-                                <span class="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-indigo-600 text-[11px] font-semibold text-white">
-                                    {{ $activeFilterCount }}
-                                </span>
-                            @endif
-                        </x-ui.button>
+                        </span>
 
                         @if ($activeFilterCount > 0)
-                            <x-ui.button href="{{ route('startups.index') }}" variant="secondary" title="Clear all filters">
-                                <x-ui.icon name="x" class="h-4 w-4" />
-                            </x-ui.button>
+                            <span class="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-indigo-600 text-[11px] font-semibold text-white">
+                                {{ $activeFilterCount }}
+                            </span>
                         @endif
-                    </div>
+                    </x-ui.button>
+
+                    @if ($activeFilterCount > 0)
+                        <x-ui.button
+                            href="{{ route('startups.index') }}"
+                            variant="secondary"
+                            title="Clear all filters"
+                            class="shrink-0"
+                        >
+                            <x-ui.icon name="x" class="h-4 w-4" />
+                        </x-ui.button>
+                    @endif
+
                 </div>
             </div>
-        </form>
-    </x-ui.card>
 
+        </div>
+    </form>
+</x-ui.card>
     @if ($activeFilterCount > 0)
         <div class="flex flex-wrap items-center gap-2">
             <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Active filters:</span>
@@ -260,7 +330,7 @@
         </div>
     @endif
 
-    <div x-show="selectedIds.length > 0" x-transition class="flex items-center gap-3 rounded-2xl border border-indigo-200 bg-indigo-50 px-5 py-3 dark:border-indigo-900 dark:bg-indigo-950/40">
+    <div x-cloak x-show="selectedIds.length > 0" x-transition class="flex items-center gap-3 rounded-2xl border border-indigo-200 bg-indigo-50 px-5 py-3 dark:border-indigo-900 dark:bg-indigo-950/40">
         <span class="text-sm font-semibold text-indigo-700 dark:text-indigo-300">
             <span x-text="selectedIds.length"></span>
             startups selected
@@ -313,13 +383,6 @@
                         </th>
                         <th class="px-6 py-4">Sector</th>
                         <th class="px-6 py-4">State</th>
-                        <th class="px-6 py-4">Stage</th>
-                        <th class="px-6 py-4">
-                            <a class="inline-flex items-center gap-1 {{ $sortActive(['status_asc', 'status_desc']) ? 'font-bold text-indigo-600 dark:text-indigo-400' : 'hover:text-indigo-600 dark:hover:text-indigo-400' }}" href="{{ $buildIndexUrl(['sort' => $sort === 'status_asc' ? 'status_desc' : 'status_asc']) }}">
-                                Status <span class="text-xs opacity-60">{{ $sortIndicator(['status_asc', 'status_desc']) }}</span>
-                            </a>
-                        </th>
-                        <th class="px-6 py-4">DPIIT</th>
                         <th class="px-6 py-4">
                             <a class="inline-flex items-center gap-1 {{ $sortActive(['founded_new', 'founded_old']) ? 'font-bold text-indigo-600 dark:text-indigo-400' : 'hover:text-indigo-600 dark:hover:text-indigo-400' }}" href="{{ $buildIndexUrl(['sort' => $sort === 'founded_new' ? 'founded_old' : 'founded_new']) }}">
                                 Founded <span class="text-xs opacity-60">{{ $sortIndicator(['founded_new', 'founded_old']) }}</span>
@@ -335,12 +398,6 @@
                                 Growth % <span class="text-xs opacity-60">{{ $sortIndicator(['growth_high', 'growth_low']) }}</span>
                             </a>
                         </th>
-                        <th class="px-6 py-4">
-                            <a class="inline-flex items-center gap-1 {{ $sortActive(['employees_high']) ? 'font-bold text-indigo-600 dark:text-indigo-400' : 'hover:text-indigo-600 dark:hover:text-indigo-400' }}" href="{{ $buildIndexUrl(['sort' => 'employees_high']) }}">
-                                Employees <span class="text-xs opacity-60">{{ $sortIndicator(['employees_high']) }}</span>
-                            </a>
-                        </th>
-                        <th class="px-6 py-4">Tags</th>
                         <th class="px-6 py-4">Actions</th>
                     </tr>
                 </thead>
@@ -357,7 +414,6 @@
                             };
 
                             $growthValue = (float) ($startup->growth_percentage ?? 0);
-                            $tags = $startup->tags->take(2);
                         @endphp
 
                         <tr class="group hover:bg-slate-50/70 dark:hover:bg-slate-800/40" :class="{ 'bg-indigo-50/50 dark:bg-indigo-950/20': selectedIds.includes('{{ $startup->id }}') }">
@@ -373,31 +429,8 @@
                             <td class="px-6 py-4">{{ $startup->sector?->sector_name ?? '—' }}</td>
                             <td class="px-6 py-4">{{ $startup->state?->state_name ?? '—' }}</td>
                             <td class="px-6 py-4">
-                                <x-ui.stage-badge :stage="$startup->funding_stage" />
+                                {{ $startup->founded_year ?? '—' }}
                             </td>
-                            <td class="px-6 py-4">
-                                <x-ui.badge
-                                    :variant="match($startup->status) {
-                                        'Active' => 'success',
-                                        'Inactive' => 'neutral',
-                                        'Acquired' => 'info',
-                                        'Failed' => 'danger',
-                                        default => 'warning',
-                                    }"
-                                >
-                                    {{ $startup->status ?? '—' }}
-                                </x-ui.badge>
-                            </td>
-                            <td class="px-6 py-4">
-                                @if ($startup->dpiit_recognized)
-                                    <span class="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-600 dark:text-emerald-400">
-                                        <x-ui.icon name="check-circle" class="h-4 w-4" /> Yes
-                                    </span>
-                                @else
-                                    <span class="text-slate-400 dark:text-slate-500">—</span>
-                                @endif
-                            </td>
-                            <td class="px-6 py-4">{{ $startup->founded_year ?? '—' }}</td>
                             <td class="px-6 py-4 font-mono text-sm text-slate-700 dark:text-slate-200">{{ $formattedFunding }}</td>
                             <td class="px-6 py-4 font-mono text-sm {{ $growthValue > 0 ? 'text-emerald-600 dark:text-emerald-400' : ($growthValue < 0 ? 'text-rose-600 dark:text-rose-400' : 'text-slate-400 dark:text-slate-500') }}">
                                 @if ($growthValue > 0)
@@ -408,25 +441,16 @@
                                     0%
                                 @endif
                             </td>
-                            <td class="px-6 py-4 text-right font-mono text-sm text-slate-700 dark:text-slate-200">{{ number_format((int) ($startup->employee_count ?? 0)) }}</td>
-                            <td class="px-6 py-4">
-                                <div class="flex flex-wrap gap-1.5">
-                                    @foreach ($tags as $tag)
-                                        <span class="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">{{ $tag->tag }}</span>
-                                    @endforeach
-                                    @if ($startup->tags->count() > 2)
-                                        <span class="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">+{{ $startup->tags->count() - 2 }}</span>
-                                    @endif
-                                </div>
-                            </td>
                             <td class="px-6 py-4">
                                 <div class="relative inline-flex">
-                                    <button type="button" class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
+                                    <button type="button" class="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800" @click.stop="toggleActionMenu('{{ $startup->id }}')" :aria-expanded="(openActionMenu === '{{ $startup->id }}').toString()">
                                         Actions
-                                        <x-ui.icon name="chevron-down" class="h-4 w-4" />
+                                        <span class="transition-transform duration-200" :class="openActionMenu === '{{ $startup->id }}' ? 'rotate-180' : ''">
+                                            <x-ui.icon name="chevron-down" class="h-4 w-4" />
+                                        </span>
                                     </button>
-                                    <div class="invisible absolute right-0 top-12 z-10 w-48 rounded-2xl border border-slate-200 bg-white p-2 opacity-0 shadow-xl shadow-slate-200/70 transition group-hover:visible group-hover:opacity-100 dark:border-slate-800 dark:bg-slate-950 dark:shadow-slate-950/40">
-                                        <a href="{{ route('startups.show', $startup) }}" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">
+                                    <div x-cloak x-show="openActionMenu === '{{ $startup->id }}'" x-transition.origin.top.right @click.outside="closeActionMenu()" class="absolute right-0 top-12 z-20 w-48 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl shadow-slate-200/70 dark:border-slate-800 dark:bg-slate-950 dark:shadow-slate-950/40">
+                                        <a href="{{ route('startups.show', ['startup' => $startup->id]) }}" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">
                                             <x-ui.icon name="eye" class="h-4 w-4" /> View
                                         </a>
                                         <a href="{{ route('startups.edit', $startup) }}" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">
@@ -480,19 +504,19 @@
         </div>
     </x-ui.card>
 
-    <div x-show="drawerOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="fixed inset-0 z-50 flex justify-end">
+    <div x-cloak x-show="drawerOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="fixed inset-0 z-50 flex justify-end">
         <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" @click="drawerOpen = false"></div>
 
-        <div x-show="drawerOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" class="relative z-10 flex h-full w-96 flex-col border-l border-slate-200 bg-white shadow-2xl dark:border-slate-800 dark:bg-slate-950">
-            <div class="flex items-center justify-between border-b border-slate-200 p-6 dark:border-slate-800">
+        <div x-show="drawerOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" class="relative z-10 flex h-full w-96 flex-col overflow-hidden border-l border-slate-200 bg-white shadow-2xl dark:border-slate-800 dark:bg-slate-950">
+            <div class="relative flex items-center border-b border-slate-200 px-6 py-6 pr-14 dark:border-slate-800">
                 <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Advanced Filters</h3>
-                <button type="button" @click="drawerOpen = false">
+                <button type="button" class="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-600 transition hover:border-slate-300 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800" @click="drawerOpen = false" aria-label="Close filters panel">
                     <x-ui.icon name="x" class="h-5 w-5" />
                 </button>
             </div>
 
-            <form id="advancedFilterForm" method="GET" action="{{ route('startups.index') }}" class="flex h-full flex-col">
-                <div class="flex-1 space-y-6 overflow-y-auto p-6">
+            <form id="advancedFilterForm" method="GET" action="{{ route('startups.index') }}" class="flex min-h-0 flex-1 flex-col overflow-hidden">
+                <div class="min-h-0 flex-1 space-y-6 overflow-y-auto p-6">
                     <input type="hidden" name="search" value="{{ $filters['search'] ?? '' }}">
                     <input type="hidden" name="sector_id" value="{{ $filters['sector_id'] ?? '' }}">
                     <input type="hidden" name="state_id" value="{{ $filters['state_id'] ?? '' }}">
@@ -578,7 +602,7 @@
                     </div>
                 </div>
 
-                <div class="border-t border-slate-200 p-6 dark:border-slate-800">
+                <div class="shrink-0 border-t border-slate-200 p-6 dark:border-slate-800">
                     <div class="flex gap-3">
                         <a href="{{ route('startups.index') }}" class="inline-flex flex-1 items-center justify-center rounded-2xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
                             Clear All
@@ -592,7 +616,7 @@
         </div>
     </div>
 
-    <div x-show="deleteModal.open" x-transition class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm" @keydown.escape.window="deleteModal.open = false">
+    <div x-cloak x-show="deleteModal.open" x-transition class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm" @keydown.escape.window="deleteModal.open = false">
         <div class="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl dark:border-slate-800 dark:bg-slate-900">
             <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-500/10 text-rose-600 dark:text-rose-400">
                 <x-ui.icon name="trash" class="h-6 w-6" />
@@ -626,12 +650,13 @@
 
     @push('scripts')
         <script>
-            function startupAdmin() {
+            function startupAdmin(startupIds = []) {
                 return {
-                    startupIds: [],
+                    startupIds,
                     selectedIds: [],
                     selectAll: false,
                     drawerOpen: false,
+                    openActionMenu: null,
                     deleteModal: {
                         open: false,
                         id: null,
@@ -639,7 +664,7 @@
                     },
 
                     init() {
-                        this.startupIds = JSON.parse(this.$root.dataset.startupIds || '[]');
+                        // Server-driven page; no client boot data required.
                     },
 
                     toggleAll() {
@@ -651,7 +676,16 @@
                         this.selectedIds = [];
                     },
 
+                    toggleActionMenu(startupId) {
+                        this.openActionMenu = this.openActionMenu === startupId ? null : startupId;
+                    },
+
+                    closeActionMenu() {
+                        this.openActionMenu = null;
+                    },
+
                     confirmDelete(id, name) {
+                        this.closeActionMenu();
                         this.deleteModal = { open: true, id, name };
                     },
 

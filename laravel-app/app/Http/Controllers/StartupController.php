@@ -75,6 +75,15 @@ class StartupController extends Controller
 
     public function show(Startup $startup)
     {
+        $startup->load([
+            'sector',
+            'state',
+            'founders' => fn ($query) => $query->orderBy('full_name'),
+            'fundingRounds' => fn ($query) => $query->orderByDesc('funding_date')->orderByDesc('id'),
+            'tags' => fn ($query) => $query->orderBy('tag'),
+            'updates' => fn ($query) => $query->orderByDesc('update_date')->orderByDesc('created_at'),
+        ]);
+
         return view('startups.show', compact('startup'));
     }
 

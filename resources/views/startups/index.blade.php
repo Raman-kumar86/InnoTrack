@@ -1,22 +1,5 @@
 @extends('layouts.app')
 
-@php
-    $title = 'Startups';
-    $pageTitle = 'Startups';
-    $breadcrumbs = [
-        ['label' => 'Home', 'url' => route('dashboard')],
-        ['label' => 'Startups', 'url' => route('startups.index')],
-    ];
-
-    $startups = [
-        ['id' => 1, 'name' => 'AeroNex Robotics', 'sector' => 'Deep Tech', 'state' => 'Karnataka', 'stage' => 'Series A', 'status' => 'Active', 'dpiit' => 'Yes', 'founded' => '12 Apr 2022'],
-        ['id' => 2, 'name' => 'SwasthGrid', 'sector' => 'HealthTech', 'state' => 'Maharashtra', 'stage' => 'Seed', 'status' => 'Review', 'dpiit' => 'No', 'founded' => '03 Jan 2023'],
-        ['id' => 3, 'name' => 'CropPulse', 'sector' => 'Agritech', 'state' => 'Gujarat', 'stage' => 'Pre-Seed', 'status' => 'Active', 'dpiit' => 'Yes', 'founded' => '29 Aug 2021'],
-        ['id' => 4, 'name' => 'LedgerLoop', 'sector' => 'FinTech', 'state' => 'Delhi', 'stage' => 'Series B', 'status' => 'Active', 'dpiit' => 'Yes', 'founded' => '11 May 2020'],
-        ['id' => 5, 'name' => 'GridNxt Energy', 'sector' => 'ClimateTech', 'state' => 'Tamil Nadu', 'stage' => 'Growth', 'status' => 'Paused', 'dpiit' => 'Yes', 'founded' => '21 Dec 2022'],
-    ];
-@endphp
-
 @section('content')
 <section class="space-y-6">
     <x-ui.section-header

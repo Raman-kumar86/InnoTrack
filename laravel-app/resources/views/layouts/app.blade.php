@@ -36,7 +36,11 @@
     @endif
     @stack('styles')
 </head>
-<body class="min-h-full bg-[radial-gradient(circle_at_top_left,rgba(79,70,229,0.08),transparent_28%),radial-gradient(circle_at_top_right,rgba(14,165,233,0.08),transparent_24%)] text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+<body
+    x-data="sidebarShell()"
+    @keydown.escape.window="closeMobileSidebar()"
+    class="min-h-full bg-[radial-gradient(circle_at_top_left,rgba(79,70,229,0.08),transparent_28%),radial-gradient(circle_at_top_right,rgba(14,165,233,0.08),transparent_24%)] text-slate-900 dark:bg-slate-950 dark:text-slate-100"
+>
     @php($flashErrors = isset($errors) ? $errors : new \Illuminate\Support\ViewErrorBag())
     @if (session('success') || session('error') || session('status') || $flashErrors->any())
         <div class="fixed right-4 top-4 z-50 flex w-[min(24rem,calc(100vw-2rem))] flex-col gap-3">
@@ -78,12 +82,21 @@
         </div>
     @endif
 
-    <div data-sidebar-overlay class="fixed inset-0 z-40 hidden bg-slate-950/50 backdrop-blur-sm lg:hidden"></div>
+    <div
+        data-sidebar-overlay
+        x-cloak
+        x-show="mobileSidebarOpen"
+        x-transition.opacity
+        class="fixed inset-0 z-40 bg-slate-950/50 backdrop-blur-sm lg:hidden"
+        @click="closeMobileSidebar()"
+    ></div>
 
     <div class="min-h-screen lg:flex">
         @include('partials.sidebar')
 
-        <div class="flex min-h-screen flex-1 flex-col lg:pl-72">
+        <div
+            class="flex min-h-screen flex-1 flex-col transition-[padding] duration-300 ease-in-out lg:pl-72"
+        >
             @include('partials.navbar')
 
             <main class="flex-1 px-4 py-6 sm:px-6 lg:px-8">

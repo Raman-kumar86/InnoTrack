@@ -1,6 +1,12 @@
 <header class="sticky top-0 z-30 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/75">
     <div class="flex h-20 items-center gap-4 px-4 sm:px-6 lg:px-8">
-        <button type="button" data-sidebar-open class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 lg:hidden">
+        <button
+            type="button"
+            class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 lg:hidden"
+            @click="toggleMobileSidebar()"
+            aria-label="Toggle sidebar"
+            :aria-expanded="mobileSidebarOpen.toString()"
+        >
             <x-ui.icon name="menu" class="h-5 w-5" />
         </button>
 

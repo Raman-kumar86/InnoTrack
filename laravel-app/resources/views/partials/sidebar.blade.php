@@ -11,35 +11,47 @@ $navigation = [
 ];
 @endphp
 
-<aside data-sidebar class="fixed inset-y-0 left-0 z-50 w-72 -translate-x-full border-r border-slate-200/80 bg-white/95 backdrop-blur-xl transition-transform duration-300 ease-out dark:border-slate-800 dark:bg-slate-950/95 lg:translate-x-0">
+<aside
+    data-sidebar
+    x-cloak
+    class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full border-r border-slate-200/80 bg-white/95 backdrop-blur-xl transition-all duration-300 ease-in-out dark:border-slate-800 dark:bg-slate-950/95 lg:translate-x-0"
+    :class="mobileSidebarOpen ? 'translate-x-0' : '-translate-x-full'"
+    @click.outside="closeMobileSidebar()"
+>
     <div class="flex h-full flex-col">
-        <div class="flex items-center justify-between border-b border-slate-200/80 px-6 py-5 dark:border-slate-800">
-            <a href="{{ route('dashboard') }}" class="flex items-center gap-3">
-                <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-linear-to-br from-indigo-600 via-blue-600 to-cyan-500 text-white shadow-lg shadow-indigo-600/30">
+        <div class="flex items-center justify-between gap-3 border-b border-slate-200/80 px-4 py-5 dark:border-slate-800 lg:px-5">
+            <a href="{{ route('dashboard') }}" class="flex min-w-0 items-center gap-3">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-indigo-600 via-blue-600 to-cyan-500 text-white shadow-lg shadow-indigo-600/30">
                     <x-ui.icon name="shield" class="h-6 w-6" />
                 </span>
-                <span>
-                    <span class="block text-sm font-semibold uppercase tracking-[0.25em] text-indigo-600 dark:text-indigo-400">Startup India</span>
-                    <span class="block text-lg font-semibold text-slate-900 dark:text-white">Progress Dashboard</span>
+                <span class="min-w-0 max-w-56 overflow-hidden transition-all duration-300 ease-in-out">
+                    <span class="block text-xs font-semibold uppercase tracking-[0.25em] text-indigo-600 dark:text-indigo-400">Startup India</span>
+                    <span class="block truncate text-lg font-semibold text-slate-900 dark:text-white">Progress Dashboard</span>
                 </span>
             </a>
-
-            <button type="button" data-sidebar-close class="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-600 transition hover:border-slate-300 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 lg:hidden">
-                <x-ui.icon name="x" class="h-5 w-5" />
-            </button>
         </div>
 
-        <div class="flex-1 overflow-y-auto px-4 py-5">
+        <div class="flex-1 overflow-y-auto px-3 py-5 lg:px-3">
 
             <nav class="space-y-2">
                 @foreach ($navigation as $item)
-                <a href="{{ route($item['route']) }}" class="sidebar-link {{ request()->routeIs($item['route']) ? 'sidebar-link-active' : 'sidebar-link-inactive' }}">
-                    <span class="flex h-10 w-10 items-center justify-center rounded-2xl {{ request()->routeIs($item['route']) ? 'bg-white/15' : 'bg-slate-100 dark:bg-slate-800' }}">
+                @php($isActive = request()->routeIs($item['route']))
+                <a
+                    href="{{ route($item['route']) }}"
+                    class="group relative flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium transition-all duration-300 ease-in-out {{ $isActive ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800/70 dark:hover:text-white' }}"
+                    title="{{ $item['label'] }}"
+                    aria-label="{{ $item['label'] }}"
+                >
+                    <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl transition-all duration-300 ease-in-out {{ $isActive ? 'bg-white/15' : 'bg-slate-100 dark:bg-slate-800' }}">
                         <x-ui.icon name="{{ $item['icon'] }}" class="h-5 w-5" />
                     </span>
-                    <span class="flex-1">{{ $item['label'] }}</span>
-                    @if (request()->routeIs($item['route']))
-                    <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+
+                    <span class="min-w-0 flex-1 max-w-40 overflow-hidden whitespace-nowrap transition-all duration-300 ease-in-out">
+                        {{ $item['label'] }}
+                    </span>
+
+                    @if ($isActive)
+                        <span class="h-2 w-2 shrink-0 rounded-full bg-emerald-400 transition-opacity duration-300 ease-in-out"></span>
                     @endif
                 </a>
                 @endforeach
@@ -47,7 +59,7 @@ $navigation = [
         </div>
 
         <div class="border-t border-slate-200/80 p-4 dark:border-slate-800">
-            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900/80">
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-4 transition-all duration-300 ease-in-out dark:border-slate-800 dark:bg-slate-900/80">
                 <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">System status</p>
                 <div class="mt-3 flex items-center justify-between text-sm">
                     <span class="text-slate-600 dark:text-slate-300">Data pipeline</span>
@@ -57,6 +69,7 @@ $navigation = [
                     </span>
                 </div>
             </div>
+
         </div>
     </div>
 </aside>

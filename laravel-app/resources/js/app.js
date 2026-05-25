@@ -3,6 +3,19 @@ import Alpine from "alpinejs";
 
 window.Chart = Chart;
 window.Alpine = Alpine;
+window.sidebarShell = function sidebarShell() {
+    return {
+        mobileSidebarOpen: false,
+
+        toggleMobileSidebar() {
+            this.mobileSidebarOpen = !this.mobileSidebarOpen;
+        },
+
+        closeMobileSidebar() {
+            this.mobileSidebarOpen = false;
+        },
+    };
+};
 Alpine.start();
 
 const root = document.documentElement;
@@ -34,47 +47,11 @@ function getPreferredTheme() {
         : "light";
 }
 
-function setSidebarState(open) {
-    const sidebar = document.querySelector("[data-sidebar]");
-    const overlay = document.querySelector("[data-sidebar-overlay]");
-
-    if (!sidebar || !overlay) {
-        return;
-    }
-
-    sidebar.classList.toggle("-translate-x-full", !open);
-    overlay.classList.toggle("hidden", !open);
-    document.body.classList.toggle("overflow-hidden", open);
-}
-
 function initThemeToggle() {
     document.querySelectorAll("[data-theme-toggle]").forEach((toggle) => {
         toggle.addEventListener("click", () => {
             applyTheme(root.classList.contains("dark") ? "light" : "dark");
         });
-    });
-}
-
-function initSidebarToggle() {
-    document.addEventListener("click", (event) => {
-        const target = event.target.closest(
-            "[data-sidebar-open], [data-sidebar-close], [data-sidebar-overlay]",
-        );
-
-        if (!target) {
-            return;
-        }
-
-        if (target.matches("[data-sidebar-open]")) {
-            setSidebarState(true);
-        }
-
-        if (
-            target.matches("[data-sidebar-close]") ||
-            target.matches("[data-sidebar-overlay]")
-        ) {
-            setSidebarState(false);
-        }
     });
 }
 
@@ -435,7 +412,6 @@ function initCharts() {
 
 applyTheme(getPreferredTheme());
 initThemeToggle();
-initSidebarToggle();
 initPasswordToggles();
 initModals();
 initSectorModalViews();
