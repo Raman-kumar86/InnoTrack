@@ -6,7 +6,7 @@ $navigation = [
 ['label' => 'State Analytics', 'route' => 'state-analytics.index', 'icon' => 'map'],
 ['label' => 'Reports', 'route' => 'reports.index', 'icon' => 'reports'],
 ['label' => 'User Management', 'route' => 'users.index', 'icon' => 'users'],
-['label' => 'Activity Logs', 'route' => 'activity.index', 'icon' => 'activity'],
+['label' => 'Activity Logs', 'route' => 'activity-logs.index', 'icon' => 'activity'],
 ['label' => 'Settings', 'route' => 'settings.index', 'icon' => 'settings'],
 ];
 @endphp

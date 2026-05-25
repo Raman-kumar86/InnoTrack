@@ -114,6 +114,7 @@ class StartupController extends Controller
 
     public function update(Request $request, Startup $startup)
     {
+        $previousName = $startup->startup_name;
         $data = $request->validate([
             'startup_name' => ['required', 'string', 'max:255'],
             'website' => ['nullable', 'url', 'max:255'],
@@ -239,12 +240,38 @@ class StartupController extends Controller
             Founder::query()->whereIn('id', $toDelete)->delete();
         }
 
+        $this->logActivity([
+            'module' => 'Startups',
+            'action' => 'Updated startup',
+            'result' => 'Success',
+            'loggable_type' => Startup::class,
+            'loggable_id' => $startup->id,
+            'description' => $startup->startup_name . ' was updated successfully.',
+            'metadata' => [
+                'startup_id' => $startup->id,
+                'previous_name' => $previousName,
+                'current_name' => $startup->startup_name,
+            ],
+            'icon' => 'edit',
+        ]);
+
         return redirect()->route('startups.show', ['startup' => $startup->id])->with('success', 'Startup updated successfully.');
     }
 
     public function destroy(Startup $startup)
     {
+        $startupName = $startup->startup_name;
         $startup->delete();
+
+        $this->logActivity([
+            'module' => 'Startups',
+            'action' => 'Deleted startup',
+            'result' => 'Success',
+            'loggable_type' => Startup::class,
+            'loggable_id' => $startup->id,
+            'description' => $startupName . ' was deleted.',
+            'icon' => 'trash',
+        ]);
 
         return redirect()->route('startups.index')->with('success', 'Startup deleted successfully.');
     }
@@ -257,9 +284,18 @@ class StartupController extends Controller
             return response()->json(['error' => 'No startups selected.'], 422);
         }
 
-        Startup::query()->whereIn('id', $ids)->delete();
+        $deleted = Startup::query()->whereIn('id', $ids)->delete();
 
-        return response()->json(['message' => count($ids).' startups deleted.']);
+        $this->logActivity([
+            'module' => 'Startups',
+            'action' => 'Bulk deleted startups',
+            'result' => 'Success',
+            'description' => $deleted . ' startups were deleted.',
+            'metadata' => ['deleted_ids' => $ids, 'deleted_count' => $deleted],
+            'icon' => 'trash',
+        ]);
+
+        return response()->json(['message' => $deleted . ' startups deleted.']);
     }
 
     public function export(Request $request)
@@ -280,6 +316,15 @@ class StartupController extends Controller
             ->sorted($sort)
             ->get();
 
+        $this->logActivity([
+            'module' => 'Startups',
+            'action' => 'Exported startups',
+            'result' => 'Success',
+            'description' => 'Exported filtered startup list.',
+            'metadata' => ['filters' => $filters, 'sort' => $sort, 'count' => $startups->count()],
+            'icon' => 'file-text',
+        ]);
+
         return $this->streamStartupsCsv(
             $startups,
             'startups_export_'.now()->format('Ymd_His').'.csv',
@@ -298,6 +343,15 @@ class StartupController extends Controller
             ->with(['sector', 'state', 'tags'])
             ->whereIn('id', $ids)
             ->get();
+
+        $this->logActivity([
+            'module' => 'Startups',
+            'action' => 'Exported selected startups',
+            'result' => 'Success',
+            'description' => 'Exported ' . $startups->count() . ' selected startups.',
+            'metadata' => ['selected_ids' => $ids, 'count' => $startups->count()],
+            'icon' => 'file-text',
+        ]);
 
         return $this->streamStartupsCsv(
             $startups,
@@ -321,6 +375,15 @@ class StartupController extends Controller
         }
 
         Startup::query()->whereIn('id', $ids)->update(['status' => $status]);
+
+        $this->logActivity([
+            'module' => 'Startups',
+            'action' => 'Bulk updated startup status',
+            'result' => 'Success',
+            'description' => count($ids) . ' startups updated to ' . $status . '.',
+            'metadata' => ['selected_ids' => $ids, 'status' => $status],
+            'icon' => 'check-circle',
+        ]);
 
         return response()->json(['message' => count($ids).' startups updated to '.$status]);
     }

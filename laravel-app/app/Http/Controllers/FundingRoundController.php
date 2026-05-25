@@ -176,6 +176,22 @@ class FundingRoundController extends Controller
                     'status' => 'Pending',
                 ]);
             }
+
+            $this->logActivity([
+                'module' => 'Funding',
+                'action' => 'Approved round',
+                'result' => 'Success',
+                'loggable_type' => FundingRound::class,
+                'loggable_id' => $round->id,
+                'description' => $startup->startup_name . ' raised $' . number_format($amountUsd) . ' in a ' . $request->input('round_type') . ' round.',
+                'metadata' => [
+                    'startup_id' => $startup->id,
+                    'round_type' => $request->input('round_type'),
+                    'amount_usd' => $amountUsd,
+                    'currency' => $currency,
+                ],
+                'icon' => 'trending-up',
+            ]);
         });
 
         return redirect()
@@ -219,7 +235,18 @@ class FundingRoundController extends Controller
     public function destroy(FundingRound $fundingRound)
     {
         $startupId = $fundingRound->startup_id;
+        $roundType = $fundingRound->round_type;
         $fundingRound->delete();
+
+        $this->logActivity([
+            'module' => 'Funding',
+            'action' => 'Deleted funding round',
+            'result' => 'Success',
+            'loggable_type' => FundingRound::class,
+            'loggable_id' => $fundingRound->id,
+            'description' => 'Deleted ' . $roundType . ' round for startup #' . $startupId . '.',
+            'icon' => 'trash',
+        ]);
 
         return redirect()->route('startups.show', $startupId)
             ->with('success', 'Funding round deleted successfully.');

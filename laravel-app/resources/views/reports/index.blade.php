@@ -4,24 +4,34 @@
 <section class="flex min-h-screen flex-col gap-6" x-data="reportsPage()" x-init="init()">
     <style>
         /* Improve numeric contrast in dark mode for this reports page */
-        .dark .reports-contrast { color: #f8fafc !important; }
+        .dark .reports-contrast {
+            color: #f8fafc !important;
+        }
 
         /* Custom thin scrollbar for the reports metrics panel */
         .reports-scroll {
             scrollbar-width: thin;
-            scrollbar-color: rgba(148,163,184,0.5) transparent;
+            scrollbar-color: rgba(148, 163, 184, 0.5) transparent;
         }
 
-        .reports-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
-        .reports-scroll::-webkit-scrollbar-track { background: transparent; }
+        .reports-scroll::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        .reports-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
         .reports-scroll::-webkit-scrollbar-thumb {
-            background-color: rgba(148,163,184,0.35);
+            background-color: rgba(148, 163, 184, 0.35);
             border-radius: 8px;
             border: 2px solid transparent;
             background-clip: content-box;
         }
+
         .dark .reports-scroll::-webkit-scrollbar-thumb {
-            background-color: rgba(148,163,184,0.22);
+            background-color: rgba(148, 163, 184, 0.22);
         }
     </style>
     <x-ui.section-header
@@ -125,278 +135,278 @@
     </div>
     <div class="grid gap-4 md:grid-cols-2 items-stretch">
 
-    <!-- YEAR OVER YEAR METRICS -->
-    <x-ui.card class="h-full flex flex-col rounded-3xl border border-white/5 bg-slate-900/80 p-5 backdrop-blur-xl">
+        <!-- YEAR OVER YEAR METRICS -->
+        <x-ui.card class="h-full flex flex-col rounded-3xl border border-white/5 bg-slate-900/80 p-5 backdrop-blur-xl">
 
-        <div class="mb-4 shrink-0">
-            <h3 class="font-semibold text-white">
-                Year over year metrics
-            </h3>
+            <div class="mb-4 shrink-0">
+                <h3 class="font-semibold text-white">
+                    Year over year metrics
+                </h3>
 
-            <p class="mt-1 text-sm text-slate-400">
-                Side-by-side comparison across fiscal years.
-            </p>
-        </div>
+                <p class="mt-1 text-sm text-slate-400">
+                    Side-by-side comparison across fiscal years.
+                </p>
+            </div>
 
-        <!-- SCROLLABLE CONTENT -->
-        <div class="space-y-4 overflow-y-auto pr-2 max-h-[420px] reports-scroll flex-1">
+            <!-- SCROLLABLE CONTENT -->
+            <div class="space-y-4 overflow-y-auto pr-2 max-h-[420px] reports-scroll flex-1">
 
-            @php
-            $metricLabels = [
+                @php
+                $metricLabels = [
                 'total_funding_cr' => 'Total Funding (Cr)',
                 'active_startups' => 'Active Startups',
                 'registrations' => 'Registrations',
                 'dpiit_recognized' => 'DPIIT Recognized',
                 'jobs_created' => 'Jobs Created',
                 'women_led' => 'Women-led Startups',
-            ];
-            @endphp
+                ];
+                @endphp
 
-            @foreach ($yoy['comparison'] as $row)
+                @foreach ($yoy['comparison'] as $row)
 
-            @php
-            $label = $metricLabels[$row['metric']] ?? $row['metric'];
+                @php
+                $label = $metricLabels[$row['metric']] ?? $row['metric'];
 
-            $max = max(
+                $max = max(
                 $row['fy1_value'],
                 $row['fy2_value'],
                 1
-            );
+                );
 
-            $pct1 = round(($row['fy1_value'] / $max) * 100);
-            $pct2 = round(($row['fy2_value'] / $max) * 100);
-            @endphp
+                $pct1 = round(($row['fy1_value'] / $max) * 100);
+                $pct2 = round(($row['fy2_value'] / $max) * 100);
+                @endphp
 
-            <div class="rounded-2xl border border-white/5 bg-slate-950/40 p-4 transition hover:border-cyan-500/20 hover:bg-slate-900/70">
+                <div class="rounded-2xl border border-white/5 bg-slate-950/40 p-4 transition hover:border-cyan-500/20 hover:bg-slate-900/70">
 
-                <!-- HEADER -->
-                <div class="mb-3 flex items-center justify-between">
+                    <!-- HEADER -->
+                    <div class="mb-3 flex items-center justify-between">
 
-                    <span class="text-xs font-medium text-slate-300">
-                        {{ $label }}
-                    </span>
+                        <span class="text-xs font-medium text-slate-300">
+                            {{ $label }}
+                        </span>
 
-                    <span class="text-xs font-mono {{ $row['direction'] === 'up'
+                        <span class="text-xs font-mono {{ $row['direction'] === 'up'
                         ? 'text-emerald-400'
                         : 'text-yellow-500' }}">
 
-                        {{ $row['direction'] === 'up' ? '↑' : '↓' }}
-                        {{ abs($row['change']) }}%
-                    </span>
-                </div>
-
-                <!-- FY1 -->
-                <div class="mb-3">
-
-                    <div class="mb-1 flex items-center justify-between">
-
-                        <span class="text-[10px] font-mono text-slate-500">
-                            {{ $row['fy1_label'] }}
-                        </span>
-
-                        <span class="text-[10px] font-mono text-slate-300">
-                            {{ number_format($row['fy1_value'], is_float($row['fy1_value']) ? 1 : 0) }}
+                            {{ $row['direction'] === 'up' ? '↑' : '↓' }}
+                            {{ abs($row['change']) }}%
                         </span>
                     </div>
 
-                    <div class="h-2 overflow-hidden rounded-full bg-slate-800">
+                    <!-- FY1 -->
+                    <div class="mb-3">
 
-                        <div
-                            class="h-full rounded-full bg-cyan-400 transition-all duration-700"
-                            x-bind:style="{ width: '{{ $pct1 }}%' }">
+                        <div class="mb-1 flex items-center justify-between">
+
+                            <span class="text-[10px] font-mono text-slate-500">
+                                {{ $row['fy1_label'] }}
+                            </span>
+
+                            <span class="text-[10px] font-mono text-slate-300">
+                                {{ number_format($row['fy1_value'], is_float($row['fy1_value']) ? 1 : 0) }}
+                            </span>
+                        </div>
+
+                        <div class="h-2 overflow-hidden rounded-full bg-slate-800">
+
+                            <div
+                                class="h-full rounded-full bg-cyan-400 transition-all duration-700"
+                                x-bind:style="{ width: '{{ $pct1 }}%' }">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FY2 -->
+                    <div>
+
+                        <div class="mb-1 flex items-center justify-between">
+
+                            <span class="text-[10px] font-mono text-slate-500">
+                                {{ $row['fy2_label'] }}
+                            </span>
+
+                            <span class="text-[10px] font-mono text-slate-300">
+                                {{ number_format($row['fy2_value'], is_float($row['fy2_value']) ? 1 : 0) }}
+                            </span>
+                        </div>
+
+                        <div class="h-2 overflow-hidden rounded-full bg-slate-800">
+
+                            <div
+                                class="h-full rounded-full bg-indigo-400 transition-all duration-700"
+                                x-bind:style="{ width: '{{ $pct2 }}%' }">
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- FY2 -->
-                <div>
+                @endforeach
+            </div>
+        </x-ui.card>
 
-                    <div class="mb-1 flex items-center justify-between">
+        <!-- EXPORT CENTER -->
+        <x-ui.card class="h-full flex flex-col rounded-3xl border border-white/5 bg-slate-900/80 p-5 backdrop-blur-xl">
 
-                        <span class="text-[10px] font-mono text-slate-500">
-                            {{ $row['fy2_label'] }}
-                        </span>
+            <div class="mb-4 shrink-0">
 
-                        <span class="text-[10px] font-mono text-slate-300">
-                            {{ number_format($row['fy2_value'], is_float($row['fy2_value']) ? 1 : 0) }}
-                        </span>
-                    </div>
+                <h3 class="text-lg font-semibold text-white">
+                    Export center
+                </h3>
 
-                    <div class="h-2 overflow-hidden rounded-full bg-slate-800">
-
-                        <div
-                            class="h-full rounded-full bg-indigo-400 transition-all duration-700"
-                            x-bind:style="{ width: '{{ $pct2 }}%' }">
-                        </div>
-                    </div>
-                </div>
+                <p class="mt-1 text-sm text-slate-400">
+                    Export executive reports and analytics summaries.
+                </p>
             </div>
 
-            @endforeach
-        </div>
-    </x-ui.card>
+            <!-- SCROLLABLE EXPORTS -->
+            <div class="space-y-3 overflow-y-auto pr-2 max-h-[420px] reports-scroll flex-1">
 
-    <!-- EXPORT CENTER -->
-    <x-ui.card class="h-full flex flex-col rounded-3xl border border-white/5 bg-slate-900/80 p-5 backdrop-blur-xl">
+                @foreach ($exportFormats as $key => $fmt)
 
-        <div class="mb-4 shrink-0">
+                <a
+                    href="{{ route($fmt['route'], ['fiscal_year' => $selectedFy]) }}"
+                    class="group flex items-start gap-4 rounded-2xl border border-white/5 bg-slate-950/40 p-5 transition hover:border-cyan-500/20 hover:bg-slate-900/70">
 
+                    <!-- ICON -->
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-500/10 transition group-hover:bg-indigo-500/20">
+
+                        <x-ui.icon
+                            name="{{ $fmt['icon'] }}"
+                            class="h-5 w-5 text-indigo-400" />
+                    </div>
+
+                    <!-- TEXT -->
+                    <div class="min-w-0 flex-1">
+
+                        <p class="font-semibold text-sm text-white">
+                            {{ $fmt['label'] }}
+                        </p>
+
+                        <p class="mt-0.5 text-xs text-slate-400">
+                            {{ $fmt['hint'] }}
+                        </p>
+                    </div>
+                </a>
+
+                @endforeach
+            </div>
+        </x-ui.card>
+    </div>
+    <x-ui.card class="border border-white/5 bg-slate-900/80 backdrop-blur-xl">
+
+        <!-- HEADER -->
+        <div class="mb-4">
             <h3 class="text-lg font-semibold text-white">
-                Export center
+                Monthly detail
             </h3>
 
             <p class="mt-1 text-sm text-slate-400">
-                Export executive reports and analytics summaries.
+                Per-month funding, registrations and approval rates for the selected range.
             </p>
         </div>
 
-        <!-- SCROLLABLE EXPORTS -->
-        <div class="space-y-3 overflow-y-auto pr-2 max-h-[420px] reports-scroll flex-1">
+        <!-- TABLE -->
+        <div class="mt-4 overflow-x-auto reports-scroll rounded-2xl border border-white/5">
 
-            @foreach ($exportFormats as $key => $fmt)
+            <table class="w-full table-auto border-collapse text-sm">
 
-            <a
-                href="{{ route($fmt['route'], ['fiscal_year' => $selectedFy]) }}"
-                class="group flex items-start gap-4 rounded-2xl border border-white/5 bg-slate-950/40 p-5 transition hover:border-cyan-500/20 hover:bg-slate-900/70">
+                <!-- TABLE HEAD -->
+                <thead class="sticky top-0 z-10 bg-slate-950/95 backdrop-blur">
 
-                <!-- ICON -->
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-500/10 transition group-hover:bg-indigo-500/20">
+                    <tr class="text-left text-xs uppercase tracking-wide text-slate-400">
 
-                    <x-ui.icon
-                        name="{{ $fmt['icon'] }}"
-                        class="h-5 w-5 text-indigo-400" />
-                </div>
+                        <th class="px-4 py-3 font-semibold">
+                            Month
+                        </th>
 
-                <!-- TEXT -->
-                <div class="min-w-0 flex-1">
+                        <th class="px-4 py-3 text-right font-semibold">
+                            Funding (USD)
+                        </th>
 
-                    <p class="font-semibold text-sm text-white">
-                        {{ $fmt['label'] }}
-                    </p>
+                        <th class="px-4 py-3 text-right font-semibold">
+                            Cumulative (USD)
+                        </th>
 
-                    <p class="mt-0.5 text-xs text-slate-400">
-                        {{ $fmt['hint'] }}
-                    </p>
-                </div>
-            </a>
+                        <th class="px-4 py-3 text-right font-semibold">
+                            Registrations
+                        </th>
 
-            @endforeach
-        </div>
-    </x-ui.card>
-</div>
-    <x-ui.card class="border border-white/5 bg-slate-900/80 backdrop-blur-xl">
+                        <th class="px-4 py-3 text-right font-semibold">
+                            Recognized
+                        </th>
 
-    <!-- HEADER -->
-    <div class="mb-4">
-        <h3 class="text-lg font-semibold text-white">
-            Monthly detail
-        </h3>
+                        <th class="px-4 py-3 text-right font-semibold">
+                            Approval %
+                        </th>
+                    </tr>
+                </thead>
 
-        <p class="mt-1 text-sm text-slate-400">
-            Per-month funding, registrations and approval rates for the selected range.
-        </p>
-    </div>
+                <!-- TABLE BODY -->
+                <tbody class="divide-y divide-white/5">
 
-    <!-- TABLE -->
-    <div class="mt-4 overflow-x-auto reports-scroll rounded-2xl border border-white/5">
+                    @forelse ($monthlyDetail as $row)
 
-        <table class="w-full table-auto border-collapse text-sm">
+                    <tr class="transition hover:bg-slate-800/40">
 
-            <!-- TABLE HEAD -->
-            <thead class="sticky top-0 z-10 bg-slate-950/95 backdrop-blur">
+                        <!-- MONTH -->
+                        <td class="px-4 py-3 font-medium text-white">
+                            {{ $row['month_label'] }}
+                        </td>
 
-                <tr class="text-left text-xs uppercase tracking-wide text-slate-400">
+                        <!-- FUNDING -->
+                        <td class="px-4 py-3 text-right font-mono text-sm text-slate-300">
 
-                    <th class="px-4 py-3 font-semibold">
-                        Month
-                    </th>
+                            @php
+                            $fundingUsd = (float) $row['funding_usd'];
 
-                    <th class="px-4 py-3 text-right font-semibold">
-                        Funding (USD)
-                    </th>
+                            echo match (true) {
+                            $fundingUsd >= 1e9 => '$' . number_format($fundingUsd / 1e9, 2) . 'B',
+                            $fundingUsd >= 1e6 => '$' . number_format($fundingUsd / 1e6, 1) . 'M',
+                            $fundingUsd >= 1e3 => '$' . number_format($fundingUsd / 1e3, 0) . 'K',
+                            $fundingUsd > 0 => '$' . number_format($fundingUsd, 2),
+                            default => '—',
+                            };
+                            @endphp
+                        </td>
 
-                    <th class="px-4 py-3 text-right font-semibold">
-                        Cumulative (USD)
-                    </th>
+                        <!-- CUMULATIVE -->
+                        <td class="px-4 py-3 text-right font-mono text-sm text-cyan-400">
 
-                    <th class="px-4 py-3 text-right font-semibold">
-                        Registrations
-                    </th>
+                            @php
+                            $cumulativeCr = (float) $row['cumulative_usd'];
 
-                    <th class="px-4 py-3 text-right font-semibold">
-                        Recognized
-                    </th>
+                            echo $cumulativeCr > 0
+                            ? '₹' . number_format($cumulativeCr, 1) . ' Cr'
+                            : '—';
+                            @endphp
+                        </td>
 
-                    <th class="px-4 py-3 text-right font-semibold">
-                        Approval %
-                    </th>
-                </tr>
-            </thead>
+                        <!-- REGISTRATIONS -->
+                        <td class="px-4 py-3 text-right font-mono text-sm text-slate-300">
+                            {{ $row['registrations'] > 0 ? number_format($row['registrations']) : '—' }}
+                        </td>
 
-            <!-- TABLE BODY -->
-            <tbody class="divide-y divide-white/5">
+                        <!-- RECOGNIZED -->
+                        <td class="px-4 py-3 text-right font-mono text-sm text-emerald-400">
+                            {{ $row['recognized'] > 0 ? number_format($row['recognized']) : '—' }}
+                        </td>
 
-                @forelse ($monthlyDetail as $row)
+                        <!-- APPROVAL -->
+                        <td class="px-4 py-3 text-right">
 
-                <tr class="transition hover:bg-slate-800/40">
+                            <div class="flex items-center justify-end gap-2">
 
-                    <!-- MONTH -->
-                    <td class="px-4 py-3 font-medium text-white">
-                        {{ $row['month_label'] }}
-                    </td>
+                                <div class="h-1.5 w-14 overflow-hidden rounded-full bg-slate-800">
 
-                    <!-- FUNDING -->
-                    <td class="px-4 py-3 text-right font-mono text-sm text-slate-300">
-
-                        @php
-                        $fundingUsd = (float) $row['funding_usd'];
-
-                        echo match (true) {
-                        $fundingUsd >= 1e9 => '$' . number_format($fundingUsd / 1e9, 2) . 'B',
-                        $fundingUsd >= 1e6 => '$' . number_format($fundingUsd / 1e6, 1) . 'M',
-                        $fundingUsd >= 1e3 => '$' . number_format($fundingUsd / 1e3, 0) . 'K',
-                        $fundingUsd > 0 => '$' . number_format($fundingUsd, 2),
-                        default => '—',
-                        };
-                        @endphp
-                    </td>
-
-                    <!-- CUMULATIVE -->
-                    <td class="px-4 py-3 text-right font-mono text-sm text-cyan-400">
-
-                        @php
-                        $cumulativeCr = (float) $row['cumulative_usd'];
-
-                        echo $cumulativeCr > 0
-                        ? '₹' . number_format($cumulativeCr, 1) . ' Cr'
-                        : '—';
-                        @endphp
-                    </td>
-
-                    <!-- REGISTRATIONS -->
-                    <td class="px-4 py-3 text-right font-mono text-sm text-slate-300">
-                        {{ $row['registrations'] > 0 ? number_format($row['registrations']) : '—' }}
-                    </td>
-
-                    <!-- RECOGNIZED -->
-                    <td class="px-4 py-3 text-right font-mono text-sm text-emerald-400">
-                        {{ $row['recognized'] > 0 ? number_format($row['recognized']) : '—' }}
-                    </td>
-
-                    <!-- APPROVAL -->
-                    <td class="px-4 py-3 text-right">
-
-                        <div class="flex items-center justify-end gap-2">
-
-                            <div class="h-1.5 w-14 overflow-hidden rounded-full bg-slate-800">
-
-                                <div
-                                    class="h-full rounded-full bg-emerald-400"
-                                    x-bind:style="{ width: '{{ min(100, $row['approval_pct']) }}%' }">
+                                    <div
+                                        class="h-full rounded-full bg-emerald-400"
+                                        x-bind:style="{ width: '{{ min(100, $row['approval_pct']) }}%' }">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <span class="font-mono text-sm
+                                <span class="font-mono text-sm
                                 {{
                                     $row['approval_pct'] >= 50
                                     ? 'text-emerald-400'
@@ -405,82 +415,82 @@
                                         : 'text-slate-500')
                                 }}">
 
-                                {{ $row['approval_pct'] > 0 ? $row['approval_pct'] . '%' : '0.0%' }}
-                            </span>
-                        </div>
-                    </td>
-                </tr>
+                                    {{ $row['approval_pct'] > 0 ? $row['approval_pct'] . '%' : '0.0%' }}
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
 
-                @empty
+                    @empty
 
-                <tr>
-                    <td colspan="6" class="px-6 py-16 text-center text-sm text-slate-500">
-                        No data for the selected range.
-                    </td>
-                </tr>
+                    <tr>
+                        <td colspan="6" class="px-6 py-16 text-center text-sm text-slate-500">
+                            No data for the selected range.
+                        </td>
+                    </tr>
 
-                @endforelse
+                    @endforelse
 
-                <!-- TOTAL ROW -->
-                @if (count($monthlyDetail) > 0)
+                    <!-- TOTAL ROW -->
+                    @if (count($monthlyDetail) > 0)
 
-                <tr class="border-t border-cyan-500/20 bg-gradient-to-r from-cyan-500/10 via-indigo-500/10 to-slate-900">
+                    <tr class="border-t border-cyan-500/20 bg-gradient-to-r from-cyan-500/10 via-indigo-500/10 to-slate-900">
 
-                    <!-- TOTAL LABEL -->
-                    <td class="px-4 py-4 text-xs font-mono font-bold uppercase tracking-[0.2em] text-cyan-300">
-                        Total
-                    </td>
+                        <!-- TOTAL LABEL -->
+                        <td class="px-4 py-4 text-xs font-mono font-bold uppercase tracking-[0.2em] text-cyan-300">
+                            Total
+                        </td>
 
-                    <!-- TOTAL FUNDING -->
-                    <td class="px-4 py-4 text-right font-mono font-bold text-sm text-white">
+                        <!-- TOTAL FUNDING -->
+                        <td class="px-4 py-4 text-right font-mono font-bold text-sm text-white">
 
-                        @php
-                        $totalUsd = collect($monthlyDetail)->sum('funding_usd');
+                            @php
+                            $totalUsd = collect($monthlyDetail)->sum('funding_usd');
 
-                        echo match (true) {
-                        $totalUsd >= 1e9 => '$' . number_format($totalUsd / 1e9, 2) . 'B',
-                        $totalUsd >= 1e6 => '$' . number_format($totalUsd / 1e6, 1) . 'M',
-                        $totalUsd > 0 => '$' . number_format($totalUsd, 0),
-                        default => '—',
-                        };
-                        @endphp
-                    </td>
+                            echo match (true) {
+                            $totalUsd >= 1e9 => '$' . number_format($totalUsd / 1e9, 2) . 'B',
+                            $totalUsd >= 1e6 => '$' . number_format($totalUsd / 1e6, 1) . 'M',
+                            $totalUsd > 0 => '$' . number_format($totalUsd, 0),
+                            default => '—',
+                            };
+                            @endphp
+                        </td>
 
-                    <!-- TOTAL CUMULATIVE -->
-                    <td class="px-4 py-4 text-right font-mono font-bold text-sm text-cyan-400">
-                        ₹{{ number_format(collect($monthlyDetail)->last()['cumulative_usd'] ?? 0, 1) }} Cr
-                    </td>
+                        <!-- TOTAL CUMULATIVE -->
+                        <td class="px-4 py-4 text-right font-mono font-bold text-sm text-cyan-400">
+                            ₹{{ number_format(collect($monthlyDetail)->last()['cumulative_usd'] ?? 0, 1) }} Cr
+                        </td>
 
-                    <!-- TOTAL REG -->
-                    <td class="px-4 py-4 text-right font-mono font-bold text-sm text-slate-200">
-                        {{ number_format(collect($monthlyDetail)->sum('registrations')) }}
-                    </td>
+                        <!-- TOTAL REG -->
+                        <td class="px-4 py-4 text-right font-mono font-bold text-sm text-slate-200">
+                            {{ number_format(collect($monthlyDetail)->sum('registrations')) }}
+                        </td>
 
-                    <!-- TOTAL RECOGNIZED -->
-                    <td class="px-4 py-4 text-right font-mono font-bold text-sm text-emerald-400">
-                        {{ number_format(collect($monthlyDetail)->sum('recognized')) }}
-                    </td>
+                        <!-- TOTAL RECOGNIZED -->
+                        <td class="px-4 py-4 text-right font-mono font-bold text-sm text-emerald-400">
+                            {{ number_format(collect($monthlyDetail)->sum('recognized')) }}
+                        </td>
 
-                    <!-- TOTAL APPROVAL -->
-                    <td class="px-4 py-4 text-right font-mono font-bold text-sm text-cyan-300">
+                        <!-- TOTAL APPROVAL -->
+                        <td class="px-4 py-4 text-right font-mono font-bold text-sm text-cyan-300">
 
-                        @php
-                        $totalRegistrations = collect($monthlyDetail)->sum('registrations');
+                            @php
+                            $totalRegistrations = collect($monthlyDetail)->sum('registrations');
 
-                        $totalRecognized = collect($monthlyDetail)->sum('recognized');
+                            $totalRecognized = collect($monthlyDetail)->sum('recognized');
 
-                        echo $totalRegistrations > 0
-                        ? round(($totalRecognized / $totalRegistrations) * 100, 1) . '%'
-                        : '0.0%';
-                        @endphp
-                    </td>
-                </tr>
+                            echo $totalRegistrations > 0
+                            ? round(($totalRecognized / $totalRegistrations) * 100, 1) . '%'
+                            : '0.0%';
+                            @endphp
+                        </td>
+                    </tr>
 
-                @endif
-            </tbody>
-        </table>
-    </div>
-</x-ui.card>
+                    @endif
+                </tbody>
+            </table>
+        </div>
+    </x-ui.card>
 </section>
 @endsection
 
@@ -571,8 +581,12 @@
                                     meta.hidden = meta.hidden === null ? !ci.data.datasets[index].hidden : null;
                                     ci.update();
                                 },
-                                onHover: (e) => { if (e?.native?.target) e.native.target.style.cursor = 'pointer'; },
-                                onLeave: (e) => { if (e?.native?.target) e.native.target.style.cursor = 'default'; },
+                                onHover: (e) => {
+                                    if (e?.native?.target) e.native.target.style.cursor = 'pointer';
+                                },
+                                onLeave: (e) => {
+                                    if (e?.native?.target) e.native.target.style.cursor = 'default';
+                                },
                                 labels: {
                                     font: {
                                         family: 'monospace',
@@ -687,8 +701,12 @@
                                     meta.hidden = meta.hidden === null ? !ci.data.datasets[index].hidden : null;
                                     ci.update();
                                 },
-                                onHover: (e) => { if (e?.native?.target) e.native.target.style.cursor = 'pointer'; },
-                                onLeave: (e) => { if (e?.native?.target) e.native.target.style.cursor = 'default'; },
+                                onHover: (e) => {
+                                    if (e?.native?.target) e.native.target.style.cursor = 'pointer';
+                                },
+                                onLeave: (e) => {
+                                    if (e?.native?.target) e.native.target.style.cursor = 'default';
+                                },
                                 labels: {
                                     font: {
                                         family: 'monospace',

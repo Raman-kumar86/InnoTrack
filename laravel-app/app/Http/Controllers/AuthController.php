@@ -179,6 +179,18 @@ class AuthController extends Controller
             'remember_token' => Str::random(60),
         ])->save();
 
+        $this->logActivity([
+            'user_id' => $user->id,
+            'user_name' => $user->name,
+            'module' => 'Users',
+            'action' => 'Reset password',
+            'result' => 'Success',
+            'loggable_type' => User::class,
+            'loggable_id' => $user->id,
+            'description' => $user->name . ' reset their password successfully.',
+            'icon' => 'shield-check',
+        ]);
+
         // Mark token as used until original expiry to prevent reuse
         if ($jti) {
             $ttl = max(1, ($payload['exp'] ?? 0) - Carbon::now()->timestamp);
@@ -247,6 +259,18 @@ class AuthController extends Controller
 
         Auth::login($user);
         $request->session()->regenerate();
+
+        $this->logActivity([
+            'user_id' => $user->id,
+            'user_name' => $user->name,
+            'module' => 'Users',
+            'action' => 'Registered account',
+            'result' => 'Success',
+            'loggable_type' => User::class,
+            'loggable_id' => $user->id,
+            'description' => $user->name . ' created a new account.',
+            'icon' => 'users',
+        ]);
 
         return redirect()->route('dashboard')->with('success', 'Account created successfully.');
     }

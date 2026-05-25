@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -40,6 +41,21 @@ class SettingsController extends Controller
         }
 
         $user->save();
+
+        $this->logActivity([
+            'module' => 'Users',
+            'action' => 'Updated profile settings',
+            'result' => 'Success',
+            'loggable_type' => User::class,
+            'loggable_id' => $user->id,
+            'description' => $user->name . ' updated personal settings.',
+            'metadata' => [
+                'user_id' => $user->id,
+                'email' => $user->email,
+                'state' => $user->state,
+            ],
+            'icon' => 'users',
+        ]);
 
         return redirect()
             ->route('settings.index')

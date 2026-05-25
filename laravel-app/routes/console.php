@@ -1,10 +1,12 @@
 <?php
 
+use App\Models\ActivityLog;
 use App\Models\Founder;
 use App\Models\Startup;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schedule;
 
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
@@ -100,3 +102,11 @@ Artisan::command('founders:backfill {--dry-run : Preview the founder-to-startup 
 
     return self::SUCCESS;
 })->purpose('Backfill founder records onto startups using startup founder counts');
+
+Schedule::call(static function (): void {
+    $days = (int) config('activity.prune_after_days', 90);
+
+    ActivityLog::query()
+        ->where('created_at', '<', now()->subDays($days))
+        ->delete();
+})->daily()->at('02:00');

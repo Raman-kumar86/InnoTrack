@@ -3,6 +3,7 @@
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ActivityLogController;
 use App\Http\Controllers\FundingRoundController;
 use App\Http\Controllers\StateAnalyticsController;
 use App\Http\Controllers\StartupController;
@@ -53,7 +54,10 @@ Route::middleware('auth')->group(function (): void {
     Route::get('/reports/export/funding', [ReportsController::class, 'exportFunding'])->name('reports.export.funding');
     Route::get('/reports/export/states', [ReportsController::class, 'exportStates'])->name('reports.export.states');
     Route::view('/users', 'users.index')->name('users.index');
-    Route::view('/activity-logs', 'activity.index')->name('activity.index');
+    Route::get('/activity-logs', [ActivityLogController::class, 'index'])->name('activity-logs.index');
+    Route::get('/activity-logs/export', [ActivityLogController::class, 'export'])->name('activity-logs.export');
+    Route::delete('/activity-logs/{activityLog}', [ActivityLogController::class, 'destroy'])->name('activity-logs.destroy');
+    Route::redirect('/activity', '/activity-logs')->name('activity.index');
     Route::get('/settings', [SettingsController::class, 'edit'])->name('settings.index');
     Route::patch('/settings', [SettingsController::class, 'update'])->name('settings.update');
     Route::get('/setting', [SettingsController::class, 'edit'])->name('setting.alias');
