@@ -58,18 +58,5 @@
                 @endforeach
             </nav>
         </div>
-
-        <div class="border-t border-slate-200/80 p-4 dark:border-slate-800">
-            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900/80">
-                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">System status</p>
-                <div class="mt-3 flex items-center justify-between text-sm">
-                    <span class="text-slate-600 dark:text-slate-300">Data pipeline</span>
-                    <span class="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-                        <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-                        Online
-                    </span>
-                </div>
-            </div>
-        </div>
     </div>
 </aside>

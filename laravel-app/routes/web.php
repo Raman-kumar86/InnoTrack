@@ -33,8 +33,14 @@ Route::prefix('auth')->name('auth.')->group(function (): void {
     Route::view('/blocked', 'auth.blocked')->middleware('auth')->name('blocked');
 });
 
+// Public landing page
+Route::get('/', function () {
+    return view('landing.index');
+})->name('home');
+
 Route::middleware(['auth', 'active.user'])->group(function (): void {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    // Dashboard for authenticated users
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/search', [SearchController::class, 'index'])->name('search.index');
     Route::get('/startups', [StartupController::class, 'index'])->name('startups.index');
     Route::get('/startups/export', [StartupController::class, 'export'])->name('startups.export');
