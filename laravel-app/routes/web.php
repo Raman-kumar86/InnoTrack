@@ -3,6 +3,8 @@
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FundingRoundController;
+use App\Http\Controllers\StateAnalyticsController;
 use App\Http\Controllers\StartupController;
 use App\Http\Controllers\ReportsController;
 use Illuminate\Support\Facades\Route;
@@ -34,8 +36,18 @@ Route::middleware('auth')->group(function (): void {
     Route::get('/startups/{startup}/edit', [StartupController::class, 'edit'])->name('startups.edit');
     Route::patch('/startups/{startup}', [StartupController::class, 'update'])->name('startups.update');
     Route::delete('/startups/{startup}', [StartupController::class, 'destroy'])->name('startups.destroy');
-    Route::view('/funding/create', 'funding.create')->name('funding.create');
-    Route::view('/analytics/state', 'analytics.state')->name('analytics.state');
+    Route::get('/funding/create', [FundingRoundController::class, 'create'])->name('funding.create');
+    Route::get('/startups/{startup}/funding/create', [FundingRoundController::class, 'create'])->name('startups.funding.create');
+    Route::post('/funding', [FundingRoundController::class, 'store'])->name('funding.store');
+    Route::get('/funding/{fundingRound}/edit', [FundingRoundController::class, 'edit'])->name('funding.edit');
+    Route::put('/funding/{fundingRound}', [FundingRoundController::class, 'update'])->name('funding.update');
+    Route::delete('/funding/{fundingRound}', [FundingRoundController::class, 'destroy'])->name('funding.destroy');
+    Route::get('/state-analytics', [StateAnalyticsController::class, 'index'])->name('state-analytics.index');
+    Route::get('/state-analytics/export', [StateAnalyticsController::class, 'export'])->name('state-analytics.export');
+    // Backwards-compatible alias used by older views/components
+    Route::get('/analytics/state', function () {
+        return redirect()->route('state-analytics.index');
+    })->name('analytics.state');
     Route::get('/reports', [ReportsController::class, 'index'])->name('reports.index');
     Route::view('/users', 'users.index')->name('users.index');
     Route::view('/activity-logs', 'activity.index')->name('activity.index');

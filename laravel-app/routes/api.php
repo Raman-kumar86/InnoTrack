@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\StartupController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FundingRoundController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('dashboard')->name('dashboard.')->group(function (): void {
@@ -15,3 +16,4 @@ Route::prefix('dashboard')->name('dashboard.')->group(function (): void {
 Route::post('/startups/bulk-delete', [StartupController::class, 'bulkDestroy']);
 Route::post('/startups/bulk-export', [StartupController::class, 'bulkExport']);
 Route::post('/startups/bulk-status', [StartupController::class, 'bulkStatusUpdate']);
+Route::get('/startups/search', [FundingRoundController::class, 'searchStartups'])->name('api.startups.search');

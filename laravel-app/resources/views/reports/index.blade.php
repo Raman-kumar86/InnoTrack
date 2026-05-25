@@ -93,8 +93,8 @@
                 <thead>
                     <tr class="text-left text-xs text-slate-500">
                         <th class="px-3 py-2">Month</th>
-                        <th class="px-3 py-2">Funding (USD)</th>
-                        <th class="px-3 py-2">Cumulative (USD)</th>
+                        <th class="px-3 py-2">Funding (Rs.)</th>
+                        <th class="px-3 py-2">Cumulative (Rs.)</th>
                         <th class="px-3 py-2">Registrations</th>
                         <th class="px-3 py-2">Recognized</th>
                         <th class="px-3 py-2">Approval %</th>

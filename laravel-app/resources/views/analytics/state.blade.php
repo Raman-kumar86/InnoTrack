@@ -5,7 +5,7 @@
     $pageTitle = 'State Analytics';
     $breadcrumbs = [
         ['label' => 'Home', 'url' => route('dashboard')],
-        ['label' => 'State Analytics', 'url' => route('analytics.state')],
+        ['label' => 'State Analytics', 'url' => route('state-analytics.index')],
     ];
 
     $stateLabels = ['Karnataka', 'Maharashtra', 'Delhi', 'Telangana', 'Tamil Nadu', 'Gujarat'];
@@ -59,7 +59,7 @@
                 <x-ui.badge variant="info">Live</x-ui.badge>
             </div>
 
-            <div class="relative mt-6 overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-indigo-50 p-6 dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-indigo-950/30">
+            <div class="relative mt-6 overflow-hidden rounded-4xl border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-indigo-50 p-6 dark:border-slate-800 dark:from-slate-900 dark:via-slate-950 dark:to-indigo-950/30">
                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(79,70,229,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.16),transparent_28%)]"></div>
                 <div class="relative grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(320px,1fr)]">
                     <div class="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 p-5 shadow-lg backdrop-blur dark:border-slate-800 dark:bg-slate-900/80">

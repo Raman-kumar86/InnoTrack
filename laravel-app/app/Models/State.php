@@ -17,6 +17,11 @@ class State extends Model
     ];
 
     protected $casts = [
-        'startup_hub' => 'boolean',
+        'startup_hub' => 'string',
     ];
+
+    public function startups()
+    {
+        return $this->hasMany(Startup::class);
+    }
 }

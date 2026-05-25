@@ -16,6 +16,11 @@ class Sector extends Model
     ];
 
     protected $casts = [
-        'is_priority_sector' => 'boolean',
+        'is_priority_sector' => 'string',
     ];
+
+    public function startups()
+    {
+        return $this->hasMany(Startup::class);
+    }
 }

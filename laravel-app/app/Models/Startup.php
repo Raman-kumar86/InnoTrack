@@ -55,7 +55,13 @@ class Startup extends Model
 
     public function fundingRounds()
     {
-        return $this->hasMany(FundingRound::class);
+        return $this->hasMany(FundingRound::class)
+            ->orderBy('funding_date', 'desc');
+    }
+
+    public function investors()
+    {
+        return $this->hasMany(StartupInvestor::class);
     }
 
     public function documents()
@@ -71,6 +77,12 @@ class Startup extends Model
     public function updates()
     {
         return $this->hasMany(StartupUpdate::class);
+    }
+
+    public function recalculateFundingTotals(): void
+    {
+        $this->total_funding_usd = $this->fundingRounds()->sum('amount_raised_usd');
+        $this->save();
     }
 
     public function scopeFilter($query, array $filters)
