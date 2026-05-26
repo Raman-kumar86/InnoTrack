@@ -20,11 +20,11 @@ $isLanding = request()->is('/') || request()->routeIs('home');
 
             <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center gap-8 text-sm font-medium">
-                <a href="#" class="hover:text-indigo-600 transition">Home</a>
-                <a href="#" class="hover:text-indigo-600 transition">Features</a>
-                <a href="{{ route('search.index') }}" class="hover:text-indigo-600 transition">Analytics</a>
-                <a href="#" class="hover:text-indigo-600 transition">Dashboard</a>
-                <a href="#" class="hover:text-indigo-600 transition">Reports</a>
+                <a href="/auth/login" class="hover:text-indigo-600 transition">Home</a>
+                <a href="/auth/login" class="hover:text-indigo-600 transition">Features</a>
+                <a href="/auth/login" class="hover:text-indigo-600 transition">Analytics</a>
+                <a href="/auth/login" class="hover:text-indigo-600 transition">Dashboard</a>
+                <a href="/auth/login" class="hover:text-indigo-600 transition">Reports</a>
             </div>
 
             <div class="flex items-center gap-4">

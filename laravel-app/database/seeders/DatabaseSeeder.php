@@ -39,5 +39,10 @@ class DatabaseSeeder extends Seeder
                 'password' => Hash::make('password'),
             ]
         );
+
+        // Optional: import additional users from CSV (storage/imports/users.csv)
+        if (class_exists(UsersCsvSeeder::class)) {
+            $this->call(UsersCsvSeeder::class);
+        }
     }
 }
